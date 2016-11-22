@@ -8,8 +8,8 @@
 
 #import "JWBasicViewController.h"
 #import "AppDelegate.h"
-//#import "YWSharedEditorViewController.h"//自定义编辑分享
-#import "JWLocalNotificationShowView.h"
+#import "YWLoginViewController.h"
+#import "YWComfiredViewController.h"
 
 @interface JWBasicViewController ()
 

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YWPersonCenterModel.h"
 
 @interface YWPersonTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+
+@property (nonatomic,strong)YWPersonCenterModel * model;
 
 @end

@@ -9,6 +9,11 @@
 #import "UserSession.h"
 #import "HttpObject.h"
 #import "JWTools.h"
+#import "VIPTabBarController.h"
+#import "VIPNavigationController.h"
+#import "YWComfiredViewController.h"
+#import "YWComfiringViewController.h"
+#import "YWLoginViewController.h"
 
 @implementation UserSession
 static UserSession * user=nil;
@@ -23,6 +28,8 @@ static UserSession * user=nil;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [UserSession getDataFromUserDefault];
         });
+    }else{
+        [UserSession isLogion];
     }
     
     return user;
@@ -59,6 +66,8 @@ static UserSession * user=nil;
         user.account = accountDefault;
         user.password = [KUSERDEFAULT valueForKey:AUTOLOGINCODE];
         [UserSession autoLoginRequestWithPragram:@{@"phone":user.account,@"password":user.password,@"is_md5":@1}];
+    }else{
+        [UserSession isLogion];
     }
 }
 
@@ -72,6 +81,7 @@ static UserSession * user=nil;
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data Error error is %@",responsObj);
         MyLog(@"Error is %@",error);
+        [UserSession isLogion];
     }];
 }
 
@@ -83,6 +93,29 @@ static UserSession * user=nil;
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
     
     user.isLogin = YES;
+    [UserSession userToComfired];
+}
+
++ (void)userToComfired{//233333333是否实名认证0未认证1认证中2认证完成
+    if (user.comfired_Status == 2)return;
+    VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController * vc;
+    if (user.comfired_Status == 0) {
+        vc = [[YWComfiredViewController alloc]init];
+    }else if (user.comfired_Status == 1){
+        vc = [[YWComfiringViewController alloc]init];
+    }
+    [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
+}
+
++ (void)isLogion{
+    if (![UserSession instance].isLogin) {
+        VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        YWLoginViewController * vc = [[YWLoginViewController alloc]init];
+        [rootTabBarVC.selectedViewController pushViewController:vc animated:NO];
+    }else if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
+        [UserSession userToComfired];
+    }
 }
 
 @end

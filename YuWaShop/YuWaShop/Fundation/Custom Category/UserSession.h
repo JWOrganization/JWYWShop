@@ -41,17 +41,16 @@
 //@property(nonatomic,copy)NSString * currency; //货币
 //已经登录
 @property(nonatomic,assign)BOOL isLogin;   //是否登录
+@property(nonatomic,assign)NSInteger comfired_Status;   //233333333是否实名认证0未认证1认证中2认证完成
 
-@property (nonatomic,assign)NSInteger baobaoLV;
-@property (nonatomic,assign)NSInteger baobaoEXP;
-@property (nonatomic,assign)NSInteger baobaoNeedEXP;
-
-+(UserSession*)instance;  //创建单例
-+(void)clearUser;   //退出登录 删除数据
++ (UserSession*)instance;  //创建单例
++ (void)clearUser;   //退出登录 删除数据
 
 + (void)saveUserLoginWithAccount:(NSString *)account withPassword:(NSString *)password;  //save login data
 
 + (void)saveUserInfoWithDic:(NSDictionary *)dataDic;//save user data
 + (void)autoLoginRequestWithPragram:(NSDictionary *)pragram;
+
++ (void)userToComfired;
 
 @end

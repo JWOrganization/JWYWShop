@@ -112,7 +112,11 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"重置成功" withSuccess:YES];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
+            [UserSession userToComfired];
+        }else{
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data Error error is %@",responsObj);

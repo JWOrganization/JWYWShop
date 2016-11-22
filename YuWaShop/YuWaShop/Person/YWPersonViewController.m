@@ -18,6 +18,7 @@
 
 @property (nonatomic,strong)YWPersonHeaderView * headerView;
 @property (nonatomic,strong)NSArray * countArr;
+@property (nonatomic,strong)NSMutableArray * showArr;
 @property (nonatomic,strong)UIImage * cameraImage;
 
 @end
@@ -44,10 +45,20 @@
 
 - (void)makeNavi{
     self.navigationItem.title = @"";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:@"Person_13" withSelectImage:@"Person_13" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(settingBtnAction) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(30.f, 30.f)];
 }
 
 - (void)dataSet{
-    self.countArr = @[@0,@3,@5,@1];
+    self.showArr = [NSMutableArray arrayWithArray:@[@[@{@"name":@"经营日报",@"image":@"Person_12"},@{@"name":@"银行账户管理",@"image":@"Person_5"},@{@"name":@"结算周期管理",@"image":@"Person_9"}],@[@{@"name":@"联系商务会员",@"image":@"Person_3"},@{@"name":@"业务合作",@"image":@"Person_2"},@{@"name":@"帮助中心",@"image":@"Person_1"},@{@"name":@"商务热线",@"image":@"Person_0"},@{@"name":@"意见反馈",@"image":@"Person_10"}],@[@{@"name":@"设置",@"image":@"Person_11"}]]];
+    for (int i = 0; i < self.showArr.count; i++) {
+        NSMutableArray * showArrTemp = [NSMutableArray arrayWithArray:self.showArr[i]];
+        for (int j = 0; j < showArrTemp.count; j++) {
+            [showArrTemp replaceObjectAtIndex:j withObject:[YWPersonCenterModel yy_modelWithDictionary:showArrTemp[j]]];
+        }
+        [self.showArr replaceObjectAtIndex:i withObject:showArrTemp];
+    }
+    
+    self.countArr = @[@0,@([self.showArr[0] count]),@([self.showArr[1] count]),@([self.showArr[2] count])];
     
     [self.tableView registerNib:[UINib nibWithNibName:PERSONCCELL bundle:nil] forCellReuseIdentifier:PERSONCCELL];
 }
@@ -60,6 +71,11 @@
         self.headerView.iconImageView.image = self.cameraImage;
     }];
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+#pragma mark - BtnAction
+- (void)settingBtnAction{
+    
 }
 
 #pragma mark - UITableViewDelegate
@@ -103,7 +119,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWPersonTableViewCell * personCell = [tableView dequeueReusableCellWithIdentifier:PERSONCCELL forIndexPath:indexPath];
-    
+    personCell.model = self.showArr[indexPath.section - 1][indexPath.row];
     
     return personCell;
 }

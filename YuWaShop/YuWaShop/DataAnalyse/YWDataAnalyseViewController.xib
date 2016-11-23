@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YWDataAnalyseViewController">
             <connections>
+                <outlet property="segmentControl" destination="8eQ-7T-4Tg" id="Cdt-OH-dNC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,29 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8eQ-7T-4Tg">
+                    <rect key="frame" x="0.0" y="64" width="600" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dE9-6q-ouS"/>
+                    </constraints>
+                    <segments>
+                        <segment title="近7天"/>
+                        <segment title="近4周"/>
+                        <segment title="近6月"/>
+                    </segments>
+                    <color key="tintColor" red="0.14509803921568626" green="0.75294117647058822" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segmentControlaction:" destination="-1" eventType="valueChanged" id="YZk-8e-5Kl"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="cQs-Qx-QWv"/>
+                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xvH-JA-m4k"/>
+                <constraint firstAttribute="trailing" secondItem="8eQ-7T-4Tg" secondAttribute="trailing" id="ytm-tr-S6b"/>
+            </constraints>
         </view>
     </objects>
 </document>

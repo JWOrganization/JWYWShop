@@ -263,8 +263,6 @@
     
     
     
-    
-    
     //h3333333333提交审核
     [self requestChangeIcon];
 //self.idTextField.text

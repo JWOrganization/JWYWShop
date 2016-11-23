@@ -150,6 +150,9 @@
 		B317ACA71DE565F90093C511 /* YWAddressSubSortCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACA61DE565F90093C511 /* YWAddressSubSortCollectionView.m */; };
 		B317ACAB1DE56B440093C511 /* YWAddressComfiredTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACAA1DE56B440093C511 /* YWAddressComfiredTypeModel.m */; };
 		B317ACAE1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACAD1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m */; };
+		B317ACB31DE582FB0093C511 /* CFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACB11DE582FB0093C511 /* CFLineChartView.m */; };
+		B317ACB41DE582FB0093C511 /* CFLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317ACB21DE582FB0093C511 /* CFLineChartView.xib */; };
+		B317AF141DE59F7A0093C511 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF131DE59F7A0093C511 /* NSDictionary+Attributes.m */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -467,6 +470,11 @@
 		B317ACAA1DE56B440093C511 /* YWAddressComfiredTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressComfiredTypeModel.m; sourceTree = "<group>"; };
 		B317ACAC1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressBaseComfiredTypeModel.h; sourceTree = "<group>"; };
 		B317ACAD1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressBaseComfiredTypeModel.m; sourceTree = "<group>"; };
+		B317ACB01DE582FB0093C511 /* CFLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLineChartView.h; sourceTree = "<group>"; };
+		B317ACB11DE582FB0093C511 /* CFLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLineChartView.m; sourceTree = "<group>"; };
+		B317ACB21DE582FB0093C511 /* CFLineChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFLineChartView.xib; sourceTree = "<group>"; };
+		B317AF121DE59F7A0093C511 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
+		B317AF131DE59F7A0093C511 /* NSDictionary+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Attributes.m"; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -543,8 +551,8 @@
 		B31097021DE44EA00033A984 /* YuWaShop */ = {
 			isa = PBXGroup;
 			children = (
-				B31097361DE4543E0033A984 /* DataAnalyse */,
 				B310973A1DE4543E0033A984 /* Fundation */,
+				B31097361DE4543E0033A984 /* DataAnalyse */,
 				B310984C1DE4543E0033A984 /* Home */,
 				B31098501DE4543E0033A984 /* Login */,
 				B310985C1DE4543E0033A984 /* Person */,
@@ -751,6 +759,8 @@
 		B310978A1DE4543E0033A984 /* MyTools */ = {
 			isa = PBXGroup;
 			children = (
+				B317AF111DE59F7A0093C511 /* NSDictionary */,
+				B317ACAF1DE582FB0093C511 /* CFLineChart */,
 				B317AC941DE557510093C511 /* TagScrolView */,
 				B310978B1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.h */,
 				B310978C1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m */,
@@ -1233,6 +1243,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B317ACAF1DE582FB0093C511 /* CFLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				B317ACB01DE582FB0093C511 /* CFLineChartView.h */,
+				B317ACB11DE582FB0093C511 /* CFLineChartView.m */,
+				B317ACB21DE582FB0093C511 /* CFLineChartView.xib */,
+			);
+			path = CFLineChart;
+			sourceTree = "<group>";
+		};
+		B317AF111DE59F7A0093C511 /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				B317AF121DE59F7A0093C511 /* NSDictionary+Attributes.h */,
+				B317AF131DE59F7A0093C511 /* NSDictionary+Attributes.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
 		B387EA991DE45E110045323C /* mainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1418,6 +1447,7 @@
 				B31097131DE44EA00033A984 /* LaunchScreen.storyboard in Resources */,
 				B31097101DE44EA00033A984 /* Assets.xcassets in Resources */,
 				B31098691DE4543E0033A984 /* YWDataAnalyseViewController.xib in Resources */,
+				B317ACB41DE582FB0093C511 /* CFLineChartView.xib in Resources */,
 				B31098C01DE4543E0033A984 /* MJRefresh.bundle in Resources */,
 				B387EAC21DE4732D0045323C /* YWComfiringViewController.xib in Resources */,
 				B31098D91DE4543E0033A984 /* TZImagePickerController.bundle in Resources */,
@@ -1534,6 +1564,7 @@
 				B387EAAF1DE45E110045323C /* JWLocalNotificationShowView.m in Sources */,
 				B317ACA01DE557A80093C511 /* JWTagCollectionView.m in Sources */,
 				B31098DF1DE4543E0033A984 /* UIView+Layout.m in Sources */,
+				B317ACB31DE582FB0093C511 /* CFLineChartView.m in Sources */,
 				B310988F1DE4543E0033A984 /* NSDictionary+Log.m in Sources */,
 				B31098B81DE4543E0033A984 /* MJRefreshNormalHeader.m in Sources */,
 				B31098B91DE4543E0033A984 /* MJRefreshStateHeader.m in Sources */,
@@ -1552,6 +1583,7 @@
 				B31098891DE4543E0033A984 /* YWLocation.m in Sources */,
 				B31098901DE4543E0033A984 /* AFHTTPRequestOperation.m in Sources */,
 				B31098AE1DE4543E0033A984 /* MJRefreshComponent.m in Sources */,
+				B317AF141DE59F7A0093C511 /* NSDictionary+Attributes.m in Sources */,
 				B317ACAE1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m in Sources */,
 				B31097051DE44EA00033A984 /* main.m in Sources */,
 				B317AC921DE53A6A0093C511 /* YWComfiredAgreeViewController.m in Sources */,

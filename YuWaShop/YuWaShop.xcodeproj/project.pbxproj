@@ -159,10 +159,6 @@
 		B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF251DE5B5110093C511 /* YWPersonCooperaViewController.xib */; };
 		B317AF2B1DE5B53C0093C511 /* YWPersonSuperVipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */; };
 		B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */; };
-		B317AF351DE5B5850093C511 /* YWBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF331DE5B5850093C511 /* YWBankViewController.m */; };
-		B317AF361DE5B5850093C511 /* YWBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF341DE5B5850093C511 /* YWBankViewController.xib */; };
-		B317AF401DE5B5EA0093C511 /* YWPersonNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF3E1DE5B5EA0093C511 /* YWPersonNewsViewController.m */; };
-		B317AF411DE5B5EA0093C511 /* YWPersonNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF3F1DE5B5EA0093C511 /* YWPersonNewsViewController.xib */; };
 		B317AF451DE5B60C0093C511 /* YWPersonPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF431DE5B60C0093C511 /* YWPersonPointViewController.m */; };
 		B317AF461DE5B60C0093C511 /* YWPersonPointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF441DE5B60C0093C511 /* YWPersonPointViewController.xib */; };
 		B317AF4A1DE5B6210093C511 /* YWPersonSubVipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF481DE5B6210093C511 /* YWPersonSubVipViewController.m */; };
@@ -241,6 +237,10 @@
 		B317AFEC1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFEA1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib */; };
 		B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */; };
 		B317AFF21DE5E1330093C511 /* YWPersonSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */; };
+		B317AFFB1DE5E6230093C511 /* YWBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFF51DE5E6230093C511 /* YWBankViewController.m */; };
+		B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFF61DE5E6230093C511 /* YWBankViewController.xib */; };
+		B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */; };
+		B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -573,12 +573,6 @@
 		B317AF281DE5B53C0093C511 /* YWPersonSuperVipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSuperVipViewController.h; sourceTree = "<group>"; };
 		B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSuperVipViewController.m; sourceTree = "<group>"; };
 		B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSuperVipViewController.xib; sourceTree = "<group>"; };
-		B317AF321DE5B5850093C511 /* YWBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBankViewController.h; sourceTree = "<group>"; };
-		B317AF331DE5B5850093C511 /* YWBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBankViewController.m; sourceTree = "<group>"; };
-		B317AF341DE5B5850093C511 /* YWBankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWBankViewController.xib; sourceTree = "<group>"; };
-		B317AF3D1DE5B5EA0093C511 /* YWPersonNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsViewController.h; sourceTree = "<group>"; };
-		B317AF3E1DE5B5EA0093C511 /* YWPersonNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsViewController.m; sourceTree = "<group>"; };
-		B317AF3F1DE5B5EA0093C511 /* YWPersonNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonNewsViewController.xib; sourceTree = "<group>"; };
 		B317AF421DE5B60C0093C511 /* YWPersonPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonPointViewController.h; sourceTree = "<group>"; };
 		B317AF431DE5B60C0093C511 /* YWPersonPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonPointViewController.m; sourceTree = "<group>"; };
 		B317AF441DE5B60C0093C511 /* YWPersonPointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonPointViewController.xib; sourceTree = "<group>"; };
@@ -666,6 +660,12 @@
 		B317AFEE1DE5E1330093C511 /* YWPersonSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSettingViewController.h; sourceTree = "<group>"; };
 		B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSettingViewController.m; sourceTree = "<group>"; };
 		B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSettingViewController.xib; sourceTree = "<group>"; };
+		B317AFF41DE5E6230093C511 /* YWBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBankViewController.h; sourceTree = "<group>"; };
+		B317AFF51DE5E6230093C511 /* YWBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBankViewController.m; sourceTree = "<group>"; };
+		B317AFF61DE5E6230093C511 /* YWBankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWBankViewController.xib; sourceTree = "<group>"; };
+		B317AFF81DE5E6230093C511 /* YWPersonNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsViewController.h; sourceTree = "<group>"; };
+		B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsViewController.m; sourceTree = "<group>"; };
+		B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonNewsViewController.xib; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -1460,6 +1460,8 @@
 		B317AF151DE5B3CD0093C511 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B317AFF31DE5E6230093C511 /* Bank */,
+				B317AFF71DE5E6230093C511 /* News */,
 				B317AFED1DE5E1330093C511 /* Setting */,
 				B317AFE11DE5DB990093C511 /* WeakCount */,
 				B317AF371DE5B5990093C511 /* HeaderVC */,
@@ -1476,12 +1478,6 @@
 				B317AF281DE5B53C0093C511 /* YWPersonSuperVipViewController.h */,
 				B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */,
 				B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */,
-				B317AF321DE5B5850093C511 /* YWBankViewController.h */,
-				B317AF331DE5B5850093C511 /* YWBankViewController.m */,
-				B317AF341DE5B5850093C511 /* YWBankViewController.xib */,
-				B317AF3D1DE5B5EA0093C511 /* YWPersonNewsViewController.h */,
-				B317AF3E1DE5B5EA0093C511 /* YWPersonNewsViewController.m */,
-				B317AF3F1DE5B5EA0093C511 /* YWPersonNewsViewController.xib */,
 			);
 			path = SubVC;
 			sourceTree = "<group>";
@@ -1626,6 +1622,26 @@
 				B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		B317AFF31DE5E6230093C511 /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				B317AFF41DE5E6230093C511 /* YWBankViewController.h */,
+				B317AFF51DE5E6230093C511 /* YWBankViewController.m */,
+				B317AFF61DE5E6230093C511 /* YWBankViewController.xib */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
+		B317AFF71DE5E6230093C511 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				B317AFF81DE5E6230093C511 /* YWPersonNewsViewController.h */,
+				B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */,
+				B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		B387EA991DE45E110045323C /* mainController */ = {
@@ -1817,8 +1833,6 @@
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
 				B317AFDF1DE5D3C90093C511 /* PersonHeaderBG8@2x.png in Resources */,
 				B317AF551DE5B6FC0093C511 /* YWPersonSuggestViewController.xib in Resources */,
-				B317AF411DE5B5EA0093C511 /* YWPersonNewsViewController.xib in Resources */,
-				B317AF361DE5B5850093C511 /* YWBankViewController.xib in Resources */,
 				B387EAB01DE45E110045323C /* JWLocalNotificationShowView.xib in Resources */,
 				B317AFCA1DE5D3C90093C511 /* PersonHeaderBG43@2x.png in Resources */,
 				B317AFD71DE5D3C90093C511 /* PersonHeaderBG55@2x.png in Resources */,
@@ -1876,7 +1890,9 @@
 				B31098D91DE4543E0033A984 /* TZImagePickerController.bundle in Resources */,
 				B317AFD51DE5D3C90093C511 /* PersonHeaderBG53@2x.png in Resources */,
 				B317AFD81DE5D3C90093C511 /* PersonHeaderBG56@2x.png in Resources */,
+				B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */,
 				B317AFDA1DE5D3C90093C511 /* PersonHeaderBG58@2x.png in Resources */,
+				B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */,
 				B317AFDD1DE5D3C90093C511 /* PersonHeaderBG6@2x.png in Resources */,
 				B317AFD31DE5D3C90093C511 /* PersonHeaderBG51@2x.png in Resources */,
 				B310987D1DE4543E0033A984 /* NewLanguage.strings in Resources */,
@@ -1923,7 +1939,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B31098C31DE4543E0033A984 /* UIScrollView+MJExtension.m in Sources */,
-				B317AF351DE5B5850093C511 /* YWBankViewController.m in Sources */,
 				B310986C1DE4543E0033A984 /* UIImage+imageColor.m in Sources */,
 				B387EAB31DE45E110045323C /* VIPTabBarController.m in Sources */,
 				B31098681DE4543E0033A984 /* YWDataAnalyseViewController.m in Sources */,
@@ -1997,6 +2012,7 @@
 				B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */,
 				B31098A41DE4543E0033A984 /* NSArray+MASAdditions.m in Sources */,
 				B310986F1DE4543E0033A984 /* UIScrollView+MJRefreshGif.m in Sources */,
+				B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */,
 				B31098741DE4543E0033A984 /* YYClassInfo.m in Sources */,
 				B310989F1DE4543E0033A984 /* MASConstraint.m in Sources */,
 				B31098711DE4543E0033A984 /* UIWindow+SettingWithVC.m in Sources */,
@@ -2005,7 +2021,6 @@
 				B31098DB1DE4543E0033A984 /* TZPhotoPickerController.m in Sources */,
 				B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */,
 				B31098DC1DE4543E0033A984 /* TZPhotoPreviewCell.m in Sources */,
-				B317AF401DE5B5EA0093C511 /* YWPersonNewsViewController.m in Sources */,
 				B31098AB1DE4543E0033A984 /* MBProgressHUD.m in Sources */,
 				B317AC861DE530780093C511 /* YWStormSubSortCollectionViewCell.m in Sources */,
 				B31098C61DE4543E0033A984 /* MKAnnotationView+WebCache.m in Sources */,
@@ -2064,6 +2079,7 @@
 				B31098D31DE4543E0033A984 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B317AF4F1DE5B6380093C511 /* YWPersonShopViewController.m in Sources */,
 				B310988E1DE4543E0033A984 /* NSArray+Log.m in Sources */,
+				B317AFFB1DE5E6230093C511 /* YWBankViewController.m in Sources */,
 				B31098E21DE4543E0033A984 /* YWForgetPassWordViewController.m in Sources */,
 				B31098C81DE4543E0033A984 /* SDImageCache.m in Sources */,
 				B31098911DE4543E0033A984 /* AFHTTPRequestOperationManager.m in Sources */,

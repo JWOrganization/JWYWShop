@@ -1,14 +1,14 @@
 //
-//  YWPersonHeaderView.m
+//  YWHomeCollectionHeaderView.m
 //  YuWaShop
 //
-//  Created by Tian Wei You on 16/11/17.
+//  Created by Tian Wei You on 16/11/23.
 //  Copyright © 2016年 Shanghai DuRui Information Technology Company. All rights reserved.
 //
 
-#import "YWPersonHeaderView.h"
+#import "YWHomeCollectionHeaderView.h"
 
-@implementation YWPersonHeaderView
+@implementation YWHomeCollectionHeaderView
 - (instancetype)initWithCoder:(NSCoder *)coder{
     self = [super initWithCoder:coder];
     if (self) {
@@ -21,28 +21,18 @@
     return self;
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
+    [super awakeFromNib];
     self.BGImageView.animationImages = self.BGImgArr;
     self.BGImageView.animationDuration = 3;
     self.BGImageView.animationRepeatCount = 0;
     [self.BGImageView startAnimating];
-    self.BGImageHeight.constant = ACTUAL_WIDTH(250.f);
-    self.iconImageTop.constant = ACTUAL_WIDTH(60.f);
-    self.iconImageView.layer.cornerRadius = 44.f;
-    self.iconImageView.layer.masksToBounds = YES;
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-    [self.iconImageView addGestureRecognizer:tap];
-    [self setNeedsDisplay];
 }
 
-- (void)tapAction{
-    self.iconBtnBlock();
+- (IBAction)payBtnAction:(id)sender {
 }
 
-- (IBAction)touchBtnACtion:(UIButton *)sender {
-    self.chooseBtnBlock(sender.tag);
+- (IBAction)recordBtnAction:(id)sender {
 }
-
-
 
 @end

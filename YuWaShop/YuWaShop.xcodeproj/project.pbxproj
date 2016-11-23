@@ -153,16 +153,12 @@
 		B317ACB31DE582FB0093C511 /* CFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACB11DE582FB0093C511 /* CFLineChartView.m */; };
 		B317ACB41DE582FB0093C511 /* CFLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317ACB21DE582FB0093C511 /* CFLineChartView.xib */; };
 		B317AF141DE59F7A0093C511 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF131DE59F7A0093C511 /* NSDictionary+Attributes.m */; };
-		B317AF1C1DE5B4410093C511 /* YWPersonSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF1A1DE5B4410093C511 /* YWPersonSettingViewController.m */; };
-		B317AF1D1DE5B4410093C511 /* YWPersonSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF1B1DE5B4410093C511 /* YWPersonSettingViewController.xib */; };
 		B317AF211DE5B4C90093C511 /* YWPersonHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF1F1DE5B4C90093C511 /* YWPersonHelpViewController.m */; };
 		B317AF221DE5B4C90093C511 /* YWPersonHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF201DE5B4C90093C511 /* YWPersonHelpViewController.xib */; };
 		B317AF261DE5B5110093C511 /* YWPersonCooperaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF241DE5B5110093C511 /* YWPersonCooperaViewController.m */; };
 		B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF251DE5B5110093C511 /* YWPersonCooperaViewController.xib */; };
 		B317AF2B1DE5B53C0093C511 /* YWPersonSuperVipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */; };
 		B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */; };
-		B317AF301DE5B5620093C511 /* YWPersonWeekCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF2E1DE5B5620093C511 /* YWPersonWeekCountViewController.m */; };
-		B317AF311DE5B5620093C511 /* YWPersonWeekCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF2F1DE5B5620093C511 /* YWPersonWeekCountViewController.xib */; };
 		B317AF351DE5B5850093C511 /* YWBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF331DE5B5850093C511 /* YWBankViewController.m */; };
 		B317AF361DE5B5850093C511 /* YWBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AF341DE5B5850093C511 /* YWBankViewController.xib */; };
 		B317AF401DE5B5EA0093C511 /* YWPersonNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AF3E1DE5B5EA0093C511 /* YWPersonNewsViewController.m */; };
@@ -239,6 +235,12 @@
 		B317AFDE1DE5D3C90093C511 /* PersonHeaderBG7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B317AFA21DE5D3C90093C511 /* PersonHeaderBG7@2x.png */; };
 		B317AFDF1DE5D3C90093C511 /* PersonHeaderBG8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B317AFA31DE5D3C90093C511 /* PersonHeaderBG8@2x.png */; };
 		B317AFE01DE5D3C90093C511 /* PersonHeaderBG9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B317AFA41DE5D3C90093C511 /* PersonHeaderBG9@2x.png */; };
+		B317AFE51DE5DBC80093C511 /* YWPersonWeekCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFE31DE5DBC80093C511 /* YWPersonWeekCountViewController.xib */; };
+		B317AFE61DE5DBC80093C511 /* YWPersonWeekCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFE41DE5DBC80093C511 /* YWPersonWeekCountViewController.m */; };
+		B317AFEB1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFE91DE5DC030093C511 /* YWPersonWeekCountTableViewCell.m */; };
+		B317AFEC1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFEA1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib */; };
+		B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */; };
+		B317AFF21DE5E1330093C511 /* YWPersonSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -562,9 +564,6 @@
 		B317AF121DE59F7A0093C511 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
 		B317AF131DE59F7A0093C511 /* NSDictionary+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Attributes.m"; sourceTree = "<group>"; };
 		B317AF161DE5B40C0093C511 /* YWPersonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonVC.h; sourceTree = "<group>"; };
-		B317AF191DE5B4410093C511 /* YWPersonSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSettingViewController.h; sourceTree = "<group>"; };
-		B317AF1A1DE5B4410093C511 /* YWPersonSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSettingViewController.m; sourceTree = "<group>"; };
-		B317AF1B1DE5B4410093C511 /* YWPersonSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSettingViewController.xib; sourceTree = "<group>"; };
 		B317AF1E1DE5B4C90093C511 /* YWPersonHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonHelpViewController.h; sourceTree = "<group>"; };
 		B317AF1F1DE5B4C90093C511 /* YWPersonHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonHelpViewController.m; sourceTree = "<group>"; };
 		B317AF201DE5B4C90093C511 /* YWPersonHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonHelpViewController.xib; sourceTree = "<group>"; };
@@ -574,9 +573,6 @@
 		B317AF281DE5B53C0093C511 /* YWPersonSuperVipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSuperVipViewController.h; sourceTree = "<group>"; };
 		B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSuperVipViewController.m; sourceTree = "<group>"; };
 		B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSuperVipViewController.xib; sourceTree = "<group>"; };
-		B317AF2D1DE5B5620093C511 /* YWPersonWeekCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonWeekCountViewController.h; sourceTree = "<group>"; };
-		B317AF2E1DE5B5620093C511 /* YWPersonWeekCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonWeekCountViewController.m; sourceTree = "<group>"; };
-		B317AF2F1DE5B5620093C511 /* YWPersonWeekCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonWeekCountViewController.xib; sourceTree = "<group>"; };
 		B317AF321DE5B5850093C511 /* YWBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBankViewController.h; sourceTree = "<group>"; };
 		B317AF331DE5B5850093C511 /* YWBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBankViewController.m; sourceTree = "<group>"; };
 		B317AF341DE5B5850093C511 /* YWBankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWBankViewController.xib; sourceTree = "<group>"; };
@@ -661,6 +657,15 @@
 		B317AFA21DE5D3C90093C511 /* PersonHeaderBG7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PersonHeaderBG7@2x.png"; sourceTree = "<group>"; };
 		B317AFA31DE5D3C90093C511 /* PersonHeaderBG8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PersonHeaderBG8@2x.png"; sourceTree = "<group>"; };
 		B317AFA41DE5D3C90093C511 /* PersonHeaderBG9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PersonHeaderBG9@2x.png"; sourceTree = "<group>"; };
+		B317AFE21DE5DBC80093C511 /* YWPersonWeekCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonWeekCountViewController.h; sourceTree = "<group>"; };
+		B317AFE31DE5DBC80093C511 /* YWPersonWeekCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonWeekCountViewController.xib; sourceTree = "<group>"; };
+		B317AFE41DE5DBC80093C511 /* YWPersonWeekCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonWeekCountViewController.m; sourceTree = "<group>"; };
+		B317AFE81DE5DC030093C511 /* YWPersonWeekCountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonWeekCountTableViewCell.h; sourceTree = "<group>"; };
+		B317AFE91DE5DC030093C511 /* YWPersonWeekCountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonWeekCountTableViewCell.m; sourceTree = "<group>"; };
+		B317AFEA1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonWeekCountTableViewCell.xib; sourceTree = "<group>"; };
+		B317AFEE1DE5E1330093C511 /* YWPersonSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSettingViewController.h; sourceTree = "<group>"; };
+		B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSettingViewController.m; sourceTree = "<group>"; };
+		B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSettingViewController.xib; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -1455,11 +1460,10 @@
 		B317AF151DE5B3CD0093C511 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B317AFED1DE5E1330093C511 /* Setting */,
+				B317AFE11DE5DB990093C511 /* WeakCount */,
 				B317AF371DE5B5990093C511 /* HeaderVC */,
 				B317AF161DE5B40C0093C511 /* YWPersonVC.h */,
-				B317AF191DE5B4410093C511 /* YWPersonSettingViewController.h */,
-				B317AF1A1DE5B4410093C511 /* YWPersonSettingViewController.m */,
-				B317AF1B1DE5B4410093C511 /* YWPersonSettingViewController.xib */,
 				B317AF511DE5B6FC0093C511 /* YWPersonSuggestViewController.h */,
 				B317AF521DE5B6FC0093C511 /* YWPersonSuggestViewController.m */,
 				B317AF531DE5B6FC0093C511 /* YWPersonSuggestViewController.xib */,
@@ -1472,9 +1476,6 @@
 				B317AF281DE5B53C0093C511 /* YWPersonSuperVipViewController.h */,
 				B317AF291DE5B53C0093C511 /* YWPersonSuperVipViewController.m */,
 				B317AF2A1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib */,
-				B317AF2D1DE5B5620093C511 /* YWPersonWeekCountViewController.h */,
-				B317AF2E1DE5B5620093C511 /* YWPersonWeekCountViewController.m */,
-				B317AF2F1DE5B5620093C511 /* YWPersonWeekCountViewController.xib */,
 				B317AF321DE5B5850093C511 /* YWBankViewController.h */,
 				B317AF331DE5B5850093C511 /* YWBankViewController.m */,
 				B317AF341DE5B5850093C511 /* YWBankViewController.xib */,
@@ -1594,6 +1595,37 @@
 				B317AFA41DE5D3C90093C511 /* PersonHeaderBG9@2x.png */,
 			);
 			path = HeaderBG;
+			sourceTree = "<group>";
+		};
+		B317AFE11DE5DB990093C511 /* WeakCount */ = {
+			isa = PBXGroup;
+			children = (
+				B317AFE71DE5DBD30093C511 /* Cell */,
+				B317AFE21DE5DBC80093C511 /* YWPersonWeekCountViewController.h */,
+				B317AFE41DE5DBC80093C511 /* YWPersonWeekCountViewController.m */,
+				B317AFE31DE5DBC80093C511 /* YWPersonWeekCountViewController.xib */,
+			);
+			path = WeakCount;
+			sourceTree = "<group>";
+		};
+		B317AFE71DE5DBD30093C511 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B317AFE81DE5DC030093C511 /* YWPersonWeekCountTableViewCell.h */,
+				B317AFE91DE5DC030093C511 /* YWPersonWeekCountTableViewCell.m */,
+				B317AFEA1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B317AFED1DE5E1330093C511 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B317AFEE1DE5E1330093C511 /* YWPersonSettingViewController.h */,
+				B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */,
+				B317AFF01DE5E1330093C511 /* YWPersonSettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		B387EA991DE45E110045323C /* mainController */ = {
@@ -1808,11 +1840,13 @@
 				B31098EB1DE4543E0033A984 /* YWPersonHeaderView.xib in Resources */,
 				B317AFE01DE5D3C90093C511 /* PersonHeaderBG9@2x.png in Resources */,
 				B317AFB01DE5D3C90093C511 /* PersonHeaderBG1@2x.png in Resources */,
+				B317AFF21DE5E1330093C511 /* YWPersonSettingViewController.xib in Resources */,
 				B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */,
-				B317AF311DE5B5620093C511 /* YWPersonWeekCountViewController.xib in Resources */,
 				B317AFD01DE5D3C90093C511 /* PersonHeaderBG49@2x.png in Resources */,
+				B317AFEC1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib in Resources */,
 				B387EABD1DE46C3C0045323C /* YWComfiredViewController.xib in Resources */,
 				B317AFB71DE5D3C90093C511 /* PersonHeaderBG26@2x.png in Resources */,
+				B317AFE51DE5DBC80093C511 /* YWPersonWeekCountViewController.xib in Resources */,
 				B317AFB91DE5D3C90093C511 /* PersonHeaderBG28@2x.png in Resources */,
 				B317AFAF1DE5D3C90093C511 /* PersonHeaderBG19@2x.png in Resources */,
 				B317AFB81DE5D3C90093C511 /* PersonHeaderBG27@2x.png in Resources */,
@@ -1851,7 +1885,6 @@
 				B31098E31DE4543E0033A984 /* YWForgetPassWordViewController.xib in Resources */,
 				B317AFC71DE5D3C90093C511 /* PersonHeaderBG40@2x.png in Resources */,
 				B317AFBF1DE5D3C90093C511 /* PersonHeaderBG33@2x.png in Resources */,
-				B317AF1D1DE5B4410093C511 /* YWPersonSettingViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
 				B317AFBC1DE5D3C90093C511 /* PersonHeaderBG30@2x.png in Resources */,
 				B317AFCB1DE5D3C90093C511 /* PersonHeaderBG44@2x.png in Resources */,
@@ -1963,7 +1996,6 @@
 				B31098D81DE4543E0033A984 /* TZImageManager.m in Sources */,
 				B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */,
 				B31098A41DE4543E0033A984 /* NSArray+MASAdditions.m in Sources */,
-				B317AF1C1DE5B4410093C511 /* YWPersonSettingViewController.m in Sources */,
 				B310986F1DE4543E0033A984 /* UIScrollView+MJRefreshGif.m in Sources */,
 				B31098741DE4543E0033A984 /* YYClassInfo.m in Sources */,
 				B310989F1DE4543E0033A984 /* MASConstraint.m in Sources */,
@@ -1971,6 +2003,7 @@
 				B31098BC1DE4543E0033A984 /* MJChiBaoZiHeader.m in Sources */,
 				B31098E81DE4543E0033A984 /* YWPersonTableViewCell.m in Sources */,
 				B31098DB1DE4543E0033A984 /* TZPhotoPickerController.m in Sources */,
+				B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */,
 				B31098DC1DE4543E0033A984 /* TZPhotoPreviewCell.m in Sources */,
 				B317AF401DE5B5EA0093C511 /* YWPersonNewsViewController.m in Sources */,
 				B31098AB1DE4543E0033A984 /* MBProgressHUD.m in Sources */,
@@ -2022,7 +2055,9 @@
 				B31098DE1DE4543E0033A984 /* TZVideoPlayerController.m in Sources */,
 				B31098F01DE454560033A984 /* AppDelegate.m in Sources */,
 				B310986D1DE4543E0033A984 /* JRToast.m in Sources */,
+				B317AFE61DE5DBC80093C511 /* YWPersonWeekCountViewController.m in Sources */,
 				B310987E1DE4543E0033A984 /* InternationalLanguage.m in Sources */,
+				B317AFEB1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.m in Sources */,
 				B31098781DE4543E0033A984 /* HUDLoadingShowView.m in Sources */,
 				B31098B31DE4543E0033A984 /* MJRefreshAutoStateFooter.m in Sources */,
 				B387EAC61DE478160045323C /* YWLoginViewController.m in Sources */,
@@ -2030,7 +2065,6 @@
 				B317AF4F1DE5B6380093C511 /* YWPersonShopViewController.m in Sources */,
 				B310988E1DE4543E0033A984 /* NSArray+Log.m in Sources */,
 				B31098E21DE4543E0033A984 /* YWForgetPassWordViewController.m in Sources */,
-				B317AF301DE5B5620093C511 /* YWPersonWeekCountViewController.m in Sources */,
 				B31098C81DE4543E0033A984 /* SDImageCache.m in Sources */,
 				B31098911DE4543E0033A984 /* AFHTTPRequestOperationManager.m in Sources */,
 			);

@@ -12,7 +12,7 @@
 
 #define PERSONCCELL @"YWPersonTableViewCell"
 
-@interface YWPersonViewController ()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
+@interface YWPersonViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -64,13 +64,39 @@
 }
 
 - (void)makeLocalImagePicker{
-    TZImagePickerController *imagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
-    imagePickerVC.allowPickingVideo = NO;
-    [imagePickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,NSArray *assets,BOOL isSelectOriginalPhoto) {
-        self.cameraImage = photos[0];
-        self.headerView.iconImageView.image = self.cameraImage;
-    }];
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    WEAKSELF;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//take photo
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
+        } else {
+            MyLog(@"照片源不可用");
+        }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//to localPhotos
+        [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+- (void)myImagePickerWithType:(UIImagePickerControllerSourceType)sourceType{
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        [picker setSourceType:sourceType];
+        [picker setAllowsEditing:YES];
+        [picker setDelegate:self];
+        [self presentViewController:picker animated:YES completion:nil];
+    } else {
+        MyLog(@"照片源不可用");
+    }
+}
+
+#pragma mark - ImagePickerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    self.cameraImage = info[@"UIImagePickerControllerEditedImage"];
+    self.headerView.iconImageView.image = self.cameraImage;
+    [self requestChangeIcon];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - BtnAction
@@ -122,6 +148,11 @@
     personCell.model = self.showArr[indexPath.section - 1][indexPath.row];
     
     return personCell;
+}
+
+#pragma mark - Http
+- (void)requestChangeIcon{
+    //h33333333333上传头像
 }
 
 

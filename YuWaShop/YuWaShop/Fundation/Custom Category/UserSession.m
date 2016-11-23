@@ -28,8 +28,6 @@ static UserSession * user=nil;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [UserSession getDataFromUserDefault];
         });
-    }else{
-        [UserSession isLogion];
     }
     
     return user;
@@ -109,13 +107,15 @@ static UserSession * user=nil;
 }
 
 + (void)isLogion{
-    if (![UserSession instance].isLogin) {
-        VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-        YWLoginViewController * vc = [[YWLoginViewController alloc]init];
-        [rootTabBarVC.selectedViewController pushViewController:vc animated:NO];
-    }else if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
-        [UserSession userToComfired];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!user.isLogin) {
+            VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            YWLoginViewController * vc = [[YWLoginViewController alloc]init];
+            [rootTabBarVC.selectedViewController pushViewController:vc animated:NO];
+        }else if (user.comfired_Status != 2){//2333333未审核||审核中
+            [UserSession userToComfired];
+        }
+    });
 }
 
 @end

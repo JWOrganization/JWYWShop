@@ -136,6 +136,16 @@
 		B31098EC1DE4543E0033A984 /* YWPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31098661DE4543E0033A984 /* YWPersonViewController.m */; };
 		B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31098671DE4543E0033A984 /* YWPersonViewController.xib */; };
 		B31098F01DE454560033A984 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B31098EF1DE454560033A984 /* AppDelegate.m */; };
+		B317AC861DE530780093C511 /* YWStormSubSortCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC801DE530780093C511 /* YWStormSubSortCollectionViewCell.m */; };
+		B317AC871DE530780093C511 /* YWStormSubSortCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AC811DE530780093C511 /* YWStormSubSortCollectionViewCell.xib */; };
+		B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC831DE530780093C511 /* YWStormSortTableView.m */; };
+		B317AC891DE530780093C511 /* YWStormSubSortCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC851DE530780093C511 /* YWStormSubSortCollectionView.m */; };
+		B317AC8D1DE532EC0093C511 /* YWComfiredTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC8C1DE532EC0093C511 /* YWComfiredTypeModel.m */; };
+		B317AC921DE53A6A0093C511 /* YWComfiredAgreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC901DE53A6A0093C511 /* YWComfiredAgreeViewController.m */; };
+		B317AC931DE53A6A0093C511 /* YWComfiredAgreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AC911DE53A6A0093C511 /* YWComfiredAgreeViewController.xib */; };
+		B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC9A1DE557A80093C511 /* JWTagCollectionViewCell.m */; };
+		B317AC9F1DE557A80093C511 /* JWTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */; };
+		B317ACA01DE557A80093C511 /* JWTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC9D1DE557A80093C511 /* JWTagCollectionView.m */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -428,6 +438,23 @@
 		B31098671DE4543E0033A984 /* YWPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonViewController.xib; sourceTree = "<group>"; };
 		B31098EE1DE454560033A984 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B31098EF1DE454560033A984 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B317AC7F1DE530780093C511 /* YWStormSubSortCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormSubSortCollectionViewCell.h; sourceTree = "<group>"; };
+		B317AC801DE530780093C511 /* YWStormSubSortCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormSubSortCollectionViewCell.m; sourceTree = "<group>"; };
+		B317AC811DE530780093C511 /* YWStormSubSortCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWStormSubSortCollectionViewCell.xib; sourceTree = "<group>"; };
+		B317AC821DE530780093C511 /* YWStormSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormSortTableView.h; sourceTree = "<group>"; };
+		B317AC831DE530780093C511 /* YWStormSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormSortTableView.m; sourceTree = "<group>"; };
+		B317AC841DE530780093C511 /* YWStormSubSortCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormSubSortCollectionView.h; sourceTree = "<group>"; };
+		B317AC851DE530780093C511 /* YWStormSubSortCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormSubSortCollectionView.m; sourceTree = "<group>"; };
+		B317AC8B1DE532EC0093C511 /* YWComfiredTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWComfiredTypeModel.h; sourceTree = "<group>"; };
+		B317AC8C1DE532EC0093C511 /* YWComfiredTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWComfiredTypeModel.m; sourceTree = "<group>"; };
+		B317AC8F1DE53A6A0093C511 /* YWComfiredAgreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWComfiredAgreeViewController.h; sourceTree = "<group>"; };
+		B317AC901DE53A6A0093C511 /* YWComfiredAgreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWComfiredAgreeViewController.m; sourceTree = "<group>"; };
+		B317AC911DE53A6A0093C511 /* YWComfiredAgreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWComfiredAgreeViewController.xib; sourceTree = "<group>"; };
+		B317AC991DE557A80093C511 /* JWTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTagCollectionViewCell.h; sourceTree = "<group>"; };
+		B317AC9A1DE557A80093C511 /* JWTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTagCollectionViewCell.m; sourceTree = "<group>"; };
+		B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		B317AC9C1DE557A80093C511 /* JWTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTagCollectionView.h; sourceTree = "<group>"; };
+		B317AC9D1DE557A80093C511 /* JWTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTagCollectionView.m; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -712,6 +739,7 @@
 		B310978A1DE4543E0033A984 /* MyTools */ = {
 			isa = PBXGroup;
 			children = (
+				B317AC941DE557510093C511 /* TagScrolView */,
 				B310978B1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.h */,
 				B310978C1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m */,
 				B310978D1DE4543E0033A984 /* JWThirdTools.h */,
@@ -1107,6 +1135,68 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B317AC7D1DE530780093C511 /* SortView */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC8A1DE532C10093C511 /* Model */,
+				B317AC7E1DE530780093C511 /* Cell */,
+				B317AC821DE530780093C511 /* YWStormSortTableView.h */,
+				B317AC831DE530780093C511 /* YWStormSortTableView.m */,
+				B317AC841DE530780093C511 /* YWStormSubSortCollectionView.h */,
+				B317AC851DE530780093C511 /* YWStormSubSortCollectionView.m */,
+			);
+			path = SortView;
+			sourceTree = "<group>";
+		};
+		B317AC7E1DE530780093C511 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC7F1DE530780093C511 /* YWStormSubSortCollectionViewCell.h */,
+				B317AC801DE530780093C511 /* YWStormSubSortCollectionViewCell.m */,
+				B317AC811DE530780093C511 /* YWStormSubSortCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B317AC8A1DE532C10093C511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC8B1DE532EC0093C511 /* YWComfiredTypeModel.h */,
+				B317AC8C1DE532EC0093C511 /* YWComfiredTypeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B317AC8E1DE53A440093C511 /* AgreeVC */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC8F1DE53A6A0093C511 /* YWComfiredAgreeViewController.h */,
+				B317AC901DE53A6A0093C511 /* YWComfiredAgreeViewController.m */,
+				B317AC911DE53A6A0093C511 /* YWComfiredAgreeViewController.xib */,
+			);
+			path = AgreeVC;
+			sourceTree = "<group>";
+		};
+		B317AC941DE557510093C511 /* TagScrolView */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC981DE557A80093C511 /* Cell */,
+				B317AC9C1DE557A80093C511 /* JWTagCollectionView.h */,
+				B317AC9D1DE557A80093C511 /* JWTagCollectionView.m */,
+			);
+			path = TagScrolView;
+			sourceTree = "<group>";
+		};
+		B317AC981DE557A80093C511 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B317AC991DE557A80093C511 /* JWTagCollectionViewCell.h */,
+				B317AC9A1DE557A80093C511 /* JWTagCollectionViewCell.m */,
+				B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B387EA991DE45E110045323C /* mainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1157,6 +1247,8 @@
 		B387EAB81DE46C1E0045323C /* Comfired */ = {
 			isa = PBXGroup;
 			children = (
+				B317AC8E1DE53A440093C511 /* AgreeVC */,
+				B317AC7D1DE530780093C511 /* SortView */,
 				B387EAB91DE46C3C0045323C /* YWComfiredViewController.h */,
 				B387EABA1DE46C3C0045323C /* YWComfiredViewController.m */,
 				B387EABB1DE46C3C0045323C /* YWComfiredViewController.xib */,
@@ -1279,6 +1371,7 @@
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
 				B387EAB01DE45E110045323C /* JWLocalNotificationShowView.xib in Resources */,
 				B31098A91DE4543E0033A984 /* 37x-Checkmark.png in Resources */,
+				B317AC871DE530780093C511 /* YWStormSubSortCollectionViewCell.xib in Resources */,
 				B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */,
 				B310989D1DE4543E0033A984 /* LICENSE in Resources */,
 				B31098791DE4543E0033A984 /* HUDLoadingShowView.xib in Resources */,
@@ -1295,7 +1388,9 @@
 				B310987D1DE4543E0033A984 /* NewLanguage.strings in Resources */,
 				B31098E31DE4543E0033A984 /* YWForgetPassWordViewController.xib in Resources */,
 				B310970E1DE44EA00033A984 /* Main.storyboard in Resources */,
+				B317AC9F1DE557A80093C511 /* JWTagCollectionViewCell.xib in Resources */,
 				B31098751DE4543E0033A984 /* GifBundle.bundle in Resources */,
+				B317AC931DE53A6A0093C511 /* YWComfiredAgreeViewController.xib in Resources */,
 				B31098E51DE4543E0033A984 /* YWRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1337,6 +1432,7 @@
 				B31098A01DE4543E0033A984 /* MASConstraintMaker.m in Sources */,
 				B31098AC1DE4543E0033A984 /* MJRefreshAutoFooter.m in Sources */,
 				B31098A31DE4543E0033A984 /* MASViewConstraint.m in Sources */,
+				B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */,
 				B310989A1DE4543E0033A984 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				B31098A61DE4543E0033A984 /* View+MASAdditions.m in Sources */,
 				B31098951DE4543E0033A984 /* AFURLConnectionOperation.m in Sources */,
@@ -1371,6 +1467,7 @@
 				B31098C11DE4543E0033A984 /* MJRefreshConst.m in Sources */,
 				B310989B1DE4543E0033A984 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				B31098971DE4543E0033A984 /* AFURLResponseSerialization.m in Sources */,
+				B317AC8D1DE532EC0093C511 /* YWComfiredTypeModel.m in Sources */,
 				B31098CF1DE4543E0033A984 /* UIButton+WebCache.m in Sources */,
 				B31098B01DE4543E0033A984 /* MJRefreshHeader.m in Sources */,
 				B31098D61DE4543E0033A984 /* TZAssetCell.m in Sources */,
@@ -1378,6 +1475,7 @@
 				B31098921DE4543E0033A984 /* AFHTTPSessionManager.m in Sources */,
 				B31098A11DE4543E0033A984 /* MASLayoutConstraint.m in Sources */,
 				B31098721DE4543E0033A984 /* YJSegmentedControl.m in Sources */,
+				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
 				B310989E1DE4543E0033A984 /* MASCompositeConstraint.m in Sources */,
 				B31098C21DE4543E0033A984 /* NSBundle+MJRefresh.m in Sources */,
 				B31098B71DE4543E0033A984 /* MJRefreshGifHeader.m in Sources */,
@@ -1393,10 +1491,12 @@
 				B31098DB1DE4543E0033A984 /* TZPhotoPickerController.m in Sources */,
 				B31098DC1DE4543E0033A984 /* TZPhotoPreviewCell.m in Sources */,
 				B31098AB1DE4543E0033A984 /* MBProgressHUD.m in Sources */,
+				B317AC861DE530780093C511 /* YWStormSubSortCollectionViewCell.m in Sources */,
 				B31098C61DE4543E0033A984 /* MKAnnotationView+WebCache.m in Sources */,
 				B31098CD1DE4543E0033A984 /* SDWebImageManager.m in Sources */,
 				B310988A1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m in Sources */,
 				B387EAAF1DE45E110045323C /* JWLocalNotificationShowView.m in Sources */,
+				B317ACA01DE557A80093C511 /* JWTagCollectionView.m in Sources */,
 				B31098DF1DE4543E0033A984 /* UIView+Layout.m in Sources */,
 				B310988F1DE4543E0033A984 /* NSDictionary+Log.m in Sources */,
 				B31098B81DE4543E0033A984 /* MJRefreshNormalHeader.m in Sources */,
@@ -1416,6 +1516,7 @@
 				B31098901DE4543E0033A984 /* AFHTTPRequestOperation.m in Sources */,
 				B31098AE1DE4543E0033A984 /* MJRefreshComponent.m in Sources */,
 				B31097051DE44EA00033A984 /* main.m in Sources */,
+				B317AC921DE53A6A0093C511 /* YWComfiredAgreeViewController.m in Sources */,
 				B310987B1DE4543E0033A984 /* HttpObject.m in Sources */,
 				B31098C51DE4543E0033A984 /* UIView+MJExtension.m in Sources */,
 				B310988D1DE4543E0033A984 /* NSDictionary+Attributes.m in Sources */,
@@ -1427,6 +1528,7 @@
 				B31098881DE4543E0033A984 /* UserSession.m in Sources */,
 				B31098DD1DE4543E0033A984 /* TZPhotoPreviewController.m in Sources */,
 				B31098761DE4543E0033A984 /* HUDFailureShowView.m in Sources */,
+				B317AC891DE530780093C511 /* YWStormSubSortCollectionView.m in Sources */,
 				B31098DE1DE4543E0033A984 /* TZVideoPlayerController.m in Sources */,
 				B31098F01DE454560033A984 /* AppDelegate.m in Sources */,
 				B310986D1DE4543E0033A984 /* JRToast.m in Sources */,

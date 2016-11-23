@@ -115,9 +115,7 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"注册成功" withSuccess:YES];
-        if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
-            [UserSession userToComfired];
-        }else{
+        if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
     } failur:^(id responsObj, NSError *error) {

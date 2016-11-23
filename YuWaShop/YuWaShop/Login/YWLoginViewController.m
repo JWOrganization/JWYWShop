@@ -60,7 +60,8 @@
 - (void)makeNavi{
     self.title = @"登录";
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"alert_error_icon" withSelectImage:@"alert_error_icon" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(backBarAction) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(25.f, 25.f)];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerAction)];
 }
 
@@ -190,9 +191,7 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"登录成功" withSuccess:YES];
-        if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
-            [UserSession userToComfired];
-        }else{
+        if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
     } failur:^(id responsObj, NSError *error) {
@@ -213,9 +212,7 @@
         [self showHUDWithStr:@"登录成功" withSuccess:YES];
         
         [UserSession saveUserLoginWithAccount:account withPassword:[UserSession instance].hxPassword];
-        if ([UserSession instance].comfired_Status != 2){//2333333未审核||审核中
-            [UserSession userToComfired];
-        }else{
+        if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
     } failur:^(id responsObj, NSError *error) {

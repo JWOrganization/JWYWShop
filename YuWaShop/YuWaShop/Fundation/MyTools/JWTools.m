@@ -665,6 +665,41 @@
     return str;
 }
 
+#pragma mark - 虚线边框
+/**
+ *  虚线边框
+ *
+ *  @param size        虚线边框视图的大小
+ *  @param color       边框颜色
+ *  @param borderWidth 边框粗细
+ *  @param cornerRadius 边框圆角
+ *
+ *  @return 虚线边框
+ */
++ (UIImage*)imageWithSize:(CGSize)size borderColor:(UIColor *)color borderWidth:(CGFloat)borderWidth withCornerRadius:(CGFloat)cornerRadius{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    [[UIColor clearColor] set];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextBeginPath(context);
+    CGContextSetLineWidth(context, borderWidth);
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGFloat lengths[] = {3,1};
+    CGContextSetLineDash(context, 0, lengths, 1);
+    CGContextMoveToPoint(context, cornerRadius, 0.0);
+    CGContextAddLineToPoint(context, size.width-cornerRadius, 0.0);
+    CGContextAddLineToPoint(context, size.width, cornerRadius);
+    CGContextAddLineToPoint(context, size.width, size.height-cornerRadius);
+    CGContextAddLineToPoint(context, size.width - cornerRadius, size.height);
+    CGContextAddLineToPoint(context, cornerRadius, size.height);
+    CGContextAddLineToPoint(context, 0, size.height-cornerRadius);
+    CGContextAddLineToPoint(context, 0.0, cornerRadius);
+    CGContextAddLineToPoint(context, cornerRadius, 0.0);
+    CGContextStrokePath(context);
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 #pragma mark - QR Code 二维码
 /**
  *  创建二维码

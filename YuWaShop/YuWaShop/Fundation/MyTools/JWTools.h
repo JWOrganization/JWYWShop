@@ -295,6 +295,19 @@
  */
 + (NSString *)stringThirtyTwoWithNumberTenBase:(NSString *)numberStr;
 
+#pragma mark - 虚线边框
+/**
+ *  虚线边框
+ *
+ *  @param size        虚线边框视图的大小
+ *  @param color       边框颜色
+ *  @param borderWidth 边框粗细
+ *  @param cornerRadius 边框圆角
+ *
+ *  @return 虚线边框
+ */
++ (UIImage*)imageWithSize:(CGSize)size borderColor:(UIColor *)color borderWidth:(CGFloat)borderWidth  withCornerRadius:(CGFloat)cornerRadius;
+
 #pragma mark - QR Code 二维码
 /**
  *  创建二维码

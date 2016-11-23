@@ -9,6 +9,7 @@
 #import "YWPersonViewController.h"
 #import "YWPersonTableViewCell.h"
 #import "YWPersonHeaderView.h"
+#import "YWPersonVC.h"
 
 #define PERSONCCELL @"YWPersonTableViewCell"
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic,strong)YWPersonHeaderView * headerView;
 @property (nonatomic,strong)NSArray * countArr;
+@property (nonatomic,strong)NSArray * subViewArr;
 @property (nonatomic,strong)NSMutableArray * showArr;
 @property (nonatomic,strong)UIImage * cameraImage;
 
@@ -61,6 +63,8 @@
     self.countArr = @[@0,@([self.showArr[0] count]),@([self.showArr[1] count]),@([self.showArr[2] count])];
     
     [self.tableView registerNib:[UINib nibWithNibName:PERSONCCELL bundle:nil] forCellReuseIdentifier:PERSONCCELL];
+    
+    self.subViewArr = @[@[[YWPersonNewsViewController class],[YWBankViewController class],[YWPersonWeekCountViewController class]],@[[YWPersonSuperVipViewController class],[YWPersonCooperaViewController class],[YWPersonHelpViewController class],@"",[YWPersonSuggestViewController class]],@[[YWPersonSettingViewController class]]];
 }
 
 - (void)makeLocalImagePicker{
@@ -101,10 +105,35 @@
 
 #pragma mark - BtnAction
 - (void)settingBtnAction{
-    
+    YWPersonSettingViewController * vc = [[YWPersonSettingViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)callService{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:[UserSession instance].phone style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIWebView* callWebview =[[UIWebView alloc] init];
+        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",[UserSession instance].phone]];
+        [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
+        [self.view addSubview:callWebview];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 3) {
+        [self settingBtnAction];
+    }else if (indexPath.section == 2&&indexPath.row == 3){
+        [self callService];
+    }else{
+        Class viewClass = (Class)self.subViewArr[indexPath.section - 1][indexPath.row];
+        UIViewController * vc = [[viewClass alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55.f;
 }
@@ -120,7 +149,25 @@
         WEAKSELF;
         self.headerView = [[[NSBundle mainBundle]loadNibNamed:@"YWPersonHeaderView" owner:nil options:nil]firstObject];
         self.headerView.chooseBtnBlock = ^(NSInteger choosedBtn){//1门店2会员3分红
-            //2333333
+            UIViewController * vc;
+            switch (choosedBtn) {
+                case 1:{
+                    vc = [[YWPersonShopViewController alloc]init];
+                    break;
+                }
+                case 2:{
+                    vc = [[YWPersonSubVipViewController alloc]init];
+                    break;
+                }
+                case 3:{
+                    vc = [[YWPersonPointViewController alloc]init];
+                    break;
+                }
+                    
+                default:
+                    break;
+            }
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         };
         self.headerView.iconBtnBlock = ^(){
             [weakSelf makeLocalImagePicker];

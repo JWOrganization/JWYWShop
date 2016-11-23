@@ -91,7 +91,10 @@ static UserSession * user=nil;
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
     
     user.isLogin = YES;
-    user.comfired_Status = 2;//2333333333实名认证
+    //233333333暂定
+    user.comfired_Status = 2;//实名认证
+    user.phone = @"18015885220";
+    //233333333暂定
     [UserSession userToComfired];
 }
 

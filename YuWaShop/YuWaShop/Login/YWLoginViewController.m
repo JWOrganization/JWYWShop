@@ -211,7 +211,7 @@
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"登录成功" withSuccess:YES];
         
-        [UserSession saveUserLoginWithAccount:account withPassword:[UserSession instance].hxPassword];
+        [UserSession saveUserLoginWithAccount:account withPassword:[UserSession instance].password];
         if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             [self.navigationController popToRootViewControllerAnimated:YES];
         }

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YWStormSortTableView : UITableView
+@interface YWStormSortTableView : UITableView<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong)NSMutableArray * dataArr;
+@property (nonatomic,assign)NSInteger selectIndex;
 
 @property (nonatomic,copy)void(^choosedTypeBlock)(NSInteger,NSInteger,NSArray *);
 
 @property (nonatomic,strong)NSMutableArray * dataStateArr;
+
+- (void)requestSubTypeWithIdx:(NSInteger)index;
 
 @end

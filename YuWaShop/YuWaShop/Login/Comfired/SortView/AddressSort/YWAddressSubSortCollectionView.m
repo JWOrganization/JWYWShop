@@ -1,14 +1,14 @@
 //
-//  YWStormSubSortCollectionView.m
-//  YuWa
+//  YWAddressSubSortCollectionView.m
+//  YuWaShop
 //
-//  Created by Tian Wei You on 16/10/15.
+//  Created by Tian Wei You on 16/11/23.
 //  Copyright © 2016年 Shanghai DuRui Information Technology Company. All rights reserved.
 //
 
-#import "YWStormSubSortCollectionView.h"
+#import "YWAddressSubSortCollectionView.h"
 
-@implementation YWStormSubSortCollectionView
+@implementation YWAddressSubSortCollectionView
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(nonnull UICollectionViewLayout *)layout{
     self = [super initWithFrame:frame collectionViewLayout:layout];
@@ -29,11 +29,12 @@
     self.choosedTypeArr = [NSMutableArray arrayWithCapacity:0];
     if (!_dataArr) {
         _dataArr = dataArr;
+        [self reloadData];
         return;
     }
     _dataArr = dataArr;
     [self reloadData];
-
+    
 }
 - (void)dataSet{
     self.dataSource = self;
@@ -47,8 +48,8 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YWStormSubSortCollectionViewCell * subSortCell = [collectionView dequeueReusableCellWithReuseIdentifier:STORMSORTCOLLECTIONCELL forIndexPath:indexPath];
-    YWComfiredTypeModel * model = self.dataArr[indexPath.row];
-    subSortCell.nameLabel.text = model.tag_name;
+    YWAddressComfiredTypeModel * model = self.dataArr[indexPath.row];
+    subSortCell.nameLabel.text = model.business_name;
     if (model.isSelected) {
         subSortCell.nameLabel.textColor = CNaviColor;
     }else{
@@ -57,13 +58,9 @@
     return subSortCell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    YWComfiredTypeModel * model = self.dataArr[indexPath.row];
-    model.isSelected = !model.isSelected;
-    if (model.isSelected) {
-        [self.choosedTypeArr addObject:model];
-    }else{
-        [self.choosedTypeArr removeObject:model];
-    }
+    YWAddressComfiredTypeModel * model = self.dataArr[indexPath.row];
+    self.choosedTypeIdx = indexPath.row;
+    self.choosedTypeBlock(model.business_name,[model.bid integerValue]);
     [self reloadData];
 }
 

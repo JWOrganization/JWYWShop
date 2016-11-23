@@ -146,6 +146,10 @@
 		B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC9A1DE557A80093C511 /* JWTagCollectionViewCell.m */; };
 		B317AC9F1DE557A80093C511 /* JWTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */; };
 		B317ACA01DE557A80093C511 /* JWTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AC9D1DE557A80093C511 /* JWTagCollectionView.m */; };
+		B317ACA41DE565CE0093C511 /* YWAddressSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACA31DE565CE0093C511 /* YWAddressSortTableView.m */; };
+		B317ACA71DE565F90093C511 /* YWAddressSubSortCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACA61DE565F90093C511 /* YWAddressSubSortCollectionView.m */; };
+		B317ACAB1DE56B440093C511 /* YWAddressComfiredTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACAA1DE56B440093C511 /* YWAddressComfiredTypeModel.m */; };
+		B317ACAE1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B317ACAD1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -455,6 +459,14 @@
 		B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		B317AC9C1DE557A80093C511 /* JWTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTagCollectionView.h; sourceTree = "<group>"; };
 		B317AC9D1DE557A80093C511 /* JWTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTagCollectionView.m; sourceTree = "<group>"; };
+		B317ACA21DE565CE0093C511 /* YWAddressSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressSortTableView.h; sourceTree = "<group>"; };
+		B317ACA31DE565CE0093C511 /* YWAddressSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressSortTableView.m; sourceTree = "<group>"; };
+		B317ACA51DE565F90093C511 /* YWAddressSubSortCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressSubSortCollectionView.h; sourceTree = "<group>"; };
+		B317ACA61DE565F90093C511 /* YWAddressSubSortCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressSubSortCollectionView.m; sourceTree = "<group>"; };
+		B317ACA91DE56B440093C511 /* YWAddressComfiredTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressComfiredTypeModel.h; sourceTree = "<group>"; };
+		B317ACAA1DE56B440093C511 /* YWAddressComfiredTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressComfiredTypeModel.m; sourceTree = "<group>"; };
+		B317ACAC1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressBaseComfiredTypeModel.h; sourceTree = "<group>"; };
+		B317ACAD1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressBaseComfiredTypeModel.m; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -1138,6 +1150,7 @@
 		B317AC7D1DE530780093C511 /* SortView */ = {
 			isa = PBXGroup;
 			children = (
+				B317ACA11DE565A10093C511 /* AddressSort */,
 				B317AC8A1DE532C10093C511 /* Model */,
 				B317AC7E1DE530780093C511 /* Cell */,
 				B317AC821DE530780093C511 /* YWStormSortTableView.h */,
@@ -1195,6 +1208,29 @@
 				B317AC9B1DE557A80093C511 /* JWTagCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B317ACA11DE565A10093C511 /* AddressSort */ = {
+			isa = PBXGroup;
+			children = (
+				B317ACA81DE56B200093C511 /* Model */,
+				B317ACA21DE565CE0093C511 /* YWAddressSortTableView.h */,
+				B317ACA31DE565CE0093C511 /* YWAddressSortTableView.m */,
+				B317ACA51DE565F90093C511 /* YWAddressSubSortCollectionView.h */,
+				B317ACA61DE565F90093C511 /* YWAddressSubSortCollectionView.m */,
+			);
+			path = AddressSort;
+			sourceTree = "<group>";
+		};
+		B317ACA81DE56B200093C511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B317ACA91DE56B440093C511 /* YWAddressComfiredTypeModel.h */,
+				B317ACAA1DE56B440093C511 /* YWAddressComfiredTypeModel.m */,
+				B317ACAC1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.h */,
+				B317ACAD1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B387EA991DE45E110045323C /* mainController */ = {
@@ -1506,6 +1542,7 @@
 				B31098D21DE4543E0033A984 /* UIImage+WebP.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
 				B31098E01DE4543E0033A984 /* YWHomeViewController.m in Sources */,
+				B317ACA41DE565CE0093C511 /* YWAddressSortTableView.m in Sources */,
 				B31098D51DE4543E0033A984 /* UIView+WebCacheOperation.m in Sources */,
 				B31098C71DE4543E0033A984 /* NSData+ImageContentType.m in Sources */,
 				B31098DA1DE4543E0033A984 /* TZImagePickerController.m in Sources */,
@@ -1515,16 +1552,19 @@
 				B31098891DE4543E0033A984 /* YWLocation.m in Sources */,
 				B31098901DE4543E0033A984 /* AFHTTPRequestOperation.m in Sources */,
 				B31098AE1DE4543E0033A984 /* MJRefreshComponent.m in Sources */,
+				B317ACAE1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m in Sources */,
 				B31097051DE44EA00033A984 /* main.m in Sources */,
 				B317AC921DE53A6A0093C511 /* YWComfiredAgreeViewController.m in Sources */,
 				B310987B1DE4543E0033A984 /* HttpObject.m in Sources */,
 				B31098C51DE4543E0033A984 /* UIView+MJExtension.m in Sources */,
 				B310988D1DE4543E0033A984 /* NSDictionary+Attributes.m in Sources */,
+				B317ACAB1DE56B440093C511 /* YWAddressComfiredTypeModel.m in Sources */,
 				B31098B51DE4543E0033A984 /* MJRefreshBackNormalFooter.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
 				B387EAB11DE45E110045323C /* VIPNavigationController.m in Sources */,
 				B31098C41DE4543E0033A984 /* UIScrollView+MJRefresh.m in Sources */,
+				B317ACA71DE565F90093C511 /* YWAddressSubSortCollectionView.m in Sources */,
 				B31098881DE4543E0033A984 /* UserSession.m in Sources */,
 				B31098DD1DE4543E0033A984 /* TZPhotoPreviewController.m in Sources */,
 				B31098761DE4543E0033A984 /* HUDFailureShowView.m in Sources */,

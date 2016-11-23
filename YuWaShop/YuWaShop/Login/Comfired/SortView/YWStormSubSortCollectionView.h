@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YWComfiredTypeModel.h"
+#import "YWStormSubSortCollectionViewCell.h"
 
+#define STORMSORTCOLLECTIONCELL @"YWStormSubSortCollectionViewCell"
 @interface YWStormSubSortCollectionView : UICollectionView<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property (nonatomic,assign)CGFloat cellWidth;
 
 @property (nonatomic,strong)NSArray * dataArr;
 @property (nonatomic,strong)NSArray * dataTagArr;

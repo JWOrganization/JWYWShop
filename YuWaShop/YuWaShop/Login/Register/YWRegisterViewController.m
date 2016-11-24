@@ -7,6 +7,7 @@
 //
 
 #import "YWRegisterViewController.h"
+#import "JPUSHService.h"
 
 @interface YWRegisterViewController ()<UITextFieldDelegate>
 
@@ -116,7 +117,10 @@
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"注册成功" withSuccess:YES];
         if ([UserSession instance].comfired_Status == 2){//2333333审核完成
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
+                [self.navigationController popViewControllerAnimated:YES];
+            });
         }
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);

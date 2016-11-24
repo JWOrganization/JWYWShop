@@ -8,6 +8,7 @@
 
 #import "UserSession.h"
 #import "HttpObject.h"
+#import "JPUSHService.h"
 #import "JWTools.h"
 #import "VIPTabBarController.h"
 #import "VIPNavigationController.h"
@@ -43,6 +44,10 @@ static UserSession * user=nil;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [UserSession getDataFromUserDefault];
         
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [JPUSHService setAlias:@"" callbackSelector:nil object:nil];
+        });
+        
         NSMutableArray * friendsRequest = [NSMutableArray arrayWithArray:[KUSERDEFAULT valueForKey:FRIENDSREQUEST]];
         friendsRequest = [NSMutableArray arrayWithCapacity:0];
         [KUSERDEFAULT setObject:friendsRequest forKey:FRIENDSREQUEST];
@@ -75,6 +80,9 @@ static UserSession * user=nil;
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data is %@",responsObj);
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [JPUSHService setAlias:user.account callbackSelector:nil object:nil];
+        });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data Error error is %@",responsObj);

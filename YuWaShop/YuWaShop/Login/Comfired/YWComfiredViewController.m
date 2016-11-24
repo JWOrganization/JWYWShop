@@ -15,6 +15,7 @@
 #import "YWAddressSortTableView.h"
 #import "YWAddressSubSortCollectionView.h"
 #import "YWComfiringViewController.h"
+#import "JPUSHService.h"
 
 @interface YWComfiredViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -273,7 +274,10 @@
 //    self.addressType//商区类
 //    self.addressSubType//商区子类
     YWComfiringViewController * vc = [[YWComfiringViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    });
 }
 
 

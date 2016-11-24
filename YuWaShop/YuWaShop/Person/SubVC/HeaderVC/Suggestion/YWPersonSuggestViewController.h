@@ -7,6 +7,7 @@
 //
 
 #import "JWBasicViewController.h"
+#import "JWTextView.h"
 
 @interface YWPersonSuggestViewController : JWBasicViewController
 

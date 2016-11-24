@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="YWPersonSubVipHeaderView" id="iN0-l3-epB" customClass="YWPersonSubVipHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YTQ-Rl-SSC">
+                    <rect key="frame" x="-2" y="54" width="379" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mxT-cA-Tpb"/>
+                    </constraints>
+                    <segments>
+                        <segment title="直接介绍"/>
+                        <segment title="间接介绍"/>
+                    </segments>
+                    <color key="tintColor" red="0.1450980392" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="typeSegmentControlAction:" destination="iN0-l3-epB" eventType="valueChanged" id="8KF-Ax-9dy"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvg-F9-GXY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分红历史总收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-FF-lld">
+                            <rect key="frame" x="10" y="0.0" width="309" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分红账户余额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ox-TH-6Kv">
+                            <rect key="frame" x="10" y="27" width="309" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3X-xW-XjV">
+                            <rect key="frame" x="319" y="12" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.1450980392" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="Lb0-qg-8xM"/>
+                                <constraint firstAttribute="height" constant="30" id="Pgd-gM-0C1"/>
+                            </constraints>
+                            <state key="normal" title="提现">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="getMoneyBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cam-Ad-RI5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1ox-TH-6Kv" firstAttribute="trailing" secondItem="n1Y-FF-lld" secondAttribute="trailing" id="5ov-K0-4d7"/>
+                        <constraint firstItem="n1Y-FF-lld" firstAttribute="leading" secondItem="xvg-F9-GXY" secondAttribute="leading" constant="10" id="8pb-wf-UfU"/>
+                        <constraint firstItem="1ox-TH-6Kv" firstAttribute="leading" secondItem="n1Y-FF-lld" secondAttribute="leading" id="Cng-n1-6Qc"/>
+                        <constraint firstAttribute="bottom" secondItem="1ox-TH-6Kv" secondAttribute="bottom" id="IUE-xc-IHe"/>
+                        <constraint firstItem="1ox-TH-6Kv" firstAttribute="height" secondItem="n1Y-FF-lld" secondAttribute="height" id="ZAK-Go-ooa"/>
+                        <constraint firstItem="F3X-xW-XjV" firstAttribute="centerY" secondItem="xvg-F9-GXY" secondAttribute="centerY" id="bJh-hq-Hg9"/>
+                        <constraint firstItem="F3X-xW-XjV" firstAttribute="leading" secondItem="n1Y-FF-lld" secondAttribute="trailing" id="mZK-Vq-Nym"/>
+                        <constraint firstAttribute="trailing" secondItem="F3X-xW-XjV" secondAttribute="trailing" constant="10" id="n1M-Ut-C7s"/>
+                        <constraint firstItem="1ox-TH-6Kv" firstAttribute="top" secondItem="n1Y-FF-lld" secondAttribute="bottom" id="rcZ-3N-UR1"/>
+                        <constraint firstItem="n1Y-FF-lld" firstAttribute="top" secondItem="xvg-F9-GXY" secondAttribute="top" id="sY6-xG-tOy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xvg-F9-GXY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="50Z-nS-cmH"/>
+                <constraint firstAttribute="trailing" secondItem="xvg-F9-GXY" secondAttribute="trailing" id="Op5-6Y-jcF"/>
+                <constraint firstItem="xvg-F9-GXY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RnQ-iy-ude"/>
+                <constraint firstItem="YTQ-Rl-SSC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-2" id="Z2z-9W-8Kv"/>
+                <constraint firstAttribute="trailing" secondItem="YTQ-Rl-SSC" secondAttribute="trailing" constant="-2" id="idJ-5x-ozL"/>
+                <constraint firstAttribute="bottom" secondItem="YTQ-Rl-SSC" secondAttribute="bottom" constant="1" id="sHT-YY-lN0"/>
+                <constraint firstItem="YTQ-Rl-SSC" firstAttribute="top" secondItem="xvg-F9-GXY" secondAttribute="bottom" id="x0h-zK-1pG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="getMoneyBtn" destination="F3X-xW-XjV" id="kX8-v1-0k6"/>
+                <outlet property="moneyLabel" destination="n1Y-FF-lld" id="7KN-WO-H7V"/>
+                <outlet property="moneyRestLabel" destination="1ox-TH-6Kv" id="6SH-Iw-UXu"/>
+                <outlet property="typeSegmentControl" destination="YTQ-Rl-SSC" id="ovv-vi-7Vv"/>
+            </connections>
+            <point key="canvasLocation" x="195.5" y="214.5"/>
+        </view>
+    </objects>
+</document>

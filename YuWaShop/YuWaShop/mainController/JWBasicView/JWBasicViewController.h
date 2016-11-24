@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIScrollView+JWGifRefresh.h"
 #import "UIBarButtonItem+SettingCustom.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "JWTools.h"

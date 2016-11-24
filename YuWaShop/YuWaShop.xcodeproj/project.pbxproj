@@ -274,6 +274,10 @@
 		B3F07EA61DE6AD0D005116EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F07EA51DE6AD0D005116EA /* libz.tbd */; };
 		B3F07EA81DE6AD39005116EA /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F07EA71DE6AD39005116EA /* libresolv.tbd */; };
 		B3F07EAA1DE6AD9A005116EA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F07EA91DE6AD9A005116EA /* AdSupport.framework */; };
+		B3F07EAF1DE6B89C005116EA /* YWBankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EAD1DE6B89C005116EA /* YWBankTableViewCell.m */; };
+		B3F07EB01DE6B89C005116EA /* YWBankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EAE1DE6B89C005116EA /* YWBankTableViewCell.xib */; };
+		B3F07EB41DE6B9E8005116EA /* YWBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EB31DE6B9E8005116EA /* YWBankModel.m */; };
+		B3F07EB71DE6C1DD005116EA /* NSString+JWAppendOtherStr.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EB61DE6C1DD005116EA /* NSString+JWAppendOtherStr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -729,6 +733,13 @@
 		B3F07EA51DE6AD0D005116EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B3F07EA71DE6AD39005116EA /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		B3F07EA91DE6AD9A005116EA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B3F07EAC1DE6B89C005116EA /* YWBankTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBankTableViewCell.h; sourceTree = "<group>"; };
+		B3F07EAD1DE6B89C005116EA /* YWBankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBankTableViewCell.m; sourceTree = "<group>"; };
+		B3F07EAE1DE6B89C005116EA /* YWBankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWBankTableViewCell.xib; sourceTree = "<group>"; };
+		B3F07EB21DE6B9E8005116EA /* YWBankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBankModel.h; sourceTree = "<group>"; };
+		B3F07EB31DE6B9E8005116EA /* YWBankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBankModel.m; sourceTree = "<group>"; };
+		B3F07EB51DE6C1DD005116EA /* NSString+JWAppendOtherStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JWAppendOtherStr.h"; sourceTree = "<group>"; };
+		B3F07EB61DE6C1DD005116EA /* NSString+JWAppendOtherStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JWAppendOtherStr.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1001,6 +1012,8 @@
 		B310978A1DE4543E0033A984 /* MyTools */ = {
 			isa = PBXGroup;
 			children = (
+				B3F07EB51DE6C1DD005116EA /* NSString+JWAppendOtherStr.h */,
+				B3F07EB61DE6C1DD005116EA /* NSString+JWAppendOtherStr.m */,
 				B3F07E861DE6A7A8005116EA /* NSLog */,
 				B3F07E681DE6A79F005116EA /* TZImagePickerController */,
 				B317AF111DE59F7A0093C511 /* NSDictionary */,
@@ -1638,6 +1651,8 @@
 		B317AFF31DE5E6230093C511 /* Bank */ = {
 			isa = PBXGroup;
 			children = (
+				B3F07EB11DE6B9CD005116EA /* Model */,
+				B3F07EAB1DE6B87E005116EA /* Cell */,
 				B317AFF41DE5E6230093C511 /* YWBankViewController.h */,
 				B317AFF51DE5E6230093C511 /* YWBankViewController.m */,
 				B317AFF61DE5E6230093C511 /* YWBankViewController.xib */,
@@ -1838,6 +1853,25 @@
 				B3F07E921DE6AC82005116EA /* CFNetwork.framework */,
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		B3F07EAB1DE6B87E005116EA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07EAC1DE6B89C005116EA /* YWBankTableViewCell.h */,
+				B3F07EAD1DE6B89C005116EA /* YWBankTableViewCell.m */,
+				B3F07EAE1DE6B89C005116EA /* YWBankTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3F07EB11DE6B9CD005116EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07EB21DE6B9E8005116EA /* YWBankModel.h */,
+				B3F07EB31DE6B9E8005116EA /* YWBankModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2054,6 +2088,7 @@
 				B317AFC81DE5D3C90093C511 /* PersonHeaderBG41@2x.png in Resources */,
 				B317AFAE1DE5D3C90093C511 /* PersonHeaderBG18@2x.png in Resources */,
 				B3F07E7F1DE6A79F005116EA /* TZImagePickerController.bundle in Resources */,
+				B3F07EB01DE6B89C005116EA /* YWBankTableViewCell.xib in Resources */,
 				B317AFC21DE5D3C90093C511 /* PersonHeaderBG36@2x.png in Resources */,
 				B317AF221DE5B4C90093C511 /* YWPersonHelpViewController.xib in Resources */,
 			);
@@ -2095,6 +2130,7 @@
 				B3F07E831DE6A79F005116EA /* TZPhotoPreviewController.m in Sources */,
 				B31098BE1DE4543E0033A984 /* MJDIYBackFooter.m in Sources */,
 				B317AF261DE5B5110093C511 /* YWPersonCooperaViewController.m in Sources */,
+				B3F07EAF1DE6B89C005116EA /* YWBankTableViewCell.m in Sources */,
 				B31098B21DE4543E0033A984 /* MJRefreshAutoNormalFooter.m in Sources */,
 				B31098A01DE4543E0033A984 /* MASConstraintMaker.m in Sources */,
 				B31098AC1DE4543E0033A984 /* MJRefreshAutoFooter.m in Sources */,
@@ -2128,6 +2164,7 @@
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
+				B3F07EB71DE6C1DD005116EA /* NSString+JWAppendOtherStr.m in Sources */,
 				B310986B1DE4543E0033A984 /* UIColor+HexString.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
@@ -2181,6 +2218,7 @@
 				B3F07E821DE6A79F005116EA /* TZPhotoPreviewCell.m in Sources */,
 				B31098CA1DE4543E0033A984 /* SDWebImageDecoder.m in Sources */,
 				B31098EC1DE4543E0033A984 /* YWPersonViewController.m in Sources */,
+				B3F07EB41DE6B9E8005116EA /* YWBankModel.m in Sources */,
 				B31098D21DE4543E0033A984 /* UIImage+WebP.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
 				B31098E01DE4543E0033A984 /* YWHomeViewController.m in Sources */,

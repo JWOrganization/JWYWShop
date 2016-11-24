@@ -33,6 +33,7 @@
 //233333333暂定
 @property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证0未认证1认证中2认证完成
 @property (nonatomic,copy)NSString * phone;
+@property (nonatomic,copy)NSString * serventPhone;//客服电话
 //233333333暂定
 
 

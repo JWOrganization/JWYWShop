@@ -66,9 +66,9 @@
     self.consumptionView.isShowLineChart = YES;
     [self.scrollView addSubview:self.consumptionView];
     
-    NSArray * nameArr = @[@"浏览量",@"客户数",@"消费金额"];
+    NSArray * nameArr = @[@"店铺的浏览量",@"客户客户数",@"消费总金额"];
     NSArray * imgNameArr = @[@"chart_line0",@"chart_line1",@"chart_line0"];
-    NSArray * pointNameArr = @[@" 点击量",@" 单位:个",@" 单位:元"];
+    NSArray * pointNameArr = @[@" 点击量",@" 单位:个",@" 单位:k"];
     for (int i = 0; i<nameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(10.f, i*(45.f+chartViewHeight), kScreen_Width - 20.f, 45.f)];
         label.text = nameArr[i];
@@ -108,7 +108,7 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h333333333
+    //h333333333消费分析
 //    self.status
     self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
     self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];

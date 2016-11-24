@@ -292,6 +292,12 @@
 		B3F07EE41DE6E031005116EA /* YWPersonSubVipHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EE31DE6E031005116EA /* YWPersonSubVipHeaderView.m */; };
 		B3F07EE61DE6E03C005116EA /* YWPersonSubVipHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EE51DE6E03C005116EA /* YWPersonSubVipHeaderView.xib */; };
 		B3F07EEA1DE6F1F1005116EA /* JWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EE91DE6F1F1005116EA /* JWTextView.m */; };
+		B3F07EF01DE70BD1005116EA /* YWPersonShopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EEF1DE70BD1005116EA /* YWPersonShopHeaderView.m */; };
+		B3F07EF41DE70BE7005116EA /* YWPersonShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EF21DE70BE7005116EA /* YWPersonShopTableViewCell.m */; };
+		B3F07EF51DE70BE7005116EA /* YWPersonShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EF31DE70BE7005116EA /* YWPersonShopTableViewCell.xib */; };
+		B3F07EF81DE70C38005116EA /* YWPersonShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EF71DE70C38005116EA /* YWPersonShopModel.m */; };
+		B3F07EFB1DE70C5D005116EA /* YWPersonShopHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EFA1DE70C5D005116EA /* YWPersonShopHeaderModel.m */; };
+		B3F07EFD1DE70CDB005116EA /* YWPersonShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EFC1DE70CDB005116EA /* YWPersonShopHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -778,6 +784,16 @@
 		B3F07EE51DE6E03C005116EA /* YWPersonSubVipHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSubVipHeaderView.xib; sourceTree = "<group>"; };
 		B3F07EE81DE6F1F1005116EA /* JWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTextView.h; sourceTree = "<group>"; };
 		B3F07EE91DE6F1F1005116EA /* JWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTextView.m; sourceTree = "<group>"; };
+		B3F07EEE1DE70BD1005116EA /* YWPersonShopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonShopHeaderView.h; sourceTree = "<group>"; };
+		B3F07EEF1DE70BD1005116EA /* YWPersonShopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonShopHeaderView.m; sourceTree = "<group>"; };
+		B3F07EF11DE70BE7005116EA /* YWPersonShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonShopTableViewCell.h; sourceTree = "<group>"; };
+		B3F07EF21DE70BE7005116EA /* YWPersonShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonShopTableViewCell.m; sourceTree = "<group>"; };
+		B3F07EF31DE70BE7005116EA /* YWPersonShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonShopTableViewCell.xib; sourceTree = "<group>"; };
+		B3F07EF61DE70C38005116EA /* YWPersonShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonShopModel.h; sourceTree = "<group>"; };
+		B3F07EF71DE70C38005116EA /* YWPersonShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonShopModel.m; sourceTree = "<group>"; };
+		B3F07EF91DE70C5D005116EA /* YWPersonShopHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonShopHeaderModel.h; sourceTree = "<group>"; };
+		B3F07EFA1DE70C5D005116EA /* YWPersonShopHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonShopHeaderModel.m; sourceTree = "<group>"; };
+		B3F07EFC1DE70CDB005116EA /* YWPersonShopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonShopHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1787,6 +1803,9 @@
 		B3F07E491DE681B6005116EA /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				B3F07EED1DE70B63005116EA /* Model */,
+				B3F07EEC1DE70B58005116EA /* Header */,
+				B3F07EEB1DE70B45005116EA /* Cell */,
 				B3F07E4A1DE681B6005116EA /* YWPersonShopViewController.h */,
 				B3F07E4B1DE681B6005116EA /* YWPersonShopViewController.m */,
 				B3F07E4C1DE681B6005116EA /* YWPersonShopViewController.xib */,
@@ -2000,6 +2019,37 @@
 			path = JWTextView;
 			sourceTree = "<group>";
 		};
+		B3F07EEB1DE70B45005116EA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07EF11DE70BE7005116EA /* YWPersonShopTableViewCell.h */,
+				B3F07EF21DE70BE7005116EA /* YWPersonShopTableViewCell.m */,
+				B3F07EF31DE70BE7005116EA /* YWPersonShopTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3F07EEC1DE70B58005116EA /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07EEE1DE70BD1005116EA /* YWPersonShopHeaderView.h */,
+				B3F07EEF1DE70BD1005116EA /* YWPersonShopHeaderView.m */,
+				B3F07EFC1DE70CDB005116EA /* YWPersonShopHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		B3F07EED1DE70B63005116EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07EF61DE70C38005116EA /* YWPersonShopModel.h */,
+				B3F07EF71DE70C38005116EA /* YWPersonShopModel.m */,
+				B3F07EF91DE70C5D005116EA /* YWPersonShopHeaderModel.h */,
+				B3F07EFA1DE70C5D005116EA /* YWPersonShopHeaderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2124,6 +2174,7 @@
 				B317AF661DE5CFB80093C511 /* YWHomeCollectionHeaderView.xib in Resources */,
 				B317AFDC1DE5D3C90093C511 /* PersonHeaderBG5@2x.png in Resources */,
 				B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */,
+				B3F07EF51DE70BE7005116EA /* YWPersonShopTableViewCell.xib in Resources */,
 				B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */,
 				B317AFC31DE5D3C90093C511 /* PersonHeaderBG37@2x.png in Resources */,
 				B317AF611DE5CA120093C511 /* YWHomeCollectionViewCell.xib in Resources */,
@@ -2158,6 +2209,7 @@
 				B317AFE01DE5D3C90093C511 /* PersonHeaderBG9@2x.png in Resources */,
 				B3F07EC71DE6CB35005116EA /* YWPersonPointHeaderView.xib in Resources */,
 				B317AFB01DE5D3C90093C511 /* PersonHeaderBG1@2x.png in Resources */,
+				B3F07EFD1DE70CDB005116EA /* YWPersonShopHeaderView.xib in Resources */,
 				B317AFF21DE5E1330093C511 /* YWPersonSettingViewController.xib in Resources */,
 				B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */,
 				B317AFD01DE5D3C90093C511 /* PersonHeaderBG49@2x.png in Resources */,
@@ -2272,6 +2324,7 @@
 				B31098A61DE4543E0033A984 /* View+MASAdditions.m in Sources */,
 				B31098951DE4543E0033A984 /* AFURLConnectionOperation.m in Sources */,
 				B310986A1DE4543E0033A984 /* UIColor+Art.m in Sources */,
+				B3F07EF01DE70BD1005116EA /* YWPersonShopHeaderView.m in Sources */,
 				B31098981DE4543E0033A984 /* AFURLSessionManager.m in Sources */,
 				B387EAC11DE4732D0045323C /* YWComfiringViewController.m in Sources */,
 				B31098961DE4543E0033A984 /* AFURLRequestSerialization.m in Sources */,
@@ -2293,6 +2346,7 @@
 				B387EAB71DE460780045323C /* YWPersonCenterModel.m in Sources */,
 				B3F07E531DE681B6005116EA /* YWPersonShopViewController.m in Sources */,
 				B31098AA1DE4543E0033A984 /* MBHUD.m in Sources */,
+				B3F07EF81DE70C38005116EA /* YWPersonShopModel.m in Sources */,
 				B31098941DE4543E0033A984 /* AFSecurityPolicy.m in Sources */,
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
@@ -2312,6 +2366,7 @@
 				B3F07EE41DE6E031005116EA /* YWPersonSubVipHeaderView.m in Sources */,
 				B310989B1DE4543E0033A984 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				B31098971DE4543E0033A984 /* AFURLResponseSerialization.m in Sources */,
+				B3F07EF41DE70BE7005116EA /* YWPersonShopTableViewCell.m in Sources */,
 				B3F07EC51DE6CB26005116EA /* YWPersonPointHeaderView.m in Sources */,
 				B317AC8D1DE532EC0093C511 /* YWComfiredTypeModel.m in Sources */,
 				B31098CF1DE4543E0033A984 /* UIButton+WebCache.m in Sources */,
@@ -2325,6 +2380,7 @@
 				B31098721DE4543E0033A984 /* YJSegmentedControl.m in Sources */,
 				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
 				B310989E1DE4543E0033A984 /* MASCompositeConstraint.m in Sources */,
+				B3F07EFB1DE70C5D005116EA /* YWPersonShopHeaderModel.m in Sources */,
 				B31098C21DE4543E0033A984 /* NSBundle+MJRefresh.m in Sources */,
 				B3F07E8C1DE6A7A8005116EA /* NSDictionary+Log.m in Sources */,
 				B317AF601DE5CA120093C511 /* YWHomeCollectionViewCell.m in Sources */,

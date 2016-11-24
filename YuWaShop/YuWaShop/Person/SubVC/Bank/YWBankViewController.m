@@ -27,7 +27,7 @@
 }
 
 - (void)dataSet{
-//    self.nameLabel.attributedText = [NSString stringWithFirstStr:@"如需要修改银行卡信息,请您联系" withFont:[UIFont systemFontOfSize:13.f] withColor:[UIColor blackColor] withSecondtStr:@"责任销售" withFont:[UIFont systemFontOfSize:13.f] withColor:CNaviColor];
+    self.nameLabel.attributedText = [NSString stringWithFirstStr:@"如需要修改银行卡信息,请您联系" withFont:[UIFont systemFontOfSize:13.f] withColor:[UIColor blackColor] withSecondtStr:@"责任销售" withFont:[UIFont systemFontOfSize:13.f] withColor:CNaviColor];
     self.bankArr = [NSMutableArray arrayWithCapacity:0];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWBankTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWBankTableViewCell"];
 }
@@ -81,7 +81,7 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h333333333333
+    //h333333333333银行信息
     
     //2333333333删
     YWBankModel * model = [[YWBankModel alloc]init];

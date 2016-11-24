@@ -17,9 +17,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8eQ-7T-4Tg">
-                    <rect key="frame" x="0.0" y="64" width="600" height="41"/>
+                    <rect key="frame" x="15" y="74" width="570" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="dE9-6q-ouS"/>
+                        <constraint firstAttribute="height" constant="30" id="dE9-6q-ouS"/>
                     </constraints>
                     <segments>
                         <segment title="近7天"/>
@@ -32,11 +32,11 @@
                     </connections>
                 </segmentedControl>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="cQs-Qx-QWv"/>
-                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xvH-JA-m4k"/>
-                <constraint firstAttribute="trailing" secondItem="8eQ-7T-4Tg" secondAttribute="trailing" id="ytm-tr-S6b"/>
+                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="cQs-Qx-QWv"/>
+                <constraint firstItem="8eQ-7T-4Tg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="xvH-JA-m4k"/>
+                <constraint firstAttribute="trailing" secondItem="8eQ-7T-4Tg" secondAttribute="trailing" constant="15" id="ytm-tr-S6b"/>
             </constraints>
         </view>
     </objects>

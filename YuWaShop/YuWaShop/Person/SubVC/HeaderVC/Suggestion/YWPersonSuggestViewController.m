@@ -65,7 +65,7 @@
         return;
     }
     
-    //h333333333333
+    //h333333333333传建议
     [self showHUDWithStr:@"感谢您的建议" withSuccess:YES];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView resignFirstResponder];

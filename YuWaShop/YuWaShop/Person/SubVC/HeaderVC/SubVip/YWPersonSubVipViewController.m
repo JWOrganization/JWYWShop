@@ -46,6 +46,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 95.f;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001f;
+}
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (!self.headerView) {
         WEAKSELF;
@@ -119,7 +122,7 @@
 }
 
 - (void)requestGetMoney{
-    //h33333333333
+    //h33333333333提现
     
     [self.tableView reloadData];
 }

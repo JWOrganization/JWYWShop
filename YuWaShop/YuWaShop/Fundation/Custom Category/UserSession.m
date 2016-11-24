@@ -102,6 +102,7 @@ static UserSession * user=nil;
     //233333333暂定
     user.comfired_Status = 2;//实名认证
     user.phone = @"18015885220";
+    user.serventPhone = @"12346667";
     //233333333暂定
     [UserSession userToComfired];
 }

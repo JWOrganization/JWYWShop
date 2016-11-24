@@ -298,6 +298,18 @@
 		B3F07EF81DE70C38005116EA /* YWPersonShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EF71DE70C38005116EA /* YWPersonShopModel.m */; };
 		B3F07EFB1DE70C5D005116EA /* YWPersonShopHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EFA1DE70C5D005116EA /* YWPersonShopHeaderModel.m */; };
 		B3F07EFD1DE70CDB005116EA /* YWPersonShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EFC1DE70CDB005116EA /* YWPersonShopHeaderView.xib */; };
+		B3F07F071DE72DC6005116EA /* YWPCCounselorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F051DE72DC6005116EA /* YWPCCounselorViewController.m */; };
+		B3F07F081DE72DC6005116EA /* YWPCCounselorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F061DE72DC6005116EA /* YWPCCounselorViewController.xib */; };
+		B3F07F0C1DE72DD7005116EA /* YWPCCutSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F0A1DE72DD7005116EA /* YWPCCutSetViewController.m */; };
+		B3F07F0D1DE72DD7005116EA /* YWPCCutSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F0B1DE72DD7005116EA /* YWPCCutSetViewController.xib */; };
+		B3F07F111DE72DE9005116EA /* YWPCEveryPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F0F1DE72DE9005116EA /* YWPCEveryPayViewController.m */; };
+		B3F07F121DE72DE9005116EA /* YWPCEveryPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F101DE72DE9005116EA /* YWPCEveryPayViewController.xib */; };
+		B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F141DE72E04005116EA /* YWPCBasicSetViewController.m */; };
+		B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F151DE72E04005116EA /* YWPCBasicSetViewController.xib */; };
+		B3F07F1B1DE72E25005116EA /* YWPCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F191DE72E25005116EA /* YWPCMapViewController.m */; };
+		B3F07F1C1DE72E25005116EA /* YWPCMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F1A1DE72E25005116EA /* YWPCMapViewController.xib */; };
+		B3F07F211DE72F9C005116EA /* YWPCTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */; };
+		B3F07F221DE72F9C005116EA /* YWPCTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -794,6 +806,24 @@
 		B3F07EF91DE70C5D005116EA /* YWPersonShopHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonShopHeaderModel.h; sourceTree = "<group>"; };
 		B3F07EFA1DE70C5D005116EA /* YWPersonShopHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonShopHeaderModel.m; sourceTree = "<group>"; };
 		B3F07EFC1DE70CDB005116EA /* YWPersonShopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonShopHeaderView.xib; sourceTree = "<group>"; };
+		B3F07F041DE72DC6005116EA /* YWPCCounselorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCCounselorViewController.h; sourceTree = "<group>"; };
+		B3F07F051DE72DC6005116EA /* YWPCCounselorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCCounselorViewController.m; sourceTree = "<group>"; };
+		B3F07F061DE72DC6005116EA /* YWPCCounselorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCCounselorViewController.xib; sourceTree = "<group>"; };
+		B3F07F091DE72DD7005116EA /* YWPCCutSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCCutSetViewController.h; sourceTree = "<group>"; };
+		B3F07F0A1DE72DD7005116EA /* YWPCCutSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCCutSetViewController.m; sourceTree = "<group>"; };
+		B3F07F0B1DE72DD7005116EA /* YWPCCutSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCCutSetViewController.xib; sourceTree = "<group>"; };
+		B3F07F0E1DE72DE9005116EA /* YWPCEveryPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCEveryPayViewController.h; sourceTree = "<group>"; };
+		B3F07F0F1DE72DE9005116EA /* YWPCEveryPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCEveryPayViewController.m; sourceTree = "<group>"; };
+		B3F07F101DE72DE9005116EA /* YWPCEveryPayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCEveryPayViewController.xib; sourceTree = "<group>"; };
+		B3F07F131DE72E04005116EA /* YWPCBasicSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCBasicSetViewController.h; sourceTree = "<group>"; };
+		B3F07F141DE72E04005116EA /* YWPCBasicSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCBasicSetViewController.m; sourceTree = "<group>"; };
+		B3F07F151DE72E04005116EA /* YWPCBasicSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCBasicSetViewController.xib; sourceTree = "<group>"; };
+		B3F07F181DE72E25005116EA /* YWPCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCMapViewController.h; sourceTree = "<group>"; };
+		B3F07F191DE72E25005116EA /* YWPCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCMapViewController.m; sourceTree = "<group>"; };
+		B3F07F1A1DE72E25005116EA /* YWPCMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCMapViewController.xib; sourceTree = "<group>"; };
+		B3F07F1E1DE72F9C005116EA /* YWPCTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTimeViewController.h; sourceTree = "<group>"; };
+		B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTimeViewController.m; sourceTree = "<group>"; };
+		B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTimeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1803,6 +1833,7 @@
 		B3F07E491DE681B6005116EA /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				B3F07EFE1DE72CD9005116EA /* SubVC */,
 				B3F07EED1DE70B63005116EA /* Model */,
 				B3F07EEC1DE70B58005116EA /* Header */,
 				B3F07EEB1DE70B45005116EA /* Cell */,
@@ -2050,6 +2081,79 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B3F07EFE1DE72CD9005116EA /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F1D1DE72F6F005116EA /* Time */,
+				B3F07F031DE72D56005116EA /* Counselor */,
+				B3F07F021DE72D46005116EA /* CutSet */,
+				B3F07F011DE72D33005116EA /* EveryPay */,
+				B3F07F001DE72D24005116EA /* Map */,
+				B3F07EFF1DE72D09005116EA /* BaseSet */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		B3F07EFF1DE72D09005116EA /* BaseSet */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F131DE72E04005116EA /* YWPCBasicSetViewController.h */,
+				B3F07F141DE72E04005116EA /* YWPCBasicSetViewController.m */,
+				B3F07F151DE72E04005116EA /* YWPCBasicSetViewController.xib */,
+			);
+			path = BaseSet;
+			sourceTree = "<group>";
+		};
+		B3F07F001DE72D24005116EA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F181DE72E25005116EA /* YWPCMapViewController.h */,
+				B3F07F191DE72E25005116EA /* YWPCMapViewController.m */,
+				B3F07F1A1DE72E25005116EA /* YWPCMapViewController.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B3F07F011DE72D33005116EA /* EveryPay */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F0E1DE72DE9005116EA /* YWPCEveryPayViewController.h */,
+				B3F07F0F1DE72DE9005116EA /* YWPCEveryPayViewController.m */,
+				B3F07F101DE72DE9005116EA /* YWPCEveryPayViewController.xib */,
+			);
+			path = EveryPay;
+			sourceTree = "<group>";
+		};
+		B3F07F021DE72D46005116EA /* CutSet */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F091DE72DD7005116EA /* YWPCCutSetViewController.h */,
+				B3F07F0A1DE72DD7005116EA /* YWPCCutSetViewController.m */,
+				B3F07F0B1DE72DD7005116EA /* YWPCCutSetViewController.xib */,
+			);
+			path = CutSet;
+			sourceTree = "<group>";
+		};
+		B3F07F031DE72D56005116EA /* Counselor */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F041DE72DC6005116EA /* YWPCCounselorViewController.h */,
+				B3F07F051DE72DC6005116EA /* YWPCCounselorViewController.m */,
+				B3F07F061DE72DC6005116EA /* YWPCCounselorViewController.xib */,
+			);
+			path = Counselor;
+			sourceTree = "<group>";
+		};
+		B3F07F1D1DE72F6F005116EA /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				B3F07F1E1DE72F9C005116EA /* YWPCTimeViewController.h */,
+				B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */,
+				B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2176,9 +2280,11 @@
 				B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */,
 				B3F07EF51DE70BE7005116EA /* YWPersonShopTableViewCell.xib in Resources */,
 				B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */,
+				B3F07F121DE72DE9005116EA /* YWPCEveryPayViewController.xib in Resources */,
 				B317AFC31DE5D3C90093C511 /* PersonHeaderBG37@2x.png in Resources */,
 				B317AF611DE5CA120093C511 /* YWHomeCollectionViewCell.xib in Resources */,
 				B317AFC51DE5D3C90093C511 /* PersonHeaderBG39@2x.png in Resources */,
+				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B317AFCF1DE5D3C90093C511 /* PersonHeaderBG48@2x.png in Resources */,
 				B31098E91DE4543E0033A984 /* YWPersonTableViewCell.xib in Resources */,
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
@@ -2192,6 +2298,7 @@
 				B317AFD11DE5D3C90093C511 /* PersonHeaderBG4@2x.png in Resources */,
 				B3F07EBD1DE6CA77005116EA /* YWPersonPointTableViewCell.xib in Resources */,
 				B317AFA71DE5D3C90093C511 /* PersonHeaderBG11@2x.png in Resources */,
+				B3F07F081DE72DC6005116EA /* YWPCCounselorViewController.xib in Resources */,
 				B3F07E541DE681B6005116EA /* YWPersonShopViewController.xib in Resources */,
 				B317AC871DE530780093C511 /* YWStormSubSortCollectionViewCell.xib in Resources */,
 				B317AFD21DE5D3C90093C511 /* PersonHeaderBG50@2x.png in Resources */,
@@ -2216,6 +2323,7 @@
 				B317AFEC1DE5DC030093C511 /* YWPersonWeekCountTableViewCell.xib in Resources */,
 				B387EABD1DE46C3C0045323C /* YWComfiredViewController.xib in Resources */,
 				B317AFB71DE5D3C90093C511 /* PersonHeaderBG26@2x.png in Resources */,
+				B3F07F221DE72F9C005116EA /* YWPCTimeViewController.xib in Resources */,
 				B317AFE51DE5DBC80093C511 /* YWPersonWeekCountViewController.xib in Resources */,
 				B317AFB91DE5D3C90093C511 /* PersonHeaderBG28@2x.png in Resources */,
 				B317AFAF1DE5D3C90093C511 /* PersonHeaderBG19@2x.png in Resources */,
@@ -2237,6 +2345,7 @@
 				B31098C01DE4543E0033A984 /* MJRefresh.bundle in Resources */,
 				B317AFB21DE5D3C90093C511 /* PersonHeaderBG21@2x.png in Resources */,
 				B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */,
+				B3F07F0D1DE72DD7005116EA /* YWPCCutSetViewController.xib in Resources */,
 				B317AFB11DE5D3C90093C511 /* PersonHeaderBG20@2x.png in Resources */,
 				B317AFC41DE5D3C90093C511 /* PersonHeaderBG38@2x.png in Resources */,
 				B387EAC21DE4732D0045323C /* YWComfiringViewController.xib in Resources */,
@@ -2270,6 +2379,7 @@
 				B317AFC81DE5D3C90093C511 /* PersonHeaderBG41@2x.png in Resources */,
 				B317AFAE1DE5D3C90093C511 /* PersonHeaderBG18@2x.png in Resources */,
 				B3F07E7F1DE6A79F005116EA /* TZImagePickerController.bundle in Resources */,
+				B3F07F1C1DE72E25005116EA /* YWPCMapViewController.xib in Resources */,
 				B3F07EB01DE6B89C005116EA /* YWBankTableViewCell.xib in Resources */,
 				B317AFC21DE5D3C90093C511 /* PersonHeaderBG36@2x.png in Resources */,
 				B317AF221DE5B4C90093C511 /* YWPersonHelpViewController.xib in Resources */,
@@ -2297,6 +2407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F07F1B1DE72E25005116EA /* YWPCMapViewController.m in Sources */,
 				B3F07EDC1DE6E000005116EA /* YWPersonSubVipHeaderModel.m in Sources */,
 				B31098C31DE4543E0033A984 /* UIScrollView+MJExtension.m in Sources */,
 				B310986C1DE4543E0033A984 /* UIImage+imageColor.m in Sources */,
@@ -2306,6 +2417,7 @@
 				B310989C1DE4543E0033A984 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				B31098AF1DE4543E0033A984 /* MJRefreshFooter.m in Sources */,
 				B317AF211DE5B4C90093C511 /* YWPersonHelpViewController.m in Sources */,
+				B3F07F111DE72DE9005116EA /* YWPCEveryPayViewController.m in Sources */,
 				B310988B1DE4543E0033A984 /* JWThirdTools.m in Sources */,
 				B3F07E851DE6A79F005116EA /* UIView+Layout.m in Sources */,
 				B31098EA1DE4543E0033A984 /* YWPersonHeaderView.m in Sources */,
@@ -2321,6 +2433,7 @@
 				B31098A31DE4543E0033A984 /* MASViewConstraint.m in Sources */,
 				B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */,
 				B310989A1DE4543E0033A984 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				B3F07F211DE72F9C005116EA /* YWPCTimeViewController.m in Sources */,
 				B31098A61DE4543E0033A984 /* View+MASAdditions.m in Sources */,
 				B31098951DE4543E0033A984 /* AFURLConnectionOperation.m in Sources */,
 				B310986A1DE4543E0033A984 /* UIColor+Art.m in Sources */,
@@ -2351,6 +2464,7 @@
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
+				B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */,
 				B3F07EB71DE6C1DD005116EA /* NSString+JWAppendOtherStr.m in Sources */,
 				B310986B1DE4543E0033A984 /* UIColor+HexString.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
@@ -2403,6 +2517,7 @@
 				B31098C61DE4543E0033A984 /* MKAnnotationView+WebCache.m in Sources */,
 				B31098CD1DE4543E0033A984 /* SDWebImageManager.m in Sources */,
 				B310988A1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m in Sources */,
+				B3F07F071DE72DC6005116EA /* YWPCCounselorViewController.m in Sources */,
 				B387EAAF1DE45E110045323C /* JWLocalNotificationShowView.m in Sources */,
 				B3F07E551DE681B6005116EA /* YWPersonSubVipViewController.m in Sources */,
 				B317ACA01DE557A80093C511 /* JWTagCollectionView.m in Sources */,
@@ -2437,6 +2552,7 @@
 				B310988D1DE4543E0033A984 /* NSDictionary+Attributes.m in Sources */,
 				B317ACAB1DE56B440093C511 /* YWAddressComfiredTypeModel.m in Sources */,
 				B31098B51DE4543E0033A984 /* MJRefreshBackNormalFooter.m in Sources */,
+				B3F07F0C1DE72DD7005116EA /* YWPCCutSetViewController.m in Sources */,
 				B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,

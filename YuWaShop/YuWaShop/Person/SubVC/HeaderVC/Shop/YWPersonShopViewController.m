@@ -10,6 +10,12 @@
 #import "YWPersonShopHeaderView.h"
 #import "YWPersonShopTableViewCell.h"
 #import "YWPersonShopModel.h"
+#import "YWPCBasicSetViewController.h"
+#import "YWPCMapViewController.h"
+#import "YWPCTimeViewController.h"
+#import "YWPCEveryPayViewController.h"
+#import "YWPCCutSetViewController.h"
+#import "YWPCCounselorViewController.h"
 
 @interface YWPersonShopViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,6 +24,7 @@
 @property (nonatomic,strong)YWPersonShopHeaderModel * headerModel;
 @property (nonatomic,strong)NSMutableArray * headerArr;
 @property (nonatomic,strong)NSArray * nameArr;
+@property (nonatomic,strong)NSArray * subViewClassArr;
 @property (nonatomic,strong)NSMutableArray * dataArr;
 
 @end
@@ -34,7 +41,8 @@
 - (void)dataSet{
     NSArray * typeNameArr = @[@"",@"    基础信息",@"    附加信息",@"    寻求帮助"];
     self.nameArr = @[@[],@[@"基本信息",@"门店地图",@"营业时间"],@[@"人均消费",@"折扣设置"],@[@"营销顾问"]];
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@"",@""],@[@""],@[@""]]];
+    self.subViewClassArr = @[@[],@[[YWPCBasicSetViewController class],[YWPCMapViewController class],[YWPCTimeViewController class]],@[[YWPCEveryPayViewController class],[YWPCCutSetViewController class]],@[[YWPCCounselorViewController class]]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@""],@[@""]]];
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 1; i < typeNameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(15.f, 0.f, kScreen_Width - 30.f, 38.f)];
@@ -85,6 +93,13 @@
         return self.headerView;
     }else{
         return self.headerArr[section - 1];
+    }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section > 0) {
+        Class vcClass = self.subViewClassArr[indexPath.section][indexPath.row];
+        UIViewController * vc = [[vcClass alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

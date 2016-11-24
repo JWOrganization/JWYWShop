@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5C-Hk-Msd">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5C-Hk-Msd">
                     <rect key="frame" x="0.0" y="64" width="600" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如需要修改银行卡信息,请您联系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lW-y9-kbT">
@@ -37,7 +37,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-yb-ZEx">
-                    <rect key="frame" x="0.0" y="104" width="600" height="496"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                     <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="26V-NT-xBV"/>
@@ -49,12 +49,18 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="0jW-yb-ZEx" secondAttribute="trailing" id="ExP-9T-Iwl"/>
                 <constraint firstItem="0jW-yb-ZEx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QqL-rN-afJ"/>
+                <constraint firstItem="0jW-yb-ZEx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="atn-hV-gxl"/>
                 <constraint firstItem="0jW-yb-ZEx" firstAttribute="top" secondItem="P5C-Hk-Msd" secondAttribute="bottom" id="frQ-XE-4Xo"/>
                 <constraint firstItem="P5C-Hk-Msd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="jRJ-32-4f3"/>
                 <constraint firstItem="P5C-Hk-Msd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nKD-GK-CGR"/>
                 <constraint firstAttribute="bottom" secondItem="0jW-yb-ZEx" secondAttribute="bottom" id="qlA-lj-KMZ"/>
                 <constraint firstAttribute="trailing" secondItem="P5C-Hk-Msd" secondAttribute="trailing" id="uxr-35-oyb"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="frQ-XE-4Xo"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

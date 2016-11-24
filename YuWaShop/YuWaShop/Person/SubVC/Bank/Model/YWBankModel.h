@@ -10,4 +10,6 @@
 
 @interface YWBankModel : NSObject
 
+@property (nonatomic,copy)NSString * bankID;
+
 @end

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"门店日报";
+    self.title = @"经营日报";
 }
 
 @end

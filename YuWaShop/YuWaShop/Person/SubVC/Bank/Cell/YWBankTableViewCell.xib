@@ -71,17 +71,27 @@
                             <color key="titleColor" red="0.63137254901960782" green="0.83529411764705885" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-Tz-lsf">
+                        <rect key="frame" x="15" y="71" width="297" height="1"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="dh1-MT-DMC"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yLc-Nz-TqP" firstAttribute="centerY" secondItem="XAd-bo-tpy" secondAttribute="centerY" id="49E-4Z-nPr"/>
                     <constraint firstItem="7an-zK-BDc" firstAttribute="top" secondItem="mqp-os-Etc" secondAttribute="bottom" constant="7" id="4S7-UN-6Ic"/>
                     <constraint firstItem="XAd-bo-tpy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="4cm-Hs-67h"/>
                     <constraint firstItem="wpZ-7Q-kCR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="90o-Fz-KuP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pH4-Tz-lsf" secondAttribute="trailing" id="C5U-Ma-dRT"/>
                     <constraint firstAttribute="trailingMargin" secondItem="mqp-os-Etc" secondAttribute="trailing" constant="2" id="GST-fs-LPc"/>
                     <constraint firstItem="mqp-os-Etc" firstAttribute="top" secondItem="XAd-bo-tpy" secondAttribute="bottom" id="L9P-vd-bGm"/>
+                    <constraint firstItem="pH4-Tz-lsf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="LFX-Qp-1vV"/>
                     <constraint firstItem="XAd-bo-tpy" firstAttribute="leading" secondItem="mqp-os-Etc" secondAttribute="leading" id="LnB-zo-6G3"/>
                     <constraint firstItem="yLc-Nz-TqP" firstAttribute="leading" secondItem="XAd-bo-tpy" secondAttribute="trailing" id="PyO-EL-UIy"/>
                     <constraint firstItem="wpZ-7Q-kCR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="R3q-7M-yAI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pH4-Tz-lsf" secondAttribute="bottom" constant="-8" id="V6I-Qd-A5f"/>
                     <constraint firstItem="aKQ-2Z-xcp" firstAttribute="width" secondItem="7an-zK-BDc" secondAttribute="width" id="V8O-KX-YgT"/>
                     <constraint firstItem="7an-zK-BDc" firstAttribute="leading" secondItem="mqp-os-Etc" secondAttribute="leading" id="YKB-I9-Sg8"/>
                     <constraint firstItem="XAd-bo-tpy" firstAttribute="trailing" secondItem="mqp-os-Etc" secondAttribute="trailing" id="Za9-oe-ufl"/>

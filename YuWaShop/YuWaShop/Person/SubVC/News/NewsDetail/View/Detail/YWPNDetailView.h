@@ -10,4 +10,10 @@
 
 @interface YWPNDetailView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *conLabel;
+@property (weak, nonatomic) IBOutlet UILabel *compareLabel;
+
+
 @end

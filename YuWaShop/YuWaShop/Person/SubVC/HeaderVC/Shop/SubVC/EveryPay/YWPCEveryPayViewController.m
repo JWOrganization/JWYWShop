@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self makeNavi];
+}
+
+- (void)makeNavi{
     self.title = @"人均消费";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"保存" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(saveInfoAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+}
+
+- (void)saveInfoAction{
+    
 }
 
 @end

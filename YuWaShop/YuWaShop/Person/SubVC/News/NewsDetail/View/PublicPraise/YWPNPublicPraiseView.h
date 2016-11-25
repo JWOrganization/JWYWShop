@@ -10,4 +10,9 @@
 
 @interface YWPNPublicPraiseView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
+//tag1-5为好评11-15为差评
+
 @end

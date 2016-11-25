@@ -43,29 +43,33 @@
     [self.view addSubview:self.scrollView];
     
     self.detailView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNDetailView" owner:nil options:nil]firstObject];
-    self.detailView.frame = CGRectMake(0.f, 0.f, kScreen_Width, ACTUAL_WIDTH(165.f));
+    self.detailView.frame = CGRectMake(0.f, 0.f, kScreen_Width, 165.f);
     [self.detailView setNeedsLayout];
     [self.scrollView addSubview:self.detailView];
     
-    self.rankView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNRankView" owner:nil options:nil]firstObject];
-    self.rankView.frame = CGRectMake(0.f, CGRectGetMaxY(self.detailView.frame), kScreen_Width, ACTUAL_WIDTH(320.f));
-    [self.rankView setNeedsLayout];
-    [self.scrollView addSubview:self.rankView];
-    
     self.publicPraiseView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNPublicPraiseView" owner:nil options:nil]firstObject];
-    self.publicPraiseView.frame = CGRectMake(0.f, CGRectGetMaxY(self.rankView.frame), kScreen_Width, ACTUAL_WIDTH(320.f));
+    self.publicPraiseView.frame = CGRectMake(0.f, CGRectGetMaxY(self.detailView.frame), kScreen_Width, 320.f);
     [self.publicPraiseView setNeedsLayout];
     [self.scrollView addSubview:self.publicPraiseView];
     
+    self.rankView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNRankView" owner:nil options:nil]firstObject];
+    self.rankView.frame = CGRectMake(0.f, CGRectGetMaxY(self.rankView.frame), kScreen_Width, 320.f);
+    [self.rankView setNeedsLayout];
+    [self.scrollView addSubview:self.rankView];
+    
     self.popularityView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNPopularityView" owner:nil options:nil]firstObject];
-    self.popularityView.frame = CGRectMake(0.f, CGRectGetMaxY(self.publicPraiseView.frame), kScreen_Width, ACTUAL_WIDTH(320.f));
+    self.popularityView.frame = CGRectMake(0.f, CGRectGetMaxY(self.publicPraiseView.frame), kScreen_Width, 320.f);
     [self.popularityView setNeedsLayout];
     [self.scrollView addSubview:self.popularityView];
     
     self.scrollView.contentSize = CGSizeMake(kScreen_Width, CGRectGetMaxY(self.popularityView.frame));
 }
 
-- (void)UIDataRefresh{
+- (void)UIDataRefresh{//23333333333日报内容self.model设置
+    self.detailView.nameLabel.text = @"Drink me咖啡店";
+    self.detailView.timeLabel.text = @"2016-11-11";
+    self.detailView.conLabel.text = @"您的门店经营状况平稳,超过同城99%的同业商家";
+    self.detailView.compareLabel.text = @"数据为昨日单日数据,增长下降趋势为上周同日";
     
 }
 

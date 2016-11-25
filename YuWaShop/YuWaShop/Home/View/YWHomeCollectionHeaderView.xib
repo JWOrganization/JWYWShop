@@ -36,23 +36,35 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-MG-Gex">
                     <rect key="frame" x="213" y="72" width="55" height="55"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买单收银" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-cu-kWG">
-                    <rect key="frame" x="0.0" y="127" width="160" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="买单收银" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-cu-kWG">
+                    <rect key="frame" x="0.0" y="127" width="160" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Cmo-Vc-1NE"/>
+                        <constraint firstAttribute="height" constant="40" id="VDn-8k-qgp"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Cmo-Vc-1NE"/>
+                        </mask>
+                    </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闪惠记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h88-tk-XkP">
-                    <rect key="frame" x="160" y="127" width="160" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="闪惠记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h88-tk-XkP">
+                    <rect key="frame" x="160" y="127" width="160" height="48"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bdw-mk-uGP"/>
                         <constraint firstAttribute="height" constant="40" id="scp-7M-h88"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="scp-7M-h88"/>
+                        </mask>
+                    </variation>
                 </label>
             </subviews>
             <constraints>
@@ -60,6 +72,7 @@
                 <constraint firstItem="pHn-cu-kWG" firstAttribute="leading" secondItem="yzo-Tv-Cu2" secondAttribute="leading" id="3J8-X7-mtv"/>
                 <constraint firstItem="pHn-cu-kWG" firstAttribute="top" secondItem="r4E-rh-udB" secondAttribute="bottom" id="8GO-zW-yIt"/>
                 <constraint firstItem="h88-tk-XkP" firstAttribute="trailing" secondItem="Y7W-L4-8yN" secondAttribute="trailing" id="9O3-Lu-5eP"/>
+                <constraint firstAttribute="bottom" secondItem="pHn-cu-kWG" secondAttribute="bottom" id="DE8-Nw-5Lj"/>
                 <constraint firstItem="Y7W-L4-8yN" firstAttribute="height" secondItem="yzo-Tv-Cu2" secondAttribute="height" id="FwJ-9g-eRa"/>
                 <constraint firstItem="3cB-JQ-quW" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="GPV-sl-jZd"/>
                 <constraint firstAttribute="trailing" secondItem="Y7W-L4-8yN" secondAttribute="trailing" id="H96-0E-ROf"/>
@@ -71,6 +84,7 @@
                 <constraint firstItem="h88-tk-XkP" firstAttribute="leading" secondItem="Y7W-L4-8yN" secondAttribute="leading" id="Syr-O0-t8Z"/>
                 <constraint firstItem="r4E-rh-udB" firstAttribute="centerX" secondItem="yzo-Tv-Cu2" secondAttribute="centerX" id="Yjh-Tf-x56"/>
                 <constraint firstItem="V5d-MG-Gex" firstAttribute="height" secondItem="r4E-rh-udB" secondAttribute="height" id="Zv8-G1-BJJ"/>
+                <constraint firstAttribute="bottom" secondItem="h88-tk-XkP" secondAttribute="bottom" id="e6r-EB-AIO"/>
                 <constraint firstItem="Y7W-L4-8yN" firstAttribute="width" secondItem="yzo-Tv-Cu2" secondAttribute="width" id="eur-g5-Tx4"/>
                 <constraint firstItem="V5d-MG-Gex" firstAttribute="width" secondItem="r4E-rh-udB" secondAttribute="width" id="m8i-iN-IFB"/>
                 <constraint firstItem="V5d-MG-Gex" firstAttribute="centerX" secondItem="Y7W-L4-8yN" secondAttribute="centerX" id="o3c-ck-fIW"/>
@@ -81,6 +95,12 @@
                 <constraint firstItem="yzo-Tv-Cu2" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="64" id="x4c-ph-Gr3"/>
                 <constraint firstAttribute="trailing" secondItem="3cB-JQ-quW" secondAttribute="trailing" id="yq3-iZ-ZMF"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="DE8-Nw-5Lj"/>
+                    <exclude reference="e6r-EB-AIO"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="BGImageView" destination="3cB-JQ-quW" id="5Tw-Qx-hDV"/>
             </connections>

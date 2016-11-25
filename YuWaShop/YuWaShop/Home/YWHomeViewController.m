@@ -65,7 +65,7 @@
     return CGSizeMake(kScreen_Width/3, ACTUAL_WIDTH(110.f));
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(kScreen_Width, ACTUAL_WIDTH(175.f));
+    return CGSizeMake(kScreen_Width, 175.f);
 }
 
 @end

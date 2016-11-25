@@ -7,8 +7,10 @@
 //
 
 #import "YWPCCounselorViewController.h"
+#import "NSString+JWAppendOtherStr.h"
 
 @interface YWPCCounselorViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -17,6 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"营销顾问";
+    self.nameLabel.attributedText = [NSString stringWithFirstStr:@"有疑问,请拨打" withFont:[UIFont systemFontOfSize:16.f] withColor:[UIColor blackColor] withSecondtStr:[UserSession instance].serventPhone withFont:[UIFont systemFontOfSize:16.f] withColor:[UIColor colorWithHexString:@"#ff6632"]];
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    [self callService];
+}
+
+- (void)callService{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:[UserSession instance].phone style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIWebView* callWebview =[[UIWebView alloc] init];
+        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",[UserSession instance].serventPhone]];
+        [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
+        [self.view addSubview:callWebview];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 @end

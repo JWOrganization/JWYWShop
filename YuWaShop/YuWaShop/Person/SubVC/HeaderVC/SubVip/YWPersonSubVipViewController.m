@@ -109,6 +109,7 @@
     [self.tableView.mj_header beginRefreshing];
 }
 - (void)requestDataWithPages:(NSInteger)page{
+    //h333333333锁定会员
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });

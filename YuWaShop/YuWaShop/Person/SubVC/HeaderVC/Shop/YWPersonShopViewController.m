@@ -108,7 +108,7 @@
     //h3333333333门店数据
     
     //233333333333要删
-    self.model = [[YWPersonShopModel alloc]init];
+    self.model = [[YWPersonShopModel alloc]init];//第一次可放UserSession内
     self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"妮可咖啡馆",@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",@"7折"],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
     self.headerModel = [[YWPersonShopHeaderModel alloc]init];
     //233333333333要删

@@ -221,6 +221,24 @@
 		B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFF61DE5E6230093C511 /* YWBankViewController.xib */; };
 		B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */; };
 		B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */; };
+		B32737591DE7D145001C57DF /* YWStormAnnotationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737581DE7D145001C57DF /* YWStormAnnotationModel.m */; };
+		B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B327375E1DE7D3E1001C57DF /* YWStormPinAnnotationView.m */; };
+		B32737641DE7EBB0001C57DF /* YWPCCutPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737631DE7EBB0001C57DF /* YWPCCutPickerView.m */; };
+		B32737691DE80F01001C57DF /* YWPCTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737671DE80F01001C57DF /* YWPCTimeTableViewCell.m */; };
+		B327376A1DE80F01001C57DF /* YWPCTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737681DE80F01001C57DF /* YWPCTimeTableViewCell.xib */; };
+		B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B327376D1DE812A2001C57DF /* YWPCTimeModel.m */; };
+		B32737721DE81E12001C57DF /* YWPersonNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737711DE81E12001C57DF /* YWPersonNewsModel.m */; };
+		B32737771DE82121001C57DF /* YWPersonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737751DE82121001C57DF /* YWPersonNewsDetailViewController.m */; };
+		B32737781DE82121001C57DF /* YWPersonNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737761DE82121001C57DF /* YWPersonNewsDetailViewController.xib */; };
+		B32737801DE82237001C57DF /* YWPersonNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B327377F1DE82237001C57DF /* YWPersonNewsDetailModel.m */; };
+		B32737871DE824B4001C57DF /* YWPNPopularityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737861DE824B4001C57DF /* YWPNPopularityView.m */; };
+		B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737891DE824D3001C57DF /* YWPNRankView.m */; };
+		B327378D1DE824E7001C57DF /* YWPNPublicPraiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B327378C1DE824E7001C57DF /* YWPNPublicPraiseView.m */; };
+		B32737901DE824F9001C57DF /* YWPNDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = B327378F1DE824F9001C57DF /* YWPNDetailView.m */; };
+		B32737921DE8250C001C57DF /* YWPNDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737911DE8250C001C57DF /* YWPNDetailView.xib */; };
+		B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */; };
+		B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737951DE8254A001C57DF /* YWPNRankView.xib */; };
+		B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737971DE8255E001C57DF /* YWPNPopularityView.xib */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -684,6 +702,36 @@
 		B317AFF81DE5E6230093C511 /* YWPersonNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsViewController.h; sourceTree = "<group>"; };
 		B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsViewController.m; sourceTree = "<group>"; };
 		B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonNewsViewController.xib; sourceTree = "<group>"; };
+		B32737571DE7D145001C57DF /* YWStormAnnotationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormAnnotationModel.h; sourceTree = "<group>"; };
+		B32737581DE7D145001C57DF /* YWStormAnnotationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormAnnotationModel.m; sourceTree = "<group>"; };
+		B327375D1DE7D3E1001C57DF /* YWStormPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormPinAnnotationView.h; sourceTree = "<group>"; };
+		B327375E1DE7D3E1001C57DF /* YWStormPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormPinAnnotationView.m; sourceTree = "<group>"; };
+		B32737621DE7EBB0001C57DF /* YWPCCutPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCCutPickerView.h; sourceTree = "<group>"; };
+		B32737631DE7EBB0001C57DF /* YWPCCutPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCCutPickerView.m; sourceTree = "<group>"; };
+		B32737661DE80F01001C57DF /* YWPCTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTimeTableViewCell.h; sourceTree = "<group>"; };
+		B32737671DE80F01001C57DF /* YWPCTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTimeTableViewCell.m; sourceTree = "<group>"; };
+		B32737681DE80F01001C57DF /* YWPCTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTimeTableViewCell.xib; sourceTree = "<group>"; };
+		B327376C1DE812A2001C57DF /* YWPCTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTimeModel.h; sourceTree = "<group>"; };
+		B327376D1DE812A2001C57DF /* YWPCTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTimeModel.m; sourceTree = "<group>"; };
+		B32737701DE81E12001C57DF /* YWPersonNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsModel.h; sourceTree = "<group>"; };
+		B32737711DE81E12001C57DF /* YWPersonNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsModel.m; sourceTree = "<group>"; };
+		B32737741DE82121001C57DF /* YWPersonNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsDetailViewController.h; sourceTree = "<group>"; };
+		B32737751DE82121001C57DF /* YWPersonNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsDetailViewController.m; sourceTree = "<group>"; };
+		B32737761DE82121001C57DF /* YWPersonNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonNewsDetailViewController.xib; sourceTree = "<group>"; };
+		B327377E1DE82237001C57DF /* YWPersonNewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsDetailModel.h; sourceTree = "<group>"; };
+		B327377F1DE82237001C57DF /* YWPersonNewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsDetailModel.m; sourceTree = "<group>"; };
+		B32737851DE824B4001C57DF /* YWPNPopularityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPNPopularityView.h; sourceTree = "<group>"; };
+		B32737861DE824B4001C57DF /* YWPNPopularityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPNPopularityView.m; sourceTree = "<group>"; };
+		B32737881DE824D3001C57DF /* YWPNRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPNRankView.h; sourceTree = "<group>"; };
+		B32737891DE824D3001C57DF /* YWPNRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPNRankView.m; sourceTree = "<group>"; };
+		B327378B1DE824E7001C57DF /* YWPNPublicPraiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPNPublicPraiseView.h; sourceTree = "<group>"; };
+		B327378C1DE824E7001C57DF /* YWPNPublicPraiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPNPublicPraiseView.m; sourceTree = "<group>"; };
+		B327378E1DE824F9001C57DF /* YWPNDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPNDetailView.h; sourceTree = "<group>"; };
+		B327378F1DE824F9001C57DF /* YWPNDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPNDetailView.m; sourceTree = "<group>"; };
+		B32737911DE8250C001C57DF /* YWPNDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNDetailView.xib; sourceTree = "<group>"; };
+		B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPublicPraiseView.xib; sourceTree = "<group>"; };
+		B32737951DE8254A001C57DF /* YWPNRankView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNRankView.xib; sourceTree = "<group>"; };
+		B32737971DE8255E001C57DF /* YWPNPopularityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPopularityView.xib; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -831,13 +879,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F07E9E1DE6ACD9005116EA /* MapKit.framework in Frameworks */,
 				B3F07EAA1DE6AD9A005116EA /* AdSupport.framework in Frameworks */,
 				B3F07EA81DE6AD39005116EA /* libresolv.tbd in Frameworks */,
 				B3F07EA61DE6AD0D005116EA /* libz.tbd in Frameworks */,
 				B3F07EA41DE6ACFD005116EA /* Security.framework in Frameworks */,
 				B3F07EA21DE6ACF3005116EA /* UIKit.framework in Frameworks */,
 				B3F07EA01DE6ACE6005116EA /* Foundation.framework in Frameworks */,
-				B3F07E9E1DE6ACD9005116EA /* MapKit.framework in Frameworks */,
 				B3F07E9C1DE6ACD0005116EA /* CoreGraphics.framework in Frameworks */,
 				B3F07E991DE6ACA3005116EA /* SystemConfiguration.framework in Frameworks */,
 				B3F07E971DE6AC98005116EA /* CoreTelephony.framework in Frameworks */,
@@ -1748,11 +1796,140 @@
 		B317AFF71DE5E6230093C511 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				B32737731DE820FF001C57DF /* NewsDetail */,
+				B327376F1DE81DF7001C57DF /* Model */,
 				B317AFF81DE5E6230093C511 /* YWPersonNewsViewController.h */,
 				B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */,
 				B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		B32737561DE7D145001C57DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B32737571DE7D145001C57DF /* YWStormAnnotationModel.h */,
+				B32737581DE7D145001C57DF /* YWStormAnnotationModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B327375A1DE7D3E1001C57DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B327375D1DE7D3E1001C57DF /* YWStormPinAnnotationView.h */,
+				B327375E1DE7D3E1001C57DF /* YWStormPinAnnotationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B32737611DE7EB87001C57DF /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				B32737621DE7EBB0001C57DF /* YWPCCutPickerView.h */,
+				B32737631DE7EBB0001C57DF /* YWPCCutPickerView.m */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		B32737651DE80EDC001C57DF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B32737661DE80F01001C57DF /* YWPCTimeTableViewCell.h */,
+				B32737671DE80F01001C57DF /* YWPCTimeTableViewCell.m */,
+				B32737681DE80F01001C57DF /* YWPCTimeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B327376B1DE81284001C57DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B327376C1DE812A2001C57DF /* YWPCTimeModel.h */,
+				B327376D1DE812A2001C57DF /* YWPCTimeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B327376F1DE81DF7001C57DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B32737701DE81E12001C57DF /* YWPersonNewsModel.h */,
+				B32737711DE81E12001C57DF /* YWPersonNewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B32737731DE820FF001C57DF /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B327377A1DE82205001C57DF /* Model */,
+				B32737791DE821F5001C57DF /* View */,
+				B32737741DE82121001C57DF /* YWPersonNewsDetailViewController.h */,
+				B32737751DE82121001C57DF /* YWPersonNewsDetailViewController.m */,
+				B32737761DE82121001C57DF /* YWPersonNewsDetailViewController.xib */,
+			);
+			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		B32737791DE821F5001C57DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B32737841DE823DE001C57DF /* Popularity */,
+				B32737831DE8233A001C57DF /* Rank */,
+				B32737821DE822F1001C57DF /* PublicPraise */,
+				B32737811DE822C4001C57DF /* Detail */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B327377A1DE82205001C57DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B327377E1DE82237001C57DF /* YWPersonNewsDetailModel.h */,
+				B327377F1DE82237001C57DF /* YWPersonNewsDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B32737811DE822C4001C57DF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B327378E1DE824F9001C57DF /* YWPNDetailView.h */,
+				B327378F1DE824F9001C57DF /* YWPNDetailView.m */,
+				B32737911DE8250C001C57DF /* YWPNDetailView.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B32737821DE822F1001C57DF /* PublicPraise */ = {
+			isa = PBXGroup;
+			children = (
+				B327378B1DE824E7001C57DF /* YWPNPublicPraiseView.h */,
+				B327378C1DE824E7001C57DF /* YWPNPublicPraiseView.m */,
+				B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */,
+			);
+			path = PublicPraise;
+			sourceTree = "<group>";
+		};
+		B32737831DE8233A001C57DF /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				B32737881DE824D3001C57DF /* YWPNRankView.h */,
+				B32737891DE824D3001C57DF /* YWPNRankView.m */,
+				B32737951DE8254A001C57DF /* YWPNRankView.xib */,
+			);
+			path = Rank;
+			sourceTree = "<group>";
+		};
+		B32737841DE823DE001C57DF /* Popularity */ = {
+			isa = PBXGroup;
+			children = (
+				B32737851DE824B4001C57DF /* YWPNPopularityView.h */,
+				B32737861DE824B4001C57DF /* YWPNPopularityView.m */,
+				B32737971DE8255E001C57DF /* YWPNPopularityView.xib */,
+			);
+			path = Popularity;
 			sourceTree = "<group>";
 		};
 		B387EA991DE45E110045323C /* mainController */ = {
@@ -2107,6 +2284,8 @@
 		B3F07F001DE72D24005116EA /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				B327375A1DE7D3E1001C57DF /* View */,
+				B32737561DE7D145001C57DF /* Model */,
 				B3F07F181DE72E25005116EA /* YWPCMapViewController.h */,
 				B3F07F191DE72E25005116EA /* YWPCMapViewController.m */,
 				B3F07F1A1DE72E25005116EA /* YWPCMapViewController.xib */,
@@ -2127,6 +2306,7 @@
 		B3F07F021DE72D46005116EA /* CutSet */ = {
 			isa = PBXGroup;
 			children = (
+				B32737611DE7EB87001C57DF /* Picker */,
 				B3F07F091DE72DD7005116EA /* YWPCCutSetViewController.h */,
 				B3F07F0A1DE72DD7005116EA /* YWPCCutSetViewController.m */,
 				B3F07F0B1DE72DD7005116EA /* YWPCCutSetViewController.xib */,
@@ -2147,6 +2327,8 @@
 		B3F07F1D1DE72F6F005116EA /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				B327376B1DE81284001C57DF /* Model */,
+				B32737651DE80EDC001C57DF /* Cell */,
 				B3F07F1E1DE72F9C005116EA /* YWPCTimeViewController.h */,
 				B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */,
 				B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */,
@@ -2275,6 +2457,7 @@
 				B317AFD61DE5D3C90093C511 /* PersonHeaderBG54@2x.png in Resources */,
 				B317AFAD1DE5D3C90093C511 /* PersonHeaderBG17@2x.png in Resources */,
 				B317AFBE1DE5D3C90093C511 /* PersonHeaderBG32@2x.png in Resources */,
+				B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */,
 				B317AF661DE5CFB80093C511 /* YWHomeCollectionHeaderView.xib in Resources */,
 				B317AFDC1DE5D3C90093C511 /* PersonHeaderBG5@2x.png in Resources */,
 				B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */,
@@ -2287,6 +2470,7 @@
 				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B317AFCF1DE5D3C90093C511 /* PersonHeaderBG48@2x.png in Resources */,
 				B31098E91DE4543E0033A984 /* YWPersonTableViewCell.xib in Resources */,
+				B327376A1DE80F01001C57DF /* YWPCTimeTableViewCell.xib in Resources */,
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
 				B3F07E521DE681B6005116EA /* YWPersonPointViewController.xib in Resources */,
 				B317AFDF1DE5D3C90093C511 /* PersonHeaderBG8@2x.png in Resources */,
@@ -2294,6 +2478,7 @@
 				B317AFCA1DE5D3C90093C511 /* PersonHeaderBG43@2x.png in Resources */,
 				B317AFD71DE5D3C90093C511 /* PersonHeaderBG55@2x.png in Resources */,
 				B31098A91DE4543E0033A984 /* 37x-Checkmark.png in Resources */,
+				B32737921DE8250C001C57DF /* YWPNDetailView.xib in Resources */,
 				B3F07EE11DE6E01F005116EA /* YWPersonSubVipTableViewCell.xib in Resources */,
 				B317AFD11DE5D3C90093C511 /* PersonHeaderBG4@2x.png in Resources */,
 				B3F07EBD1DE6CA77005116EA /* YWPersonPointTableViewCell.xib in Resources */,
@@ -2351,6 +2536,7 @@
 				B387EAC21DE4732D0045323C /* YWComfiringViewController.xib in Resources */,
 				B317AFC91DE5D3C90093C511 /* PersonHeaderBG42@2x.png in Resources */,
 				B317AFC61DE5D3C90093C511 /* PersonHeaderBG3@2x.png in Resources */,
+				B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */,
 				B317AFD51DE5D3C90093C511 /* PersonHeaderBG53@2x.png in Resources */,
 				B317AFD81DE5D3C90093C511 /* PersonHeaderBG56@2x.png in Resources */,
 				B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */,
@@ -2363,6 +2549,7 @@
 				B317AFB41DE5D3C90093C511 /* PersonHeaderBG23@2x.png in Resources */,
 				B317AFD41DE5D3C90093C511 /* PersonHeaderBG52@2x.png in Resources */,
 				B31098E31DE4543E0033A984 /* YWForgetPassWordViewController.xib in Resources */,
+				B32737781DE82121001C57DF /* YWPersonNewsDetailViewController.xib in Resources */,
 				B317AFC71DE5D3C90093C511 /* PersonHeaderBG40@2x.png in Resources */,
 				B3F07ED31DE6DBB6005116EA /* YWPersonSuggestViewController.xib in Resources */,
 				B317AFBF1DE5D3C90093C511 /* PersonHeaderBG33@2x.png in Resources */,
@@ -2371,6 +2558,7 @@
 				B317AFBC1DE5D3C90093C511 /* PersonHeaderBG30@2x.png in Resources */,
 				B317AFCB1DE5D3C90093C511 /* PersonHeaderBG44@2x.png in Resources */,
 				B310970E1DE44EA00033A984 /* Main.storyboard in Resources */,
+				B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */,
 				B317AC9F1DE557A80093C511 /* JWTagCollectionViewCell.xib in Resources */,
 				B317AFCE1DE5D3C90093C511 /* PersonHeaderBG47@2x.png in Resources */,
 				B31098751DE4543E0033A984 /* GifBundle.bundle in Resources */,
@@ -2434,6 +2622,7 @@
 				B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */,
 				B310989A1DE4543E0033A984 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				B3F07F211DE72F9C005116EA /* YWPCTimeViewController.m in Sources */,
+				B327378D1DE824E7001C57DF /* YWPNPublicPraiseView.m in Sources */,
 				B31098A61DE4543E0033A984 /* View+MASAdditions.m in Sources */,
 				B31098951DE4543E0033A984 /* AFURLConnectionOperation.m in Sources */,
 				B310986A1DE4543E0033A984 /* UIColor+Art.m in Sources */,
@@ -2452,6 +2641,7 @@
 				B31098C91DE4543E0033A984 /* SDWebImageCompat.m in Sources */,
 				B387EAB21DE45E110045323C /* VIPTabBar.m in Sources */,
 				B3F07EEA1DE6F1F1005116EA /* JWTextView.m in Sources */,
+				B32737691DE80F01001C57DF /* YWPCTimeTableViewCell.m in Sources */,
 				B31098731DE4543E0033A984 /* NSObject+YYModel.m in Sources */,
 				B31098A71DE4543E0033A984 /* ViewController+MASAdditions.m in Sources */,
 				B31098AD1DE4543E0033A984 /* MJRefreshBackFooter.m in Sources */,
@@ -2468,9 +2658,11 @@
 				B3F07EB71DE6C1DD005116EA /* NSString+JWAppendOtherStr.m in Sources */,
 				B310986B1DE4543E0033A984 /* UIColor+HexString.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
+				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */,
 				B3F07E7D1DE6A79F005116EA /* TZAssetModel.m in Sources */,
+				B32737871DE824B4001C57DF /* YWPNPopularityView.m in Sources */,
 				B31098931DE4543E0033A984 /* AFNetworkReachabilityManager.m in Sources */,
 				B3F07E601DE68C51005116EA /* YWBasicTableViewCell.m in Sources */,
 				B31098991DE4543E0033A984 /* UITableView+FDIndexPathHeightCache.m in Sources */,
@@ -2492,6 +2684,7 @@
 				B31098A11DE4543E0033A984 /* MASLayoutConstraint.m in Sources */,
 				B317AF651DE5CFB80093C511 /* YWHomeCollectionHeaderView.m in Sources */,
 				B31098721DE4543E0033A984 /* YJSegmentedControl.m in Sources */,
+				B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */,
 				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
 				B310989E1DE4543E0033A984 /* MASCompositeConstraint.m in Sources */,
 				B3F07EFB1DE70C5D005116EA /* YWPersonShopHeaderModel.m in Sources */,
@@ -2501,6 +2694,7 @@
 				B3F07EE01DE6E01F005116EA /* YWPersonSubVipTableViewCell.m in Sources */,
 				B31098B71DE4543E0033A984 /* MJRefreshGifHeader.m in Sources */,
 				B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */,
+				B32737901DE824F9001C57DF /* YWPNDetailView.m in Sources */,
 				B31098A41DE4543E0033A984 /* NSArray+MASAdditions.m in Sources */,
 				B310986F1DE4543E0033A984 /* UIScrollView+MJRefreshGif.m in Sources */,
 				B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */,
@@ -2537,6 +2731,7 @@
 				B31098D51DE4543E0033A984 /* UIView+WebCacheOperation.m in Sources */,
 				B3F07E661DE6938D005116EA /* YWPersonNoticaficationViewController.m in Sources */,
 				B31098C71DE4543E0033A984 /* NSData+ImageContentType.m in Sources */,
+				B32737591DE7D145001C57DF /* YWStormAnnotationModel.m in Sources */,
 				B31098B41DE4543E0033A984 /* MJRefreshBackGifFooter.m in Sources */,
 				B31098A21DE4543E0033A984 /* MASViewAttribute.m in Sources */,
 				B31098BD1DE4543E0033A984 /* MJDIYAutoFooter.m in Sources */,
@@ -2551,9 +2746,13 @@
 				B31098C51DE4543E0033A984 /* UIView+MJExtension.m in Sources */,
 				B310988D1DE4543E0033A984 /* NSDictionary+Attributes.m in Sources */,
 				B317ACAB1DE56B440093C511 /* YWAddressComfiredTypeModel.m in Sources */,
+				B32737721DE81E12001C57DF /* YWPersonNewsModel.m in Sources */,
 				B31098B51DE4543E0033A984 /* MJRefreshBackNormalFooter.m in Sources */,
 				B3F07F0C1DE72DD7005116EA /* YWPCCutSetViewController.m in Sources */,
+				B32737801DE82237001C57DF /* YWPersonNewsDetailModel.m in Sources */,
+				B32737641DE7EBB0001C57DF /* YWPCCutPickerView.m in Sources */,
 				B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */,
+				B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
 				B387EAB11DE45E110045323C /* VIPNavigationController.m in Sources */,
@@ -2571,6 +2770,7 @@
 				B31098781DE4543E0033A984 /* HUDLoadingShowView.m in Sources */,
 				B31098B31DE4543E0033A984 /* MJRefreshAutoStateFooter.m in Sources */,
 				B387EAC61DE478160045323C /* YWLoginViewController.m in Sources */,
+				B32737771DE82121001C57DF /* YWPersonNewsDetailViewController.m in Sources */,
 				B31098D31DE4543E0033A984 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B317AFFB1DE5E6230093C511 /* YWBankViewController.m in Sources */,
 				B31098E21DE4543E0033A984 /* YWForgetPassWordViewController.m in Sources */,

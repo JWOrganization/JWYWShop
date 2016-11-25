@@ -269,12 +269,12 @@ static CGFloat allW;
     for (CAShapeLayer *layer in layers) {
         [layer removeFromSuperlayer];
     }
-    if(self.isShowPillar){
-         [self drawPillar];
+    if (self.isShowLine) {
+        [self drawLines];
     }
     
-    if (self.isShowLine) {
-         [self drawLines];
+    if(self.isShowPillar){
+         [self drawPillar];
     }
     
     [self drawXYLine];

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"营业时间";
+    self.title = @"人均消费";
 }
 
 @end

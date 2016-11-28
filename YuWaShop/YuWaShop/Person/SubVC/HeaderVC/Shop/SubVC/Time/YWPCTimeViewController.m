@@ -8,6 +8,7 @@
 
 #import "YWPCTimeViewController.h"
 #import "YWPCTimeTableViewCell.h"
+#import "YWPCChooseTimeViewController.h"
 
 @interface YWPCTimeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -38,7 +39,9 @@
 }
 
 - (void)addTimeAction{
-    //2333333添加经营时间
+    YWPCChooseTimeViewController * vc = [[YWPCChooseTimeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
     //2333333333删
     YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
     model.timeID = @"1";

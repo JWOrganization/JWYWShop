@@ -12,6 +12,7 @@
 #import "YWLoginViewController.h"
 #import "YWForgetPassWordViewController.h"
 #import "YWPersonNoticaficationViewController.h"
+#import "YWPersonAboutUsViewController.h"
 
 @interface YWPersonSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -30,7 +31,7 @@
 
 - (void)dataSet{
     NSArray*path=  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    self.nameArr = [NSMutableArray arrayWithArray:@[@"通知设置",[NSString stringWithFormat:@"清除缓存(%.2fMB)",[JWThirdTools folderSizeAtPath:path[0]]],@"更改密码",@"退出登录"]];
+    self.nameArr = [NSMutableArray arrayWithArray:@[@"通知设置",[NSString stringWithFormat:@"清除缓存(%.2fMB)",[JWThirdTools folderSizeAtPath:path[0]]],@"更改密码",@"退出登录",@"关于我们"]];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWBasicTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWBasicTableViewCell"];
 }
 
@@ -72,7 +73,10 @@
             vc = [[YWLoginViewController alloc]init];
             break;
         }
-            
+        case 4:{
+            vc = [[YWPersonAboutUsViewController alloc]init];
+            break;
+        }
         default:
             break;
     }

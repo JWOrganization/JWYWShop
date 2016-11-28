@@ -62,8 +62,11 @@
     self.picker.delegate = self;
     self.picker.dataSource = self;
     self.picker.backgroundColor = [UIColor whiteColor];
-    self.cut = @"95折";
-    self.cutInter = 95;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.picker selectRow:25 inComponent:0 animated:YES];
+    });
+    self.cut = @"7折";
+    self.cutInter = 70;
     NSMutableArray * cutArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 95; i >= 10; i--) {
         if (i%10 == 0) {

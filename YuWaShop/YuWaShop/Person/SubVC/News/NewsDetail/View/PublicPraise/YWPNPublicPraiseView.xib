@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户可以在新版雨娃给您的商户点赞啦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2r0-KE-Ot8">
-                    <rect key="frame" x="0.0" y="276" width="375" height="30"/>
+                    <rect key="frame" x="0.0" y="280" width="375" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="LOm-Ws-OR0"/>
                     </constraints>
@@ -21,7 +21,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vp7-P1-nin">
-                    <rect key="frame" x="57" y="232" width="260" height="44"/>
+                    <rect key="frame" x="57" y="236" width="260" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点赞数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bC4-Xj-nVa">
                             <rect key="frame" x="0.0" y="0.0" width="87" height="16"/>
@@ -195,7 +195,7 @@
                 <constraint firstItem="vp7-P1-nin" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QHJ-CV-xI8"/>
                 <constraint firstItem="2r0-KE-Ot8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zj1-WK-OyR"/>
                 <constraint firstItem="koK-pP-4yL" firstAttribute="top" secondItem="zek-d0-HYA" secondAttribute="bottom" id="aQw-aP-GKj"/>
-                <constraint firstAttribute="bottom" secondItem="2r0-KE-Ot8" secondAttribute="bottom" constant="14" id="eGu-fn-jax"/>
+                <constraint firstAttribute="bottom" secondItem="2r0-KE-Ot8" secondAttribute="bottom" constant="10" id="eGu-fn-jax"/>
                 <constraint firstItem="zek-d0-HYA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fwx-H9-MMj"/>
                 <constraint firstItem="zek-d0-HYA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tKV-iy-M4b"/>
                 <constraint firstItem="trg-K5-K5D" firstAttribute="bottom" secondItem="koK-pP-4yL" secondAttribute="bottom" id="tgN-Ff-N7H"/>

@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YWPCEveryPayViewController">
             <connections>
+                <outlet property="everyPayTextfield" destination="6Ml-Jh-LTI" id="xEm-4C-pyo"/>
+                <outlet property="submitBtn" destination="0Xc-B4-g91" id="CyY-Mx-ifR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,64 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-jW-Fcp">
+                    <rect key="frame" x="0.0" y="74" width="600" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人均消费设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5S-E1-yEc">
+                            <rect key="frame" x="15" y="0.0" width="98" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="98" id="mMS-Zd-HWt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入人均消费(元)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-Jh-LTI">
+                            <rect key="frame" x="113" y="0.0" width="472" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="send"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="CIe-el-tWT"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4b1-OO-TUZ"/>
+                        <constraint firstItem="b5S-E1-yEc" firstAttribute="top" secondItem="B8m-jW-Fcp" secondAttribute="top" id="dlE-Jf-6xp"/>
+                        <constraint firstItem="6Ml-Jh-LTI" firstAttribute="top" secondItem="B8m-jW-Fcp" secondAttribute="top" id="fUw-ix-y2U"/>
+                        <constraint firstAttribute="bottom" secondItem="b5S-E1-yEc" secondAttribute="bottom" id="vBn-cb-B8Z"/>
+                        <constraint firstAttribute="bottom" secondItem="6Ml-Jh-LTI" secondAttribute="bottom" id="vTO-bW-OeW"/>
+                        <constraint firstItem="6Ml-Jh-LTI" firstAttribute="leading" secondItem="b5S-E1-yEc" secondAttribute="trailing" id="vuh-R8-0dg"/>
+                        <constraint firstItem="b5S-E1-yEc" firstAttribute="leading" secondItem="B8m-jW-Fcp" secondAttribute="leading" constant="15" id="zJ7-Q2-r1P"/>
+                        <constraint firstAttribute="trailing" secondItem="6Ml-Jh-LTI" secondAttribute="trailing" constant="15" id="zKe-1o-FSJ"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-B4-g91">
+                    <rect key="frame" x="15" y="550" width="570" height="40"/>
+                    <color key="backgroundColor" red="0.1450980392" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="xNl-LJ-FqT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitBtnAction:" destination="-1" eventType="touchUpInside" id="wvH-0g-vrp"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="0Xc-B4-g91" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="9ql-hk-uD3"/>
+                <constraint firstAttribute="trailing" secondItem="B8m-jW-Fcp" secondAttribute="trailing" id="JH7-39-Z1g"/>
+                <constraint firstItem="B8m-jW-Fcp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="TIP-BG-jgt"/>
+                <constraint firstItem="B8m-jW-Fcp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bAK-4K-Hox"/>
+                <constraint firstAttribute="bottom" secondItem="0Xc-B4-g91" secondAttribute="bottom" constant="10" id="fbg-CR-ccx"/>
+                <constraint firstAttribute="trailing" secondItem="0Xc-B4-g91" secondAttribute="trailing" constant="15" id="jve-8o-rQk"/>
+            </constraints>
         </view>
     </objects>
 </document>

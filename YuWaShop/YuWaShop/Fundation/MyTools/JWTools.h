@@ -225,6 +225,14 @@
  */
 + (BOOL)isComfireCodeWithStr:(NSString *)comfireCode;
 /**
+ *  纯数字
+ *
+ *  @param numberStr Str
+ *
+ *  @return 是否是纯数字
+ */
++ (BOOL)isNumberWithStr:(NSString *)numberStr;
+/**
  *  邮箱验证
  *
  *  @param email 邮箱

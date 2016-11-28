@@ -469,7 +469,18 @@
     NSPredicate *codePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",codeRegex];
     return [codePredicate evaluateWithObject:comfireCode];
 }
-
+/**
+ *  纯数字
+ *
+ *  @param numberStr Str
+ *
+ *  @return 是否是纯数字
+ */
++ (BOOL)isNumberWithStr:(NSString *)numberStr{
+    NSString * numberRegex = @"^[0-9]{1,99}+$";
+    NSPredicate * numberPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",numberRegex];
+    return [numberPredicate evaluateWithObject:numberStr];
+}
 
 /**
  *  邮箱验证

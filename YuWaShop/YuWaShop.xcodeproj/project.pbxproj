@@ -221,6 +221,18 @@
 		B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFF61DE5E6230093C511 /* YWBankViewController.xib */; };
 		B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */; };
 		B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */; };
+		B32346F61DEBD095002C72E1 /* YWPersonAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32346F41DEBD095002C72E1 /* YWPersonAboutUsViewController.m */; };
+		B32346F71DEBD095002C72E1 /* YWPersonAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32346F51DEBD095002C72E1 /* YWPersonAboutUsViewController.xib */; };
+		B32346FC1DEBD1C1002C72E1 /* YWPersonSuggestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32346FA1DEBD1C1002C72E1 /* YWPersonSuggestViewController.m */; };
+		B32346FD1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32346FB1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib */; };
+		B32347021DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32347001DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m */; };
+		B32347031DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32347011DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib */; };
+		B32347081DEBD400002C72E1 /* YWPCEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32347061DEBD400002C72E1 /* YWPCEnvironmentViewController.m */; };
+		B32347091DEBD400002C72E1 /* YWPCEnvironmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32347071DEBD400002C72E1 /* YWPCEnvironmentViewController.xib */; };
+		B323470E1DEBD718002C72E1 /* YWPCESelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B323470C1DEBD718002C72E1 /* YWPCESelTableViewCell.m */; };
+		B323470F1DEBD718002C72E1 /* YWPCESelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B323470D1DEBD718002C72E1 /* YWPCESelTableViewCell.xib */; };
+		B32347141DEBD73C002C72E1 /* YWPCEOnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32347121DEBD73C002C72E1 /* YWPCEOnTableViewCell.m */; };
+		B32347151DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32347131DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib */; };
 		B32737591DE7D145001C57DF /* YWStormAnnotationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737581DE7D145001C57DF /* YWStormAnnotationModel.m */; };
 		B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B327375E1DE7D3E1001C57DF /* YWStormPinAnnotationView.m */; };
 		B32737641DE7EBB0001C57DF /* YWPCCutPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B32737631DE7EBB0001C57DF /* YWPCCutPickerView.m */; };
@@ -239,6 +251,25 @@
 		B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */; };
 		B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737951DE8254A001C57DF /* YWPNRankView.xib */; };
 		B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737971DE8255E001C57DF /* YWPNPopularityView.xib */; };
+		B35C9B5F1DEBFA630051E352 /* YWPCChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B5D1DEBFA630051E352 /* YWPCChooseTimeViewController.m */; };
+		B35C9B601DEBFA630051E352 /* YWPCChooseTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B5E1DEBFA630051E352 /* YWPCChooseTimeViewController.xib */; };
+		B35C9B651DEBFF580051E352 /* YWPCChooseTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B641DEBFF580051E352 /* YWPCChooseTimeModel.m */; };
+		B35C9B681DEBFFE20051E352 /* YWPCChooseSubTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B671DEBFFE20051E352 /* YWPCChooseSubTimeModel.m */; };
+		B35C9B6C1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B6A1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m */; };
+		B35C9B6D1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B6B1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib */; };
+		B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B6F1DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m */; };
+		B35C9B721DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B701DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib */; };
+		B35C9B761DEC03590051E352 /* YWPCTDayTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B741DEC03590051E352 /* YWPCTDayTimeTableViewCell.m */; };
+		B35C9B771DEC03590051E352 /* YWPCTDayTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B751DEC03590051E352 /* YWPCTDayTimeTableViewCell.xib */; };
+		B35C9B7B1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B791DEC036C0051E352 /* YWPCTTimeNameTableViewCell.m */; };
+		B35C9B7C1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B7A1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.xib */; };
+		B35C9B801DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B7E1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m */; };
+		B35C9B811DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B7F1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib */; };
+		B35C9B881DEC14850051E352 /* YWPCChooseWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B861DEC14850051E352 /* YWPCChooseWeekViewController.m */; };
+		B35C9B891DEC14850051E352 /* YWPCChooseWeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B871DEC14850051E352 /* YWPCChooseWeekViewController.xib */; };
+		B35C9B8E1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B8C1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m */; };
+		B35C9B8F1DEC16770051E352 /* YWPCChooseWeekTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B8D1DEC16770051E352 /* YWPCChooseWeekTableViewCell.xib */; };
+		B35C9B921DEC1F830051E352 /* YWPCCHooseTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B911DEC1F830051E352 /* YWPCCHooseTimePickerView.m */; };
 		B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9C1DE45E110045323C /* JWBasicViewController.m */; };
 		B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EA9D1DE45E110045323C /* JWBasicViewController.xib */; };
 		B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EA9F1DE45E110045323C /* JWLocationBasicViewController.m */; };
@@ -301,8 +332,6 @@
 		B3F07EC71DE6CB35005116EA /* YWPersonPointHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07EC61DE6CB35005116EA /* YWPersonPointHeaderView.xib */; };
 		B3F07ECA1DE6CD41005116EA /* UIScrollView+JWGifRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EC91DE6CD41005116EA /* UIScrollView+JWGifRefresh.m */; };
 		B3F07ECD1DE6D5DE005116EA /* YWPersonPointHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07ECC1DE6D5DE005116EA /* YWPersonPointHeaderModel.m */; };
-		B3F07ED21DE6DBB6005116EA /* YWPersonSuggestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07ED01DE6DBB6005116EA /* YWPersonSuggestViewController.m */; };
-		B3F07ED31DE6DBB6005116EA /* YWPersonSuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07ED11DE6DBB6005116EA /* YWPersonSuggestViewController.xib */; };
 		B3F07ED91DE6DFE4005116EA /* YWPersonSubVipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07ED81DE6DFE4005116EA /* YWPersonSubVipModel.m */; };
 		B3F07EDC1DE6E000005116EA /* YWPersonSubVipHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EDB1DE6E000005116EA /* YWPersonSubVipHeaderModel.m */; };
 		B3F07EE01DE6E01F005116EA /* YWPersonSubVipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07EDE1DE6E01F005116EA /* YWPersonSubVipTableViewCell.m */; };
@@ -702,6 +731,24 @@
 		B317AFF81DE5E6230093C511 /* YWPersonNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonNewsViewController.h; sourceTree = "<group>"; };
 		B317AFF91DE5E6230093C511 /* YWPersonNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonNewsViewController.m; sourceTree = "<group>"; };
 		B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonNewsViewController.xib; sourceTree = "<group>"; };
+		B32346F31DEBD095002C72E1 /* YWPersonAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonAboutUsViewController.h; sourceTree = "<group>"; };
+		B32346F41DEBD095002C72E1 /* YWPersonAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonAboutUsViewController.m; sourceTree = "<group>"; };
+		B32346F51DEBD095002C72E1 /* YWPersonAboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonAboutUsViewController.xib; sourceTree = "<group>"; };
+		B32346F91DEBD1C1002C72E1 /* YWPersonSuggestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSuggestViewController.h; sourceTree = "<group>"; };
+		B32346FA1DEBD1C1002C72E1 /* YWPersonSuggestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSuggestViewController.m; sourceTree = "<group>"; };
+		B32346FB1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSuggestViewController.xib; sourceTree = "<group>"; };
+		B32346FF1DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSuggRePlayViewController.h; sourceTree = "<group>"; };
+		B32347001DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSuggRePlayViewController.m; sourceTree = "<group>"; };
+		B32347011DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSuggRePlayViewController.xib; sourceTree = "<group>"; };
+		B32347051DEBD400002C72E1 /* YWPCEnvironmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCEnvironmentViewController.h; sourceTree = "<group>"; };
+		B32347061DEBD400002C72E1 /* YWPCEnvironmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCEnvironmentViewController.m; sourceTree = "<group>"; };
+		B32347071DEBD400002C72E1 /* YWPCEnvironmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCEnvironmentViewController.xib; sourceTree = "<group>"; };
+		B323470B1DEBD718002C72E1 /* YWPCESelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCESelTableViewCell.h; sourceTree = "<group>"; };
+		B323470C1DEBD718002C72E1 /* YWPCESelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCESelTableViewCell.m; sourceTree = "<group>"; };
+		B323470D1DEBD718002C72E1 /* YWPCESelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCESelTableViewCell.xib; sourceTree = "<group>"; };
+		B32347111DEBD73C002C72E1 /* YWPCEOnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCEOnTableViewCell.h; sourceTree = "<group>"; };
+		B32347121DEBD73C002C72E1 /* YWPCEOnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCEOnTableViewCell.m; sourceTree = "<group>"; };
+		B32347131DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCEOnTableViewCell.xib; sourceTree = "<group>"; };
 		B32737571DE7D145001C57DF /* YWStormAnnotationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormAnnotationModel.h; sourceTree = "<group>"; };
 		B32737581DE7D145001C57DF /* YWStormAnnotationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWStormAnnotationModel.m; sourceTree = "<group>"; };
 		B327375D1DE7D3E1001C57DF /* YWStormPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWStormPinAnnotationView.h; sourceTree = "<group>"; };
@@ -732,6 +779,36 @@
 		B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPublicPraiseView.xib; sourceTree = "<group>"; };
 		B32737951DE8254A001C57DF /* YWPNRankView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNRankView.xib; sourceTree = "<group>"; };
 		B32737971DE8255E001C57DF /* YWPNPopularityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPopularityView.xib; sourceTree = "<group>"; };
+		B35C9B5C1DEBFA630051E352 /* YWPCChooseTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseTimeViewController.h; sourceTree = "<group>"; };
+		B35C9B5D1DEBFA630051E352 /* YWPCChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseTimeViewController.m; sourceTree = "<group>"; };
+		B35C9B5E1DEBFA630051E352 /* YWPCChooseTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCChooseTimeViewController.xib; sourceTree = "<group>"; };
+		B35C9B631DEBFF580051E352 /* YWPCChooseTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseTimeModel.h; sourceTree = "<group>"; };
+		B35C9B641DEBFF580051E352 /* YWPCChooseTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseTimeModel.m; sourceTree = "<group>"; };
+		B35C9B661DEBFFE20051E352 /* YWPCChooseSubTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseSubTimeModel.h; sourceTree = "<group>"; };
+		B35C9B671DEBFFE20051E352 /* YWPCChooseSubTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseSubTimeModel.m; sourceTree = "<group>"; };
+		B35C9B691DEC031A0051E352 /* YWPCTWeekDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTWeekDayTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B6A1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTWeekDayTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B6B1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTWeekDayTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B6E1DEC03390051E352 /* YWPCTIsAllDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTIsAllDayTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B6F1DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTIsAllDayTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B701DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTIsAllDayTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B731DEC03590051E352 /* YWPCTDayTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTDayTimeTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B741DEC03590051E352 /* YWPCTDayTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTDayTimeTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B751DEC03590051E352 /* YWPCTDayTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTDayTimeTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B781DEC036C0051E352 /* YWPCTTimeNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTTimeNameTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B791DEC036C0051E352 /* YWPCTTimeNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTTimeNameTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B7A1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTTimeNameTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B7D1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTDayTimeAddTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B7E1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTDayTimeAddTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B7F1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTDayTimeAddTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B851DEC14850051E352 /* YWPCChooseWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseWeekViewController.h; sourceTree = "<group>"; };
+		B35C9B861DEC14850051E352 /* YWPCChooseWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseWeekViewController.m; sourceTree = "<group>"; };
+		B35C9B871DEC14850051E352 /* YWPCChooseWeekViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCChooseWeekViewController.xib; sourceTree = "<group>"; };
+		B35C9B8B1DEC16770051E352 /* YWPCChooseWeekTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseWeekTableViewCell.h; sourceTree = "<group>"; };
+		B35C9B8C1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseWeekTableViewCell.m; sourceTree = "<group>"; };
+		B35C9B8D1DEC16770051E352 /* YWPCChooseWeekTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCChooseWeekTableViewCell.xib; sourceTree = "<group>"; };
+		B35C9B901DEC1F830051E352 /* YWPCCHooseTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCCHooseTimePickerView.h; sourceTree = "<group>"; };
+		B35C9B911DEC1F830051E352 /* YWPCCHooseTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCCHooseTimePickerView.m; sourceTree = "<group>"; };
 		B387EA9B1DE45E110045323C /* JWBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBasicViewController.h; sourceTree = "<group>"; };
 		B387EA9C1DE45E110045323C /* JWBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBasicViewController.m; sourceTree = "<group>"; };
 		B387EA9D1DE45E110045323C /* JWBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBasicViewController.xib; sourceTree = "<group>"; };
@@ -829,9 +906,6 @@
 		B3F07EC91DE6CD41005116EA /* UIScrollView+JWGifRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JWGifRefresh.m"; sourceTree = "<group>"; };
 		B3F07ECB1DE6D5DE005116EA /* YWPersonPointHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonPointHeaderModel.h; sourceTree = "<group>"; };
 		B3F07ECC1DE6D5DE005116EA /* YWPersonPointHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonPointHeaderModel.m; sourceTree = "<group>"; };
-		B3F07ECF1DE6DBB6005116EA /* YWPersonSuggestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSuggestViewController.h; sourceTree = "<group>"; };
-		B3F07ED01DE6DBB6005116EA /* YWPersonSuggestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSuggestViewController.m; sourceTree = "<group>"; };
-		B3F07ED11DE6DBB6005116EA /* YWPersonSuggestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonSuggestViewController.xib; sourceTree = "<group>"; };
 		B3F07ED71DE6DFE4005116EA /* YWPersonSubVipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSubVipModel.h; sourceTree = "<group>"; };
 		B3F07ED81DE6DFE4005116EA /* YWPersonSubVipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonSubVipModel.m; sourceTree = "<group>"; };
 		B3F07EDA1DE6E000005116EA /* YWPersonSubVipHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonSubVipHeaderModel.h; sourceTree = "<group>"; };
@@ -1628,6 +1702,7 @@
 				B317AFF71DE5E6230093C511 /* News */,
 				B317AFED1DE5E1330093C511 /* Setting */,
 				B317AFE11DE5DB990093C511 /* WeakCount */,
+				B32346F81DEBD1C1002C72E1 /* Suggestion */,
 				B317AF371DE5B5990093C511 /* HeaderVC */,
 				B317AF161DE5B40C0093C511 /* YWPersonVC.h */,
 				B317AF1E1DE5B4C90093C511 /* YWPersonHelpViewController.h */,
@@ -1646,7 +1721,6 @@
 		B317AF371DE5B5990093C511 /* HeaderVC */ = {
 			isa = PBXGroup;
 			children = (
-				B3F07ECE1DE6DBB6005116EA /* Suggestion */,
 				B3F07E451DE681B6005116EA /* Point */,
 				B3F07E491DE681B6005116EA /* Shop */,
 				B3F07E4D1DE681B6005116EA /* SubVip */,
@@ -1773,6 +1847,7 @@
 		B317AFED1DE5E1330093C511 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				B32346F21DEBD063002C72E1 /* AboutUs */,
 				B3F07E621DE69367005116EA /* Noticafication */,
 				B317AFEE1DE5E1330093C511 /* YWPersonSettingViewController.h */,
 				B317AFEF1DE5E1330093C511 /* YWPersonSettingViewController.m */,
@@ -1803,6 +1878,61 @@
 				B317AFFA1DE5E6230093C511 /* YWPersonNewsViewController.xib */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		B32346F21DEBD063002C72E1 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				B32346F31DEBD095002C72E1 /* YWPersonAboutUsViewController.h */,
+				B32346F41DEBD095002C72E1 /* YWPersonAboutUsViewController.m */,
+				B32346F51DEBD095002C72E1 /* YWPersonAboutUsViewController.xib */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		B32346F81DEBD1C1002C72E1 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				B32346FE1DEBD1D6002C72E1 /* RePlay */,
+				B32346F91DEBD1C1002C72E1 /* YWPersonSuggestViewController.h */,
+				B32346FA1DEBD1C1002C72E1 /* YWPersonSuggestViewController.m */,
+				B32346FB1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib */,
+			);
+			path = Suggestion;
+			sourceTree = "<group>";
+		};
+		B32346FE1DEBD1D6002C72E1 /* RePlay */ = {
+			isa = PBXGroup;
+			children = (
+				B32346FF1DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.h */,
+				B32347001DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m */,
+				B32347011DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib */,
+			);
+			path = RePlay;
+			sourceTree = "<group>";
+		};
+		B32347041DEBD392002C72E1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				B323470A1DEBD699002C72E1 /* Cell */,
+				B32347051DEBD400002C72E1 /* YWPCEnvironmentViewController.h */,
+				B32347061DEBD400002C72E1 /* YWPCEnvironmentViewController.m */,
+				B32347071DEBD400002C72E1 /* YWPCEnvironmentViewController.xib */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		B323470A1DEBD699002C72E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B323470B1DEBD718002C72E1 /* YWPCESelTableViewCell.h */,
+				B323470C1DEBD718002C72E1 /* YWPCESelTableViewCell.m */,
+				B323470D1DEBD718002C72E1 /* YWPCESelTableViewCell.xib */,
+				B32347111DEBD73C002C72E1 /* YWPCEOnTableViewCell.h */,
+				B32347121DEBD73C002C72E1 /* YWPCEOnTableViewCell.m */,
+				B32347131DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B32737561DE7D145001C57DF /* Model */ = {
@@ -1930,6 +2060,91 @@
 				B32737971DE8255E001C57DF /* YWPNPopularityView.xib */,
 			);
 			path = Popularity;
+			sourceTree = "<group>";
+		};
+		B35C9B5B1DEBFA330051E352 /* ChooseTime */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B821DEC14150051E352 /* SubView */,
+				B35C9B621DEBFF360051E352 /* Model */,
+				B35C9B611DEBFF210051E352 /* Cell */,
+				B35C9B5C1DEBFA630051E352 /* YWPCChooseTimeViewController.h */,
+				B35C9B5D1DEBFA630051E352 /* YWPCChooseTimeViewController.m */,
+				B35C9B5E1DEBFA630051E352 /* YWPCChooseTimeViewController.xib */,
+			);
+			path = ChooseTime;
+			sourceTree = "<group>";
+		};
+		B35C9B611DEBFF210051E352 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B691DEC031A0051E352 /* YWPCTWeekDayTableViewCell.h */,
+				B35C9B6A1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m */,
+				B35C9B6B1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib */,
+				B35C9B6E1DEC03390051E352 /* YWPCTIsAllDayTableViewCell.h */,
+				B35C9B6F1DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m */,
+				B35C9B701DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib */,
+				B35C9B731DEC03590051E352 /* YWPCTDayTimeTableViewCell.h */,
+				B35C9B741DEC03590051E352 /* YWPCTDayTimeTableViewCell.m */,
+				B35C9B751DEC03590051E352 /* YWPCTDayTimeTableViewCell.xib */,
+				B35C9B781DEC036C0051E352 /* YWPCTTimeNameTableViewCell.h */,
+				B35C9B791DEC036C0051E352 /* YWPCTTimeNameTableViewCell.m */,
+				B35C9B7A1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.xib */,
+				B35C9B7D1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.h */,
+				B35C9B7E1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m */,
+				B35C9B7F1DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B35C9B621DEBFF360051E352 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B631DEBFF580051E352 /* YWPCChooseTimeModel.h */,
+				B35C9B641DEBFF580051E352 /* YWPCChooseTimeModel.m */,
+				B35C9B661DEBFFE20051E352 /* YWPCChooseSubTimeModel.h */,
+				B35C9B671DEBFFE20051E352 /* YWPCChooseSubTimeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B35C9B821DEC14150051E352 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B841DEC14520051E352 /* View */,
+				B35C9B831DEC14450051E352 /* VC */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		B35C9B831DEC14450051E352 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B8A1DEC163A0051E352 /* Cell */,
+				B35C9B851DEC14850051E352 /* YWPCChooseWeekViewController.h */,
+				B35C9B861DEC14850051E352 /* YWPCChooseWeekViewController.m */,
+				B35C9B871DEC14850051E352 /* YWPCChooseWeekViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B35C9B841DEC14520051E352 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B901DEC1F830051E352 /* YWPCCHooseTimePickerView.h */,
+				B35C9B911DEC1F830051E352 /* YWPCCHooseTimePickerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B35C9B8A1DEC163A0051E352 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B35C9B8B1DEC16770051E352 /* YWPCChooseWeekTableViewCell.h */,
+				B35C9B8C1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m */,
+				B35C9B8D1DEC16770051E352 /* YWPCChooseWeekTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B387EA991DE45E110045323C /* mainController */ = {
@@ -2177,16 +2392,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B3F07ECE1DE6DBB6005116EA /* Suggestion */ = {
-			isa = PBXGroup;
-			children = (
-				B3F07ECF1DE6DBB6005116EA /* YWPersonSuggestViewController.h */,
-				B3F07ED01DE6DBB6005116EA /* YWPersonSuggestViewController.m */,
-				B3F07ED11DE6DBB6005116EA /* YWPersonSuggestViewController.xib */,
-			);
-			path = Suggestion;
-			sourceTree = "<group>";
-		};
 		B3F07ED41DE6DCFD005116EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2261,6 +2466,7 @@
 		B3F07EFE1DE72CD9005116EA /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B32347041DEBD392002C72E1 /* Environment */,
 				B3F07F1D1DE72F6F005116EA /* Time */,
 				B3F07F031DE72D56005116EA /* Counselor */,
 				B3F07F021DE72D46005116EA /* CutSet */,
@@ -2327,6 +2533,7 @@
 		B3F07F1D1DE72F6F005116EA /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				B35C9B5B1DEBFA330051E352 /* ChooseTime */,
 				B327376B1DE81284001C57DF /* Model */,
 				B32737651DE80EDC001C57DF /* Cell */,
 				B3F07F1E1DE72F9C005116EA /* YWPCTimeViewController.h */,
@@ -2449,10 +2656,12 @@
 			files = (
 				B317AFA91DE5D3C90093C511 /* PersonHeaderBG13@2x.png in Resources */,
 				B317AFD91DE5D3C90093C511 /* PersonHeaderBG57@2x.png in Resources */,
+				B35C9B6D1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib in Resources */,
 				B31098E11DE4543E0033A984 /* YWHomeViewController.xib in Resources */,
 				B317AFAA1DE5D3C90093C511 /* PersonHeaderBG14@2x.png in Resources */,
 				B31098771DE4543E0033A984 /* HUDFailureShowView.xib in Resources */,
 				B317AFC11DE5D3C90093C511 /* PersonHeaderBG35@2x.png in Resources */,
+				B32346FD1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib in Resources */,
 				B317AFA61DE5D3C90093C511 /* PersonHeaderBG10@2x.png in Resources */,
 				B317AFD61DE5D3C90093C511 /* PersonHeaderBG54@2x.png in Resources */,
 				B317AFAD1DE5D3C90093C511 /* PersonHeaderBG17@2x.png in Resources */,
@@ -2485,10 +2694,12 @@
 				B317AFA71DE5D3C90093C511 /* PersonHeaderBG11@2x.png in Resources */,
 				B3F07F081DE72DC6005116EA /* YWPCCounselorViewController.xib in Resources */,
 				B3F07E541DE681B6005116EA /* YWPersonShopViewController.xib in Resources */,
+				B35C9B771DEC03590051E352 /* YWPCTDayTimeTableViewCell.xib in Resources */,
 				B317AC871DE530780093C511 /* YWStormSubSortCollectionViewCell.xib in Resources */,
 				B317AFD21DE5D3C90093C511 /* PersonHeaderBG50@2x.png in Resources */,
 				B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */,
 				B317AFDB1DE5D3C90093C511 /* PersonHeaderBG59@2x.png in Resources */,
+				B32347091DEBD400002C72E1 /* YWPCEnvironmentViewController.xib in Resources */,
 				B310989D1DE4543E0033A984 /* LICENSE in Resources */,
 				B317AFB31DE5D3C90093C511 /* PersonHeaderBG22@2x.png in Resources */,
 				B317AFCD1DE5D3C90093C511 /* PersonHeaderBG46@2x.png in Resources */,
@@ -2500,7 +2711,9 @@
 				B31098EB1DE4543E0033A984 /* YWPersonHeaderView.xib in Resources */,
 				B317AFE01DE5D3C90093C511 /* PersonHeaderBG9@2x.png in Resources */,
 				B3F07EC71DE6CB35005116EA /* YWPersonPointHeaderView.xib in Resources */,
+				B32346F71DEBD095002C72E1 /* YWPersonAboutUsViewController.xib in Resources */,
 				B317AFB01DE5D3C90093C511 /* PersonHeaderBG1@2x.png in Resources */,
+				B323470F1DEBD718002C72E1 /* YWPCESelTableViewCell.xib in Resources */,
 				B3F07EFD1DE70CDB005116EA /* YWPersonShopHeaderView.xib in Resources */,
 				B317AFF21DE5E1330093C511 /* YWPersonSettingViewController.xib in Resources */,
 				B387EAAC1DE45E110045323C /* JWBasicViewController.xib in Resources */,
@@ -2513,6 +2726,8 @@
 				B317AFB91DE5D3C90093C511 /* PersonHeaderBG28@2x.png in Resources */,
 				B317AFAF1DE5D3C90093C511 /* PersonHeaderBG19@2x.png in Resources */,
 				B317AFB81DE5D3C90093C511 /* PersonHeaderBG27@2x.png in Resources */,
+				B35C9B601DEBFA630051E352 /* YWPCChooseTimeViewController.xib in Resources */,
+				B35C9B7C1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.xib in Resources */,
 				B317AFC01DE5D3C90093C511 /* PersonHeaderBG34@2x.png in Resources */,
 				B31097131DE44EA00033A984 /* LaunchScreen.storyboard in Resources */,
 				B317AFB61DE5D3C90093C511 /* PersonHeaderBG25@2x.png in Resources */,
@@ -2521,12 +2736,14 @@
 				B317AFCC1DE5D3C90093C511 /* PersonHeaderBG45@2x.png in Resources */,
 				B3F07EE61DE6E03C005116EA /* YWPersonSubVipHeaderView.xib in Resources */,
 				B317AFDE1DE5D3C90093C511 /* PersonHeaderBG7@2x.png in Resources */,
+				B32347031DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib in Resources */,
 				B3F07E611DE68C51005116EA /* YWBasicTableViewCell.xib in Resources */,
 				B31097101DE44EA00033A984 /* Assets.xcassets in Resources */,
 				B31098691DE4543E0033A984 /* YWDataAnalyseViewController.xib in Resources */,
 				B317AFBD1DE5D3C90093C511 /* PersonHeaderBG31@2x.png in Resources */,
 				B317AFB51DE5D3C90093C511 /* PersonHeaderBG24@2x.png in Resources */,
 				B317ACB41DE582FB0093C511 /* CFLineChartView.xib in Resources */,
+				B35C9B811DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib in Resources */,
 				B31098C01DE4543E0033A984 /* MJRefresh.bundle in Resources */,
 				B317AFB21DE5D3C90093C511 /* PersonHeaderBG21@2x.png in Resources */,
 				B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */,
@@ -2541,6 +2758,8 @@
 				B317AFD81DE5D3C90093C511 /* PersonHeaderBG56@2x.png in Resources */,
 				B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */,
 				B317AFDA1DE5D3C90093C511 /* PersonHeaderBG58@2x.png in Resources */,
+				B35C9B8F1DEC16770051E352 /* YWPCChooseWeekTableViewCell.xib in Resources */,
+				B35C9B891DEC14850051E352 /* YWPCChooseWeekViewController.xib in Resources */,
 				B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */,
 				B317AFDD1DE5D3C90093C511 /* PersonHeaderBG6@2x.png in Resources */,
 				B317AFD31DE5D3C90093C511 /* PersonHeaderBG51@2x.png in Resources */,
@@ -2551,14 +2770,15 @@
 				B31098E31DE4543E0033A984 /* YWForgetPassWordViewController.xib in Resources */,
 				B32737781DE82121001C57DF /* YWPersonNewsDetailViewController.xib in Resources */,
 				B317AFC71DE5D3C90093C511 /* PersonHeaderBG40@2x.png in Resources */,
-				B3F07ED31DE6DBB6005116EA /* YWPersonSuggestViewController.xib in Resources */,
 				B317AFBF1DE5D3C90093C511 /* PersonHeaderBG33@2x.png in Resources */,
+				B35C9B721DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib in Resources */,
 				B3F07E561DE681B6005116EA /* YWPersonSubVipViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
 				B317AFBC1DE5D3C90093C511 /* PersonHeaderBG30@2x.png in Resources */,
 				B317AFCB1DE5D3C90093C511 /* PersonHeaderBG44@2x.png in Resources */,
 				B310970E1DE44EA00033A984 /* Main.storyboard in Resources */,
 				B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */,
+				B32347151DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib in Resources */,
 				B317AC9F1DE557A80093C511 /* JWTagCollectionViewCell.xib in Resources */,
 				B317AFCE1DE5D3C90093C511 /* PersonHeaderBG47@2x.png in Resources */,
 				B31098751DE4543E0033A984 /* GifBundle.bundle in Resources */,
@@ -2617,6 +2837,7 @@
 				B3F07EAF1DE6B89C005116EA /* YWBankTableViewCell.m in Sources */,
 				B31098B21DE4543E0033A984 /* MJRefreshAutoNormalFooter.m in Sources */,
 				B31098A01DE4543E0033A984 /* MASConstraintMaker.m in Sources */,
+				B32346F61DEBD095002C72E1 /* YWPersonAboutUsViewController.m in Sources */,
 				B31098AC1DE4543E0033A984 /* MJRefreshAutoFooter.m in Sources */,
 				B31098A31DE4543E0033A984 /* MASViewConstraint.m in Sources */,
 				B317AC9E1DE557A80093C511 /* JWTagCollectionViewCell.m in Sources */,
@@ -2634,11 +2855,14 @@
 				B310987A1DE4543E0033A984 /* HttpManager.m in Sources */,
 				B31098B61DE4543E0033A984 /* MJRefreshBackStateFooter.m in Sources */,
 				B31098A51DE4543E0033A984 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				B35C9B881DEC14850051E352 /* YWPCChooseWeekViewController.m in Sources */,
 				B3F07EC11DE6CAA1005116EA /* YWPersonPointModel.m in Sources */,
 				B31098D11DE4543E0033A984 /* UIImage+MultiFormat.m in Sources */,
 				B3F07E8B1DE6A7A8005116EA /* NSArray+Log.m in Sources */,
+				B323470E1DEBD718002C72E1 /* YWPCESelTableViewCell.m in Sources */,
 				B31098BB1DE4543E0033A984 /* MJChiBaoZiFooter2.m in Sources */,
 				B31098C91DE4543E0033A984 /* SDWebImageCompat.m in Sources */,
+				B32346FC1DEBD1C1002C72E1 /* YWPersonSuggestViewController.m in Sources */,
 				B387EAB21DE45E110045323C /* VIPTabBar.m in Sources */,
 				B3F07EEA1DE6F1F1005116EA /* JWTextView.m in Sources */,
 				B32737691DE80F01001C57DF /* YWPCTimeTableViewCell.m in Sources */,
@@ -2647,6 +2871,7 @@
 				B31098AD1DE4543E0033A984 /* MJRefreshBackFooter.m in Sources */,
 				B31098701DE4543E0033A984 /* UIView+Frame.m in Sources */,
 				B387EAB71DE460780045323C /* YWPersonCenterModel.m in Sources */,
+				B35C9B5F1DEBFA630051E352 /* YWPCChooseTimeViewController.m in Sources */,
 				B3F07E531DE681B6005116EA /* YWPersonShopViewController.m in Sources */,
 				B31098AA1DE4543E0033A984 /* MBHUD.m in Sources */,
 				B3F07EF81DE70C38005116EA /* YWPersonShopModel.m in Sources */,
@@ -2656,8 +2881,10 @@
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
 				B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */,
 				B3F07EB71DE6C1DD005116EA /* NSString+JWAppendOtherStr.m in Sources */,
+				B32347081DEBD400002C72E1 /* YWPCEnvironmentViewController.m in Sources */,
 				B310986B1DE4543E0033A984 /* UIColor+HexString.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
+				B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */,
 				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */,
@@ -2667,6 +2894,7 @@
 				B3F07E601DE68C51005116EA /* YWBasicTableViewCell.m in Sources */,
 				B31098991DE4543E0033A984 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				B31098CE1DE4543E0033A984 /* SDWebImagePrefetcher.m in Sources */,
+				B35C9B651DEBFF580051E352 /* YWPCChooseTimeModel.m in Sources */,
 				B31098C11DE4543E0033A984 /* MJRefreshConst.m in Sources */,
 				B3F07ECD1DE6D5DE005116EA /* YWPersonPointHeaderModel.m in Sources */,
 				B3F07EE41DE6E031005116EA /* YWPersonSubVipHeaderView.m in Sources */,
@@ -2676,6 +2904,7 @@
 				B3F07EC51DE6CB26005116EA /* YWPersonPointHeaderView.m in Sources */,
 				B317AC8D1DE532EC0093C511 /* YWComfiredTypeModel.m in Sources */,
 				B31098CF1DE4543E0033A984 /* UIButton+WebCache.m in Sources */,
+				B35C9B921DEC1F830051E352 /* YWPCCHooseTimePickerView.m in Sources */,
 				B31098B01DE4543E0033A984 /* MJRefreshHeader.m in Sources */,
 				B3F07E801DE6A79F005116EA /* TZImagePickerController.m in Sources */,
 				B31098D41DE4543E0033A984 /* UIImageView+WebCache.m in Sources */,
@@ -2684,6 +2913,7 @@
 				B31098A11DE4543E0033A984 /* MASLayoutConstraint.m in Sources */,
 				B317AF651DE5CFB80093C511 /* YWHomeCollectionHeaderView.m in Sources */,
 				B31098721DE4543E0033A984 /* YJSegmentedControl.m in Sources */,
+				B35C9B761DEC03590051E352 /* YWPCTDayTimeTableViewCell.m in Sources */,
 				B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */,
 				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
 				B310989E1DE4543E0033A984 /* MASCompositeConstraint.m in Sources */,
@@ -2692,18 +2922,20 @@
 				B3F07E8C1DE6A7A8005116EA /* NSDictionary+Log.m in Sources */,
 				B317AF601DE5CA120093C511 /* YWHomeCollectionViewCell.m in Sources */,
 				B3F07EE01DE6E01F005116EA /* YWPersonSubVipTableViewCell.m in Sources */,
+				B35C9B7B1DEC036C0051E352 /* YWPCTTimeNameTableViewCell.m in Sources */,
 				B31098B71DE4543E0033A984 /* MJRefreshGifHeader.m in Sources */,
 				B387EAAB1DE45E110045323C /* JWBasicViewController.m in Sources */,
 				B32737901DE824F9001C57DF /* YWPNDetailView.m in Sources */,
 				B31098A41DE4543E0033A984 /* NSArray+MASAdditions.m in Sources */,
 				B310986F1DE4543E0033A984 /* UIScrollView+MJRefreshGif.m in Sources */,
 				B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */,
-				B3F07ED21DE6DBB6005116EA /* YWPersonSuggestViewController.m in Sources */,
 				B31098741DE4543E0033A984 /* YYClassInfo.m in Sources */,
 				B310989F1DE4543E0033A984 /* MASConstraint.m in Sources */,
 				B31098711DE4543E0033A984 /* UIWindow+SettingWithVC.m in Sources */,
 				B31098BC1DE4543E0033A984 /* MJChiBaoZiHeader.m in Sources */,
 				B31098E81DE4543E0033A984 /* YWPersonTableViewCell.m in Sources */,
+				B32347021DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m in Sources */,
+				B35C9B8E1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m in Sources */,
 				B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */,
 				B31098AB1DE4543E0033A984 /* MBProgressHUD.m in Sources */,
 				B3F07ED91DE6DFE4005116EA /* YWPersonSubVipModel.m in Sources */,
@@ -2721,9 +2953,11 @@
 				B31098B91DE4543E0033A984 /* MJRefreshStateHeader.m in Sources */,
 				B3F07E821DE6A79F005116EA /* TZPhotoPreviewCell.m in Sources */,
 				B31098CA1DE4543E0033A984 /* SDWebImageDecoder.m in Sources */,
+				B35C9B6C1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m in Sources */,
 				B31098EC1DE4543E0033A984 /* YWPersonViewController.m in Sources */,
 				B3F07EB41DE6B9E8005116EA /* YWBankModel.m in Sources */,
 				B31098D21DE4543E0033A984 /* UIImage+WebP.m in Sources */,
+				B32347141DEBD73C002C72E1 /* YWPCEOnTableViewCell.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
 				B31098E01DE4543E0033A984 /* YWHomeViewController.m in Sources */,
 				B317ACA41DE565CE0093C511 /* YWAddressSortTableView.m in Sources */,
@@ -2733,6 +2967,7 @@
 				B31098C71DE4543E0033A984 /* NSData+ImageContentType.m in Sources */,
 				B32737591DE7D145001C57DF /* YWStormAnnotationModel.m in Sources */,
 				B31098B41DE4543E0033A984 /* MJRefreshBackGifFooter.m in Sources */,
+				B35C9B801DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m in Sources */,
 				B31098A21DE4543E0033A984 /* MASViewAttribute.m in Sources */,
 				B31098BD1DE4543E0033A984 /* MJDIYAutoFooter.m in Sources */,
 				B31098891DE4543E0033A984 /* YWLocation.m in Sources */,
@@ -2755,6 +2990,7 @@
 				B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
+				B35C9B681DEBFFE20051E352 /* YWPCChooseSubTimeModel.m in Sources */,
 				B387EAB11DE45E110045323C /* VIPNavigationController.m in Sources */,
 				B31098C41DE4543E0033A984 /* UIScrollView+MJRefresh.m in Sources */,
 				B317ACA71DE565F90093C511 /* YWAddressSubSortCollectionView.m in Sources */,

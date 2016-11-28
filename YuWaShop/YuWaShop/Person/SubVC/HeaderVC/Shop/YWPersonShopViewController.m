@@ -13,6 +13,7 @@
 #import "YWPCBasicSetViewController.h"
 #import "YWPCMapViewController.h"
 #import "YWPCTimeViewController.h"
+#import "YWPCEnvironmentViewController.h"
 #import "YWPCEveryPayViewController.h"
 #import "YWPCCutSetViewController.h"
 #import "YWPCCounselorViewController.h"
@@ -40,9 +41,9 @@
 
 - (void)dataSet{
     NSArray * typeNameArr = @[@"",@"    基础信息",@"    附加信息",@"    寻求帮助"];
-    self.nameArr = @[@[],@[@"基本信息",@"门店地图",@"营业时间"],@[@"人均消费",@"折扣设置"],@[@"营销顾问"]];
-    self.subViewClassArr = @[@[],@[[YWPCBasicSetViewController class],[YWPCMapViewController class],[YWPCTimeViewController class]],@[[YWPCEveryPayViewController class],[YWPCCutSetViewController class]],@[[YWPCCounselorViewController class]]];
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@""],@[@""]]];
+    self.nameArr = @[@[],@[@"基本信息",@"门店地图",@"营业时间"],@[@"人均消费",@"折扣设置",@"环境设置"],@[@"营销顾问"]];
+    self.subViewClassArr = @[@[],@[[YWPCBasicSetViewController class],[YWPCMapViewController class],[YWPCTimeViewController class]],@[[YWPCEveryPayViewController class],[YWPCCutSetViewController class],[YWPCEnvironmentViewController class]],@[[YWPCCounselorViewController class]]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@"",@""],@[@""]]];
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 1; i < typeNameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(15.f, 0.f, kScreen_Width - 30.f, 38.f)];
@@ -109,7 +110,7 @@
     
     //233333333333要删
     self.model = [[YWPersonShopModel alloc]init];//第一次可放UserSession内
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"妮可咖啡馆",@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",@"7折"],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
+    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"妮可咖啡馆",@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",@"7折",@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
     self.headerModel = [[YWPersonShopHeaderModel alloc]init];
     //233333333333要删
     

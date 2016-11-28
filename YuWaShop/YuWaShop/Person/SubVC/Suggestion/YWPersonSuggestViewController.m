@@ -7,6 +7,7 @@
 //
 
 #import "YWPersonSuggestViewController.h"
+#import "YWPersonSuggRePlayViewController.h"
 
 @interface YWPersonSuggestViewController ()<UITextViewDelegate>
 
@@ -19,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"意见反馈";
+    [self makeNavi];
     [self makeUI];
 }
 
@@ -33,6 +34,11 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
+- (void)makeNavi{
+    self.title = @"意见反馈";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"查看意见回复" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(toSeeplay) forControlEvents:UIControlEventTouchUpInside withWidth:98.f];
+}
+
 - (void)makeUI{
     self.textView.placeholderColor = [UIColor colorWithHexString:@"#C4C4C9"];
     self.textView.placeholder = @"请输入您的建议(最少5字)";
@@ -43,6 +49,11 @@
 
 - (IBAction)submitBtnAction:(id)sender {
     [self requestSendSuggestion];
+}
+
+- (void)toSeeplay{
+    YWPersonSuggRePlayViewController * vc = [[YWPersonSuggRePlayViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITextViewDelegate

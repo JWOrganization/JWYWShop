@@ -10,4 +10,11 @@
 
 @interface YWPNPopularityView : UIView
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+@property (weak, nonatomic) IBOutlet UILabel *compareLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pageViewCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pageViewCompareLabel;
+
+
 @end

@@ -12,16 +12,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同业排行" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-C6-VYk">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="62" id="efF-ab-5EF"/>
+                        <constraint firstAttribute="height" constant="74" id="efF-ab-5EF"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您在同城同行1805家商户中排行26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-dU-wzY">
-                    <rect key="frame" x="0.0" y="227" width="375" height="34"/>
+                    <rect key="frame" x="0.0" y="239" width="375" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="n9A-y0-V38"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="领先99%的同行,请再接再厉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa6-ld-tLt">
-                    <rect key="frame" x="0.0" y="261" width="375" height="28"/>
+                    <rect key="frame" x="0.0" y="273" width="375" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="t1V-fc-G9e"/>
                     </constraints>
@@ -38,24 +38,24 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="5wI-2U-zoE">
-                    <rect key="frame" x="108" y="62" width="160" height="160"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vipxox" translatesAutoresizingMaskIntoConstraints="NO" id="5wI-2U-zoE">
+                    <rect key="frame" x="108" y="74" width="160" height="160"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="13n-jA-860"/>
                         <constraint firstAttribute="width" constant="160" id="4TK-aW-UOr"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⬆︎2名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-oz-lXC">
-                    <rect key="frame" x="108" y="182" width="160" height="24"/>
+                    <rect key="frame" x="108" y="194" width="160" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="T0H-MK-yWM"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMf-EW-Ftn">
-                    <rect key="frame" x="108" y="128" width="160" height="54"/>
+                    <rect key="frame" x="108" y="140" width="160" height="54"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="VwP-mr-5q5"/>
                     </constraints>
@@ -85,9 +85,16 @@
                 <constraint firstItem="Wa6-ld-tLt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ysI-tj-XcU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="rankCheerLabel" destination="Wa6-ld-tLt" id="PTz-ZT-qrK"/>
+                <outlet property="rankCompareLabel" destination="ZuI-oz-lXC" id="mYc-X3-Sl6"/>
+                <outlet property="rankDetailLabel" destination="TqL-dU-wzY" id="AJJ-kG-BFu"/>
+                <outlet property="rankLabel" destination="eMf-EW-Ftn" id="bCY-ss-MSJ"/>
+                <outlet property="showImageView" destination="5wI-2U-zoE" id="xIG-M2-meD"/>
+            </connections>
         </view>
     </objects>
     <resources>
-        <image name="placeholder" width="250" height="250"/>
+        <image name="vipxox" width="512" height="512"/>
     </resources>
 </document>

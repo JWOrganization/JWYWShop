@@ -10,4 +10,11 @@
 
 @interface YWPNRankView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankCompareLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankDetailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankCheerLabel;
+
+
 @end

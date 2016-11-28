@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSArray * nameArr;
+@property (nonatomic,strong)NSArray * imgNameArr;
+
+@property (nonatomic,strong)UIBarButtonItem * rightBarBtn;
 
 @end
 
@@ -28,14 +31,30 @@
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [self isNewNotification:YES];//YES红点出现,NO消失
 }
 - (void)makeNavi{
     self.title = @"首页";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:@"MessageNoChat" withSelectImage:@"MessageNoChat" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+    self.rightBarBtn = [UIBarButtonItem barItemWithImageName:@"MessageNoChat" withSelectImage:@"MessageNoChat" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+    CGFloat redWidth = 8.f;
+    UILabel * redLabel = [[UILabel alloc]initWithFrame:CGRectMake(20.f, 5.f, redWidth, redWidth)];
+    redLabel.backgroundColor = [UIColor redColor];
+    redLabel.layer.cornerRadius = redWidth/2;
+    redLabel.layer.masksToBounds = YES;
+    redLabel.tag = 1001;
+    redLabel.hidden = YES;
+    [self.rightBarBtn.customView addSubview:redLabel];
+    self.navigationItem.rightBarButtonItem = self.rightBarBtn;
+}
+
+- (void)isNewNotification:(BOOL)isNew{
+    UILabel * redLabel = (UILabel *)[self.rightBarBtn.customView viewWithTag:1001];
+    redLabel.hidden = !isNew;
 }
 
 - (void)dataSet{
     self.nameArr = @[@"财务管理",@"商品管理",@"现金券",@"口碑品牌",@"门店管理",@"预定管理",@"节日管理",@"相册管理",@"同业排行"];
+    self.imgNameArr = @[@"",@"",@"",@"",@"",@"",@"",@"",@""];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"YWHomeCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView"];
 }
@@ -47,7 +66,13 @@
 #pragma mark - UICollectionViewDataSource
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     YWHomeCollectionHeaderView * header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView" forIndexPath:indexPath];
-    
+    WEAKSELF;
+    header.payBlock = ^(){
+        //买单
+    };
+    header.recordBlock = ^(){
+        //闪惠
+    };
     return header;
 }
 
@@ -57,6 +82,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeCollectionViewCell * homeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YWHomeCollectionViewCell" forIndexPath:indexPath];
     homeCell.nameLabel.text = self.nameArr[indexPath.row];
+    
     return homeCell;
 }
 

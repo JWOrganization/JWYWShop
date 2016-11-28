@@ -30,9 +30,11 @@
 }
 
 - (IBAction)payBtnAction:(id)sender {
+    self.payBlock();
 }
 
 - (IBAction)recordBtnAction:(id)sender {
+    self.recordBlock();
 }
 
 @end

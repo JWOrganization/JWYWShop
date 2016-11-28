@@ -168,7 +168,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="koK-pP-4yL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vipxox" translatesAutoresizingMaskIntoConstraints="NO" id="koK-pP-4yL">
                     <rect key="frame" x="120" y="74" width="136" height="136"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="136" id="ZKo-Xv-Tt4"/>
@@ -205,6 +205,7 @@
             <connections>
                 <outlet property="countLabel" destination="jom-0O-8s1" id="0w6-dU-Jyv"/>
                 <outlet property="likeCountLabel" destination="trg-K5-K5D" id="1Wh-oK-c0d"/>
+                <outlet property="showImageView" destination="koK-pP-4yL" id="OcG-5Q-BPx"/>
                 <outlet property="showLabel" destination="2r0-KE-Ot8" id="l7U-QD-FIo"/>
             </connections>
         </view>
@@ -212,6 +213,6 @@
     <resources>
         <image name="PublicPraise-star-disable" width="12" height="12"/>
         <image name="PublicUnPraise-star-disable" width="12" height="12"/>
-        <image name="placeholder" width="250" height="250"/>
+        <image name="vipxox" width="512" height="512"/>
     </resources>
 </document>

@@ -36,8 +36,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-MG-Gex">
                     <rect key="frame" x="213" y="72" width="55" height="55"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="买单收银" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-cu-kWG">
-                    <rect key="frame" x="0.0" y="127" width="160" height="48"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买单收银" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-cu-kWG">
+                    <rect key="frame" x="0.0" y="127" width="160" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Cmo-Vc-1NE"/>
                         <constraint firstAttribute="height" constant="40" id="VDn-8k-qgp"/>
@@ -51,8 +51,8 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="闪惠记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h88-tk-XkP">
-                    <rect key="frame" x="160" y="127" width="160" height="48"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闪惠记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h88-tk-XkP">
+                    <rect key="frame" x="160" y="127" width="160" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="bdw-mk-uGP"/>
                         <constraint firstAttribute="height" constant="40" id="scp-7M-h88"/>

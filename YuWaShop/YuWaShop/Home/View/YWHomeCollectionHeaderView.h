@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface YWHomeCollectionHeaderView : UICollectionReusableView
+@property (nonatomic,copy)void (^payBlock)();
+@property (nonatomic,copy)void (^recordBlock)();
+
 @property (nonatomic,strong)NSMutableArray * BGImgArr;
 @property (weak, nonatomic) IBOutlet UIImageView *BGImageView;
 

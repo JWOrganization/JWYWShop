@@ -13,6 +13,8 @@
 #import "YWPNPublicPraiseView.h"
 #import "YWPNPopularityView.h"
 
+#import "NSString+JWAppendOtherStr.h"
+
 @interface YWPersonNewsDetailViewController ()
 
 @property (nonatomic,strong)YWPersonNewsDetailModel * model;
@@ -39,7 +41,7 @@
     if (self.publicPraiseView.height<300.f) {
         self.publicPraiseView.frame = CGRectMake(0.f, 165.f, kScreen_Width, 320.f);
         self.rankView.frame = CGRectMake(0.f, 485.f, kScreen_Width, 320.f);
-        self.popularityView.frame = CGRectMake(0.f, 805.f, kScreen_Width, 320.f);
+        self.popularityView.frame = CGRectMake(0.f, 805.f, kScreen_Width, 285.f);
     }
 }
 
@@ -71,7 +73,7 @@
     [self.popularityView setNeedsLayout];
     [self.scrollView addSubview:self.popularityView];
     
-    self.scrollView.contentSize = CGSizeMake(kScreen_Width, 1125.f);
+    self.scrollView.contentSize = CGSizeMake(kScreen_Width, 1090.f);
 }
 
 - (void)UIDataRefresh{//23333333333日报内容self.model设置
@@ -93,6 +95,20 @@
         imageView.image = [UIImage imageNamed:@"PublicUnPraise-star-0"];
     }
     
+    
+    self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:@"26" withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
+    self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:@"⬆︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@名",@"2"] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
+    self.rankView.rankDetailLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"您在同城同行%@家商户中排行 ",@"23333"] withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:@"2333" withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
+    NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];//99%要换2333333
+    [rankCheerStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"的同行,请再接再厉" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#343434"],NSFontAttributeName:[UIFont systemFontOfSize:15.f]}]];
+    self.rankView.rankCheerLabel.attributedText = rankCheerStr;
+    
+    
+    self.popularityView.compareLabel.attributedText = [NSString stringWithFirstStr:@"⬇︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"50"] withFont:[UIFont systemFontOfSize:28.f] withColor:[UIColor whiteColor]];
+    self.popularityView.pageViewCountLabel.attributedText = [NSString stringWithFirstStr:@"门店浏览人数  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",@"6"] withFont:[UIFont systemFontOfSize:26.f] withColor:[UIColor blackColor]];
+    NSMutableAttributedString * pageViewCompareStr =[NSString stringWithFirstStr:@"店铺浏览量相比昨天  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",@"⬇︎"] withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor colorWithHexString:@"#4ed761"]];
+    [pageViewCompareStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@%%",@"50"] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#4ed761"],NSFontAttributeName:[UIFont systemFontOfSize:28.f]}]];
+    self.popularityView.pageViewCompareLabel.attributedText = pageViewCompareStr;
 }
 
 #pragma mark - Http

@@ -10,12 +10,10 @@
 
 @implementation YWPNRankView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.showImageView.layer.cornerRadius = 80.f;
+    self.showImageView.layer.masksToBounds = YES;
 }
-*/
 
 @end

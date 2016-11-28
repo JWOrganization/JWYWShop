@@ -10,6 +10,7 @@
 
 @interface YWPNPublicPraiseView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;

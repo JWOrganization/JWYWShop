@@ -10,13 +10,16 @@
 #import "VIPTabBarController.h"
 #import "UIWindow+SettingWithVC.h"
 
+#import "EMSDK.h"
+#import "EaseUI.h"
+
 #import "JPUSHService.h"
 #import <AdSupport/AdSupport.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-@interface AppDelegate ()<JPUSHRegisterDelegate>
+@interface AppDelegate ()<EMContactManagerDelegate,EMChatManagerDelegate,EMGroupManagerDelegate,EMClientDelegate,JPUSHRegisterDelegate>
 
 @end
 
@@ -24,6 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self registerEMClientWithApplication:application withOptions:(NSDictionary *)launchOptions];//registerEMClient
     [self registerJPushWithOptions:launchOptions];
     [UserSession instance];
     
@@ -52,6 +56,40 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - EMClient
+- (void)registerEMClientWithApplication:(UIApplication *)application withOptions:(NSDictionary *)launchOptions{
+    NSString *apnsCertName = nil;
+#if DEBUG
+    apnsCertName = @"YvWaNotificationDevelop";
+#else
+    apnsCertName = @"YvWaNotificationProducation";
+#endif
+    NSString * appkey= @"ceoshanghaidurui#duruikejiyuwa";
+    
+    EMOptions *options = [EMOptions optionsWithAppkey:appkey];
+    options.apnsCertName = apnsCertName;
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];//好友代理
+    [[EMClient sharedClient] addDelegate:self delegateQueue:nil];//登录代理
+    
+    [[EaseSDKHelper shareHelper] hyphenateApplication:application didFinishLaunchingWithOptions:launchOptions appkey:appkey apnsCertName:apnsCertName otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+}
+
+- (void)friendRequestDidReceiveFromUser:(NSString *)aUsername message:(NSString *)aMessage{
+    NSMutableArray * friendsRequest = [NSMutableArray arrayWithArray:[KUSERDEFAULT valueForKey:FRIENDSREQUEST]];
+    NSDictionary * requestDic = @{@"hxID":aUsername,@"message":aMessage,@"status":@"0"};//0未读1未处理2同意3拒绝
+    if (!friendsRequest)friendsRequest = [NSMutableArray arrayWithCapacity:0];
+    [friendsRequest insertObject:requestDic atIndex:0];
+    [KUSERDEFAULT setObject:friendsRequest forKey:FRIENDSREQUEST];
+}
+
+- (void)didLoginFromOtherDevice{//当前登录账号在其它设备登录时会接收到该回调
+    [JPUSHService setAlias:@"" callbackSelector:nil object:nil];
+}
+- (void)didRemovedFromServer{//当前登录账号已经被从服务器端删除时会收到该回调
+    [JPUSHService setAlias:@"" callbackSelector:nil object:nil];
 }
 
 #pragma mark - JPush

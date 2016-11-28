@@ -116,6 +116,18 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"注册成功" withSuccess:YES];
+        EMError *error = [[EMClient sharedClient] registerWithUsername:account password:account];
+        if (error==nil) {
+            MyLog(@"环信注册成功");
+            BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
+            if (!isAutoLogin) {
+                EMError *errorLog = [[EMClient sharedClient] loginWithUsername:account password:password];
+                if (errorLog==nil){
+                    [[EMClient sharedClient].options setIsAutoLogin:YES];
+                    MyLog(@"环信登录成功");
+                }
+            }
+        }
         if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];

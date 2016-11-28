@@ -13,6 +13,8 @@
 #import "YWPersonViewController.h"
 #import "YWHomeViewController.h"
 #import "YWDataAnalyseViewController.h"
+#import "RBHomeViewController.h"
+#import "YWMessageViewController.h"
 
 @implementation VIPTabBarController
 
@@ -28,8 +30,14 @@
     YWHomeViewController * vc = [[YWHomeViewController alloc]init];
     [self addChildVC:vc withTitle:@"首页" withImage:@"TabBar_Home" withSelectedImage:@"TabBar_Home"];
     
+    RBHomeViewController * rbVC=[[RBHomeViewController alloc]init];
+    [self addChildVC:rbVC withTitle:@"发现" withImage:@"home_1_nomal" withSelectedImage:@"home_1_selected"];
+    
     YWDataAnalyseViewController * vcDiscover = [[YWDataAnalyseViewController alloc]init];
     [self addChildVC:vcDiscover withTitle:@"数据分析" withImage:@"TabBar_Data" withSelectedImage:@"TabBar_Data"];
+    
+    YWMessageViewController*vcMessage=[[YWMessageViewController alloc]init];
+    [self addChildVC:vcMessage withTitle:@"消息" withImage:@"home_3_nomal" withSelectedImage:@"home_3_selected"];
     
     YWPersonViewController * vcPerson = [[YWPersonViewController alloc]init];
     [self addChildVC:vcPerson withTitle:@"个人中心" withImage:@"TabBar_Person" withSelectedImage:@"TabBar_Person"];

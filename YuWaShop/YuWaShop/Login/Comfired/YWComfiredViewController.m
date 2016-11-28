@@ -9,7 +9,7 @@
 #import "YWComfiredViewController.h"
 #import "YWLoginViewController.h"
 #import "YWComfiredAgreeViewController.h"
-#import "JWTagCollectionView.h"
+#import "JWTagsCollectionView.h"
 #import "YWStormSortTableView.h"
 #import "YWStormSubSortCollectionView.h"
 #import "YWAddressSortTableView.h"
@@ -25,7 +25,7 @@
 @property (nonatomic,assign)BOOL isAgree;
 @property (nonatomic,strong)UIImage * cameraImage;
 @property (weak, nonatomic) IBOutlet UIView *chooseTagBGView;
-@property (nonatomic,strong)JWTagCollectionView * tagCollectionView;
+@property (nonatomic,strong)JWTagsCollectionView * tagCollectionView;
 @property (nonatomic,strong)NSMutableArray * tagIDArr;
 
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;
@@ -190,7 +190,7 @@
     UICollectionViewFlowLayout * flowLayout =[[UICollectionViewFlowLayout alloc]init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     if (!self.tagCollectionView) {
-        self.tagCollectionView = [[JWTagCollectionView alloc]initWithFrame:CGRectMake(0.f, 5.f, kScreen_Width-90.f, 30.f) collectionViewLayout:flowLayout];
+        self.tagCollectionView = [[JWTagsCollectionView alloc]initWithFrame:CGRectMake(0.f, 5.f, kScreen_Width-90.f, 30.f) collectionViewLayout:flowLayout];
         [self.chooseTagBGView addSubview:self.tagCollectionView];
     }
     self.tagCollectionView.tagArr = tagArr;

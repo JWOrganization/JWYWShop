@@ -42,6 +42,11 @@ static UserSession * user=nil;
     user.token=@"";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[EMClient sharedClient].options setIsAutoLogin:NO];
+        
+        EMError *error = [[EMClient sharedClient] logout:YES];
+        if (!error)MyLog(@"环信退出成功");
+        
         [UserSession getDataFromUserDefault];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -81,6 +86,13 @@ static UserSession * user=nil;
         MyLog(@"Data is %@",responsObj);
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            EMError *errorLog = [[EMClient sharedClient] loginWithUsername:user.account password:user.hxPassword];
+            if (!errorLog){
+                [[EMClient sharedClient].options setIsAutoLogin:NO];
+                [[EMClient sharedClient].chatManager getAllConversations];
+                MyLog(@"环信登录成功");
+            }
+            
             [JPUSHService setAlias:user.account callbackSelector:nil object:nil];
         });
     } failur:^(id responsObj, NSError *error) {
@@ -97,6 +109,44 @@ static UserSession * user=nil;
     user.uid = [dataDic[@"id"] integerValue];
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
+    user.nickName = dataDic[@"nickname"];
+    user.birthDay = dataDic[@"birthday"];
+    user.hxPassword = dataDic[@"mobile"];
+    user.local = dataDic[@"address"];
+    
+    NSArray * SexArr = @[@"男",@"女",@"未知"];
+    NSNumber* sexNum=dataDic[@"sex"];
+    NSInteger sexInt=[sexNum integerValue];
+    if (sexInt>0&&sexInt<=3) {
+        user.sex = [NSString stringWithFormat:@"%@",SexArr[sexInt-1]];
+        
+    }
+    
+    user.money = dataDic[@"money"];
+    user.inviteID = dataDic[@"invite_uid"];
+    user.logo = dataDic[@"header_img"];
+    user.personality = dataDic[@"mark"];
+    user.aldumCount = dataDic[@"aldumcount"];
+    user.collected = dataDic[@"collected"];
+    user.praised = dataDic[@"praised"];
+    user.attentionCount = dataDic[@"attentioncount"];
+    user.fans = dataDic[@"fans"];
+    user.isVIP = [dataDic[@"user_type"] integerValue];
+    user.last_login_time = dataDic[@"last_login_time"];
+    user.status = dataDic[@"status"];
+    user.reg_time = dataDic[@"reg_time"];
+    user.sale_id = dataDic[@"sale_id"];
+    user.email = dataDic[@"email"];
+    user.baobaoLV = [dataDic[@"level"] integerValue];
+    user.baobaoEXP = [dataDic[@"energy"] integerValue];
+    NSInteger needExp = [dataDic[@"update_level_energy"] integerValue];
+    user.baobaoNeedEXP = needExp?needExp>0?needExp:13500:13500;
+    
+    user.note_nums=dataDic[@"note_nums"];
+    user.album_nums=dataDic[@"album_nums"];
+    user.comment_nums=dataDic[@"comment_nums"];
+    user.today_money=dataDic[@"today_money"];
+    
     
     user.isLogin = YES;
     //233333333暂定

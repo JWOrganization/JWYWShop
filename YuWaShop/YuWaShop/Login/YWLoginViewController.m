@@ -192,6 +192,12 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"登录成功" withSuccess:YES];
+        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:account password:[UserSession instance].hxPassword];
+        if (!errorLog){
+            [[EMClient sharedClient].options setIsAutoLogin:NO];
+            MyLog(@"环信登录成功");
+        }
+        
         if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
@@ -216,6 +222,11 @@
         [self showHUDWithStr:@"登录成功" withSuccess:YES];
         
         [UserSession saveUserLoginWithAccount:account withPassword:[UserSession instance].password];
+        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:account password:[UserSession instance].hxPassword];
+        if (!errorLog){
+            [[EMClient sharedClient].options setIsAutoLogin:NO];
+            MyLog(@"环信登录成功");
+        }
         if ([UserSession instance].comfired_Status == 2){//2333333审核完成
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];

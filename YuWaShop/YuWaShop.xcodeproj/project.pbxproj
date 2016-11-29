@@ -31,13 +31,9 @@
 		B31098771DE4543E0033A984 /* HUDFailureShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31097611DE4543E0033A984 /* HUDFailureShowView.xib */; };
 		B31098781DE4543E0033A984 /* HUDLoadingShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097631DE4543E0033A984 /* HUDLoadingShowView.m */; };
 		B31098791DE4543E0033A984 /* HUDLoadingShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31097641DE4543E0033A984 /* HUDLoadingShowView.xib */; };
-		B310987A1DE4543E0033A984 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097671DE4543E0033A984 /* HttpManager.m */; };
-		B310987B1DE4543E0033A984 /* HttpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097691DE4543E0033A984 /* HttpObject.m */; };
 		B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B310976B1DE4543E0033A984 /* InfoPlist.strings */; };
 		B310987D1DE4543E0033A984 /* NewLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = B310976D1DE4543E0033A984 /* NewLanguage.strings */; };
 		B310987E1DE4543E0033A984 /* InternationalLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097701DE4543E0033A984 /* InternationalLanguage.m */; };
-		B31098881DE4543E0033A984 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097861DE4543E0033A984 /* UserSession.m */; };
-		B31098891DE4543E0033A984 /* YWLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097891DE4543E0033A984 /* YWLocation.m */; };
 		B310988A1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m in Sources */ = {isa = PBXBuildFile; fileRef = B310978C1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m */; };
 		B310988B1DE4543E0033A984 /* JWThirdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B310978E1DE4543E0033A984 /* JWThirdTools.m */; };
 		B310988C1DE4543E0033A984 /* JWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097901DE4543E0033A984 /* JWTools.m */; };
@@ -584,6 +580,10 @@
 		B3AA59C51DEC6150006B39CC /* YWPSRePlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */; };
 		B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */; };
 		B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */; };
+		B3C12A501DED217F000EF099 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A461DED217F000EF099 /* UserSession.m */; };
+		B3C12A511DED217F000EF099 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A481DED217F000EF099 /* HttpManager.m */; };
+		B3C12A521DED217F000EF099 /* YWLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A4D1DED217F000EF099 /* YWLocation.m */; };
+		B3C12A531DED217F000EF099 /* HttpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A4E1DED217F000EF099 /* HttpObject.m */; };
 		B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07E471DE681B6005116EA /* YWPersonPointViewController.m */; };
 		B3F07E521DE681B6005116EA /* YWPersonPointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07E481DE681B6005116EA /* YWPersonPointViewController.xib */; };
 		B3F07E531DE681B6005116EA /* YWPersonShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07E4B1DE681B6005116EA /* YWPersonShopViewController.m */; };
@@ -708,22 +708,12 @@
 		B31097621DE4543E0033A984 /* HUDLoadingShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLoadingShowView.h; sourceTree = "<group>"; };
 		B31097631DE4543E0033A984 /* HUDLoadingShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLoadingShowView.m; sourceTree = "<group>"; };
 		B31097641DE4543E0033A984 /* HUDLoadingShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUDLoadingShowView.xib; sourceTree = "<group>"; };
-		B31097651DE4543E0033A984 /* GlobalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalInfo.h; sourceTree = "<group>"; };
-		B31097661DE4543E0033A984 /* HttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
-		B31097671DE4543E0033A984 /* HttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
-		B31097681DE4543E0033A984 /* HttpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpObject.h; sourceTree = "<group>"; };
-		B31097691DE4543E0033A984 /* HttpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpObject.m; sourceTree = "<group>"; };
 		B310976C1DE4543E0033A984 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B310976E1DE4543E0033A984 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewLanguage.strings; sourceTree = "<group>"; };
 		B310976F1DE4543E0033A984 /* InternationalLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternationalLanguage.h; sourceTree = "<group>"; };
 		B31097701DE4543E0033A984 /* InternationalLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternationalLanguage.m; sourceTree = "<group>"; };
 		B31097711DE4543E0033A984 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B31097721DE4543E0033A984 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/NewLanguage.strings"; sourceTree = "<group>"; };
-		B31097851DE4543E0033A984 /* UserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
-		B31097861DE4543E0033A984 /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
-		B31097871DE4543E0033A984 /* VipxoxPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipxoxPrefixHeader.pch; sourceTree = "<group>"; };
-		B31097881DE4543E0033A984 /* YWLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWLocation.h; sourceTree = "<group>"; };
-		B31097891DE4543E0033A984 /* YWLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWLocation.m; sourceTree = "<group>"; };
 		B310978B1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JWLocalNotifiction.h"; sourceTree = "<group>"; };
 		B310978C1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JWLocalNotifiction.m"; sourceTree = "<group>"; };
 		B310978D1DE4543E0033A984 /* JWThirdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWThirdTools.h; sourceTree = "<group>"; };
@@ -1680,6 +1670,16 @@
 		B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPSRePlayTableViewCell.xib; sourceTree = "<group>"; };
 		B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSRePlayModel.h; sourceTree = "<group>"; };
 		B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSRePlayModel.m; sourceTree = "<group>"; };
+		B3C12A461DED217F000EF099 /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
+		B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipxoxPrefixHeader.pch; sourceTree = "<group>"; };
+		B3C12A481DED217F000EF099 /* HttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
+		B3C12A491DED217F000EF099 /* GlobalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalInfo.h; sourceTree = "<group>"; };
+		B3C12A4A1DED217F000EF099 /* HttpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpObject.h; sourceTree = "<group>"; };
+		B3C12A4B1DED217F000EF099 /* HttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
+		B3C12A4C1DED217F000EF099 /* UserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
+		B3C12A4D1DED217F000EF099 /* YWLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWLocation.m; sourceTree = "<group>"; };
+		B3C12A4E1DED217F000EF099 /* HttpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpObject.m; sourceTree = "<group>"; };
+		B3C12A4F1DED217F000EF099 /* YWLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWLocation.h; sourceTree = "<group>"; };
 		B3F07E461DE681B6005116EA /* YWPersonPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonPointViewController.h; sourceTree = "<group>"; };
 		B3F07E471DE681B6005116EA /* YWPersonPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonPointViewController.m; sourceTree = "<group>"; };
 		B3F07E481DE681B6005116EA /* YWPersonPointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonPointViewController.xib; sourceTree = "<group>"; };
@@ -1865,6 +1865,16 @@
 				B31098EE1DE454560033A984 /* AppDelegate.h */,
 				B31098EF1DE454560033A984 /* AppDelegate.m */,
 				B31097041DE44EA00033A984 /* main.m */,
+				B3C12A461DED217F000EF099 /* UserSession.m */,
+				B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */,
+				B3C12A481DED217F000EF099 /* HttpManager.m */,
+				B3C12A491DED217F000EF099 /* GlobalInfo.h */,
+				B3C12A4A1DED217F000EF099 /* HttpObject.h */,
+				B3C12A4B1DED217F000EF099 /* HttpManager.h */,
+				B3C12A4C1DED217F000EF099 /* UserSession.h */,
+				B3C12A4D1DED217F000EF099 /* YWLocation.m */,
+				B3C12A4E1DED217F000EF099 /* HttpObject.m */,
+				B3C12A4F1DED217F000EF099 /* YWLocation.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1914,17 +1924,7 @@
 			children = (
 				B310973C1DE4543E0033A984 /* category */,
 				B310975D1DE4543E0033A984 /* custom LoadingShow */,
-				B31097651DE4543E0033A984 /* GlobalInfo.h */,
-				B31097661DE4543E0033A984 /* HttpManager.h */,
-				B31097671DE4543E0033A984 /* HttpManager.m */,
-				B31097681DE4543E0033A984 /* HttpObject.h */,
-				B31097691DE4543E0033A984 /* HttpObject.m */,
 				B310976A1DE4543E0033A984 /* InternationalLanguage */,
-				B31097851DE4543E0033A984 /* UserSession.h */,
-				B31097861DE4543E0033A984 /* UserSession.m */,
-				B31097871DE4543E0033A984 /* VipxoxPrefixHeader.pch */,
-				B31097881DE4543E0033A984 /* YWLocation.h */,
-				B31097891DE4543E0033A984 /* YWLocation.m */,
 			);
 			path = "Custom Category";
 			sourceTree = "<group>";
@@ -5246,6 +5246,7 @@
 				B35C9CFC1DEC3ECD0051E352 /* EaseUsersListViewController.m in Sources */,
 				B310988C1DE4543E0033A984 /* JWTools.m in Sources */,
 				B35C9EDE1DEC3FE80051E352 /* RBHomeUserModel.m in Sources */,
+				B3C12A531DED217F000EF099 /* HttpObject.m in Sources */,
 				B35C9EAA1DEC3FE80051E352 /* YWMessageAddressBookTableView.m in Sources */,
 				B35C9CD21DEC3ECD0051E352 /* UIButton+EMWebCache.m in Sources */,
 				B31098BE1DE4543E0033A984 /* MJDIYBackFooter.m in Sources */,
@@ -5289,7 +5290,6 @@
 				B387EAC11DE4732D0045323C /* YWComfiringViewController.m in Sources */,
 				B31098961DE4543E0033A984 /* AFURLRequestSerialization.m in Sources */,
 				B35C9CF41DEC3ECD0051E352 /* EaseEmojiEmoticons.m in Sources */,
-				B310987A1DE4543E0033A984 /* HttpManager.m in Sources */,
 				B31098B61DE4543E0033A984 /* MJRefreshBackStateFooter.m in Sources */,
 				B35C9D071DEC3ECD0051E352 /* EaseBubbleView+Text.m in Sources */,
 				B35C9CCC1DEC3ECD0051E352 /* EMSDWebImageDownloader.m in Sources */,
@@ -5352,6 +5352,7 @@
 				B35C9D0C1DEC3ECD0051E352 /* EaseChatToolbarItem.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				B35C9EC11DEC3FE80051E352 /* UIImage+Utility.m in Sources */,
+				B3C12A501DED217F000EF099 /* UserSession.m in Sources */,
 				B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */,
 				B35C9D111DEC3ECD0051E352 /* EaseChatBarMoreView.m in Sources */,
 				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
@@ -5397,6 +5398,7 @@
 				B317AC8D1DE532EC0093C511 /* YWComfiredTypeModel.m in Sources */,
 				B31098CF1DE4543E0033A984 /* UIButton+WebCache.m in Sources */,
 				B35C9F281DEC3FE80051E352 /* NSString+JWAppendOtherStr.m in Sources */,
+				B3C12A511DED217F000EF099 /* HttpManager.m in Sources */,
 				B35C9F251DEC3FE80051E352 /* YWSharedEditorViewController.m in Sources */,
 				B35C9CBA1DEC3ECD0051E352 /* amrFileCodec.mm in Sources */,
 				B35C9B921DEC1F830051E352 /* YWPCCHooseTimePickerView.m in Sources */,
@@ -5529,7 +5531,6 @@
 				B35C9CE21DEC3ECD0051E352 /* PSTGridLayoutInfo.m in Sources */,
 				B31098BD1DE4543E0033A984 /* MJDIYAutoFooter.m in Sources */,
 				B35C9F2A1DEC3FE80051E352 /* JWSharedView.m in Sources */,
-				B31098891DE4543E0033A984 /* YWLocation.m in Sources */,
 				B35C9EF51DEC3FE80051E352 /* RBNodeUserLevelModel.m in Sources */,
 				B31098901DE4543E0033A984 /* AFHTTPRequestOperation.m in Sources */,
 				B31098AE1DE4543E0033A984 /* MJRefreshComponent.m in Sources */,
@@ -5538,7 +5539,6 @@
 				B317ACAE1DE56CE10093C511 /* YWAddressBaseComfiredTypeModel.m in Sources */,
 				B31097051DE44EA00033A984 /* main.m in Sources */,
 				B317AC921DE53A6A0093C511 /* YWComfiredAgreeViewController.m in Sources */,
-				B310987B1DE4543E0033A984 /* HttpObject.m in Sources */,
 				B35C9EA61DEC3FE80051E352 /* YWMessageTableViewCell.m in Sources */,
 				B35C9F481DEC3FE80051E352 /* XHCenterView.m in Sources */,
 				B31098C51DE4543E0033A984 /* UIView+MJExtension.m in Sources */,
@@ -5561,6 +5561,7 @@
 				B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */,
 				B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
+				B3C12A521DED217F000EF099 /* YWLocation.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
 				B35C9B681DEBFFE20051E352 /* YWPCChooseSubTimeModel.m in Sources */,
 				B387EAB11DE45E110045323C /* VIPNavigationController.m in Sources */,
@@ -5568,7 +5569,6 @@
 				B317ACA71DE565F90093C511 /* YWAddressSubSortCollectionView.m in Sources */,
 				B3F07EBC1DE6CA77005116EA /* YWPersonPointTableViewCell.m in Sources */,
 				B35C9CF51DEC3ECD0051E352 /* EaseEmotionEscape.m in Sources */,
-				B31098881DE4543E0033A984 /* UserSession.m in Sources */,
 				B35C9ED71DEC3FE80051E352 /* RBHomeCollectionViewCell.m in Sources */,
 				B35C9ED51DEC3FE80051E352 /* RBPublicTagEditorViewController.m in Sources */,
 				B31098761DE4543E0033A984 /* HUDFailureShowView.m in Sources */,
@@ -5758,7 +5758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tianwei You (VCMW85NFTV)";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/Fundation/Custom Category/VipxoxPrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
 				INFOPLIST_FILE = YuWaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -5781,7 +5781,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tianwei You (VCMW85NFTV)";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/Fundation/Custom Category/VipxoxPrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
 				INFOPLIST_FILE = YuWaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

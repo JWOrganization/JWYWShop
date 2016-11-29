@@ -1,15 +1,14 @@
 //
-//  YWHomeQuickPayListTableViewCell.m
+//  YWHomeCommoditiesTableViewCell.m
 //  YuWaShop
 //
 //  Created by Tian Wei You on 16/11/29.
 //  Copyright © 2016年 Shanghai DuRui Information Technology Company. All rights reserved.
 //
 
-#import "YWHomeQuickPayListTableViewCell.h"
-#import "JWTools.h"
+#import "YWHomeCommoditiesTableViewCell.h"
 
-@implementation YWHomeQuickPayListTableViewCell
+@implementation YWHomeCommoditiesTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,16 +19,16 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setModel:(YWHomeQuickPayListModel *)model{
+- (void)setModel:(YWHomeCommoditiesModel *)model{
     if (!model)return;
     _model = model;
     [self dataSet];
 }
 - (void)dataSet{//233333333
-    self.nameLabel.text = @"客户";
-    self.timeLabel.text = @"2016-10-23 15:00";
-    self.priceLabel.text = [NSString stringWithFormat:@"+%@元",@"38.77"];
-    self.cutLabel.text = [NSString stringWithFormat:@"原价:%@ 实付:%@ 折扣:%@折",@"300",@"250",@"8.8"];
+//    self.showImageView
+    self.nameLabel.text = @"绝味鸭脖";
+    self.conLabel.text = @"绝味鸭脖是绝味食品股份有限公司的核心品牌";
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%@",@"35.5"];
 }
 
 @end

@@ -27,17 +27,15 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"YWPersonWeekCountTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWPersonWeekCountTableViewCell"];
 }
 
-#pragma mark - UITableViewDelegate
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWPersonWeekCountTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"YWPersonWeekCountTableViewCell"];
-    [cell.showBtn setTitle:indexPath.row==0?@"团":@"惠" forState:UIControlStateNormal];
-    cell.nameLabel.text = indexPath.row==0?@"团购":@"闪惠";
+    [cell.showBtn setTitle:@"付" forState:UIControlStateNormal];
+    cell.nameLabel.text = @"闪付";
     return cell;
 }
 

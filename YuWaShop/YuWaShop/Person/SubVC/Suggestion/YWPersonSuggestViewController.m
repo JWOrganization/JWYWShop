@@ -36,12 +36,17 @@
 
 - (void)makeNavi{
     self.title = @"意见反馈";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"查看意见回复" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(toSeeplay) forControlEvents:UIControlEventTouchUpInside withWidth:98.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"查看意见反馈" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(toSeeplay) forControlEvents:UIControlEventTouchUpInside withWidth:98.f];
 }
 
 - (void)makeUI{
-    self.textView.placeholderColor = [UIColor colorWithHexString:@"#C4C4C9"];
-    self.textView.placeholder = @"请输入您的建议(最少5字)";
+    self.textView.placeholderColor = [UIColor colorWithHexString:@"#b3b3b3"];
+    self.textView.placeholder = @"请输入您宝贵的建议(最少5字)";
+    
+    self.textView.layer.borderColor = [UIColor colorWithHexString:@"#b3b3b3"].CGColor;
+    self.textView.layer.borderWidth = 1.5f;
+    self.textView.layer.cornerRadius = 5.f;
+    self.textView.layer.masksToBounds = YES;
     
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;

@@ -34,6 +34,7 @@
                             <constraint firstAttribute="width" constant="49" id="Vxq-Qo-1cG"/>
                             <constraint firstAttribute="height" constant="31" id="usI-9N-r6b"/>
                         </constraints>
+                        <color key="onTintColor" red="0.1450980392" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="chooseSwichAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="F5X-5n-vcn"/>
                         </connections>

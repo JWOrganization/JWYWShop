@@ -71,7 +71,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kl-wf-QHp">
-                    <rect key="frame" x="0.0" y="151" width="375" height="22"/>
+                    <rect key="frame" x="0.0" y="153" width="375" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="rle-pf-BdN"/>
                     </constraints>
@@ -80,7 +80,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is fun in your yuwabaobao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBL-iQ-Jt6">
-                    <rect key="frame" x="0.0" y="173" width="375" height="11"/>
+                    <rect key="frame" x="0.0" y="178" width="375" height="11"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="11" id="wqQ-3N-XL6"/>
                     </constraints>
@@ -131,10 +131,10 @@
                 <constraint firstItem="YxO-H8-Dj5" firstAttribute="top" secondItem="h32-Qo-yTD" secondAttribute="bottom" id="nYb-35-8e7"/>
                 <constraint firstItem="xKw-0N-00x" firstAttribute="centerX" secondItem="WPp-ya-59m" secondAttribute="centerX" id="nlf-z0-jeI"/>
                 <constraint firstItem="xKw-0N-00x" firstAttribute="height" secondItem="8QB-d5-Jij" secondAttribute="height" id="qUO-Zr-SDr"/>
-                <constraint firstItem="fBL-iQ-Jt6" firstAttribute="top" secondItem="7Kl-wf-QHp" secondAttribute="bottom" id="qVU-9E-hTs"/>
+                <constraint firstItem="fBL-iQ-Jt6" firstAttribute="top" secondItem="7Kl-wf-QHp" secondAttribute="bottom" constant="3" id="qVU-9E-hTs"/>
                 <constraint firstAttribute="bottom" secondItem="eZi-XF-QeW" secondAttribute="bottom" id="qlX-8u-Xkg"/>
                 <constraint firstItem="Clf-S3-jJe" firstAttribute="trailing" secondItem="WPp-ya-59m" secondAttribute="trailing" id="seN-NQ-1ej"/>
-                <constraint firstItem="7Kl-wf-QHp" firstAttribute="top" secondItem="gmv-jf-FuR" secondAttribute="bottom" constant="3" id="t4T-nZ-cUj"/>
+                <constraint firstItem="7Kl-wf-QHp" firstAttribute="top" secondItem="gmv-jf-FuR" secondAttribute="bottom" constant="5" id="t4T-nZ-cUj"/>
                 <constraint firstItem="xKw-0N-00x" firstAttribute="width" secondItem="8QB-d5-Jij" secondAttribute="width" id="tf5-Lr-kTF"/>
                 <constraint firstItem="WPp-ya-59m" firstAttribute="width" secondItem="eZi-XF-QeW" secondAttribute="width" id="wtf-gP-Aq3"/>
                 <constraint firstAttribute="trailing" secondItem="7Kl-wf-QHp" secondAttribute="trailing" id="xXl-ri-mjn"/>
@@ -154,7 +154,7 @@
         </view>
     </objects>
     <resources>
-        <image name="PersonHeaderBG0" width="375" height="300"/>
+        <image name="PersonHeaderBG0" width="80" height="80"/>
         <image name="Person_14" width="27" height="30"/>
         <image name="Person_7" width="25" height="29"/>
         <image name="Person_8" width="31" height="28"/>

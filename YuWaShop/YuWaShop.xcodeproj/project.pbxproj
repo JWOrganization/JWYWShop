@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B302EABC1DED640D0000B0A0 /* YWHomeCommoditiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EABA1DED640D0000B0A0 /* YWHomeCommoditiesVC.m */; };
+		B302EABD1DED640D0000B0A0 /* YWHomeCommoditiesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EABB1DED640D0000B0A0 /* YWHomeCommoditiesVC.xib */; };
+		B302EAC41DED657E0000B0A0 /* YWHomeAddCommoditiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAC21DED657E0000B0A0 /* YWHomeAddCommoditiesVC.m */; };
+		B302EAC51DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAC31DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib */; };
+		B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAC71DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m */; };
+		B302EACA1DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAC81DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib */; };
+		B302EACD1DED65B80000B0A0 /* YWHomeCommoditiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EACC1DED65B80000B0A0 /* YWHomeCommoditiesModel.m */; };
 		B31097051DE44EA00033A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097041DE44EA00033A984 /* main.m */; };
 		B310970E1DE44EA00033A984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B310970C1DE44EA00033A984 /* Main.storyboard */; };
 		B31097101DE44EA00033A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B310970F1DE44EA00033A984 /* Assets.xcassets */; };
@@ -668,6 +675,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B302EAB91DED640D0000B0A0 /* YWHomeCommoditiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCommoditiesVC.h; sourceTree = "<group>"; };
+		B302EABA1DED640D0000B0A0 /* YWHomeCommoditiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCommoditiesVC.m; sourceTree = "<group>"; };
+		B302EABB1DED640D0000B0A0 /* YWHomeCommoditiesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCommoditiesVC.xib; sourceTree = "<group>"; };
+		B302EAC11DED657E0000B0A0 /* YWHomeAddCommoditiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAddCommoditiesVC.h; sourceTree = "<group>"; };
+		B302EAC21DED657E0000B0A0 /* YWHomeAddCommoditiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAddCommoditiesVC.m; sourceTree = "<group>"; };
+		B302EAC31DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAddCommoditiesVC.xib; sourceTree = "<group>"; };
+		B302EAC61DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCommoditiesTableViewCell.h; sourceTree = "<group>"; };
+		B302EAC71DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCommoditiesTableViewCell.m; sourceTree = "<group>"; };
+		B302EAC81DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCommoditiesTableViewCell.xib; sourceTree = "<group>"; };
+		B302EACB1DED65B80000B0A0 /* YWHomeCommoditiesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCommoditiesModel.h; sourceTree = "<group>"; };
+		B302EACC1DED65B80000B0A0 /* YWHomeCommoditiesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCommoditiesModel.m; sourceTree = "<group>"; };
 		B31097001DE44EA00033A984 /* YuWaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuWaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31097041DE44EA00033A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B310970D1DE44EA00033A984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1834,6 +1852,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B302EAB81DED63E20000B0A0 /* Commodities */ = {
+			isa = PBXGroup;
+			children = (
+				B302EAC01DED65480000B0A0 /* AddCommodities */,
+				B302EABF1DED653B0000B0A0 /* Model */,
+				B302EABE1DED652C0000B0A0 /* Cell */,
+				B302EAB91DED640D0000B0A0 /* YWHomeCommoditiesVC.h */,
+				B302EABA1DED640D0000B0A0 /* YWHomeCommoditiesVC.m */,
+				B302EABB1DED640D0000B0A0 /* YWHomeCommoditiesVC.xib */,
+			);
+			path = Commodities;
+			sourceTree = "<group>";
+		};
+		B302EABE1DED652C0000B0A0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B302EAC61DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.h */,
+				B302EAC71DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m */,
+				B302EAC81DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B302EABF1DED653B0000B0A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B302EACB1DED65B80000B0A0 /* YWHomeCommoditiesModel.h */,
+				B302EACC1DED65B80000B0A0 /* YWHomeCommoditiesModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B302EAC01DED65480000B0A0 /* AddCommodities */ = {
+			isa = PBXGroup;
+			children = (
+				B302EAC11DED657E0000B0A0 /* YWHomeAddCommoditiesVC.h */,
+				B302EAC21DED657E0000B0A0 /* YWHomeAddCommoditiesVC.m */,
+				B302EAC31DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib */,
+			);
+			path = AddCommodities;
+			sourceTree = "<group>";
+		};
 		B31096F71DE44EA00033A984 = {
 			isa = PBXGroup;
 			children = (
@@ -4582,6 +4642,7 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B302EAB81DED63E20000B0A0 /* Commodities */,
 				B3C12A621DED3432000EF099 /* QuickPayList */,
 			);
 			path = SubVC;
@@ -5186,6 +5247,7 @@
 				B317AFBD1DE5D3C90093C511 /* PersonHeaderBG31@2x.png in Resources */,
 				B35C9EE61DEC3FE80051E352 /* RBNodeDetailCommendFooter.xib in Resources */,
 				B317AFB51DE5D3C90093C511 /* PersonHeaderBG24@2x.png in Resources */,
+				B302EABD1DED640D0000B0A0 /* YWHomeCommoditiesVC.xib in Resources */,
 				B317ACB41DE582FB0093C511 /* CFLineChartView.xib in Resources */,
 				B35C9B811DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.xib in Resources */,
 				B31098C01DE4543E0033A984 /* MJRefresh.bundle in Resources */,
@@ -5216,6 +5278,7 @@
 				B310987D1DE4543E0033A984 /* NewLanguage.strings in Resources */,
 				B3F07E671DE6938D005116EA /* YWPersonNoticaficationViewController.xib in Resources */,
 				B317AFB41DE5D3C90093C511 /* PersonHeaderBG23@2x.png in Resources */,
+				B302EAC51DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib in Resources */,
 				B35C9EB01DEC3FE80051E352 /* 发送笔记.json in Resources */,
 				B317AFD41DE5D3C90093C511 /* PersonHeaderBG52@2x.png in Resources */,
 				B35C9F171DEC3FE80051E352 /* RBNewAlbumCollectionViewCell.xib in Resources */,
@@ -5257,6 +5320,7 @@
 				B317AFC21DE5D3C90093C511 /* PersonHeaderBG36@2x.png in Resources */,
 				B317AF221DE5B4C90093C511 /* YWPersonHelpViewController.xib in Resources */,
 				B35C9EBA1DEC3FE80051E352 /* EmojisList.plist in Resources */,
+				B302EACA1DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib in Resources */,
 				B35C9EAC1DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json in Resources */,
 				B35C9EEE1DEC3FE80051E352 /* RBNodeDetailRecommendHeader.xib in Resources */,
 				B35C9EB51DEC3FE80051E352 /* 总的笔记个人.json in Resources */,
@@ -5357,6 +5421,7 @@
 				B35C9EDC1DEC3FE80051E352 /* RBHomeModel.m in Sources */,
 				B35C9CE51DEC3ECD0051E352 /* PSTGridLayoutSection.m in Sources */,
 				B31098951DE4543E0033A984 /* AFURLConnectionOperation.m in Sources */,
+				B302EABC1DED640D0000B0A0 /* YWHomeCommoditiesVC.m in Sources */,
 				B35C9CF11DEC3ECD0051E352 /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				B310986A1DE4543E0033A984 /* UIColor+Art.m in Sources */,
 				B3F07EF01DE70BD1005116EA /* YWPersonShopHeaderView.m in Sources */,
@@ -5431,6 +5496,7 @@
 				B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */,
 				B35C9D111DEC3ECD0051E352 /* EaseChatBarMoreView.m in Sources */,
 				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
+				B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B35C9EC61DEC3FE80051E352 /* RBPublicToolView.m in Sources */,
 				B35C9F3B1DEC3FE80051E352 /* TZAssetModel.m in Sources */,
@@ -5503,6 +5569,7 @@
 				B35C9CCF1DEC3ECD0051E352 /* EMSDWebImagePrefetcher.m in Sources */,
 				B3C12A571DED25DD000EF099 /* UserSession.m in Sources */,
 				B35C9CE01DEC3ECD0051E352 /* PSTCollectionViewLayout.m in Sources */,
+				B302EAC41DED657E0000B0A0 /* YWHomeAddCommoditiesVC.m in Sources */,
 				B35C9CC61DEC3ECD0051E352 /* MWTapDetectingView.m in Sources */,
 				B35C9CEC1DEC3ECD0051E352 /* NSDateFormatter+Category.m in Sources */,
 				B317AF601DE5CA120093C511 /* YWHomeCollectionViewCell.m in Sources */,
@@ -5546,6 +5613,7 @@
 				B31098CD1DE4543E0033A984 /* SDWebImageManager.m in Sources */,
 				B310988A1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m in Sources */,
 				B3F07F071DE72DC6005116EA /* YWPCCounselorViewController.m in Sources */,
+				B302EACD1DED65B80000B0A0 /* YWHomeCommoditiesModel.m in Sources */,
 				B35C9F0E1DEC3FE80051E352 /* MDHotelRightBtn.m in Sources */,
 				B35C9EEB1DEC3FE80051E352 /* RBNodeDetailImageHeader.m in Sources */,
 				B387EAAF1DE45E110045323C /* JWLocalNotificationShowView.m in Sources */,

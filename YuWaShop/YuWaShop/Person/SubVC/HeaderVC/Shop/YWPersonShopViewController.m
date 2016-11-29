@@ -47,7 +47,7 @@
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 1; i < typeNameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(15.f, 0.f, kScreen_Width - 30.f, 38.f)];
-        label.font = [UIFont systemFontOfSize:14.f];
+        label.font = [UIFont boldSystemFontOfSize:13.f];
         label.textColor = [UIColor colorWithHexString:@"#bebec0"];
         label.text = typeNameArr[i];
         label.backgroundColor = [UIColor colorWithHexString:@"#EFEFF4"];

@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOb-ng-Yuk">
-                        <rect key="frame" x="15" y="42" width="305" height="1"/>
+                        <rect key="frame" x="0.0" y="42" width="342" height="1"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="7yx-i1-YcA"/>
@@ -41,10 +41,10 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="g6m-Qk-fwl" secondAttribute="trailing" constant="-8" id="Ffy-BE-G6t"/>
                     <constraint firstItem="Fvj-fk-CXr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="JIr-VK-bSa"/>
-                    <constraint firstItem="EOb-ng-Yuk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="LXR-Zr-qSI"/>
+                    <constraint firstItem="EOb-ng-Yuk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="LXR-Zr-qSI"/>
                     <constraint firstItem="Fvj-fk-CXr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OqZ-8s-PUJ"/>
                     <constraint firstItem="EOb-ng-Yuk" firstAttribute="top" secondItem="Fvj-fk-CXr" secondAttribute="bottom" id="XWb-2W-yVX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="EOb-ng-Yuk" secondAttribute="trailing" constant="-8" id="XkP-hc-GMY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EOb-ng-Yuk" secondAttribute="trailing" constant="-30" id="XkP-hc-GMY"/>
                     <constraint firstItem="g6m-Qk-fwl" firstAttribute="leading" secondItem="Fvj-fk-CXr" secondAttribute="trailing" id="nvS-H4-lux"/>
                     <constraint firstAttribute="bottomMargin" secondItem="EOb-ng-Yuk" secondAttribute="bottom" constant="-8" id="vPQ-hL-gwH"/>
                     <constraint firstItem="g6m-Qk-fwl" firstAttribute="bottom" secondItem="Fvj-fk-CXr" secondAttribute="bottom" id="xLk-ik-wxH"/>

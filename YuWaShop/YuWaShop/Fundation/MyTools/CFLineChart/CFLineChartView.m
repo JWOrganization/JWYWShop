@@ -159,7 +159,7 @@ static CGFloat allW;
                 CGPoint point = CGPointMake(kMargin + everyX * (i + 1) , kMargin + (1 - [self.yValues[i] floatValue] / maxY ) * allH);
                 CAShapeLayer *layer = [[CAShapeLayer alloc] init];
                 layer.frame = CGRectMake(point.x - 2.5, point.y - 2.5, 5, 5);
-                layer.backgroundColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
+                layer.backgroundColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
                 [self.bgView.layer addSublayer:layer];
             }
             break;
@@ -178,8 +178,8 @@ static CGFloat allW;
                 
                 CAShapeLayer *layer = [CAShapeLayer layer];
                 layer.path = path.CGPath;
-                layer.strokeColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
-                layer.fillColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
+                layer.strokeColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
+                layer.fillColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
                 [self.bgView.layer addSublayer:layer];
             }
 
@@ -200,8 +200,8 @@ static CGFloat allW;
         
         CAShapeLayer *layer = [[CAShapeLayer alloc] init];
         layer.path = path.CGPath;
-        layer.strokeColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
-        layer.fillColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
+        layer.strokeColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
+        layer.fillColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
         
         [self.bgView.layer addSublayer:layer];
 
@@ -238,7 +238,7 @@ static CGFloat allW;
     
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
     layer.path = path.CGPath;
-    layer.strokeColor = [UIColor colorWithHexString:@"#ff763a"].CGColor;
+    layer.strokeColor = [UIColor colorWithHexString:@"#1296f5"].CGColor;
     layer.fillColor = [UIColor clearColor].CGColor;
     
     [self.bgView.layer addSublayer:layer];

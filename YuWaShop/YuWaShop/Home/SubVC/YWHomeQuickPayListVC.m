@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"闪惠记录";
+    self.title = @"闪付记录";
     [self dataSet];
     [self setupRefresh];
     [self requestDataWithPages:0];
@@ -37,7 +37,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80.f;
+    return 66.f;
 }
 
 #pragma mark - UITableViewDataSource

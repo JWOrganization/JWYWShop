@@ -65,6 +65,32 @@ typedef enum YuWaType{
     YuWaType_Other_Node,//别人的笔记
     YuWaType_Other_Aldum,//别人的专辑
     
+    YuWaType_VIP_BaseInfo,//基本信息
+    YuWaType_VIP_Sale_Detail,//交易详情信息，支持分页
+    YuWaType_VIP_Sale_MyDirectUser,//我的绑定用户
+    YuWaType_VIP_Sale_MyInviteShop,//我签约的商铺
+    YuWaType_VIP_Sale_MyMoneyHistory,//收支明细
+    YuWaType_VIP_Sale_DetailShow,//每一条交易详情信息
+    YuWaType_VIP_Sale_ScoreToMoney,//积分提现
+    
+    YuWaType_ShopAdmin_Home,//门店管理首页
+    YuWaType_Shoper_ShopAdmin_SetBaseInfo,//设置店铺基本信息
+    YuWaType_Shoper_ShopAdmin_SetShopMap,//门店地图
+    YuWaType_Shoper_ShopAdmin_GetSalePhone,//获取营销顾问电话
+    YuWaType_Shoper_ShopAdmin_SetEnvironment,//设置门店环境信息
+    YuWaType_Shoper_ShopAdmin_SetDiscount,//设置门店折扣
+    YuWaType_Shoper_ShopAdmin_SetPerCapita,//设置人均消费
+    YuWaType_Shoper_ShopAdmin_MyDividendMoney,//我的分红
+    YuWaType_Shoper_ShopAdmin_AddRecord,//买单收银，生成二维码
+    YuWaType_Shoper_ShopAdmin_RecordLists,//闪惠记录
+    YuWaType_Shoper_ShopAdmin_GoodsLists,//商品管理之商品列表,支持分页
+    YuWaType_Shoper_ShopAdmin_AddGoods,//商品管理之添加商品
+    YuWaType_Shoper_ShopAdmin_DelGoods,//商品管理之删除商品
+    YuWaType_Shoper_ShopAdmin_AddCoupon,//优惠券之生成优惠券
+    YuWaType_Shoper_ShopAdmin_CouponList,//优惠券之列表
+    YuWaType_Shoper_ShopAdmin_CommentList,//口碑品牌之列表
+    YuWaType_Shoper_ShopAdmin_CommentReply,//口碑品牌之回复
+    
     YuWaType_
     
 }kYuWaType;

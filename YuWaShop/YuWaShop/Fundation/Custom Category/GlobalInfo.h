@@ -82,7 +82,41 @@
 #pragma mark - Other
 #define HTTP_Other_Node @"/api.php/Note/getOtherNewNote/"//别人的笔记
 #define HTTP_Other_Aldum @"/api.php/Note/getOtherAlbum/"//别人的专辑
-#define HTTP_OTHERCOMMIT   @"/api.php/Shop/getUserComment"   //别人的评论
+#define HTTP_OTHERCOMMIT   @"/api.php/Shop/getUserComment/"   //别人的评论
+
+
+
+#pragma mark - Shop VIP
+#define HTTP_VIP_BaseInfo   @"/api.php/Sale/getBaseInfo/"   //基本信息
+#define HTTP_VIP_Sale_Detail   @"/api.php/Sale/detail/"   //交易详情信息，支持分页
+#define HTTP_VIP_Sale_MyDirectUser   @"/api.php/Sale/myDirectUser/"   //我的绑定用户
+#define HTTP_VIP_Sale_MyInviteShop   @"/api.php/Sale/myInviteShop/"   //我签约的商铺
+#define HTTP_VIP_Sale_MyMoneyHistory   @"/api.php/Sale/myMoneyHistory/"   //收支明细
+#define HTTP_VIP_Sale_DetailShow   @"/api.php/Sale/detailShow/"   //每一条交易详情信息
+#define HTTP_VIP_Sale_ScoreToMoney   @"/api.php/Sale/scoreToMoney/"   //积分提现
+
+#pragma mark - Shoper
+#define HTTP_VIP_ShopAdmin_Home   @"/api.php/ShopAdmin/home/"   //门店管理首页
+#define HTTP_Shoper_ShopAdmin_SetBaseInfo   @"/api.php/ShopAdmin/setBaseInfo/"   //设置店铺基本信息
+#define HTTP_Shoper_ShopAdmin_SetShopMap   @"/api.php/ShopAdmin/setShopMap/"   //门店地图
+//#define HTTP_Shoper_   @""   //设置营业时间
+#define HTTP_Shoper_ShopAdmin_GetSalePhone   @"/api.php/ShopAdmin/getSalePhone/"   //获取营销顾问电话
+#define HTTP_Shoper_ShopAdmin_SetEnvironment   @"/api.php/ShopAdmin/setEnvironment/"   //设置门店环境信息
+#define HTTP_Shoper_ShopAdmin_SetDiscount   @"/api.php/ShopAdmin/setDiscount/"   //设置门店折扣
+#define HTTP_Shoper_ShopAdmin_SetPerCapita   @"/api.php/ShopAdmin/setPerCapita/"   //设置人均消费
+#define HTTP_Shoper_ShopAdmin_MyDividendMoney   @"/api.php/ShopAdmin/myDividendMoney/"   //我的分红
+//#define HTTP_Shoper_   @""   //经营日报
+#define HTTP_Shoper_ShopAdmin_AddRecord   @"/api.php/ShopAdmin/addRecord/"   //买单收银，生成二维码
+#define HTTP_Shoper_ShopAdmin_RecordLists   @"/api.php/ShopAdmin/recordLists/"   //闪惠记录
+//#define HTTP_Shoper_   @""   //财务管理
+#define HTTP_Shoper_ShopAdmin_GoodsLists   @"/api.php/ShopAdmin/goodsLists/"   //商品管理之商品列表,支持分页
+#define HTTP_Shoper_ShopAdmin_AddGoods   @"/api.php/ShopAdmin/addGoods/"   //商品管理之添加商品
+#define HTTP_Shoper_ShopAdmin_DelGoods   @"/api.php/ShopAdmin/delGoods/"   //商品管理之删除商品
+#define HTTP_Shoper_ShopAdmin_AddCoupon   @"/api.php/ShopAdmin/addCoupon/"   //优惠券之生成优惠券
+#define HTTP_Shoper_ShopAdmin_CouponList   @"/api.php/ShopAdmin/couponList/"   //优惠券之列表
+#define HTTP_Shoper_ShopAdmin_CommentList   @"/api.php/ShopAdmin/commentList/"   //口碑品牌之列表
+#define HTTP_Shoper_ShopAdmin_CommentReply   @"/api.php/ShopAdmin/commentReply/"   //口碑品牌之回复
+
 
 
 

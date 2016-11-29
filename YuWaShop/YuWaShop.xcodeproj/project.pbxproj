@@ -581,6 +581,9 @@
 		B387EAC21DE4732D0045323C /* YWComfiringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EAC01DE4732D0045323C /* YWComfiringViewController.xib */; };
 		B387EAC61DE478160045323C /* YWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EAC41DE478160045323C /* YWLoginViewController.m */; };
 		B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EAC51DE478160045323C /* YWLoginViewController.xib */; };
+		B3AA59C51DEC6150006B39CC /* YWPSRePlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */; };
+		B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */; };
+		B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */; };
 		B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07E471DE681B6005116EA /* YWPersonPointViewController.m */; };
 		B3F07E521DE681B6005116EA /* YWPersonPointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07E481DE681B6005116EA /* YWPersonPointViewController.xib */; };
 		B3F07E531DE681B6005116EA /* YWPersonShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07E4B1DE681B6005116EA /* YWPersonShopViewController.m */; };
@@ -1672,6 +1675,11 @@
 		B387EAC31DE478160045323C /* YWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWLoginViewController.h; sourceTree = "<group>"; };
 		B387EAC41DE478160045323C /* YWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWLoginViewController.m; sourceTree = "<group>"; };
 		B387EAC51DE478160045323C /* YWLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWLoginViewController.xib; sourceTree = "<group>"; };
+		B3AA59C21DEC6150006B39CC /* YWPSRePlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSRePlayTableViewCell.h; sourceTree = "<group>"; };
+		B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSRePlayTableViewCell.m; sourceTree = "<group>"; };
+		B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPSRePlayTableViewCell.xib; sourceTree = "<group>"; };
+		B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSRePlayModel.h; sourceTree = "<group>"; };
+		B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSRePlayModel.m; sourceTree = "<group>"; };
 		B3F07E461DE681B6005116EA /* YWPersonPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonPointViewController.h; sourceTree = "<group>"; };
 		B3F07E471DE681B6005116EA /* YWPersonPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonPointViewController.m; sourceTree = "<group>"; };
 		B3F07E481DE681B6005116EA /* YWPersonPointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonPointViewController.xib; sourceTree = "<group>"; };
@@ -2722,6 +2730,8 @@
 		B32346FE1DEBD1D6002C72E1 /* RePlay */ = {
 			isa = PBXGroup;
 			children = (
+				B3AA59C71DEC73EE006B39CC /* Model */,
+				B3AA59C11DEC611C006B39CC /* Cell */,
 				B32346FF1DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.h */,
 				B32347001DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.m */,
 				B32347011DEBD1FE002C72E1 /* YWPersonSuggRePlayViewController.xib */,
@@ -4515,6 +4525,25 @@
 			path = Comfired;
 			sourceTree = "<group>";
 		};
+		B3AA59C11DEC611C006B39CC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3AA59C21DEC6150006B39CC /* YWPSRePlayTableViewCell.h */,
+				B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */,
+				B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3AA59C71DEC73EE006B39CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */,
+				B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3F07E451DE681B6005116EA /* Point */ = {
 			isa = PBXGroup;
 			children = (
@@ -5006,6 +5035,7 @@
 				B35C9EF81DEC3FE80051E352 /* RBNodeShowViewController.xib in Resources */,
 				B35C9EB11DEC3FE80051E352 /* 国家 选择币种.json in Resources */,
 				B35C9F031DEC3FE80051E352 /* RBNodeAddToAldumTableViewCell.xib in Resources */,
+				B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */,
 				B35C9EA91DEC3FE80051E352 /* YWMessageAddressBookHeader.xib in Resources */,
 				B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */,
 				B35C9EB61DEC3FE80051E352 /* 点进个人中心的一个专辑.json in Resources */,
@@ -5444,6 +5474,7 @@
 				B35C9CD01DEC3ECD0051E352 /* MKAnnotationView+EMWebCache.m in Sources */,
 				B35C9D0B1DEC3ECD0051E352 /* EaseChatToolbar.m in Sources */,
 				B35C9D081DEC3ECD0051E352 /* EaseBubbleView+Video.m in Sources */,
+				B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */,
 				B35C9CE31DEC3ECD0051E352 /* PSTGridLayoutItem.m in Sources */,
 				B3F07E551DE681B6005116EA /* YWPersonSubVipViewController.m in Sources */,
 				B317ACA01DE557A80093C511 /* JWTagsCollectionView.m in Sources */,
@@ -5477,6 +5508,7 @@
 				B35C9F451DEC3FE80051E352 /* XHFocusLayer.m in Sources */,
 				B35C9ECB1DEC3FE80051E352 /* RBPublicEditorScrollView.m in Sources */,
 				B317AF2B1DE5B53C0093C511 /* YWPersonSuperVipViewController.m in Sources */,
+				B3AA59C51DEC6150006B39CC /* YWPSRePlayTableViewCell.m in Sources */,
 				B35C9ED01DEC3FE80051E352 /* RBPublicLocationViewController.m in Sources */,
 				B35C9F401DEC3FE80051E352 /* TZPhotoPreviewCell.m in Sources */,
 				B31098D51DE4543E0033A984 /* UIView+WebCacheOperation.m in Sources */,

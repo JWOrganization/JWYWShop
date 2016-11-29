@@ -87,6 +87,59 @@
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_FRIENDS_INFO];
             break;
             
+#pragma mark - Shop VIP
+        case YuWaType_VIP_Sale_Detail://交易详情信息，支持分页
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_Detail];
+            break;
+        case YuWaType_VIP_Sale_MyMoneyHistory://收支明细
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyMoneyHistory];
+            break;
+        case YuWaType_VIP_Sale_DetailShow://每一条交易详情信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_DetailShow];
+            break;
+        case YuWaType_VIP_Sale_ScoreToMoney://积分提现
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_ScoreToMoney];
+            break;
+            
+#pragma mark - Shoper
+        case YuWaType_ShopAdmin_Home://门店管理首页
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_ShopAdmin_Home];
+            break;
+        case YuWaType_Shoper_ShopAdmin_SetBaseInfo://设置店铺基本信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetBaseInfo];
+            break;
+        case YuWaType_Shoper_ShopAdmin_SetEnvironment://设置门店环境信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetEnvironment];
+            break;
+        case YuWaType_Shoper_ShopAdmin_SetDiscount://设置门店折扣
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetDiscount];
+            break;
+        case YuWaType_Shoper_ShopAdmin_SetPerCapita://设置人均消费
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetPerCapita];
+            break;
+        case YuWaType_Shoper_ShopAdmin_MyDividendMoney://我的分红
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_MyDividendMoney];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddRecord://买单收银，生成二维码
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddRecord];
+            break;
+        case YuWaType_Shoper_ShopAdmin_RecordLists://闪惠记录
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_RecordLists];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddGoods://商品管理之添加商品
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddGoods];
+            break;
+        case YuWaType_Shoper_ShopAdmin_DelGoods://商品管理之删除商品
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_DelGoods];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddCoupon://优惠券之生成优惠券
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddCoupon];
+            break;
+        case YuWaType_Shoper_ShopAdmin_CommentReply://口碑品牌之回复
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CommentReply];
+            break;
+            
+            
            //URLStr建立
         default:
             break;
@@ -213,6 +266,34 @@
 
         case YuWaType_SHOP_GETCATEGORY://得到大分类和商圈
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_SHOP_GETCATEGORY];
+            break;
+            
+#pragma mark - Shop VIP
+        case YuWaType_VIP_BaseInfo://基本信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_BaseInfo];
+            break;
+        case YuWaType_VIP_Sale_MyDirectUser://我的绑定用户
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyDirectUser];
+            break;
+        case YuWaType_VIP_Sale_MyInviteShop://我签约的商铺
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyInviteShop];
+            break;
+            
+#pragma mark - Shoper
+        case YuWaType_Shoper_ShopAdmin_SetShopMap://门店地图
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetShopMap];
+            break;
+        case YuWaType_Shoper_ShopAdmin_GetSalePhone://获取营销顾问电话
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetSalePhone];
+            break;
+        case YuWaType_Shoper_ShopAdmin_CouponList://优惠券之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CouponList];
+            break;
+        case YuWaType_Shoper_ShopAdmin_CommentList://口碑品牌之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CommentList];
+            break;
+        case YuWaType_Shoper_ShopAdmin_GoodsLists://商品管理之商品列表,支持分页
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GoodsLists];
             break;
             
             //URLStr建立

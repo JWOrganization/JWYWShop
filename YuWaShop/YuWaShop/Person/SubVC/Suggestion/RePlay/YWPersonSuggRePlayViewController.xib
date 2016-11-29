@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YWPersonSuggRePlayViewController">
             <connections>
+                <outlet property="tableView" destination="uWh-cf-7HJ" id="eAr-Ug-4lI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWh-cf-7HJ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1r0-Us-age"/>
+                        <outlet property="delegate" destination="-1" id="ekU-eG-ibX"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uWh-cf-7HJ" secondAttribute="bottom" id="L5U-CM-cJz"/>
+                <constraint firstItem="uWh-cf-7HJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SxY-jJ-wdM"/>
+                <constraint firstItem="uWh-cf-7HJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t4U-qb-eD0"/>
+                <constraint firstAttribute="trailing" secondItem="uWh-cf-7HJ" secondAttribute="trailing" id="ybM-uO-hAb"/>
+            </constraints>
         </view>
     </objects>
 </document>

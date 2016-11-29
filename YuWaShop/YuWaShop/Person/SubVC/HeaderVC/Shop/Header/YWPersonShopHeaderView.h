@@ -16,4 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *imageCountLabBGView;
+@property (weak, nonatomic) IBOutlet UILabel *imageCountLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageCountBGWidth;
+
+
 @end

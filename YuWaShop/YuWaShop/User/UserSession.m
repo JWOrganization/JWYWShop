@@ -107,6 +107,8 @@ static UserSession * user=nil;
 + (void)saveUserInfoWithDic:(NSDictionary *)dataDic{
     user.token = dataDic[@"token"];
     user.uid = [dataDic[@"id"] integerValue];
+    [UserSession userShoperSalePhone];//商户信息
+    
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
     user.nickName = dataDic[@"nickname"];
@@ -150,15 +152,28 @@ static UserSession * user=nil;
     
     user.isLogin = YES;
     //233333333暂定
-    user.comfired_Status = 2;//实名认证
-    user.phone = @"18015885220";
-    user.serventPhone = @"12346667";
+    user.comfired_Status = 2;//实名认证,user.isVIP=3时成功
+    user.serventPhone = @"18015885220";
     //233333333暂定
     [UserSession userToComfired];
 }
 
++ (void)userShoperSalePhone{
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":user.token,@"user_id":@(user.uid)};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_GetSalePhone withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        user.phone = responsObj[@"data"][@"phone"];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
+}
+
+
 + (void)userToComfired{//233333333是否实名认证0未认证1认证中2认证完成
-    if (user.comfired_Status == 2)return;
+    if (user.isVIP ==3||user.comfired_Status == 2)return;
     VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     UIViewController * vc;
     if (user.comfired_Status == 0) {
@@ -175,7 +190,7 @@ static UserSession * user=nil;
             VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
             YWLoginViewController * vc = [[YWLoginViewController alloc]init];
             [rootTabBarVC.selectedViewController pushViewController:vc animated:NO];
-        }else if (user.comfired_Status != 2){//2333333未审核||审核中
+        }else if (user.isVIP != 3){
             [UserSession userToComfired];
         }
     });

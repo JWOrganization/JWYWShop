@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YWUserShopAdminModel.h"
 
 @interface UserSession : NSObject
 
@@ -53,10 +54,12 @@
 @property (nonatomic,assign)NSInteger baobaoEXP;
 @property (nonatomic,assign)NSInteger baobaoNeedEXP;
 
+@property (nonatomic,copy)NSString * phone;//营销顾问电话
+
 //233333333暂定
 @property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证0未认证1认证中2认证完成
-@property (nonatomic,copy)NSString * phone;
-@property (nonatomic,copy)NSString * serventPhone;//客服电话
+@property (nonatomic,copy)NSString * serventPhone;
+
 //233333333暂定
 
 
@@ -64,6 +67,7 @@
 + (void)clearUser;   //退出登录 删除数据
 
 + (void)saveUserLoginWithAccount:(NSString *)account withPassword:(NSString *)password;  //save login data
++ (void)userShoperSalePhone;
 
 + (void)saveUserInfoWithDic:(NSDictionary *)dataDic;//save user data
 + (void)autoLoginRequestWithPragram:(NSDictionary *)pragram;

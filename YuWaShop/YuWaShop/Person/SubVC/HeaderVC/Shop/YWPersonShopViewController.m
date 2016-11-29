@@ -106,7 +106,16 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h3333333333门店数据
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_ShopAdmin_Home withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
+    
     
     //233333333333要删
     self.model = [[YWPersonShopModel alloc]init];//第一次可放UserSession内

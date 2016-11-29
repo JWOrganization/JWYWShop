@@ -7,19 +7,29 @@
 //
 
 #import "YWPersonShopHeaderView.h"
+#import "JWTools.h"
 
 @implementation YWPersonShopHeaderView
+
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.imageCountLabBGView.layer.cornerRadius = 9.f;
+    self.imageCountLabBGView.layer.masksToBounds = YES;
+}
 
 - (void)setModel:(YWPersonShopHeaderModel *)model{
     if (!model)return;
     _model = model;
     [self dataSet];
+    [self layoutSet];
 }
 
 - (void)dataSet{//233333333
 //    self.showImageView.image
 //    self.nameLabel.text =
 //    self.signatureLabel.text =
+    self.imageCountLabel.text = @"126";
+    
     CGFloat point = 4.3f;//评分Temp
     NSInteger countTime = point/1;
     if (point >= 0.5f && point < 1.f) {
@@ -36,8 +46,11 @@
             }
         }
     }
-    
-    
+}
+
+- (void)layoutSet{
+    self.imageCountBGWidth.constant = [JWTools labelWidthWithLabel:self.imageCountLabel];
+    [self setNeedsLayout];
 }
 
 @end

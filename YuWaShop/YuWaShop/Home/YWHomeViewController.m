@@ -7,14 +7,17 @@
 //
 
 #import "YWHomeViewController.h"
+#import "YWPersonShopViewController.h"
 #import "YWHomeCollectionViewCell.h"
 #import "YWHomeCollectionHeaderView.h"
+#import "YWHomeQuickPayListVC.h"
 
 @interface YWHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSArray * nameArr;
 @property (nonatomic,strong)NSArray * imgNameArr;
+@property (nonatomic,strong)NSArray * subVCArr;
 
 @property (nonatomic,strong)UIBarButtonItem * rightBarBtn;
 
@@ -33,6 +36,11 @@
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self isNewNotification:YES];//YES红点出现,NO消失
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.f];
+}
+
 - (void)makeNavi{
     self.title = @"首页";
     self.rightBarBtn = [UIBarButtonItem barItemWithImageName:@"MessageNoChat" withSelectImage:@"MessageNoChat" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
@@ -54,13 +62,14 @@
 
 - (void)dataSet{
     self.nameArr = @[@"财务管理",@"商品管理",@"现金券",@"口碑品牌",@"门店管理",@"预定管理",@"节日管理",@"相册管理",@"同业排行"];
-    self.imgNameArr = @[@"",@"",@"",@"",@"",@"",@"",@"",@""];
+    self.imgNameArr = @[@"placeholder",@"placeholder",@"placeholder",@"placeholder",@"placeholder",@"placeholder",@"placeholder",@"placeholder",@"placeholder"];
+    self.subVCArr = @[[UIViewController class],[UIViewController class],[UIViewController class],[UIViewController class],[YWPersonShopViewController class],[UIViewController class],[UIViewController class],[UIViewController class],[UIViewController class]];//2333333333
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"YWHomeCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView"];
 }
 
 - (void)messageAction{
-    
+    //2333333333消息
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -68,10 +77,11 @@
     YWHomeCollectionHeaderView * header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView" forIndexPath:indexPath];
     WEAKSELF;
     header.payBlock = ^(){
-        //买单
+        //买单2333333333
     };
     header.recordBlock = ^(){
-        //闪惠
+        YWHomeQuickPayListVC * vc = [[YWHomeQuickPayListVC alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return header;
 }
@@ -82,11 +92,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeCollectionViewCell * homeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YWHomeCollectionViewCell" forIndexPath:indexPath];
     homeCell.nameLabel.text = self.nameArr[indexPath.row];
-    
+    homeCell.showImage.image = [UIImage imageNamed:self.imgNameArr[indexPath.row]];
     return homeCell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    Class viewClass = (Class)self.subVCArr[indexPath.row];
+    UIViewController * vc = [[viewClass alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(kScreen_Width/3, ACTUAL_WIDTH(110.f));
 }

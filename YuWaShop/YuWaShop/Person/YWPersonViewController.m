@@ -110,6 +110,11 @@
 }
 
 - (void)callService{
+    if (![UserSession instance].phone) {
+        [self showHUDWithStr:@"获取营销顾问电话失败,请重试" withSuccess:NO];
+        [UserSession userShoperSalePhone];
+        return;
+    }
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertController addAction:[UIAlertAction actionWithTitle:[UserSession instance].phone style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIWebView* callWebview =[[UIWebView alloc] init];

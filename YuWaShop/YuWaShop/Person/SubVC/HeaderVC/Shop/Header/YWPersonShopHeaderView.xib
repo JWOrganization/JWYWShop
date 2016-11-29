@@ -52,6 +52,37 @@
                         <constraint firstAttribute="height" constant="18" id="rov-qk-m3d"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byh-WF-Ps4">
+                    <rect key="frame" x="25" y="54" width="70" height="20"/>
+                    <subviews>
+                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFn-qN-Dkw">
+                            <rect key="frame" x="10" y="0.0" width="60" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-Xj-aBA">
+                                    <rect key="frame" x="2" y="0.0" width="56" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="aVj-Xj-aBA" firstAttribute="leading" secondItem="IFn-qN-Dkw" secondAttribute="leading" constant="2" id="E4D-lz-yLf"/>
+                                <constraint firstItem="aVj-Xj-aBA" firstAttribute="top" secondItem="IFn-qN-Dkw" secondAttribute="top" id="Qe9-AA-Kg0"/>
+                                <constraint firstAttribute="width" constant="60" id="gDr-zs-L3E"/>
+                                <constraint firstAttribute="bottom" secondItem="aVj-Xj-aBA" secondAttribute="bottom" id="j3Z-k8-oVf"/>
+                                <constraint firstAttribute="trailing" secondItem="aVj-Xj-aBA" secondAttribute="trailing" constant="2" id="ydb-Zn-ITK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="IFn-qN-Dkw" firstAttribute="top" secondItem="byh-WF-Ps4" secondAttribute="top" id="KpM-KO-7ef"/>
+                        <constraint firstAttribute="bottom" secondItem="IFn-qN-Dkw" secondAttribute="bottom" id="dQn-Iz-DKK"/>
+                        <constraint firstAttribute="trailing" secondItem="IFn-qN-Dkw" secondAttribute="trailing" id="e7B-xe-sdr"/>
+                        <constraint firstAttribute="height" constant="20" id="fTe-vA-xJy"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -60,6 +91,7 @@
                 <constraint firstItem="hqU-eM-tqv" firstAttribute="leading" secondItem="q0I-Lf-AVn" secondAttribute="leading" id="A4S-AK-l5k"/>
                 <constraint firstItem="7vm-R3-jXj" firstAttribute="centerY" secondItem="ElS-jW-Vr8" secondAttribute="centerY" id="ESC-5N-tuS"/>
                 <constraint firstItem="3u5-8C-uEc" firstAttribute="leading" secondItem="ElS-jW-Vr8" secondAttribute="trailing" constant="2" id="GMB-9y-WkR"/>
+                <constraint firstItem="byh-WF-Ps4" firstAttribute="trailing" secondItem="YkO-Ld-H2S" secondAttribute="trailing" constant="-10" id="H6d-xi-oDe"/>
                 <constraint firstItem="ElS-jW-Vr8" firstAttribute="leading" secondItem="YkO-Ld-H2S" secondAttribute="trailing" constant="10" id="HWB-cE-fyf"/>
                 <constraint firstAttribute="trailing" secondItem="q0I-Lf-AVn" secondAttribute="trailing" id="Hx3-bE-ouo"/>
                 <constraint firstItem="ENu-EF-5xR" firstAttribute="centerY" secondItem="ElS-jW-Vr8" secondAttribute="centerY" id="IFL-tI-Kh7"/>
@@ -70,6 +102,7 @@
                 <constraint firstItem="7vm-R3-jXj" firstAttribute="height" secondItem="ElS-jW-Vr8" secondAttribute="height" id="aJT-qh-cqu"/>
                 <constraint firstItem="hqU-eM-tqv" firstAttribute="trailing" secondItem="q0I-Lf-AVn" secondAttribute="trailing" id="asg-TL-pn5"/>
                 <constraint firstItem="3u5-8C-uEc" firstAttribute="centerY" secondItem="ElS-jW-Vr8" secondAttribute="centerY" id="atx-vO-ZSo"/>
+                <constraint firstItem="byh-WF-Ps4" firstAttribute="bottom" secondItem="YkO-Ld-H2S" secondAttribute="bottom" constant="-7" id="baZ-v9-LNZ"/>
                 <constraint firstItem="GDV-0m-Uo0" firstAttribute="leading" secondItem="3u5-8C-uEc" secondAttribute="trailing" constant="2" id="dpM-6E-ReG"/>
                 <constraint firstItem="ENu-EF-5xR" firstAttribute="height" secondItem="ElS-jW-Vr8" secondAttribute="height" id="h0w-CN-mvB"/>
                 <constraint firstItem="hqU-eM-tqv" firstAttribute="height" secondItem="q0I-Lf-AVn" secondAttribute="height" id="iBP-5C-sKe"/>
@@ -82,9 +115,13 @@
                 <constraint firstItem="hqU-eM-tqv" firstAttribute="top" secondItem="GDV-0m-Uo0" secondAttribute="bottom" id="u1j-rL-sXn"/>
                 <constraint firstItem="3u5-8C-uEc" firstAttribute="width" secondItem="ElS-jW-Vr8" secondAttribute="width" id="vg6-WC-Nsq"/>
                 <constraint firstItem="GDV-0m-Uo0" firstAttribute="width" secondItem="ElS-jW-Vr8" secondAttribute="width" id="wMJ-6m-s8e"/>
+                <constraint firstItem="byh-WF-Ps4" firstAttribute="leading" secondItem="YkO-Ld-H2S" secondAttribute="leading" constant="10" id="zfy-T1-AKY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="imageCountBGWidth" destination="gDr-zs-L3E" id="64t-R2-nxJ"/>
+                <outlet property="imageCountLabBGView" destination="IFn-qN-Dkw" id="91j-Z4-yXr"/>
+                <outlet property="imageCountLabel" destination="aVj-Xj-aBA" id="740-Fw-xpf"/>
                 <outlet property="nameLabel" destination="q0I-Lf-AVn" id="PLl-5y-30T"/>
                 <outlet property="showImageView" destination="YkO-Ld-H2S" id="2yg-p4-lo1"/>
                 <outlet property="signatureLabel" destination="hqU-eM-tqv" id="lpT-hb-kEi"/>

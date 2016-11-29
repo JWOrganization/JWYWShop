@@ -192,7 +192,8 @@ static CGFloat allW;
     for (int i = 0; i < count; i ++) {
         CGPoint point = CGPointMake(kMargin + everyX * (i + 1), kMargin + (1 - [self.yValues[i] floatValue] / maxY) * allH);
         
-        CGFloat width = everyX <= 20 ? 10: 20;
+//        CGFloat width = everyX <= 20 ? 10: 20;
+        CGFloat width = everyX*2/3;
         
         CGRect rect = CGRectMake(point.x - width / 2, point.y, width, (CGRectGetHeight(myFrame) -  kMargin - point.y));
         

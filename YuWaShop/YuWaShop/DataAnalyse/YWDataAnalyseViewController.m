@@ -33,11 +33,17 @@
 - (void)makeUI{
     [self.segmentControl setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor colorWithHexString:@"#25C0E9"]] forState:UIControlStateNormal];
     [self.segmentControl setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor whiteColor]] forState:UIControlStateSelected];
+    self.segmentControl.tintColor = CNaviColor;
+    self.segmentControl.layer.borderColor = CNaviColor.CGColor;
+    [self.segmentControl setDividerImage:[UIImage imageNamed:@"segmentLine"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    self.segmentControl.layer.borderWidth = 2.f;
+    self.segmentControl.layer.cornerRadius = 5.f;
+    self.segmentControl.layer.masksToBounds = YES;
     
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0.f, 105.f, kScreen_Width, kScreen_Height - 105.f - 49.f)];
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.backgroundColor = [UIColor colorWithHexString:@"#efeff4"];
+    self.scrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.scrollView];
     
     [self doWithCreateUI];
@@ -67,7 +73,7 @@
     [self.scrollView addSubview:self.consumptionView];
     
     NSArray * nameArr = @[@"店铺的浏览量",@"客户客户数",@"消费总金额"];
-    NSArray * imgNameArr = @[@"chart_line0",@"chart_line1",@"chart_line0"];
+    NSArray * imgNameArr = @[@"chart_line01",@"chart_line11",@"chart_line01"];
     NSArray * pointNameArr = @[@" 点击量",@" 单位:个",@" 单位:k"];
     for (int i = 0; i<nameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(10.f, i*(45.f+chartViewHeight), kScreen_Width - 20.f, 45.f)];
@@ -113,8 +119,8 @@
     self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
     self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
     
-    self.customersView.xValues = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
-    self.customersView.yValues = @[@35, @5, @80, @40, @50, @13, @50, @75,@25, @100, @64, @95, @33, @100];
+    self.customersView.xValues = @[@1, @2, @3, @4, @5, @6, @7];
+    self.customersView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
     
     self.consumptionView.xValues = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
     self.consumptionView.yValues = @[@350, @1000, @800, @400, @500, @130, @50, @750,@250, @100, @640, @950, @333, @510];

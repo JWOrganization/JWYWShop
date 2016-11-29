@@ -32,7 +32,7 @@
                     </connections>
                 </segmentedControl>
             </subviews>
-            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8eQ-7T-4Tg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="cQs-Qx-QWv"/>
                 <constraint firstItem="8eQ-7T-4Tg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="xvH-JA-m4k"/>

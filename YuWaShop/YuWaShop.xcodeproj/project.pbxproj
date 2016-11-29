@@ -14,6 +14,13 @@
 		B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAC71DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m */; };
 		B302EACA1DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAC81DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib */; };
 		B302EACD1DED65B80000B0A0 /* YWHomeCommoditiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EACC1DED65B80000B0A0 /* YWHomeCommoditiesModel.m */; };
+		B302EAD21DEDA8ED0000B0A0 /* YWHomeFestivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAD01DEDA8ED0000B0A0 /* YWHomeFestivalViewController.m */; };
+		B302EAD31DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAD11DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib */; };
+		B302EAD71DEDAA0C0000B0A0 /* YWHomeFestivalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAD61DEDAA0C0000B0A0 /* YWHomeFestivalModel.m */; };
+		B302EADC1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EADA1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m */; };
+		B302EADD1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EADB1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib */; };
+		B302EAE21DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */; };
+		B302EAE31DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */; };
 		B31097051DE44EA00033A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097041DE44EA00033A984 /* main.m */; };
 		B310970E1DE44EA00033A984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B310970C1DE44EA00033A984 /* Main.storyboard */; };
 		B31097101DE44EA00033A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B310970F1DE44EA00033A984 /* Assets.xcassets */; };
@@ -686,6 +693,17 @@
 		B302EAC81DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCommoditiesTableViewCell.xib; sourceTree = "<group>"; };
 		B302EACB1DED65B80000B0A0 /* YWHomeCommoditiesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCommoditiesModel.h; sourceTree = "<group>"; };
 		B302EACC1DED65B80000B0A0 /* YWHomeCommoditiesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCommoditiesModel.m; sourceTree = "<group>"; };
+		B302EACF1DEDA8ED0000B0A0 /* YWHomeFestivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeFestivalViewController.h; sourceTree = "<group>"; };
+		B302EAD01DEDA8ED0000B0A0 /* YWHomeFestivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeFestivalViewController.m; sourceTree = "<group>"; };
+		B302EAD11DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeFestivalViewController.xib; sourceTree = "<group>"; };
+		B302EAD51DEDAA0C0000B0A0 /* YWHomeFestivalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeFestivalModel.h; sourceTree = "<group>"; };
+		B302EAD61DEDAA0C0000B0A0 /* YWHomeFestivalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeFestivalModel.m; sourceTree = "<group>"; };
+		B302EAD91DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeFestivalTableViewCell.h; sourceTree = "<group>"; };
+		B302EADA1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeFestivalTableViewCell.m; sourceTree = "<group>"; };
+		B302EADB1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeFestivalTableViewCell.xib; sourceTree = "<group>"; };
+		B302EADF1DEDAB450000B0A0 /* YWHomeAddFastivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAddFastivalViewController.h; sourceTree = "<group>"; };
+		B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAddFastivalViewController.m; sourceTree = "<group>"; };
+		B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAddFastivalViewController.xib; sourceTree = "<group>"; };
 		B31097001DE44EA00033A984 /* YuWaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuWaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31097041DE44EA00033A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B310970D1DE44EA00033A984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1892,6 +1910,48 @@
 				B302EAC31DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib */,
 			);
 			path = AddCommodities;
+			sourceTree = "<group>";
+		};
+		B302EACE1DEDA8CA0000B0A0 /* Festival */ = {
+			isa = PBXGroup;
+			children = (
+				B302EADE1DEDAB250000B0A0 /* AddFastival */,
+				B302EAD81DEDAA130000B0A0 /* Cell */,
+				B302EAD41DEDA9EA0000B0A0 /* Model */,
+				B302EACF1DEDA8ED0000B0A0 /* YWHomeFestivalViewController.h */,
+				B302EAD01DEDA8ED0000B0A0 /* YWHomeFestivalViewController.m */,
+				B302EAD11DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib */,
+			);
+			path = Festival;
+			sourceTree = "<group>";
+		};
+		B302EAD41DEDA9EA0000B0A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B302EAD51DEDAA0C0000B0A0 /* YWHomeFestivalModel.h */,
+				B302EAD61DEDAA0C0000B0A0 /* YWHomeFestivalModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B302EAD81DEDAA130000B0A0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B302EAD91DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.h */,
+				B302EADA1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m */,
+				B302EADB1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B302EADE1DEDAB250000B0A0 /* AddFastival */ = {
+			isa = PBXGroup;
+			children = (
+				B302EADF1DEDAB450000B0A0 /* YWHomeAddFastivalViewController.h */,
+				B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */,
+				B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */,
+			);
+			path = AddFastival;
 			sourceTree = "<group>";
 		};
 		B31096F71DE44EA00033A984 = {
@@ -4642,6 +4702,7 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B302EACE1DEDA8CA0000B0A0 /* Festival */,
 				B302EAB81DED63E20000B0A0 /* Commodities */,
 				B3C12A621DED3432000EF099 /* QuickPayList */,
 			);
@@ -5134,6 +5195,7 @@
 				B35C9F341DEC3FE80051E352 /* JWImagePickerCell.xib in Resources */,
 				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B35C9EC01DEC3FE80051E352 /* RBBasicViewController.xib in Resources */,
+				B302EADD1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib in Resources */,
 				B35C9EBB1DEC3FE80051E352 /* EmotionTextKeys.plist in Resources */,
 				B35C9EFA1DEC3FE80051E352 /* YWNodeAddAldumShowTableViewCell.xib in Resources */,
 				B317AFCF1DE5D3C90093C511 /* PersonHeaderBG48@2x.png in Resources */,
@@ -5144,6 +5206,7 @@
 				B327376A1DE80F01001C57DF /* YWPCTimeTableViewCell.xib in Resources */,
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
 				B3F07E521DE681B6005116EA /* YWPersonPointViewController.xib in Resources */,
+				B302EAD31DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib in Resources */,
 				B35C9F4A1DEC3FE80051E352 /* tag-center@2x.png in Resources */,
 				B35C9F371DEC3FE80051E352 /* JWImgPickerAlbumChooseTableView.xib in Resources */,
 				B317AFDF1DE5D3C90093C511 /* PersonHeaderBG8@2x.png in Resources */,
@@ -5213,6 +5276,7 @@
 				B317AFB71DE5D3C90093C511 /* PersonHeaderBG26@2x.png in Resources */,
 				B35C9EBE1DEC3FE80051E352 /* xhsemoji2.plist in Resources */,
 				B3F07F221DE72F9C005116EA /* YWPCTimeViewController.xib in Resources */,
+				B302EAE31DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib in Resources */,
 				B35C9EA51DEC3FE80051E352 /* YWMessageSearchFriendAddCell.xib in Resources */,
 				B317AFE51DE5DBC80093C511 /* YWPersonWeekCountViewController.xib in Resources */,
 				B317AFB91DE5D3C90093C511 /* PersonHeaderBG28@2x.png in Resources */,
@@ -5382,6 +5446,7 @@
 				B35C9CDE1DEC3ECD0051E352 /* PSTCollectionViewFlowLayout.m in Sources */,
 				B31098CC1DE4543E0033A984 /* SDWebImageDownloaderOperation.m in Sources */,
 				B35C9CD11DEC3ECD0051E352 /* NSData+EMImageContentType.m in Sources */,
+				B302EADC1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m in Sources */,
 				B35C9CD81DEC3ECD0051E352 /* UIView+EMWebCacheOperation.m in Sources */,
 				B35C9CFC1DEC3ECD0051E352 /* EaseUsersListViewController.m in Sources */,
 				B310988C1DE4543E0033A984 /* JWTools.m in Sources */,
@@ -5467,6 +5532,7 @@
 				B35C9CB91DEC3ECD0051E352 /* EMCDDeviceManagerBase.m in Sources */,
 				B32737691DE80F01001C57DF /* YWPCTimeTableViewCell.m in Sources */,
 				B31098731DE4543E0033A984 /* NSObject+YYModel.m in Sources */,
+				B302EAD71DEDAA0C0000B0A0 /* YWHomeFestivalModel.m in Sources */,
 				B31098A71DE4543E0033A984 /* ViewController+MASAdditions.m in Sources */,
 				B31098AD1DE4543E0033A984 /* MJRefreshBackFooter.m in Sources */,
 				B35C9CED1DEC3ECD0051E352 /* NSString+Valid.m in Sources */,
@@ -5565,6 +5631,7 @@
 				B35C9CD41DEC3ECD0051E352 /* UIImage+EMMultiFormat.m in Sources */,
 				B31098C21DE4543E0033A984 /* NSBundle+MJRefresh.m in Sources */,
 				B35C9CB51DEC3ECD0051E352 /* EMCDDeviceManager+Media.m in Sources */,
+				B302EAD21DEDA8ED0000B0A0 /* YWHomeFestivalViewController.m in Sources */,
 				B3F07E8C1DE6A7A8005116EA /* NSDictionary+Log.m in Sources */,
 				B35C9CCF1DEC3ECD0051E352 /* EMSDWebImagePrefetcher.m in Sources */,
 				B3C12A571DED25DD000EF099 /* UserSession.m in Sources */,
@@ -5610,6 +5677,7 @@
 				B317AC861DE530780093C511 /* YWStormSubSortCollectionViewCell.m in Sources */,
 				B31098C61DE4543E0033A984 /* MKAnnotationView+WebCache.m in Sources */,
 				B35C9F471DEC3FE80051E352 /* XHBranchTextView.m in Sources */,
+				B302EAE21DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m in Sources */,
 				B31098CD1DE4543E0033A984 /* SDWebImageManager.m in Sources */,
 				B310988A1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m in Sources */,
 				B3F07F071DE72DC6005116EA /* YWPCCounselorViewController.m in Sources */,

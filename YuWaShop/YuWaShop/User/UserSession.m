@@ -70,7 +70,10 @@ static UserSession * user=nil;
 + (void)getDataFromUserDefault{
     NSString * accountDefault = [KUSERDEFAULT valueForKey:AUTOLOGIN];
     if (accountDefault) {
-        if ([accountDefault isEqualToString:@""])return;
+        if ([accountDefault isEqualToString:@""]){
+            [UserSession isLogion];
+            return;
+        }
         user.account = accountDefault;
         user.password = [KUSERDEFAULT valueForKey:AUTOLOGINCODE];
         [UserSession autoLoginRequestWithPragram:@{@"phone":user.account,@"password":user.password,@"is_md5":@1}];
@@ -119,10 +122,7 @@ static UserSession * user=nil;
     NSArray * SexArr = @[@"男",@"女",@"未知"];
     NSNumber* sexNum=dataDic[@"sex"];
     NSInteger sexInt=[sexNum integerValue];
-    if (sexInt>0&&sexInt<=3) {
-        user.sex = [NSString stringWithFormat:@"%@",SexArr[sexInt-1]];
-        
-    }
+    if (sexInt>0&&sexInt<=3)user.sex = [NSString stringWithFormat:@"%@",SexArr[sexInt-1]];
     
     user.money = dataDic[@"money"];
     user.inviteID = dataDic[@"invite_uid"];
@@ -154,6 +154,11 @@ static UserSession * user=nil;
     //233333333暂定
     user.comfired_Status = 2;//实名认证,user.isVIP=3时成功
     user.serventPhone = @"18015885220";
+    user.cut = 80;
+    user.shopType = @"美食";
+    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
+    user.shopTypeID = @"24";
+    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
     //233333333暂定
     [UserSession userToComfired];
 }

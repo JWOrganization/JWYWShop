@@ -73,7 +73,11 @@
 }
 
 - (void)changeSegumentAction:(UIButton *)btn{
-    [self selectTheSegument:btn.tag - 1];
+    if (self.isCancelSame) {
+        [self segumentSelectionSelected:btn.tag - 1];
+    }else{
+        [self selectTheSegument:btn.tag - 1];
+    }
 }
 
 -(void)selectTheSegument:(NSInteger)segument{
@@ -90,6 +94,20 @@
         selectSeugment = segument;
         [self.delegate segumentSelectionChange:selectSeugment];
     }
+}
+
+-(void)segumentSelectionSelected:(NSInteger)segument{
+    if (selectSeugment != segument) {
+        [self.btnTitleSource[selectSeugment] setSelected:NO];
+        [self.btnTitleSource[segument] setSelected:YES];
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            [buttonDownView setFrame:CGRectMake(segument * witdthFloat,self.bounds.size.height - 2, witdthFloat, 2)];
+        }];
+        selectSeugment = segument;
+    }
+    [self.delegate segumentSelectionChange:selectSeugment];
 }
 
 @end

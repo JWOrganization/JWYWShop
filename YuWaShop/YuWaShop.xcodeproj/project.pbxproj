@@ -22,6 +22,19 @@
 		B302EAE21DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */; };
 		B302EAE31DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */; };
 		B30E4DBB1DEE7084008684BA /* YWFastivalDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */; };
+		B30E4DC61DEE900D008684BA /* YWHomePayBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DC41DEE900D008684BA /* YWHomePayBillViewController.m */; };
+		B30E4DC71DEE900D008684BA /* YWHomePayBillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DC51DEE900D008684BA /* YWHomePayBillViewController.xib */; };
+		B30E4DCC1DEEBB02008684BA /* YWHomeCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DCA1DEEBB02008684BA /* YWHomeCompareViewController.m */; };
+		B30E4DCD1DEEBB02008684BA /* YWHomeCompareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DCB1DEEBB02008684BA /* YWHomeCompareViewController.xib */; };
+		B30E4DD31DEEBD18008684BA /* YWHomeCompareViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DD21DEEBD18008684BA /* YWHomeCompareViewHeaderView.m */; };
+		B30E4DD51DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DD41DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib */; };
+		B30E4DD81DEEBD77008684BA /* YWHomeCompareMyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DD71DEEBD77008684BA /* YWHomeCompareMyModel.m */; };
+		B30E4DDF1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DDD1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m */; };
+		B30E4DE01DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DDE1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib */; };
+		B30E4DE41DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DE21DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.m */; };
+		B30E4DE51DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DE31DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib */; };
+		B30E4DE81DEEBDEB008684BA /* YWHomeCompareOtherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DE71DEEBDEB008684BA /* YWHomeCompareOtherModel.m */; };
+		B30E4DEC1DEEEAD7008684BA /* YWHomeCompareSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */; };
 		B31097051DE44EA00033A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097041DE44EA00033A984 /* main.m */; };
 		B310970E1DE44EA00033A984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B310970C1DE44EA00033A984 /* Main.storyboard */; };
 		B31097101DE44EA00033A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B310970F1DE44EA00033A984 /* Assets.xcassets */; };
@@ -707,6 +720,27 @@
 		B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAddFastivalViewController.xib; sourceTree = "<group>"; };
 		B30E4DB91DEE7084008684BA /* YWFastivalDayPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWFastivalDayPicker.h; sourceTree = "<group>"; };
 		B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWFastivalDayPicker.m; sourceTree = "<group>"; };
+		B30E4DC31DEE900D008684BA /* YWHomePayBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomePayBillViewController.h; sourceTree = "<group>"; };
+		B30E4DC41DEE900D008684BA /* YWHomePayBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomePayBillViewController.m; sourceTree = "<group>"; };
+		B30E4DC51DEE900D008684BA /* YWHomePayBillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomePayBillViewController.xib; sourceTree = "<group>"; };
+		B30E4DC91DEEBB02008684BA /* YWHomeCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareViewController.h; sourceTree = "<group>"; };
+		B30E4DCA1DEEBB02008684BA /* YWHomeCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareViewController.m; sourceTree = "<group>"; };
+		B30E4DCB1DEEBB02008684BA /* YWHomeCompareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCompareViewController.xib; sourceTree = "<group>"; };
+		B30E4DD11DEEBD18008684BA /* YWHomeCompareViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareViewHeaderView.h; sourceTree = "<group>"; };
+		B30E4DD21DEEBD18008684BA /* YWHomeCompareViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareViewHeaderView.m; sourceTree = "<group>"; };
+		B30E4DD41DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCompareViewHeaderView.xib; sourceTree = "<group>"; };
+		B30E4DD61DEEBD77008684BA /* YWHomeCompareMyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareMyModel.h; sourceTree = "<group>"; };
+		B30E4DD71DEEBD77008684BA /* YWHomeCompareMyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareMyModel.m; sourceTree = "<group>"; };
+		B30E4DDC1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareMyTableViewCell.h; sourceTree = "<group>"; };
+		B30E4DDD1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareMyTableViewCell.m; sourceTree = "<group>"; };
+		B30E4DDE1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCompareMyTableViewCell.xib; sourceTree = "<group>"; };
+		B30E4DE11DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareOtherTableViewCell.h; sourceTree = "<group>"; };
+		B30E4DE21DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareOtherTableViewCell.m; sourceTree = "<group>"; };
+		B30E4DE31DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCompareOtherTableViewCell.xib; sourceTree = "<group>"; };
+		B30E4DE61DEEBDEB008684BA /* YWHomeCompareOtherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareOtherModel.h; sourceTree = "<group>"; };
+		B30E4DE71DEEBDEB008684BA /* YWHomeCompareOtherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareOtherModel.m; sourceTree = "<group>"; };
+		B30E4DEA1DEEEAD7008684BA /* YWHomeCompareSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareSortTableView.h; sourceTree = "<group>"; };
+		B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareSortTableView.m; sourceTree = "<group>"; };
 		B31097001DE44EA00033A984 /* YuWaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuWaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31097041DE44EA00033A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B310970D1DE44EA00033A984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1965,6 +1999,73 @@
 				B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */,
 			);
 			path = Picker;
+			sourceTree = "<group>";
+		};
+		B30E4DC21DEE8FEC008684BA /* PayBill */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DC31DEE900D008684BA /* YWHomePayBillViewController.h */,
+				B30E4DC41DEE900D008684BA /* YWHomePayBillViewController.m */,
+				B30E4DC51DEE900D008684BA /* YWHomePayBillViewController.xib */,
+			);
+			path = PayBill;
+			sourceTree = "<group>";
+		};
+		B30E4DC81DEEBAE6008684BA /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DE91DEEEAA1008684BA /* SortView */,
+				B30E4DD01DEEBCF4008684BA /* Header */,
+				B30E4DCF1DEEBCE8008684BA /* Cell */,
+				B30E4DCE1DEEBCD7008684BA /* Model */,
+				B30E4DC91DEEBB02008684BA /* YWHomeCompareViewController.h */,
+				B30E4DCA1DEEBB02008684BA /* YWHomeCompareViewController.m */,
+				B30E4DCB1DEEBB02008684BA /* YWHomeCompareViewController.xib */,
+			);
+			path = Compare;
+			sourceTree = "<group>";
+		};
+		B30E4DCE1DEEBCD7008684BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DD61DEEBD77008684BA /* YWHomeCompareMyModel.h */,
+				B30E4DD71DEEBD77008684BA /* YWHomeCompareMyModel.m */,
+				B30E4DE61DEEBDEB008684BA /* YWHomeCompareOtherModel.h */,
+				B30E4DE71DEEBDEB008684BA /* YWHomeCompareOtherModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B30E4DCF1DEEBCE8008684BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DDC1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.h */,
+				B30E4DDD1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m */,
+				B30E4DDE1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib */,
+				B30E4DE11DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.h */,
+				B30E4DE21DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.m */,
+				B30E4DE31DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B30E4DD01DEEBCF4008684BA /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DD11DEEBD18008684BA /* YWHomeCompareViewHeaderView.h */,
+				B30E4DD21DEEBD18008684BA /* YWHomeCompareViewHeaderView.m */,
+				B30E4DD41DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		B30E4DE91DEEEAA1008684BA /* SortView */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DEA1DEEEAD7008684BA /* YWHomeCompareSortTableView.h */,
+				B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */,
+			);
+			path = SortView;
 			sourceTree = "<group>";
 		};
 		B31096F71DE44EA00033A984 = {
@@ -4715,9 +4816,11 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B30E4DC81DEEBAE6008684BA /* Compare */,
 				B302EACE1DEDA8CA0000B0A0 /* Festival */,
 				B302EAB81DED63E20000B0A0 /* Commodities */,
 				B3C12A621DED3432000EF099 /* QuickPayList */,
+				B30E4DC21DEE8FEC008684BA /* PayBill */,
 			);
 			path = SubVC;
 			sourceTree = "<group>";
@@ -5181,6 +5284,7 @@
 				B31098E11DE4543E0033A984 /* YWHomeViewController.xib in Resources */,
 				B317AFAA1DE5D3C90093C511 /* PersonHeaderBG14@2x.png in Resources */,
 				B31098771DE4543E0033A984 /* HUDFailureShowView.xib in Resources */,
+				B30E4DD51DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib in Resources */,
 				B35C9F4B1DEC3FE80051E352 /* tag-center@3x.png in Resources */,
 				B317AFC11DE5D3C90093C511 /* PersonHeaderBG35@2x.png in Resources */,
 				B32346FD1DEBD1C1002C72E1 /* YWPersonSuggestViewController.xib in Resources */,
@@ -5191,12 +5295,14 @@
 				B317AFBE1DE5D3C90093C511 /* PersonHeaderBG32@2x.png in Resources */,
 				B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */,
 				B317AF661DE5CFB80093C511 /* YWHomeCollectionHeaderView.xib in Resources */,
+				B30E4DC71DEE900D008684BA /* YWHomePayBillViewController.xib in Resources */,
 				B317AFDC1DE5D3C90093C511 /* PersonHeaderBG5@2x.png in Resources */,
 				B35C9ED41DEC3FE80051E352 /* RBPublicNodeViewController.xib in Resources */,
 				B35C9EB81DEC3FE80051E352 /* country.plist in Resources */,
 				B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */,
 				B3F07EF51DE70BE7005116EA /* YWPersonShopTableViewCell.xib in Resources */,
 				B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */,
+				B30E4DE01DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib in Resources */,
 				B35C9EC71DEC3FE80051E352 /* RBPublicToolView.xib in Resources */,
 				B3F07F121DE72DE9005116EA /* YWPCEveryPayViewController.xib in Resources */,
 				B317AFC31DE5D3C90093C511 /* PersonHeaderBG37@2x.png in Resources */,
@@ -5220,6 +5326,7 @@
 				B310987C1DE4543E0033A984 /* InfoPlist.strings in Resources */,
 				B3F07E521DE681B6005116EA /* YWPersonPointViewController.xib in Resources */,
 				B302EAD31DEDA8ED0000B0A0 /* YWHomeFestivalViewController.xib in Resources */,
+				B30E4DE51DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib in Resources */,
 				B35C9F4A1DEC3FE80051E352 /* tag-center@2x.png in Resources */,
 				B35C9F371DEC3FE80051E352 /* JWImgPickerAlbumChooseTableView.xib in Resources */,
 				B317AFDF1DE5D3C90093C511 /* PersonHeaderBG8@2x.png in Resources */,
@@ -5237,6 +5344,7 @@
 				B3F07EBD1DE6CA77005116EA /* YWPersonPointTableViewCell.xib in Resources */,
 				B35C9F3D1DEC3FE80051E352 /* TZImagePickerController.bundle in Resources */,
 				B317AFA71DE5D3C90093C511 /* PersonHeaderBG11@2x.png in Resources */,
+				B30E4DCD1DEEBB02008684BA /* YWHomeCompareViewController.xib in Resources */,
 				B35C9EA31DEC3FE80051E352 /* YWMessageNotificationCell.xib in Resources */,
 				B3F07F081DE72DC6005116EA /* YWPCCounselorViewController.xib in Resources */,
 				B3F07E541DE681B6005116EA /* YWPersonShopViewController.xib in Resources */,
@@ -5435,10 +5543,12 @@
 				B35C9EA81DEC3FE80051E352 /* YWMessageAddressBookHeader.m in Sources */,
 				B310986C1DE4543E0033A984 /* UIImage+imageColor.m in Sources */,
 				B387EAB31DE45E110045323C /* VIPTabBarController.m in Sources */,
+				B30E4DD81DEEBD77008684BA /* YWHomeCompareMyModel.m in Sources */,
 				B35C9EFD1DEC3FE80051E352 /* YWNodeAddAldumViewController.m in Sources */,
 				B35C9CC91DEC3ECD0051E352 /* EMSDImageCache.m in Sources */,
 				B35C9EE11DEC3FE80051E352 /* RBNodeDetailTableViewCell.m in Sources */,
 				B35C9CDD1DEC3ECD0051E352 /* PSTCollectionViewData.m in Sources */,
+				B30E4DE41DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.m in Sources */,
 				B31098681DE4543E0033A984 /* YWDataAnalyseViewController.m in Sources */,
 				B35C9D051DEC3ECD0051E352 /* EaseBubbleView+Image.m in Sources */,
 				B310989C1DE4543E0033A984 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -5466,6 +5576,8 @@
 				B35C9EDE1DEC3FE80051E352 /* RBHomeUserModel.m in Sources */,
 				B3C12A531DED217F000EF099 /* HttpObject.m in Sources */,
 				B35C9EAA1DEC3FE80051E352 /* YWMessageAddressBookTableView.m in Sources */,
+				B30E4DDF1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m in Sources */,
+				B30E4DD31DEEBD18008684BA /* YWHomeCompareViewHeaderView.m in Sources */,
 				B35C9CD21DEC3ECD0051E352 /* UIButton+EMWebCache.m in Sources */,
 				B31098BE1DE4543E0033A984 /* MJDIYBackFooter.m in Sources */,
 				B35C9CBB1DEC3ECD0051E352 /* wav.mm in Sources */,
@@ -5488,6 +5600,7 @@
 				B35C9D0A1DEC3ECD0051E352 /* EaseBubbleView.m in Sources */,
 				B35C9CB81DEC3ECD0051E352 /* EMCDDeviceManager+Remind.m in Sources */,
 				B35C9EF41DEC3FE80051E352 /* RBNodeTagModel.m in Sources */,
+				B30E4DCC1DEEBB02008684BA /* YWHomeCompareViewController.m in Sources */,
 				B35C9F1A1DEC3FE80051E352 /* RBCenterAlbumModel.m in Sources */,
 				B35C9D131DEC3ECD0051E352 /* EaseConversationCell.m in Sources */,
 				B35C9F2E1DEC3FE80051E352 /* JWTagScrollView.m in Sources */,
@@ -5598,6 +5711,7 @@
 				B35C9CFA1DEC3ECD0051E352 /* EaseMessageViewController.m in Sources */,
 				B35C9D0F1DEC3ECD0051E352 /* EaseFaceView.m in Sources */,
 				B3F07ECD1DE6D5DE005116EA /* YWPersonPointHeaderModel.m in Sources */,
+				B30E4DE81DEEBDEB008684BA /* YWHomeCompareOtherModel.m in Sources */,
 				B35C9EEF1DEC3FE80051E352 /* RBNodeShowCommentModel.m in Sources */,
 				B3F07EE41DE6E031005116EA /* YWPersonSubVipHeaderView.m in Sources */,
 				B35C9E971DEC3FE80051E352 /* YWMessageFriendAddModel.m in Sources */,
@@ -5621,6 +5735,7 @@
 				B31098CF1DE4543E0033A984 /* UIButton+WebCache.m in Sources */,
 				B35C9F281DEC3FE80051E352 /* NSString+JWAppendOtherStr.m in Sources */,
 				B3C12A511DED217F000EF099 /* HttpManager.m in Sources */,
+				B30E4DEC1DEEEAD7008684BA /* YWHomeCompareSortTableView.m in Sources */,
 				B35C9F251DEC3FE80051E352 /* YWSharedEditorViewController.m in Sources */,
 				B35C9CBA1DEC3ECD0051E352 /* amrFileCodec.mm in Sources */,
 				B35C9B921DEC1F830051E352 /* YWPCCHooseTimePickerView.m in Sources */,
@@ -5735,6 +5850,7 @@
 				B35C9F461DEC3FE80051E352 /* XHBranchPoint.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
 				B31098E01DE4543E0033A984 /* YWHomeViewController.m in Sources */,
+				B30E4DC61DEE900D008684BA /* YWHomePayBillViewController.m in Sources */,
 				B317ACA41DE565CE0093C511 /* YWAddressSortTableView.m in Sources */,
 				B35C9F451DEC3FE80051E352 /* XHFocusLayer.m in Sources */,
 				B35C9ECB1DEC3FE80051E352 /* RBPublicEditorScrollView.m in Sources */,

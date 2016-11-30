@@ -26,7 +26,10 @@
 @property (strong, nonatomic) UIColor * selectColor;
 @property (strong, nonatomic) UIFont * titleFont;
 @property (nonatomic, strong) UIColor * buttonDownColor;
+@property (nonatomic,assign)BOOL isCancelSame;
+
 -(void)selectTheSegument:(NSInteger)segument;
+-(void)segumentSelectionSelected:(NSInteger)selection;
 
 + (YJSegmentedControl *)segmentedControlFrame:(CGRect)frame titleDataSource:(NSArray *)titleDataSouece backgroundColor:(UIColor *)backgroundColor titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont selectColor:(UIColor *)selectColor buttonDownColor:(UIColor *)buttonDownColor Delegate:(id)delegate;
 

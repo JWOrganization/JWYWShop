@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "YWUserShopAdminModel.h"
 
 @interface UserSession : NSObject
@@ -59,7 +60,11 @@
 //233333333暂定
 @property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证0未认证1认证中2认证完成
 @property (nonatomic,copy)NSString * serventPhone;
-
+@property (nonatomic,assign)NSInteger cut;//买单收银折扣
+@property (nonatomic,copy)NSString * shopType;//店铺所属大类
+@property (nonatomic,strong)NSArray * shopSubTypeArr;//店铺所选小类
+@property (nonatomic,copy)NSString * shopTypeID;//店铺所属大类
+@property (nonatomic,strong)NSArray * shopSubTypeIDArr;//店铺所选小类
 //233333333暂定
 
 

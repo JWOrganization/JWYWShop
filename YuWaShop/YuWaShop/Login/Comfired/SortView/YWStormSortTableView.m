@@ -83,8 +83,14 @@
         [self reloadData];
         NSMutableArray * tagArr = [NSMutableArray arrayWithCapacity:0];
         NSArray * dataArr = responsObj[@"data"];
-        for (int i = 0; i<dataArr.count; i++) {
-            [tagArr addObject:[YWComfiredTypeModel yy_modelWithDictionary:dataArr[i]]];
+        if (dataArr.count>1) {
+            for (int i = 1; i<dataArr.count; i++) {
+                [tagArr addObject:[YWComfiredTypeModel yy_modelWithDictionary:dataArr[i]]];
+            }
+        }else{
+            for (int i = 0; i<dataArr.count; i++) {
+                [tagArr addObject:[YWComfiredTypeModel yy_modelWithDictionary:dataArr[i]]];
+            }
         }
         
         self.choosedTypeBlock(self.selectIndex,[self.dataStateArr[self.selectIndex] integerValue],tagArr);

@@ -21,6 +21,7 @@
 		B302EADD1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EADB1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib */; };
 		B302EAE21DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */; };
 		B302EAE31DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */; };
+		B30E4DBB1DEE7084008684BA /* YWFastivalDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */; };
 		B31097051DE44EA00033A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097041DE44EA00033A984 /* main.m */; };
 		B310970E1DE44EA00033A984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B310970C1DE44EA00033A984 /* Main.storyboard */; };
 		B31097101DE44EA00033A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B310970F1DE44EA00033A984 /* Assets.xcassets */; };
@@ -704,6 +705,8 @@
 		B302EADF1DEDAB450000B0A0 /* YWHomeAddFastivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAddFastivalViewController.h; sourceTree = "<group>"; };
 		B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAddFastivalViewController.m; sourceTree = "<group>"; };
 		B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAddFastivalViewController.xib; sourceTree = "<group>"; };
+		B30E4DB91DEE7084008684BA /* YWFastivalDayPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWFastivalDayPicker.h; sourceTree = "<group>"; };
+		B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWFastivalDayPicker.m; sourceTree = "<group>"; };
 		B31097001DE44EA00033A984 /* YuWaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuWaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31097041DE44EA00033A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B310970D1DE44EA00033A984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1947,11 +1950,21 @@
 		B302EADE1DEDAB250000B0A0 /* AddFastival */ = {
 			isa = PBXGroup;
 			children = (
+				B30E4DB81DEE6FD4008684BA /* Picker */,
 				B302EADF1DEDAB450000B0A0 /* YWHomeAddFastivalViewController.h */,
 				B302EAE01DEDAB450000B0A0 /* YWHomeAddFastivalViewController.m */,
 				B302EAE11DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib */,
 			);
 			path = AddFastival;
+			sourceTree = "<group>";
+		};
+		B30E4DB81DEE6FD4008684BA /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4DB91DEE7084008684BA /* YWFastivalDayPicker.h */,
+				B30E4DBA1DEE7084008684BA /* YWFastivalDayPicker.m */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		B31096F71DE44EA00033A984 = {
@@ -5570,6 +5583,7 @@
 				B35C9F291DEC3FE80051E352 /* UIScrollView+JWGifRefresh.m in Sources */,
 				B32737871DE824B4001C57DF /* YWPNPopularityView.m in Sources */,
 				B35C9E9C1DEC3FE80051E352 /* YWMessageNotificationViewController.m in Sources */,
+				B30E4DBB1DEE7084008684BA /* YWFastivalDayPicker.m in Sources */,
 				B31098931DE4543E0033A984 /* AFNetworkReachabilityManager.m in Sources */,
 				B3F07E601DE68C51005116EA /* YWBasicTableViewCell.m in Sources */,
 				B35C9F121DEC3FE80051E352 /* RBHomeSearchToolsView.m in Sources */,

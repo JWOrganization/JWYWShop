@@ -46,7 +46,7 @@
 
 - (void)makeNavi{
     self.title = @"首页";
-    self.rightBarBtn = [UIBarButtonItem barItemWithImageName:@"MessageNoChat" withSelectImage:@"MessageNoChat" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+    self.rightBarBtn = [UIBarButtonItem barItemWithImageName:@"MessageNoChatWhite" withSelectImage:@"MessageNoChatWhite" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
     CGFloat redWidth = 8.f;
     UILabel * redLabel = [[UILabel alloc]initWithFrame:CGRectMake(20.f, 5.f, redWidth, redWidth)];
     redLabel.backgroundColor = [UIColor redColor];

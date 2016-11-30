@@ -12,5 +12,13 @@
 @interface YWHomeFestivalTableViewCell : UITableViewCell
 
 @property (nonatomic,strong)YWHomeFestivalModel * model;
+@property (nonatomic,assign)NSInteger status;
+
+@property (weak, nonatomic) IBOutlet UIView *BGView;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *boardLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end

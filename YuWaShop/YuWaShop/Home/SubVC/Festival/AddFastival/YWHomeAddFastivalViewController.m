@@ -7,8 +7,29 @@
 //
 
 #import "YWHomeAddFastivalViewController.h"
+#import "YWFastivalDayPicker.h"
+#import "YWPCCutPickerView.h"
+#import "JWTextView.h"
 
 @interface YWHomeAddFastivalViewController ()
+
+@property (nonatomic,strong)YWPCCutPickerView * cutPicker;
+@property (nonatomic,strong)YWFastivalDayPicker * startDayPicker;
+@property (nonatomic,strong)YWFastivalDayPicker * finishDayPicker;
+
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet JWTextView *conTextView;
+
+@property (weak, nonatomic) IBOutlet UIButton *startTimeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *finishTimeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cutBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *startTimeBtnWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *finishTimeBtnWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cutBtnWidth;
+
+@property (nonatomic,copy)NSString * cut;
+@property (nonatomic,assign)NSInteger cutInter;
 
 @end
 
@@ -16,22 +37,103 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"添加节日信息";
+    [self makeUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
-/*
-#pragma mark - Navigation
+- (void)makeUI{
+    WEAKSELF;
+    
+    self.conTextView.placeholderColor = [UIColor colorWithHexString:@"#b3b3b3"];
+    self.conTextView.placeholder = @"请输入节日主题";
+    
+    self.conTextView.layer.borderColor = [UIColor colorWithHexString:@"#b3b3b3"].CGColor;
+    self.conTextView.layer.borderWidth = 1.5f;
+    self.conTextView.layer.cornerRadius = 5.f;
+    self.conTextView.layer.masksToBounds = YES;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self cornerRadiusUISet:self.cutBtn];
+    [self cornerRadiusUISet:self.startTimeBtn];
+    [self cornerRadiusUISet:self.finishTimeBtn];
+    [self cornerRadiusUISet:self.submitBtn];
+    
+    self.cutPicker = [[YWPCCutPickerView alloc]initWithFrame:CGRectMake(0.f, 64.f, kScreen_Width, kScreen_Height - 64.f)];
+    self.cutPicker.hidden = YES;
+    self.cutPicker.saveBlock = ^(NSString * name,NSInteger cut,NSString * showName){
+        weakSelf.cutBtnWidth.constant = 60.f;
+        [weakSelf.cutBtn updateConstraints];
+        [weakSelf.cutBtn setTitle:name forState:UIControlStateNormal];
+    };
+    [self.view addSubview:self.cutPicker];
+    
+    self.startDayPicker = [[YWFastivalDayPicker alloc]initWithFrame:CGRectMake(0.f, 64.f, kScreen_Width, kScreen_Height - 64.f)];
+    self.startDayPicker.hidden = YES;
+    self.startDayPicker.saveBlock = ^(NSString * time){
+        weakSelf.startTimeBtnWidth.constant = 120.f;
+        [weakSelf.startTimeBtn updateConstraints];
+        [weakSelf.startTimeBtn setTitle:time forState:UIControlStateNormal];
+    };
+    [self.view addSubview:self.startDayPicker];
+    
+    self.finishDayPicker = [[YWFastivalDayPicker alloc]initWithFrame:CGRectMake(0.f, 64.f, kScreen_Width, kScreen_Height - 64.f)];
+    self.finishDayPicker.hidden = YES;
+    self.finishDayPicker.saveBlock = ^(NSString * time){
+        weakSelf.finishTimeBtnWidth.constant = 120.f;
+        [weakSelf.finishTimeBtn updateConstraints];
+        [weakSelf.finishTimeBtn setTitle:time forState:UIControlStateNormal];
+    };
+    [self.view addSubview:self.finishDayPicker];
 }
-*/
+
+- (void)cornerRadiusUISet:(UIControl *)sender{
+    sender.layer.cornerRadius = 5.f;
+    sender.layer.masksToBounds = YES;
+}
+
+- (IBAction)submitBtnAction:(id)sender {
+    [self requestAddFastival];
+}
+- (IBAction)cutBtnAction:(id)sender {
+    self.cutPicker.hidden = NO;
+}
+- (IBAction)startTimeBtnAction:(id)sender {
+    self.startDayPicker.hidden = NO;
+}
+- (IBAction)finishTimeBtnAction:(id)sender {
+    self.finishDayPicker.hidden = NO;
+}
+
+#pragma mark - Http
+- (void)requestAddFastival{
+    if ([self.conTextView.text isEqualToString:@""]) {
+        [self showHUDWithStr:@"请输入节日主题哟~" withSuccess:NO];
+        return;
+    }else if ([self.cutBtn.titleLabel.text isEqualToString:@"请输入"]) {
+        [self showHUDWithStr:@"请选择折扣哟~" withSuccess:NO];
+        return;
+    }else if ([self.startTimeBtn.titleLabel.text isEqualToString:@"请输入"]) {
+        [self showHUDWithStr:@"请选择开始时间哟~" withSuccess:NO];
+        return;
+    }else if ([self.finishTimeBtn.titleLabel.text isEqualToString:@"请输入"]) {
+        [self showHUDWithStr:@"请输入结束时间哟~" withSuccess:NO];
+        return;
+    }
+    
+    
+    //h3333333上传添加节日数据
+    [self showHUDWithStr:@"添加节日活动成功" withSuccess:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
 
 @end

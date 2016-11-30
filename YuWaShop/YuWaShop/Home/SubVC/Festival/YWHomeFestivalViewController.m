@@ -113,6 +113,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeFestivalTableViewCell * festivalCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeFestivalTableViewCell"];
     festivalCell.model = self.dataArr[indexPath.row];
+    festivalCell.status = self.type;
     return festivalCell;
 }
 

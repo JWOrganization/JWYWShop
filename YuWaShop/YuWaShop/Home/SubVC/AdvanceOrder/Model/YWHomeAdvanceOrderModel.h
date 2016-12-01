@@ -10,4 +10,8 @@
 
 @interface YWHomeAdvanceOrderModel : NSObject
 
+@property (nonatomic,copy)NSString * orderID;
+
+@property (nonatomic,copy)NSString * status;
+
 @end

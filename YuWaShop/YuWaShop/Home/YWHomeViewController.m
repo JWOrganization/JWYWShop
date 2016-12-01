@@ -7,6 +7,7 @@
 //
 
 #import "YWHomeViewController.h"
+#import "YWHomeNoticaficationViewController.h"
 #import "YWHomeQuickPayListVC.h"
 #import "YWHomePayBillViewController.h"
 
@@ -43,7 +44,7 @@
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    [self isNewNotification:YES];//YES红点出现,NO消失
+    [self isNewNotification:[UserSession instance].isNewNoticafication];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -78,7 +79,8 @@
 }
 
 - (void)messageAction{
-    //2333333333消息
+    YWHomeNoticaficationViewController * vc = [[YWHomeNoticaficationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource

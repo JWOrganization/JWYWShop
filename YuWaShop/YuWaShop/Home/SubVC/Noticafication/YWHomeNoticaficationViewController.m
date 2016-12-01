@@ -1,19 +1,23 @@
 //
-//  YWHomeAdvanceOrderViewController.m
+//  YWHomeNoticaficationViewController.m
 //  YuWaShop
 //
 //  Created by Tian Wei You on 16/12/1.
 //  Copyright © 2016年 Shanghai DuRui Information Technology Company. All rights reserved.
 //
 
-#import "YWHomeAdvanceOrderViewController.h"
-#import "YWHomeAdvanceOrderTableViewCell.h"
+#import "YWHomeNoticaficationViewController.h"
+#import "YWHomeOrderNoticaficationTableViewCell.h"
+#import "YWHomeQuickPayListTableViewCell.h"
 #import "NSDictionary+Attributes.h"
 
-@interface YWHomeAdvanceOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface YWHomeNoticaficationViewController ()
+
+<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)UIView * headerView;
+@property (nonatomic,strong)UIView * lineView;
 @property (nonatomic,strong)UISegmentedControl * typeSegmentView;
 @property (nonatomic,copy)NSString * pagens;
 @property (nonatomic,assign)NSInteger pages;
@@ -24,11 +28,13 @@
 
 @end
 
-@implementation YWHomeAdvanceOrderViewController
+@implementation YWHomeNoticaficationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"预约订单";
+    self.title = @"消息";
+    [UserSession instance].isNewNoticafication = NO;
+    [UserSession refreshNoticaficationWithIsNewNoticafication:NO];
     [self makeUI];
     [self dataSet];
     [self setupRefresh];
@@ -43,9 +49,13 @@
 - (void)makeUI{
     self.headerView = [[UIView alloc]initWithFrame:CGRectMake(0.f, 0.f, kScreen_Width, 50.f)];
     self.headerView.backgroundColor = [UIColor whiteColor];
+    self.lineView = [[UIView alloc]initWithFrame:CGRectMake(15.f, 49.f, kScreen_Width - 30.f, 1.f)];
+    self.lineView.backgroundColor = [UIColor colorWithHexString:@"#f0f0f0"];
+    self.lineView.hidden = YES;
+    [self.headerView addSubview:self.lineView];
     
-    self.typeSegmentView = [[UISegmentedControl alloc]initWithItems:@[@"待处理",@"已接受",@"已取消"]];
-    self.typeSegmentView.frame = CGRectMake(20.f, 10.f, kScreen_Width - 40.f, 30.f);
+    self.typeSegmentView = [[UISegmentedControl alloc]initWithItems:@[@"付款消息",@"订单消息"]];
+    self.typeSegmentView.frame = CGRectMake(15.f, 10.f, kScreen_Width - 30.f, 30.f);
     self.typeSegmentView.selectedSegmentIndex = 0;
     [self.typeSegmentView setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor colorWithHexString:@"#25C0E9"]] forState:UIControlStateNormal];
     [self.typeSegmentView setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor whiteColor]] forState:UIControlStateSelected];
@@ -66,7 +76,8 @@
     self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeAdvanceOrderTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeAdvanceOrderTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeOrderNoticaficationTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeOrderNoticaficationTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeQuickPayListTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeQuickPayListTableViewCell"];
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)sender{
@@ -76,12 +87,13 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 155.f;
+    return self.status==0?66.f:155.f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 50.f;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    self.lineView.hidden = self.status==1;
     return self.headerView;
 }
 
@@ -91,31 +103,34 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YWHomeAdvanceOrderTableViewCell * advanceOrderCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeAdvanceOrderTableViewCell"];
-    advanceOrderCell.model = self.dataArr[indexPath.row];
-    advanceOrderCell.status = self.status;
-    if (self.status <= 0) {
-        advanceOrderCell.rePlayBlock = ^(){
-            UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"Hello Boss" message:@"请输入您对客户的回复" preferredStyle:UIAlertControllerStyleAlert];
-            [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField){
-                textField.placeholder = @"请输入您对客户的回复";
-                textField.secureTextEntry = NO;
-            }];
-            UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                UITextField * replayTextField = alertVC.textFields.firstObject;
-                [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath];
-            }];
-            UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                UITextField * replayTextField = alertVC.textFields.firstObject;
-                [self requestCancelOrderWithReplay:replayTextField.text withIndexPath:indexPath];
-            }];
-            [alertVC addAction:delAction];
-            [alertVC addAction:OKAction];
-            self.alertVC = alertVC;
-            [self presentViewController:self.alertVC animated:YES completion:nil];
-        };
+    if (self.status == 0) {
+        YWHomeQuickPayListTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeQuickPayListTableViewCell"];
+        listCell.model = self.dataArr[indexPath.row];
+        return listCell;
     }
-    return advanceOrderCell;
+    YWHomeOrderNoticaficationTableViewCell * orderCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeOrderNoticaficationTableViewCell"];
+    orderCell.model = self.dataArr[indexPath.row];
+    __weak typeof(orderCell)weakOrderCell = orderCell;
+    orderCell.rePlayBlock = ^(){
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"Hello Boss" message:@"请输入您对客户的回复" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField){
+            textField.placeholder = @"请输入您对客户的回复";
+            textField.secureTextEntry = NO;
+        }];
+        UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UITextField * replayTextField = alertVC.textFields.firstObject;
+            [self requestDelOrderWithReplay:replayTextField.text withOrderID:weakOrderCell.model.orderID withCell:weakOrderCell];
+        }];
+        UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UITextField * replayTextField = alertVC.textFields.firstObject;
+            [self requestCancelOrderWithReplay:replayTextField.text withOrderID:weakOrderCell.model.orderID withCell:weakOrderCell];
+        }];
+        [alertVC addAction:delAction];
+        [alertVC addAction:OKAction];
+        self.alertVC = alertVC;
+        [self presentViewController:self.alertVC animated:YES completion:nil];
+    };
+    return orderCell;
 }
 
 - (void)tapAction{
@@ -154,35 +169,39 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
-    //    self.status
-    if (page == 0)[self.dataArr removeAllObjects];
     
-    //233333333要删
-    for (int i = 0; i<3; i++) {
-        YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
-        model.orderID = @"233333333";
-        [self.dataArr addObject:model];
+    if (self.status==0) {
+        if (page == 0)[self.dataArr removeAllObjects];
+        //233333333要删
+        for (int i = 0; i<3; i++) {
+            [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+        }
+        //233333333要删
+        [self.tableView reloadData];
+    }else{
+        if (page == 0)[self.dataArr removeAllObjects];
+        //233333333要删
+        for (int i = 0; i<3; i++) {
+            YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
+            model.orderID = @"233333333";
+            model.status = [NSString stringWithFormat:@"%zi",i];
+            [self.dataArr addObject:model];
+        }
+        //233333333要删
+        [self.tableView reloadData];
     }
-    //233333333要删
-    [self.tableView reloadData];
 }
 
-- (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath{
-    //h3333333333删除回复了的订单,并提交回复
+- (void)requestDelOrderWithReplay:(NSString *)rePlay withOrderID:(NSString *)orderID withCell:(YWHomeOrderNoticaficationTableViewCell *)orderCell{
+    //h3333333333订单提交回复
     //    rePlay//回复信息
-    YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
-//    model.orderID
-    [self.dataArr removeObjectAtIndex:indexPath.row];
-    [self.tableView reloadData];
+    orderCell.status = 1;//233333可能会变
 }
 
-- (void)requestCancelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath{
-    //h3333333333删除拒绝了的订单,并提交回复
+- (void)requestCancelOrderWithReplay:(NSString *)rePlay withOrderID:(NSString *)orderID withCell:(YWHomeOrderNoticaficationTableViewCell *)orderCell{
+    //h3333333333订单提交回复
     //    rePlay//回复信息
-    YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
-    //    model.orderID
-    [self.dataArr removeObjectAtIndex:indexPath.row];
-    [self.tableView reloadData];
+    orderCell.status = 2;//233333可能会变
 }
 
 @end

@@ -168,10 +168,9 @@ forRemoteNotification:(NSDictionary *)userInfo
 }
 #endif
 
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo
-fetchCompletionHandler:
-(void (^)(UIBackgroundFetchResult))completionHandler {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [UserSession instance].isNewNoticafication = YES;
+    [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
     [JPUSHService handleRemoteNotification:userInfo];
     MyLog(@"iOS7及以上系统，收到通知:%@", [self logDic:userInfo]);
     if ([[UIDevice currentDevice].systemVersion floatValue]<10.0 || application.applicationState>0) {
@@ -192,6 +191,8 @@ fetchCompletionHandler:
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #pragma mark- JPUSHRegisterDelegate
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    [UserSession instance].isNewNoticafication = YES;
+    [UserSession refreshNoticaficationWithIsNewNoticafication:YES]
     NSDictionary * userInfo = notification.request.content.userInfo;
     
     UNNotificationRequest *request = notification.request; // 收到推送的请求

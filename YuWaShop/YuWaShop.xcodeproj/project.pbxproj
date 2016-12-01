@@ -690,6 +690,10 @@
 		B3F177EC1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177EB1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m */; };
 		B3F177F01DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177EE1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m */; };
 		B3F177F11DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177EF1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib */; };
+		B3F177F61DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177F41DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m */; };
+		B3F177F71DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */; };
+		B3F177FC1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */; };
+		B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1891,6 +1895,12 @@
 		B3F177ED1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAdvanceOrderTableViewCell.h; sourceTree = "<group>"; };
 		B3F177EE1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAdvanceOrderTableViewCell.m; sourceTree = "<group>"; };
 		B3F177EF1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAdvanceOrderTableViewCell.xib; sourceTree = "<group>"; };
+		B3F177F31DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeNoticaficationViewController.h; sourceTree = "<group>"; };
+		B3F177F41DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeNoticaficationViewController.m; sourceTree = "<group>"; };
+		B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeNoticaficationViewController.xib; sourceTree = "<group>"; };
+		B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeOrderNoticaficationTableViewCell.h; sourceTree = "<group>"; };
+		B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeOrderNoticaficationTableViewCell.m; sourceTree = "<group>"; };
+		B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeOrderNoticaficationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4905,6 +4915,7 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B3F177F21DEFF270007DB9A3 /* Noticafication */,
 				B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */,
 				B30E4DED1DEF0397008684BA /* Coupon */,
 				B30E4DC81DEEBAE6008684BA /* Compare */,
@@ -5288,6 +5299,27 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B3F177F21DEFF270007DB9A3 /* Noticafication */ = {
+			isa = PBXGroup;
+			children = (
+				B3F177F81DEFF45E007DB9A3 /* Cell */,
+				B3F177F31DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.h */,
+				B3F177F41DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m */,
+				B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */,
+			);
+			path = Noticafication;
+			sourceTree = "<group>";
+		};
+		B3F177F81DEFF45E007DB9A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */,
+				B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */,
+				B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5429,6 +5461,7 @@
 				B35C9EC71DEC3FE80051E352 /* RBPublicToolView.xib in Resources */,
 				B3F07F121DE72DE9005116EA /* YWPCEveryPayViewController.xib in Resources */,
 				B317AFC31DE5D3C90093C511 /* PersonHeaderBG37@2x.png in Resources */,
+				B3F177F71DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib in Resources */,
 				B35C9EB91DEC3FE80051E352 /* countrycoderule.plist in Resources */,
 				B35C9E911DEC3FE80051E352 /* YWMessageViewController.xib in Resources */,
 				B317AF611DE5CA120093C511 /* YWHomeCollectionViewCell.xib in Resources */,
@@ -5476,6 +5509,7 @@
 				B317AC871DE530780093C511 /* YWStormSubSortCollectionViewCell.xib in Resources */,
 				B317AFD21DE5D3C90093C511 /* PersonHeaderBG50@2x.png in Resources */,
 				B35C9EF81DEC3FE80051E352 /* RBNodeShowViewController.xib in Resources */,
+				B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */,
 				B35C9EB11DEC3FE80051E352 /* 国家 选择币种.json in Resources */,
 				B35C9F031DEC3FE80051E352 /* RBNodeAddToAldumTableViewCell.xib in Resources */,
 				B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */,
@@ -5882,6 +5916,7 @@
 				B31098721DE4543E0033A984 /* YJSegmentedControl.m in Sources */,
 				B35C9B761DEC03590051E352 /* YWPCTDayTimeTableViewCell.m in Sources */,
 				B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */,
+				B3F177F61DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m in Sources */,
 				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
 				B35C9EE31DEC3FE80051E352 /* RBNodeDRecommendTableViewCell.m in Sources */,
 				B35C9CB31DEC3ECD0051E352 /* EMAudioPlayerUtil.m in Sources */,
@@ -6006,6 +6041,7 @@
 				B32737591DE7D145001C57DF /* YWStormAnnotationModel.m in Sources */,
 				B31098B41DE4543E0033A984 /* MJRefreshBackGifFooter.m in Sources */,
 				B35C9B801DEC037D0051E352 /* YWPCTDayTimeAddTableViewCell.m in Sources */,
+				B3F177FC1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m in Sources */,
 				B31098A21DE4543E0033A984 /* MASViewAttribute.m in Sources */,
 				B35C9CE21DEC3ECD0051E352 /* PSTGridLayoutInfo.m in Sources */,
 				B31098BD1DE4543E0033A984 /* MJDIYAutoFooter.m in Sources */,
@@ -6240,6 +6276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tianwei You (VCMW85NFTV)";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
 				INFOPLIST_FILE = YuWaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -6263,6 +6300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tianwei You (VCMW85NFTV)";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
 				INFOPLIST_FILE = YuWaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

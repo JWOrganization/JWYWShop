@@ -58,6 +58,7 @@
 @property (nonatomic,copy)NSString * phone;//营销顾问电话
 
 //233333333暂定
+@property (nonatomic,assign)BOOL isNewNoticafication;//查看新消息,极光暂测试
 @property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证0未认证1认证中2认证完成
 @property (nonatomic,copy)NSString * serventPhone;
 @property (nonatomic,assign)NSInteger cut;//买单收银折扣
@@ -78,5 +79,7 @@
 + (void)autoLoginRequestWithPragram:(NSDictionary *)pragram;
 
 + (void)userToComfired;
+
++ (void)refreshNoticaficationWithIsNewNoticafication:(BOOL)isNewNoticafication;
 
 @end

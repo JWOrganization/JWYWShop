@@ -10,4 +10,6 @@
 
 @interface YWHomeViewController : JWBasicViewController
 
+- (void)isNewNotification:(BOOL)isNew;
+
 @end

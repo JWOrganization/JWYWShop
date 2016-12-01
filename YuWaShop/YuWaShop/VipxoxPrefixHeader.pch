@@ -112,6 +112,8 @@
 #define LOCATION_LON    @"location_lon"            //lon
 #define LOCATION_LAT    @"location_lat"            //lat
 
+#define IS_NEW_NOTICAFICATION   @"isNewNoticafication"       //是否有新通知
+
 #define FRIENDSREQUEST    @"friends_request"            //friends request
 #define KEY_USERNAME_PASSWORD @"YWUUDID"   //UUDID
 

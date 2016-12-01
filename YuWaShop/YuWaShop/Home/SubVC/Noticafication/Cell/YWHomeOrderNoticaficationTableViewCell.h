@@ -1,5 +1,5 @@
 //
-//  YWHomeAdvanceOrderTableViewCell.h
+//  YWHomeOrderNoticaficationTableViewCell.h
 //  YuWaShop
 //
 //  Created by Tian Wei You on 16/12/1.
@@ -9,19 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "YWHomeAdvanceOrderModel.h"
 
-@interface YWHomeAdvanceOrderTableViewCell : UITableViewCell
+@interface YWHomeOrderNoticaficationTableViewCell : UITableViewCell
+
 @property (nonatomic,copy)void (^rePlayBlock)();
 
 @property (nonatomic,strong)YWHomeAdvanceOrderModel * model;
 
-@property (nonatomic,assign)NSInteger status;
+@property (nonatomic,assign)NSInteger status;//0未回复1已回复2已取消
 
+
+@property (weak, nonatomic) IBOutlet UIView *BGView;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nmberLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *rePlayLabel;
 @property (weak, nonatomic) IBOutlet UIButton *rePlayBtn;
-
 
 @end

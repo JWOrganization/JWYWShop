@@ -11,6 +11,7 @@
 #import "JPUSHService.h"
 #import "JWTools.h"
 #import "VIPTabBarController.h"
+#import "YWHomeViewController.h"
 #import "VIPNavigationController.h"
 #import "YWComfiredViewController.h"
 #import "YWComfiringViewController.h"
@@ -151,6 +152,13 @@ static UserSession * user=nil;
     
     
     user.isLogin = YES;
+    
+    NSString * isNewNoticafication = [KUSERDEFAULT valueForKey:IS_NEW_NOTICAFICATION];
+    if (isNewNoticafication&&[isNewNoticafication isEqualToString:@"1"]) {
+        user.isNewNoticafication = YES;
+        [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
+    }
+    
     //233333333暂定
     user.comfired_Status = 2;//实名认证,user.isVIP=3时成功
     user.serventPhone = @"18015885220";
@@ -199,6 +207,17 @@ static UserSession * user=nil;
             [UserSession userToComfired];
         }
     });
+}
+
++ (void)refreshNoticaficationWithIsNewNoticafication:(BOOL)isNewNoticafication{
+    [KUSERDEFAULT setValue:[NSString stringWithFormat:@"%@",isNewNoticafication?@"1":@"0"] forKey:IS_NEW_NOTICAFICATION];
+    user.isNewNoticafication = isNewNoticafication;
+    VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    VIPNavigationController * navigationView = rootTabBarVC.viewControllers[0];
+    if ([navigationView.viewControllers[0] isKindOfClass:[YWHomeViewController class]]) {
+        YWHomeViewController * vc = (YWHomeViewController *)navigationView.viewControllers[0];
+        [vc isNewNotification:isNewNoticafication];
+    }
 }
 
 @end

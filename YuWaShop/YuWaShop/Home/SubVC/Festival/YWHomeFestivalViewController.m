@@ -91,11 +91,11 @@
     if (editingStyle ==UITableViewCellEditingStyleDelete){
         if (self.type == 2) {
             YWHomeFestivalModel * model = self.dataArr[indexPath.row];
-            [self requestDelBankWithID:model.fastivalID withIndexPath:indexPath];
+            [self requestDelFastivalWithID:model.fastivalID withIndexPath:indexPath];
         }else{
             UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 YWHomeFestivalModel * model = self.dataArr[indexPath.row];
-                [self requestDelBankWithID:model.fastivalID withIndexPath:indexPath];
+                [self requestDelFastivalWithID:model.fastivalID withIndexPath:indexPath];
             }];
             UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
             UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除节日活动?" preferredStyle:UIAlertControllerStyleAlert];
@@ -158,7 +158,7 @@
     [self.tableView reloadData];
 }
 
-- (void)requestDelBankWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{
+- (void)requestDelFastivalWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{
     //h3333333333删除节日活动
     [self.dataArr removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];

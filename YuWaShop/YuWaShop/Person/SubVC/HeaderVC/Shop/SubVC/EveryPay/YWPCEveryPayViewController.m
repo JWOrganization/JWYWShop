@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UITextField *everyPayTextfield;
+@property (weak, nonatomic) IBOutlet UILabel *currentPayLabel;
+
 
 @end
 
@@ -25,21 +27,23 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self.everyPayTextfield becomeFirstResponder];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.f];
     [self.everyPayTextfield resignFirstResponder];
 }
 
 - (void)makeNavi{
     self.title = @"人均消费";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"保存" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(saveInfoAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
 }
 
 - (void)makeUI{
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
+    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"2333"];
 }
 
 - (BOOL)saveInfoAction{

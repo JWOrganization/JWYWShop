@@ -10,4 +10,8 @@
 
 @interface YWPSRePlayModel : NSObject
 
+@property (nonatomic,copy)NSString * con;
+@property (nonatomic,copy)NSString * time;
+@property (nonatomic,assign)NSInteger status;//0我1客服
+
 @end

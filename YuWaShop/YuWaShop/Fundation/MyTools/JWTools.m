@@ -401,7 +401,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     NSDate *date = [dateFormatter dateFromString:dateStr];
-    return [NSString stringWithFormat:@"%zi",((long long)[date timeIntervalSince1970]*1000)];
+    return [NSString stringWithFormat:@"%zi",((long long)[date timeIntervalSince1970])];
 }
 
 /**

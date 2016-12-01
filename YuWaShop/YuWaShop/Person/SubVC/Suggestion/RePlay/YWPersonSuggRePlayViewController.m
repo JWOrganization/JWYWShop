@@ -7,7 +7,7 @@
 //
 
 #import "YWPersonSuggRePlayViewController.h"
-#import "YWPSRePlayTableViewCell.h"
+#import "JWChatTableViewCell.h"
 
 @interface YWPersonSuggRePlayViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,12 +27,12 @@
 - (void)dataSet{
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"YWPSRePlayTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWPSRePlayTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"JWChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"JWChatTableViewCell"];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self.tableView fd_heightForCellWithIdentifier:@"YWPSRePlayTableViewCell" configuration:^(YWPSRePlayTableViewCell * cell) {
+    return [self.tableView fd_heightForCellWithIdentifier:@"JWChatTableViewCell" configuration:^(JWChatTableViewCell * cell) {
         cell.model = self.dataArr[indexPath.row];
     }];
 }
@@ -42,7 +42,7 @@
     return self.dataArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YWPSRePlayTableViewCell * replayCell = [tableView dequeueReusableCellWithIdentifier:@"YWPSRePlayTableViewCell"];
+    JWChatTableViewCell * replayCell = [tableView dequeueReusableCellWithIdentifier:@"JWChatTableViewCell"];
     replayCell.model = self.dataArr[indexPath.row];
     return replayCell;
 }
@@ -53,6 +53,9 @@
     //233333333333要删
     for (int i = 0; i<3; i++) {
         YWPSRePlayModel * model = [[YWPSRePlayModel alloc]init];
+        model.con = @"2333333";
+        model.time = [NSString stringWithFormat:@"1480594%zi51",i];
+        model.status = i%2==0?1:0;
         [self.dataArr addObject:model];
     }
     //233333333333要删

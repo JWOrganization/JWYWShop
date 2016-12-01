@@ -276,6 +276,9 @@
 		B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */; };
 		B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737951DE8254A001C57DF /* YWPNRankView.xib */; };
 		B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32737971DE8255E001C57DF /* YWPNPopularityView.xib */; };
+		B35557D91DF03C74002E15A4 /* JWChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B35557D71DF03C74002E15A4 /* JWChatTableViewCell.m */; };
+		B35557DA1DF03C74002E15A4 /* JWChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35557D81DF03C74002E15A4 /* JWChatTableViewCell.xib */; };
+		B35557DD1DF03C99002E15A4 /* UIImage+JWImageReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B35557DC1DF03C99002E15A4 /* UIImage+JWImageReSize.m */; };
 		B35C9B5F1DEBFA630051E352 /* YWPCChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B5D1DEBFA630051E352 /* YWPCChooseTimeViewController.m */; };
 		B35C9B601DEBFA630051E352 /* YWPCChooseTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9B5E1DEBFA630051E352 /* YWPCChooseTimeViewController.xib */; };
 		B35C9B651DEBFF580051E352 /* YWPCChooseTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9B641DEBFF580051E352 /* YWPCChooseTimeModel.m */; };
@@ -1152,6 +1155,11 @@
 		B32737931DE82536001C57DF /* YWPNPublicPraiseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPublicPraiseView.xib; sourceTree = "<group>"; };
 		B32737951DE8254A001C57DF /* YWPNRankView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNRankView.xib; sourceTree = "<group>"; };
 		B32737971DE8255E001C57DF /* YWPNPopularityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPNPopularityView.xib; sourceTree = "<group>"; };
+		B35557D61DF03C74002E15A4 /* JWChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWChatTableViewCell.h; sourceTree = "<group>"; };
+		B35557D71DF03C74002E15A4 /* JWChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWChatTableViewCell.m; sourceTree = "<group>"; };
+		B35557D81DF03C74002E15A4 /* JWChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWChatTableViewCell.xib; sourceTree = "<group>"; };
+		B35557DB1DF03C99002E15A4 /* UIImage+JWImageReSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JWImageReSize.h"; sourceTree = "<group>"; };
+		B35557DC1DF03C99002E15A4 /* UIImage+JWImageReSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JWImageReSize.m"; sourceTree = "<group>"; };
 		B35C9B5C1DEBFA630051E352 /* YWPCChooseTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCChooseTimeViewController.h; sourceTree = "<group>"; };
 		B35C9B5D1DEBFA630051E352 /* YWPCChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCChooseTimeViewController.m; sourceTree = "<group>"; };
 		B35C9B5E1DEBFA630051E352 /* YWPCChooseTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCChooseTimeViewController.xib; sourceTree = "<group>"; };
@@ -2367,6 +2375,8 @@
 				B317AC941DE557510093C511 /* TagScrolView */,
 				B310978B1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.h */,
 				B310978C1DE4543E0033A984 /* AppDelegate+JWLocalNotifiction.m */,
+				B35557DB1DF03C99002E15A4 /* UIImage+JWImageReSize.h */,
+				B35557DC1DF03C99002E15A4 /* UIImage+JWImageReSize.m */,
 				B310978D1DE4543E0033A984 /* JWThirdTools.h */,
 				B310978E1DE4543E0033A984 /* JWThirdTools.m */,
 				B310978F1DE4543E0033A984 /* JWTools.h */,
@@ -4838,6 +4848,9 @@
 		B3AA59C11DEC611C006B39CC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B35557D61DF03C74002E15A4 /* JWChatTableViewCell.h */,
+				B35557D71DF03C74002E15A4 /* JWChatTableViewCell.m */,
+				B35557D81DF03C74002E15A4 /* JWChatTableViewCell.xib */,
 				B3AA59C21DEC6150006B39CC /* YWPSRePlayTableViewCell.h */,
 				B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */,
 				B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */,
@@ -5557,6 +5570,7 @@
 				B3F07F221DE72F9C005116EA /* YWPCTimeViewController.xib in Resources */,
 				B302EAE31DEDAB450000B0A0 /* YWHomeAddFastivalViewController.xib in Resources */,
 				B35C9EA51DEC3FE80051E352 /* YWMessageSearchFriendAddCell.xib in Resources */,
+				B35557DA1DF03C74002E15A4 /* JWChatTableViewCell.xib in Resources */,
 				B317AFE51DE5DBC80093C511 /* YWPersonWeekCountViewController.xib in Resources */,
 				B317AFB91DE5D3C90093C511 /* PersonHeaderBG28@2x.png in Resources */,
 				B317AFAF1DE5D3C90093C511 /* PersonHeaderBG19@2x.png in Resources */,
@@ -5839,6 +5853,7 @@
 				B31098941DE4543E0033A984 /* AFSecurityPolicy.m in Sources */,
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
+				B35557D91DF03C74002E15A4 /* JWChatTableViewCell.m in Sources */,
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
 				B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */,
 				B35C9CD31DEC3ECD0051E352 /* UIImage+EMGIF.m in Sources */,
@@ -6032,6 +6047,7 @@
 				B35C9EF71DEC3FE80051E352 /* RBNodeShowViewController.m in Sources */,
 				B31098C71DE4543E0033A984 /* NSData+ImageContentType.m in Sources */,
 				B35C9D021DEC3ECD0051E352 /* EaseMessageTimeCell.m in Sources */,
+				B35557DD1DF03C99002E15A4 /* UIImage+JWImageReSize.m in Sources */,
 				B35C9CF81DEC3ECD0051E352 /* EaseConversationListViewController.m in Sources */,
 				B35C9EC41DEC3FE80051E352 /* RBIMGToolsCollectionViewCell.m in Sources */,
 				B35C9CE71DEC3ECD0051E352 /* EaseSDKHelper.m in Sources */,

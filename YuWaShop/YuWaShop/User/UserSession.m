@@ -162,6 +162,7 @@ static UserSession * user=nil;
     //233333333暂定
     user.comfired_Status = 2;//实名认证,user.isVIP=3时成功
     user.serventPhone = @"18015885220";
+    user.phone = @"18015885220";
     user.cut = 80;
     user.shopType = @"美食";
     user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];

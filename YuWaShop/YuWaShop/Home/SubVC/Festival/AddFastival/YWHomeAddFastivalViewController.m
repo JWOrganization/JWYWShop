@@ -126,6 +126,10 @@
     }else if ([self.finishTimeBtn.titleLabel.text isEqualToString:@"请输入"]) {
         [self showHUDWithStr:@"请输入结束时间哟~" withSuccess:NO];
         return;
+    }else if (![JWTools firstDate:[JWTools dateTimeWithStr:self.startTimeBtn.titleLabel.text] withCompareDate:[JWTools dateTimeWithStr:self.finishTimeBtn.titleLabel.text]]) {
+        [self showHUDWithStr:@"结束时间不能早于开始时间哟~" withSuccess:NO];
+        self.finishDayPicker.hidden = NO;
+        return;
     }
     
     

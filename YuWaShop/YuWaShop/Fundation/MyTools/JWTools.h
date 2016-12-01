@@ -169,6 +169,25 @@
  */
 + (NSString *)dateWithOutYearDate:(NSDate *)date;
 
+/**
+ *  *  年月日转数字
+ *
+ *  @param dateStr 年月日字符串
+ *
+ *  @return 年月日数字
+ */
++ (NSString *)dateTimeWithStr:(NSString *)dateStr;
+
+/**
+ *  第一个时间是否小于第二个时间
+ *
+ *  @param firstDateStr   第一个时间
+ *  @param compareDateStr 第二个时间
+ *
+ *  @return 第一个时间是否小于第二个时间
+ */
++ (BOOL)firstDate:(NSString *)firstDateStr withCompareDate:(NSString *)compareDateStr;
+
 #pragma mark - Json
 /**
  *  单个数组组成Json文件
@@ -303,7 +322,7 @@
  */
 + (NSString *)stringThirtyTwoWithNumberTenBase:(NSString *)numberStr;
 
-#pragma mark - 虚线边框
+#pragma mark - UIControl Border
 /**
  *  虚线边框
  *
@@ -314,7 +333,14 @@
  *
  *  @return 虚线边框
  */
-+ (UIImage*)imageWithSize:(CGSize)size borderColor:(UIColor *)color borderWidth:(CGFloat)borderWidth  withCornerRadius:(CGFloat)cornerRadius;
++ (UIImage*)imageWithSize:(CGSize)size borderColor:(UIColor *)color borderWidth:(CGFloat)borderWidth withCornerRadius:(CGFloat)cornerRadius;
+
+/**
+ *  UIControl设置圆角
+ *
+ *  @param sender UIControl
+ */
++ (void)cornerRadiusUISet:(UIControl *)sender;
 
 #pragma mark - QR Code 二维码
 /**

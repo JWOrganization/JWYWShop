@@ -55,6 +55,7 @@
     [self payMoneySet];
 }
 - (IBAction)submitBtnAction:(id)sender {
+    [self payMoneySet];
     [self requestCreateQRCode];
 }
 
@@ -63,6 +64,21 @@
         [self showHUDWithStr:@"支付金额太大,请多次支付哟" withSuccess:NO];
         return;
     }
+    
+    if (self.costNumber<=0.f) {
+        self.costTextField.text = @"";
+        [self showHUDWithStr:@"付款不能小于0元哟~" withSuccess:NO];
+        return;
+    }
+    if (self.cutNumber<=0.f){
+        self.cutTextField.text = @"";
+    }
+    
+    if (self.costNumber < self.cutNumber){
+        self.cutTextField.text = self.costTextField.text;
+        self.cutNumber = self.costNumber;
+    }
+    
     self.payNumber = (self.costNumber - self.cutNumber)*(self.isCut?self.cut:100) /100;
     self.payLabel.text = [NSString stringWithFormat:@"￥%.2f",self.payNumber];
     self.QRCodeImageView.image = nil;
@@ -87,6 +103,12 @@
 
 #pragma mark - Http
 - (void)requestCreateQRCode{
+    self.costTextField.text = [NSString stringWithFormat:@"%.2f",[self.costTextField.text floatValue]];
+    if (self.cutNumber<=0.f){
+        self.cutTextField.text = @"";
+    }else{
+        self.cutTextField.text = [NSString stringWithFormat:@"%.2f",[self.cutTextField.text floatValue]];
+    }
     if (self.payNumber<= 0) {
         [self showHUDWithStr:@"付款不能小于0元哟~" withSuccess:NO];
         return;

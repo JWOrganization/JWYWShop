@@ -390,6 +390,32 @@
     return [dateFormatter stringFromDate:date];
 }
 
+/**
+ *  *  年月日转数字
+ *
+ *  @param dateStr 年月日字符串
+ *
+ *  @return 年月日数字
+ */
++ (NSString *)dateTimeWithStr:(NSString *)dateStr{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    NSDate *date = [dateFormatter dateFromString:dateStr];
+    return [NSString stringWithFormat:@"%zi",((long long)[date timeIntervalSince1970]*1000)];
+}
+
+/**
+ *  第一个时间是否小于第二个时间
+ *
+ *  @param firstDateStr   第一个时间
+ *  @param compareDateStr 第二个时间
+ *
+ *  @return 第一个时间是否小于第二个时间
+ */
++ (BOOL)firstDate:(NSString *)firstDateStr withCompareDate:(NSString *)compareDateStr{
+    return  [firstDateStr doubleValue] <= [compareDateStr doubleValue];
+}
+
 #pragma mark - Json
 /**
  *  单个数组组成Json文件
@@ -676,7 +702,7 @@
     return str;
 }
 
-#pragma mark - 虚线边框
+#pragma mark - UIControl Border
 /**
  *  虚线边框
  *
@@ -709,6 +735,16 @@
     UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+/**
+ *  UIControl设置圆角
+ *
+ *  @param sender UIControl
+ */
++ (void)cornerRadiusUISet:(UIControl *)sender{
+    sender.layer.cornerRadius = 5.f;
+    sender.layer.masksToBounds = YES;
 }
 
 #pragma mark - QR Code 二维码

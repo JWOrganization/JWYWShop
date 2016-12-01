@@ -35,6 +35,8 @@
 		B30E4DE51DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DE31DEEBDAE008684BA /* YWHomeCompareOtherTableViewCell.xib */; };
 		B30E4DE81DEEBDEB008684BA /* YWHomeCompareOtherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DE71DEEBDEB008684BA /* YWHomeCompareOtherModel.m */; };
 		B30E4DEC1DEEEAD7008684BA /* YWHomeCompareSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */; };
+		B30E4DF11DEF03B7008684BA /* YWHomeCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E4DEF1DEF03B7008684BA /* YWHomeCouponViewController.m */; };
+		B30E4DF21DEF03B7008684BA /* YWHomeCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30E4DF01DEF03B7008684BA /* YWHomeCouponViewController.xib */; };
 		B31097051DE44EA00033A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B31097041DE44EA00033A984 /* main.m */; };
 		B310970E1DE44EA00033A984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B310970C1DE44EA00033A984 /* Main.storyboard */; };
 		B31097101DE44EA00033A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B310970F1DE44EA00033A984 /* Assets.xcassets */; };
@@ -608,6 +610,13 @@
 		B3AA59C51DEC6150006B39CC /* YWPSRePlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C31DEC6150006B39CC /* YWPSRePlayTableViewCell.m */; };
 		B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */; };
 		B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */; };
+		B3ACF10D1DEF06C40056FD64 /* YWHomeAddCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ACF10B1DEF06C40056FD64 /* YWHomeAddCouponViewController.m */; };
+		B3ACF10E1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ACF10C1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib */; };
+		B3ACF1111DEF06E10056FD64 /* YWHomeCouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ACF1101DEF06E10056FD64 /* YWHomeCouponModel.m */; };
+		B3ACF1141DEF06F70056FD64 /* YWHomeCouponHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ACF1131DEF06F70056FD64 /* YWHomeCouponHeaderView.m */; };
+		B3ACF1181DEF070C0056FD64 /* YWHomeCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ACF1161DEF070C0056FD64 /* YWHomeCouponTableViewCell.m */; };
+		B3ACF1191DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ACF1171DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib */; };
+		B3ACF11B1DEF07380056FD64 /* YWHomeCouponHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ACF11A1DEF07380056FD64 /* YWHomeCouponHeaderView.xib */; };
 		B3C12A511DED217F000EF099 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A481DED217F000EF099 /* HttpManager.m */; };
 		B3C12A521DED217F000EF099 /* YWLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A4D1DED217F000EF099 /* YWLocation.m */; };
 		B3C12A531DED217F000EF099 /* HttpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C12A4E1DED217F000EF099 /* HttpObject.m */; };
@@ -676,6 +685,11 @@
 		B3F07F1C1DE72E25005116EA /* YWPCMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F1A1DE72E25005116EA /* YWPCMapViewController.xib */; };
 		B3F07F211DE72F9C005116EA /* YWPCTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */; };
 		B3F07F221DE72F9C005116EA /* YWPCTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */; };
+		B3F177E61DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177E41DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m */; };
+		B3F177E71DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177E51DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib */; };
+		B3F177EC1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177EB1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m */; };
+		B3F177F01DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177EE1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m */; };
+		B3F177F11DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177EF1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -741,6 +755,9 @@
 		B30E4DE71DEEBDEB008684BA /* YWHomeCompareOtherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareOtherModel.m; sourceTree = "<group>"; };
 		B30E4DEA1DEEEAD7008684BA /* YWHomeCompareSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCompareSortTableView.h; sourceTree = "<group>"; };
 		B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCompareSortTableView.m; sourceTree = "<group>"; };
+		B30E4DEE1DEF03B7008684BA /* YWHomeCouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCouponViewController.h; sourceTree = "<group>"; };
+		B30E4DEF1DEF03B7008684BA /* YWHomeCouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCouponViewController.m; sourceTree = "<group>"; };
+		B30E4DF01DEF03B7008684BA /* YWHomeCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCouponViewController.xib; sourceTree = "<group>"; };
 		B31097001DE44EA00033A984 /* YuWaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuWaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31097041DE44EA00033A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B310970D1DE44EA00033A984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1749,6 +1766,17 @@
 		B3AA59C41DEC6150006B39CC /* YWPSRePlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPSRePlayTableViewCell.xib; sourceTree = "<group>"; };
 		B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSRePlayModel.h; sourceTree = "<group>"; };
 		B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSRePlayModel.m; sourceTree = "<group>"; };
+		B3ACF10A1DEF06C40056FD64 /* YWHomeAddCouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAddCouponViewController.h; sourceTree = "<group>"; };
+		B3ACF10B1DEF06C40056FD64 /* YWHomeAddCouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAddCouponViewController.m; sourceTree = "<group>"; };
+		B3ACF10C1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAddCouponViewController.xib; sourceTree = "<group>"; };
+		B3ACF10F1DEF06E10056FD64 /* YWHomeCouponModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCouponModel.h; sourceTree = "<group>"; };
+		B3ACF1101DEF06E10056FD64 /* YWHomeCouponModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCouponModel.m; sourceTree = "<group>"; };
+		B3ACF1121DEF06F70056FD64 /* YWHomeCouponHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCouponHeaderView.h; sourceTree = "<group>"; };
+		B3ACF1131DEF06F70056FD64 /* YWHomeCouponHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCouponHeaderView.m; sourceTree = "<group>"; };
+		B3ACF1151DEF070C0056FD64 /* YWHomeCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeCouponTableViewCell.h; sourceTree = "<group>"; };
+		B3ACF1161DEF070C0056FD64 /* YWHomeCouponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCouponTableViewCell.m; sourceTree = "<group>"; };
+		B3ACF1171DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCouponTableViewCell.xib; sourceTree = "<group>"; };
+		B3ACF11A1DEF07380056FD64 /* YWHomeCouponHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCouponHeaderView.xib; sourceTree = "<group>"; };
 		B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipxoxPrefixHeader.pch; sourceTree = "<group>"; };
 		B3C12A481DED217F000EF099 /* HttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
 		B3C12A491DED217F000EF099 /* GlobalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalInfo.h; sourceTree = "<group>"; };
@@ -1855,6 +1883,14 @@
 		B3F07F1E1DE72F9C005116EA /* YWPCTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPCTimeViewController.h; sourceTree = "<group>"; };
 		B3F07F1F1DE72F9C005116EA /* YWPCTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPCTimeViewController.m; sourceTree = "<group>"; };
 		B3F07F201DE72F9C005116EA /* YWPCTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPCTimeViewController.xib; sourceTree = "<group>"; };
+		B3F177E31DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAdvanceOrderViewController.h; sourceTree = "<group>"; };
+		B3F177E41DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAdvanceOrderViewController.m; sourceTree = "<group>"; };
+		B3F177E51DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAdvanceOrderViewController.xib; sourceTree = "<group>"; };
+		B3F177EA1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAdvanceOrderModel.h; sourceTree = "<group>"; };
+		B3F177EB1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAdvanceOrderModel.m; sourceTree = "<group>"; };
+		B3F177ED1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAdvanceOrderTableViewCell.h; sourceTree = "<group>"; };
+		B3F177EE1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeAdvanceOrderTableViewCell.m; sourceTree = "<group>"; };
+		B3F177EF1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeAdvanceOrderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2066,6 +2102,20 @@
 				B30E4DEB1DEEEAD7008684BA /* YWHomeCompareSortTableView.m */,
 			);
 			path = SortView;
+			sourceTree = "<group>";
+		};
+		B30E4DED1DEF0397008684BA /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				B3ACF1091DEF06A40056FD64 /* AddCoupon */,
+				B3ACF1081DEF06980056FD64 /* Model */,
+				B3ACF1071DEF068C0056FD64 /* Header */,
+				B3ACF1061DEF067E0056FD64 /* Cell */,
+				B30E4DEE1DEF03B7008684BA /* YWHomeCouponViewController.h */,
+				B30E4DEF1DEF03B7008684BA /* YWHomeCouponViewController.m */,
+				B30E4DF01DEF03B7008684BA /* YWHomeCouponViewController.xib */,
+			);
+			path = Coupon;
 			sourceTree = "<group>";
 		};
 		B31096F71DE44EA00033A984 = {
@@ -4794,6 +4844,45 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B3ACF1061DEF067E0056FD64 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3ACF1151DEF070C0056FD64 /* YWHomeCouponTableViewCell.h */,
+				B3ACF1161DEF070C0056FD64 /* YWHomeCouponTableViewCell.m */,
+				B3ACF1171DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3ACF1071DEF068C0056FD64 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B3ACF1121DEF06F70056FD64 /* YWHomeCouponHeaderView.h */,
+				B3ACF1131DEF06F70056FD64 /* YWHomeCouponHeaderView.m */,
+				B3ACF11A1DEF07380056FD64 /* YWHomeCouponHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		B3ACF1081DEF06980056FD64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3ACF10F1DEF06E10056FD64 /* YWHomeCouponModel.h */,
+				B3ACF1101DEF06E10056FD64 /* YWHomeCouponModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3ACF1091DEF06A40056FD64 /* AddCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				B3ACF10A1DEF06C40056FD64 /* YWHomeAddCouponViewController.h */,
+				B3ACF10B1DEF06C40056FD64 /* YWHomeAddCouponViewController.m */,
+				B3ACF10C1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib */,
+			);
+			path = AddCoupon;
+			sourceTree = "<group>";
+		};
 		B3C12A541DED25CA000EF099 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -4816,6 +4905,8 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */,
+				B30E4DED1DEF0397008684BA /* Coupon */,
 				B30E4DC81DEEBAE6008684BA /* Compare */,
 				B302EACE1DEDA8CA0000B0A0 /* Festival */,
 				B302EAB81DED63E20000B0A0 /* Commodities */,
@@ -5166,6 +5257,37 @@
 			path = Time;
 			sourceTree = "<group>";
 		};
+		B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */ = {
+			isa = PBXGroup;
+			children = (
+				B3F177E91DEFDE83007DB9A3 /* Cell */,
+				B3F177E81DEFDE72007DB9A3 /* Model */,
+				B3F177E31DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.h */,
+				B3F177E41DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m */,
+				B3F177E51DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib */,
+			);
+			path = AdvanceOrder;
+			sourceTree = "<group>";
+		};
+		B3F177E81DEFDE72007DB9A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3F177EA1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.h */,
+				B3F177EB1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3F177E91DEFDE83007DB9A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3F177ED1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.h */,
+				B3F177EE1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m */,
+				B3F177EF1DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5300,6 +5422,7 @@
 				B35C9ED41DEC3FE80051E352 /* RBPublicNodeViewController.xib in Resources */,
 				B35C9EB81DEC3FE80051E352 /* country.plist in Resources */,
 				B31098ED1DE4543E0033A984 /* YWPersonViewController.xib in Resources */,
+				B3ACF10E1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib in Resources */,
 				B3F07EF51DE70BE7005116EA /* YWPersonShopTableViewCell.xib in Resources */,
 				B317AF271DE5B5110093C511 /* YWPersonCooperaViewController.xib in Resources */,
 				B30E4DE01DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.xib in Resources */,
@@ -5320,6 +5443,7 @@
 				B317AFCF1DE5D3C90093C511 /* PersonHeaderBG48@2x.png in Resources */,
 				B35C9EE01DEC3FE80051E352 /* RBNodeDCommentTableViewCell.xib in Resources */,
 				B31098E91DE4543E0033A984 /* YWPersonTableViewCell.xib in Resources */,
+				B3ACF11B1DEF07380056FD64 /* YWHomeCouponHeaderView.xib in Resources */,
 				B35C9D141DEC3ECD0051E352 /* EaseUIResource.bundle in Resources */,
 				B35C9EFE1DEC3FE80051E352 /* YWNodeAddAldumViewController.xib in Resources */,
 				B327376A1DE80F01001C57DF /* YWPCTimeTableViewCell.xib in Resources */,
@@ -5451,6 +5575,7 @@
 				B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */,
 				B317AFD51DE5D3C90093C511 /* PersonHeaderBG53@2x.png in Resources */,
 				B317AFD81DE5D3C90093C511 /* PersonHeaderBG56@2x.png in Resources */,
+				B30E4DF21DEF03B7008684BA /* YWHomeCouponViewController.xib in Resources */,
 				B317AFFE1DE5E6230093C511 /* YWPersonNewsViewController.xib in Resources */,
 				B35C9F241DEC3FE80051E352 /* RBCommentToolsView.xib in Resources */,
 				B317AFDA1DE5D3C90093C511 /* PersonHeaderBG58@2x.png in Resources */,
@@ -5477,6 +5602,7 @@
 				B3F07E561DE681B6005116EA /* YWPersonSubVipViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
 				B35C9EB31DEC3FE80051E352 /* 定位.json in Resources */,
+				B3F177E71DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib in Resources */,
 				B317AFBC1DE5D3C90093C511 /* PersonHeaderBG30@2x.png in Resources */,
 				B35C9EB71DEC3FE80051E352 /* 首页数据.json in Resources */,
 				B3C12A6D1DED3575000EF099 /* YWHomeQuickPayListTableViewCell.xib in Resources */,
@@ -5485,6 +5611,7 @@
 				B317AFCB1DE5D3C90093C511 /* PersonHeaderBG44@2x.png in Resources */,
 				B310970E1DE44EA00033A984 /* Main.storyboard in Resources */,
 				B32737941DE82536001C57DF /* YWPNPublicPraiseView.xib in Resources */,
+				B3F177F11DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.xib in Resources */,
 				B32347151DEBD73C002C72E1 /* YWPCEOnTableViewCell.xib in Resources */,
 				B317AC9F1DE557A80093C511 /* JWTagsCollectionViewCell.xib in Resources */,
 				B317AFCE1DE5D3C90093C511 /* PersonHeaderBG47@2x.png in Resources */,
@@ -5495,6 +5622,7 @@
 				B317AFAE1DE5D3C90093C511 /* PersonHeaderBG18@2x.png in Resources */,
 				B3F07F1C1DE72E25005116EA /* YWPCMapViewController.xib in Resources */,
 				B35C9F221DEC3FE80051E352 /* JWEmojisKeyBoards.xib in Resources */,
+				B3ACF1191DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib in Resources */,
 				B35C9EE81DEC3FE80051E352 /* RBNodeDetailCommentHeader.xib in Resources */,
 				B35C9F0F1DEC3FE80051E352 /* MDHotelRightBtn.xib in Resources */,
 				B35C9F091DEC3FE80051E352 /* RBHomeViewController.xib in Resources */,
@@ -5563,6 +5691,7 @@
 				B35C9CFE1DEC3ECD0051E352 /* EaseUserCell.m in Sources */,
 				B35C9CF01DEC3ECD0051E352 /* EaseChineseToPinyin.m in Sources */,
 				B310988B1DE4543E0033A984 /* JWThirdTools.m in Sources */,
+				B3ACF1181DEF070C0056FD64 /* YWHomeCouponTableViewCell.m in Sources */,
 				B35C9EDD1DEC3FE80051E352 /* RBHomeRecommendModel.m in Sources */,
 				B35C9F1D1DEC3FE80051E352 /* RBNodeBGView.m in Sources */,
 				B31098EA1DE4543E0033A984 /* YWPersonHeaderView.m in Sources */,
@@ -5579,6 +5708,7 @@
 				B30E4DDF1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m in Sources */,
 				B30E4DD31DEEBD18008684BA /* YWHomeCompareViewHeaderView.m in Sources */,
 				B35C9CD21DEC3ECD0051E352 /* UIButton+EMWebCache.m in Sources */,
+				B3F177E61DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m in Sources */,
 				B31098BE1DE4543E0033A984 /* MJDIYBackFooter.m in Sources */,
 				B35C9CBB1DEC3ECD0051E352 /* wav.mm in Sources */,
 				B35C9F211DEC3FE80051E352 /* JWEmojisKeyBoards.m in Sources */,
@@ -5688,6 +5818,7 @@
 				B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */,
 				B35C9D111DEC3ECD0051E352 /* EaseChatBarMoreView.m in Sources */,
 				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
+				B3ACF10D1DEF06C40056FD64 /* YWHomeAddCouponViewController.m in Sources */,
 				B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B35C9EC61DEC3FE80051E352 /* RBPublicToolView.m in Sources */,
@@ -5726,6 +5857,7 @@
 				B35C9CBF1DEC3ECD0051E352 /* MBProgressHUD+Add.m in Sources */,
 				B35C9F231DEC3FE80051E352 /* RBCommentToolsView.m in Sources */,
 				B35C9CC11DEC3ECD0051E352 /* MWGridCell.m in Sources */,
+				B3F177EC1DEFDECF007DB9A3 /* YWHomeAdvanceOrderModel.m in Sources */,
 				B35C9EF11DEC3FE80051E352 /* RBNodeShowModel.m in Sources */,
 				B35C9ED21DEC3FE80051E352 /* RBPublishSession.m in Sources */,
 				B35C9ED31DEC3FE80051E352 /* RBPublicNodeViewController.m in Sources */,
@@ -5785,6 +5917,7 @@
 				B32737901DE824F9001C57DF /* YWPNDetailView.m in Sources */,
 				B31098A41DE4543E0033A984 /* NSArray+MASAdditions.m in Sources */,
 				B310986F1DE4543E0033A984 /* UIScrollView+MJRefreshGif.m in Sources */,
+				B3ACF1111DEF06E10056FD64 /* YWHomeCouponModel.m in Sources */,
 				B317AFFD1DE5E6230093C511 /* YWPersonNewsViewController.m in Sources */,
 				B35C9ECC1DEC3FE80051E352 /* RBPublicEditorViewController.m in Sources */,
 				B35C9CF31DEC3ECD0051E352 /* EaseEmoji.m in Sources */,
@@ -5838,6 +5971,7 @@
 				B35C9CEB1DEC3ECD0051E352 /* NSDate+Category.m in Sources */,
 				B31098CA1DE4543E0033A984 /* SDWebImageDecoder.m in Sources */,
 				B35C9B6C1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.m in Sources */,
+				B30E4DF11DEF03B7008684BA /* YWHomeCouponViewController.m in Sources */,
 				B35C9D041DEC3ECD0051E352 /* EaseBubbleView+Gif.m in Sources */,
 				B35C9F181DEC3FE80051E352 /* RBNewNodeCollectionViewCell.m in Sources */,
 				B31098EC1DE4543E0033A984 /* YWPersonViewController.m in Sources */,
@@ -5902,12 +6036,14 @@
 				B32737801DE82237001C57DF /* YWPersonNewsDetailModel.m in Sources */,
 				B35C9F3E1DEC3FE80051E352 /* TZImagePickerController.m in Sources */,
 				B35C9F301DEC3FE80051E352 /* JWTextView.m in Sources */,
+				B3ACF1141DEF06F70056FD64 /* YWHomeCouponHeaderView.m in Sources */,
 				B32737641DE7EBB0001C57DF /* YWPCCutPickerView.m in Sources */,
 				B3F07E511DE681B6005116EA /* YWPersonPointViewController.m in Sources */,
 				B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
 				B3C12A521DED217F000EF099 /* YWLocation.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
+				B3F177F01DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m in Sources */,
 				B35C9B681DEBFFE20051E352 /* YWPCChooseSubTimeModel.m in Sources */,
 				B387EAB11DE45E110045323C /* VIPNavigationController.m in Sources */,
 				B31098C41DE4543E0033A984 /* UIScrollView+MJRefresh.m in Sources */,

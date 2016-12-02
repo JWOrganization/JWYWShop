@@ -72,7 +72,7 @@
     self.consumptionView.isShowLineChart = YES;
     [self.scrollView addSubview:self.consumptionView];
     
-    NSArray * nameArr = @[@"店铺的浏览量",@"客户客户数",@"消费总金额"];
+    NSArray * nameArr = @[@"店铺的浏览量",@"消费客户数",@"消费总金额"];
     NSArray * imgNameArr = @[@"chart_line01",@"chart_line11",@"chart_line01"];
     NSArray * pointNameArr = @[@" 点击量",@" 单位:个",@" 单位:k"];
     for (int i = 0; i<nameArr.count; i++) {

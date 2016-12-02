@@ -138,7 +138,24 @@
         case YuWaType_Shoper_ShopAdmin_CommentReply://口碑品牌之回复
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CommentReply];
             break;
-            
+        case YuWaType_Shoper_ShopAdmin_DelShopPhoto://相册管理之删除
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_DelShopPhoto];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddShopPhoto://相册管理之添加
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddShopPhoto];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddHoliday://节日管理之添加
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddHoliday];
+            break;
+        case YuWaType_Shoper_ShopAdmin_DelHoliday://节日管理之删除
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_DelHoliday];
+            break;
+        case YuWaType_Shoper_ShopAdmin_BookReply://预定管理之回复
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_BookReply];
+            break;
+        case YuWaType_Shoper_ShopAdmin_AddCheckStatus://提交门店实名认证
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddCheckStatus];
+            break;
             
            //URLStr建立
         default:
@@ -294,6 +311,15 @@
             break;
         case YuWaType_Shoper_ShopAdmin_GoodsLists://商品管理之商品列表,支持分页
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GoodsLists];
+            break;
+        case YuWaType_Shoper_ShopAdmin_BookLists://预定管理之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_BookLists];
+            break;
+        case YuWaType_Shoper_ShopAdmin_HolidayLists://节日管理之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_HolidayLists];
+            break;
+        case YuWaType_Shoper_ShopAdmin_ShopPhotoLists://相册管理之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_ShopPhotoLists];
             break;
             
             //URLStr建立

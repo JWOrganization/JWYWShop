@@ -91,6 +91,16 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_CommentList,//口碑品牌之列表
     YuWaType_Shoper_ShopAdmin_CommentReply,//口碑品牌之回复
     
+    YuWaType_Shoper_ShopAdmin_AddCheckStatus, //提交门店实名认证
+    YuWaType_Shoper_ShopAdmin_BookLists,  //预定管理之列表
+    YuWaType_Shoper_ShopAdmin_BookReply,  //预定管理之回复
+    YuWaType_Shoper_ShopAdmin_HolidayLists,  //节日管理之列表
+    YuWaType_Shoper_ShopAdmin_DelHoliday,  //节日管理之删除
+    YuWaType_Shoper_ShopAdmin_AddHoliday, //节日管理之添加
+    YuWaType_Shoper_ShopAdmin_AddShopPhoto,  //相册管理之添加
+    YuWaType_Shoper_ShopAdmin_DelShopPhoto,  //相册管理之删除
+    YuWaType_Shoper_ShopAdmin_ShopPhotoLists,  //相册管理之列表
+    
     YuWaType_
     
 }kYuWaType;

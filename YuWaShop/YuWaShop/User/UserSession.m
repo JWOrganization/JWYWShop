@@ -160,6 +160,7 @@ static UserSession * user=nil;
     }
     user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
     user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
+    if (user.cut<10)user.cut = 95;
     user.serventPhone = dataDic[@"invite_phone"];
     
     //233333333暂定

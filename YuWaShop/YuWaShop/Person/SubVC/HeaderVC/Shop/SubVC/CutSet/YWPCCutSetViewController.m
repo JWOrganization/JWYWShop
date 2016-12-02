@@ -46,10 +46,8 @@
     self.sureBtn.layer.cornerRadius = 5.f;
     self.sureBtn.layer.masksToBounds = YES;
     
-    //23333333333要换
-    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@折",@"95"];
-    self.cutShowLabel.text = [NSString stringWithFormat:@"客服折扣%@+5=%@折 (0.5折为平台分配资金)\n\n不能低于95折",@"90",@"95"];
-    //23333333333要换
+    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
+    self.cutShowLabel.text = [NSString stringWithFormat:@"客服折扣%zi+5=%@ (0.5折为平台分配资金)\n\n不能低于95折",self.cut,[UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)]];
     
     [self makePickerView];
 }
@@ -64,10 +62,10 @@
     self.picker.dataSource = self;
     self.picker.backgroundColor = [UIColor whiteColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.picker selectRow:25 inComponent:0 animated:YES];
+        [self.picker selectRow:(95-[UserSession instance].cut >=0?(95-[UserSession instance].cut):0) inComponent:0 animated:YES];
     });
-    self.cut = @"7折";
-    self.cutInter = 70;
+    self.cut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
+    self.cutInter = [UserSession instance].cut;
     [self saveAvtion];
     NSMutableArray * cutArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 95; i >= 10; i--) {
@@ -126,6 +124,13 @@
 - (void)requestSendCut{
     //h333333333333折扣设置
     
+    NSString * cutStr = [NSString stringWithFormat:@"0.%zi",self.cutInter];//2333333要换成str
+    
+    [UserSession instance].cut = self.cutInter;
+    NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
+    [shopArr replaceObjectAtIndex:1 withObject:([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
+    [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
+    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
     [self showHUDWithStr:@"折扣设置成功" withSuccess:YES];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.navigationController popViewControllerAnimated:YES];

@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *imageCountLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageCountBGWidth;
 
+- (void)refreshUI;
 
 @end

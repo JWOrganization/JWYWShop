@@ -40,7 +40,7 @@
                         <constraint firstAttribute="trailing" secondItem="fXZ-cA-xto" secondAttribute="trailing" id="iVL-Vk-vAG"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际收入95折给予消费者显示全付" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-qf-QQd">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际收入95折给予消费者显示全付" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-qf-QQd">
                     <rect key="frame" x="0.0" y="320" width="600" height="64"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="wOg-Cd-vGV"/>

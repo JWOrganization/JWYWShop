@@ -31,6 +31,7 @@
     [super viewDidLoad];
     [self makeUI];
     [self dataSet];
+    [self requestData];
 }
 
 - (void)makeUI{
@@ -44,6 +45,13 @@
     self.nameArr = [NSMutableArray arrayWithArray:@[@[@"免费停车",@"付费停车",@"无停车位",@"不显示停车信息"],@[@"免费WIFI"],@[@"有吸烟区",@"有无吸烟区",@"有包厢",@"有卡座",@"有沙发位",@"有露天位",@"有景观位",@"有宝宝椅"],@[@"有表演",@"有儿童游乐区",@"有旋转餐厅"]]];
     self.parkChoose = 4;
     self.model = [YWPersonShopModel sharePersonShop];
+    if (self.model.environmentDataArr) {
+        [self.model.environmentDataArr[0] enumerateObjectsUsingBlock:^(NSString * _Nonnull str, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([str isEqualToString:@"1"]) {
+                self.parkChoose = idx;
+            }
+        }];
+    }
     self.dataArr = [NSMutableArray arrayWithArray:@[@[@"0",@"0",@"0",@"0"],@[@"0"],@[@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0"],@[@"0",@"0",@"0"]]];
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 0; i < typeNameArr.count; i++) {
@@ -132,8 +140,10 @@
 }
 - (void)requestUpData{
     //h3333333333上传环境配套设置
+    //    self.dataArr
+    
     self.model.environmentDataArr = self.dataArr;
-//    self.dataArr
+    [self showHUDWithStr:@"设置成功" withSuccess:YES];
 }
 
 @end

@@ -24,7 +24,7 @@ static YWPersonShopModel * shop =nil;
 }
 
 + (void)defaultInfoSet{
-    shop.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@"",@""],@[@""]]];
+    shop.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"",@""],@[@"",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)]),@""],@[@""]]];
 }
 
 

@@ -25,11 +25,6 @@
 }
 
 - (void)dataSet{//233333333
-//    self.showImageView.image
-//    self.nameLabel.text =
-//    self.signatureLabel.text =
-    self.imageCountLabel.text = @"126";
-    
     CGFloat point = 4.3f;//评分Temp
     NSInteger countTime = point/1;
     if (point >= 0.5f && point < 1.f) {
@@ -46,6 +41,12 @@
             }
         }
     }
+}
+
+- (void)refreshUI{
+    self.nameLabel.text = [UserSession instance].nickName;
+    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] placeholderImage:[UIImage imageNamed:@"btn-Upload-Avatar"] completed:nil];
+    self.signatureLabel.text = [UserSession instance].personality;
 }
 
 - (void)layoutSet{

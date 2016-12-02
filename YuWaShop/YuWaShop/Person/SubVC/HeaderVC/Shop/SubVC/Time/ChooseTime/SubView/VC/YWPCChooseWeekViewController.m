@@ -82,5 +82,4 @@
     return weekCell;
 }
 
-
 @end

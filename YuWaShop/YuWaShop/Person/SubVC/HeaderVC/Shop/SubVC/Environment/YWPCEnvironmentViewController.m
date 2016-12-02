@@ -129,12 +129,13 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //请求环境配置
     if (self.model.environmentDataArr){
         self.dataArr = self.model.environmentDataArr;
         [self.tableView reloadData];
         return;
     }
+    
+    //h3333333333请求环境配置
 //    self.model.environmentDataArr =
     [self.tableView reloadData];
 }

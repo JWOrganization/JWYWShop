@@ -137,6 +137,8 @@
 #pragma mark - Http
 - (void)requestUpDateLocation{
     //h3333333333333上传当前位置,经纬度
+//    self.touchMapCoordinate.latitude//纬度
+//    self.touchMapCoordinate.longitude//经度
 }
 
 @end

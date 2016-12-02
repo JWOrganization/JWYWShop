@@ -41,6 +41,7 @@
     self.textView.layer.cornerRadius = 5.f;
     self.textView.layer.masksToBounds = YES;
     self.textView.placeholder = @"显示简介";
+    self.textView.placeholderColor = [UIColor colorWithHexString:@"#d3d3d3"];
 //    self.textView.isDrawPlaceholder = NO;//233333有简介了的话
     
 }
@@ -84,7 +85,6 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     self.cameraImage = info[@"UIImagePickerControllerEditedImage"];
     [self.shopIconBtn setImage:self.cameraImage forState:UIControlStateNormal];
-    [self requestChangeIcon];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -109,26 +109,37 @@
         [self showHUDWithStr:@"请输入正确电话哟" withSuccess:NO];
         return;
     }
-    //h33333333333上传门店头像
+    
+    NSDictionary * pragram = @{@"img":@"img"};
+    
+    [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.cameraImageURL = responsObj[@"data"];
+        if (!self.cameraImageURL)self.cameraImageURL=@"";
+        [self requestUpLoadShopInfo];
+    } failur:^(id errorData, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",error);
+    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h33333333333上传门店头像
 }
 
 - (void)requestUpLoadShopInfo{
     //h333333333333提交商店信息
-    
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL};
     
-//    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
-//        MyLog(@"Regieter Code pragram is %@",pragram);
-//        MyLog(@"Regieter Code is %@",responsObj);
-//        [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            self.changeInfoBlock(self.dataArr);
-//            [self.navigationController popViewControllerAnimated:YES];
-//        });
-//    } failur:^(id responsObj, NSError *error) {
-//        MyLog(@"Regieter Code pragram is %@",pragram);
-//        MyLog(@"Regieter Code error is %@",responsObj);
-//    }];
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //233333修改model,
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }];
 }
 
 @end

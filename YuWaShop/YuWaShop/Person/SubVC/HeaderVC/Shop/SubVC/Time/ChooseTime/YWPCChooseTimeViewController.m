@@ -38,7 +38,6 @@
     self.title = @"添加营业时间";
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
-    
     self.model = [[YWPCChooseTimeModel alloc]init];
     
     WEAKSELF;
@@ -71,11 +70,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"YWPCTTimeNameTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWPCTTimeNameTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWPCTDayTimeAddTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWPCTDayTimeAddTableViewCell"];
 }
-
 - (IBAction)submitBtnAction:(id)sender {
     [self requestUpData];
 }
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.model.isPayAllDay?2:(self.model.payTimeArr.count + 3);
@@ -83,7 +80,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return section < 2?1:(section >= (self.model.payTimeArr.count + 2)?1:2);
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         YWPCTWeekDayTableViewCell * weekCell = [tableView dequeueReusableCellWithIdentifier:@"YWPCTWeekDayTableViewCell"];

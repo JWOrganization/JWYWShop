@@ -164,6 +164,7 @@ static UserSession * user=nil;
     user.serventPhone = dataDic[@"invite_phone"];
     
     //233333333暂定
+    user.comfired_Status = 2;
     user.shopType = @"美食";
     user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
     user.shopTypeID = @"24";

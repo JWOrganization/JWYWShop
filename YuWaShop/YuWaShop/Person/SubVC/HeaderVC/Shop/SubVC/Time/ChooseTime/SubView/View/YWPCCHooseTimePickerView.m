@@ -120,6 +120,7 @@
         }
     }
 }
+
 #pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 2;//列数

@@ -45,7 +45,7 @@
 
 - (void)refreshUI{
     self.nameLabel.text = [UserSession instance].nickName;
-    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] placeholderImage:[UIImage imageNamed:@"btn-Upload-Avatar"] completed:nil];
+    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] placeholderImage:[UIImage imageNamed:@"placeholder"] completed:nil];
     self.signatureLabel.text = [UserSession instance].personality;
 }
 

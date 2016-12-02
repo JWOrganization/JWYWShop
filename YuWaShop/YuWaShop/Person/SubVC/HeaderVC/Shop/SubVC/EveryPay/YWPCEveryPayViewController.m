@@ -23,10 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self makeNavi];
-    self.model = [YWPersonShopModel sharePersonShop];
     [self makeUI];
 }
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
@@ -40,12 +38,13 @@
 
 - (void)makeNavi{
     self.title = @"人均消费";
+    self.model = [YWPersonShopModel sharePersonShop];
 }
 
 - (void)makeUI{
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
-    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"2333"];
+    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"233333"];
 }
 
 - (BOOL)saveInfoAction{
@@ -73,13 +72,11 @@
 #pragma mark - Http
 - (void)requestSendEveryPay{
     //h333333333333上传人均消费
-    
     [self showHUDWithStr:@"恭喜,保存成功" withSuccess:YES];
     //2333333333修改门户设置信息
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.navigationController popViewControllerAnimated:YES];
     });
 }
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "YWPCCutSetViewController.h"
+#import "YWPersonShopModel.h"
 
 @interface YWPCCutSetViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
@@ -20,6 +21,7 @@
 @property (nonatomic,copy)NSString * cut;//23333333可能写单例或放UserSession设置模型内
 @property (nonatomic,assign)NSInteger cutInter;
 @property (nonatomic,strong)NSArray * cutArr;
+@property (nonatomic,strong)YWPersonShopModel * model;
 
 @end
 
@@ -28,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"折扣设置";
+    self.model = [YWPersonShopModel sharePersonShop];
     [self makeUI];
 }
 - (void)viewWillAppear:(BOOL)animated{

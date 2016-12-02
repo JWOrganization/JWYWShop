@@ -7,6 +7,7 @@
 //
 
 #import "YWPCMapViewController.h"
+#import "YWPersonShopModel.h"
 #import "YWStormAnnotationModel.h"
 #import "YWStormPinAnnotationView.h"
 #import <MapKit/MapKit.h>
@@ -18,6 +19,7 @@
 @property (nonatomic,assign)BOOL isSearch;
 @property (nonatomic,strong)CLGeocoder * geocoder;
 @property (nonatomic,copy)NSString * locationStr;
+@property (nonatomic,strong)YWPersonShopModel * model;
 
 @end
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"门店地图";
+    self.model = [YWPersonShopModel sharePersonShop];
     [self makeUI];
 }
 

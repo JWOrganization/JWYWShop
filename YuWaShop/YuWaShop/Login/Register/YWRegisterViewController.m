@@ -128,7 +128,7 @@
                 }
             }
         }
-        if ([UserSession instance].comfired_Status == 2){//2333333审核完成
+        if ([UserSession instance].comfired_Status == 2){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
                 [self.navigationController popToRootViewControllerAnimated:YES];

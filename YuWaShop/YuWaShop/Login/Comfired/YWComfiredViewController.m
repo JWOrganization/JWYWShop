@@ -17,6 +17,8 @@
 #import "YWComfiringViewController.h"
 #import "JPUSHService.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 @interface YWComfiredViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
@@ -24,9 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
 @property (nonatomic,assign)BOOL isAgree;
 @property (nonatomic,strong)UIImage * cameraImage;
+@property (nonatomic,copy)NSString * cameraImageURL;
+
 @property (weak, nonatomic) IBOutlet UIView *chooseTagBGView;
-@property (nonatomic,strong)JWTagsCollectionView * tagCollectionView;
-@property (nonatomic,strong)NSMutableArray * tagIDArr;
 
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -37,7 +39,8 @@
 @property (nonatomic,strong)YWStormSortTableView * sortTableView;
 @property (nonatomic,strong)YWStormSubSortCollectionView * sortSubCollectionView;
 @property (nonatomic,assign)NSInteger type;
-@property (nonatomic,assign)NSInteger subType;
+@property (nonatomic,strong)NSMutableArray * tagIDArr;
+@property (nonatomic,strong)JWTagsCollectionView * tagCollectionView;
 
 @property (nonatomic,strong)YWAddressSortTableView * sortAddressTableView;
 @property (nonatomic,strong)YWAddressSubSortCollectionView * sortAddressSubCollectionView;
@@ -45,6 +48,10 @@
 @property (nonatomic,assign)NSInteger addressSubType;
 @property (nonatomic,copy)NSString * addressName;
 @property (nonatomic,copy)NSString * addressSubName;
+
+@property (nonatomic,strong)CLGeocoder * geocoder;
+@property (nonatomic,copy)NSString * latitudeStr;
+@property (nonatomic,copy)NSString * longitudeStr;
 
 @end
 
@@ -55,10 +62,18 @@
     [self makeNavi];
     [self makeUI];
 }
+- (CLGeocoder *)geocoder{
+    if (!_geocoder) {
+        _geocoder = [[CLGeocoder alloc]init];
+    }
+    return _geocoder;
+}
+
 - (void)makeNavi{
     self.title = @"商务会员签约";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"退出登录" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(outLogion) forControlEvents:UIControlEventTouchUpInside withWidth:60.f];
+    self.type = 1;
 }
 
 - (void)outLogion{
@@ -96,7 +111,7 @@
     
     self.sortTableView = [[YWStormSortTableView alloc]initWithFrame:CGRectMake(0.f, NavigationHeight, kScreen_Width/3, self.sortSubCollectionView.height) style:UITableViewStylePlain];
     self.sortTableView.choosedTypeBlock = ^(NSInteger type,NSInteger subType,NSArray * subArr){
-        weakSelf.type = type;
+        weakSelf.type = type+1;
         weakSelf.sortSubCollectionView.allTypeIdx = type;
         weakSelf.sortSubCollectionView.dataArr = subArr;
     };
@@ -235,7 +250,18 @@
 
 #pragma mark - Http
 - (void)requestChangeIcon{
-    //h33333333333上传头像
+    NSDictionary * pragram = @{@"img":@"img"};
+    
+    [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.cameraImageURL = responsObj[@"data"];
+        if (!self.cameraImageURL)self.cameraImageURL=@"";
+        [self requestUpComfired];
+    } failur:^(id errorData, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",error);
+    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h3333333333333
 }
 - (void)requestComfired{
     if ([self.idTextField.text isEqualToString:@""]) {
@@ -246,6 +272,9 @@
         return;
     }else if ([self.addressTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"请输入店铺地址" withSuccess:NO];
+        return;
+    }else if (self.tagIDArr.count<=0) {
+        [self showHUDWithStr:@"请选择所属分类" withSuccess:NO];
         return;
     }else if ([self.addressLabel.text isEqualToString:@"店铺商区"]) {
         [self showHUDWithStr:@"请选择商区" withSuccess:NO];
@@ -261,23 +290,54 @@
         return;
     }
     
-    
-    
-    
+    [self.geocoder geocodeAddressString:self.addressTextField.text completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark * pl = [placemarks firstObject];
+        if(!error){
+            self.latitudeStr = @(pl.location.coordinate.latitude).stringValue;
+            self.longitudeStr = @(pl.location.coordinate.longitude).stringValue;
+            [self requestChangeIcon];
+        }else{
+            [self showHUDWithStr:@"地址有误,请重试" withSuccess:NO];
+        }
+    }];
+}
+
+- (void)requestUpComfired{
     //h3333333333提交审核
-    [self requestChangeIcon];
-//self.idTextField.text
-//    self.nameTextField.text
-//    self.addressTextField.text
-//    self.type选择商务大类
-//    self.tagIDArr 选择商务子类
-//    self.addressType//商区类
-//    self.addressSubType//商区子类
-    YWComfiringViewController * vc = [[YWComfiringViewController alloc]init];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    });
+  
+    //self.idTextField.text
+    //self.nameTextField.text
+    
+    NSString * subTagIDStr = self.tagIDArr[0];
+    for (int i = 1; i<self.tagIDArr.count; i++) {
+        subTagIDStr = [NSString stringWithFormat:@"%@,%@",subTagIDStr,self.tagIDArr[i]];
+    }
+    /*
+     device_id
+     token
+     user_id
+     
+     business_licence
+     company_address
+     cidtag_id
+     coordinatex
+     coordinatey
+     company_near*/
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_licence":self.cameraImageURL,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":,@"":,@"":
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddCheckStatus withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        YWComfiringViewController * vc = [[YWComfiringViewController alloc]init];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+        [self showHUDWithStr:@"提交失败,请重试" withSuccess:NO];
+    }]; //h333333333   
 }
 
 

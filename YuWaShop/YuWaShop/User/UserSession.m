@@ -115,7 +115,7 @@ static UserSession * user=nil;
     
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
-    user.nickName = dataDic[@"nickname"];
+    user.nickName = dataDic[@"company_name"]?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
     user.hxPassword = dataDic[@"mobile"];
     user.local = dataDic[@"address"];
@@ -127,8 +127,8 @@ static UserSession * user=nil;
     
     user.money = dataDic[@"money"];
     user.inviteID = dataDic[@"invite_uid"];
-    user.logo = dataDic[@"header_img"];
-    user.personality = dataDic[@"mark"];
+    user.logo = dataDic[@"company_img"]?dataDic[@"company_img"]:@"";
+    user.personality = dataDic[@"company_mark"]?dataDic[@"company_mark"]:@"雨娃宝好棒好棒哒";
     user.aldumCount = dataDic[@"aldumcount"];
     user.collected = dataDic[@"collected"];
     user.praised = dataDic[@"praised"];
@@ -158,12 +158,11 @@ static UserSession * user=nil;
         user.isNewNoticafication = YES;
         [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
     }
+    user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+    user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
+    user.serventPhone = dataDic[@"invite_phone"];
     
     //233333333暂定
-    user.comfired_Status = 1;//实名认证,user.isVIP=3时成功
-    user.serventPhone = @"18015885220";
-    user.phone = @"18015885220";
-    user.cut = 80;
     user.shopType = @"美食";
     user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
     user.shopTypeID = @"24";
@@ -186,14 +185,14 @@ static UserSession * user=nil;
 }
 
 
-+ (void)userToComfired{//233333333是否实名认证0未认证1认证中2认证完成
++ (void)userToComfired{
     if (user.isVIP ==3||user.comfired_Status == 2)return;
     VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     UIViewController * vc;
-    if (user.comfired_Status == 0) {
-        vc = [[YWComfiredViewController alloc]init];
-    }else if (user.comfired_Status == 1){
+    if (user.comfired_Status == 1) {
         vc = [[YWComfiringViewController alloc]init];
+    }else{
+        vc = [[YWComfiredViewController alloc]init];
     }
     [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
 }

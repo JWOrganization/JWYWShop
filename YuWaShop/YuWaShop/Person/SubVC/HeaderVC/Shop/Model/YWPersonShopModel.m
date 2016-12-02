@@ -10,4 +10,22 @@
 
 @implementation YWPersonShopModel
 
+static YWPersonShopModel * shop =nil;
+
++ (YWPersonShopModel *)sharePersonShop{
+    if (!shop) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            shop = [[YWPersonShopModel alloc]init];
+            [YWPersonShopModel defaultInfoSet];
+        });
+    }
+    return shop;
+}
+
++ (void)defaultInfoSet{
+    shop.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@"",@""],@[@""]]];
+}
+
+
 @end

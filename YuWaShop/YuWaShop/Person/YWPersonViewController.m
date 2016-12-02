@@ -22,6 +22,7 @@
 @property (nonatomic,strong)NSArray * subViewArr;
 @property (nonatomic,strong)NSMutableArray * showArr;
 @property (nonatomic,strong)UIImage * cameraImage;
+@property (nonatomic,copy)NSString * cameraImageURL;
 
 @end
 
@@ -30,12 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self makeNavi];
+    [self makeUI];
     [self dataSet];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
+    [self refreshUI];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
 }
 
@@ -48,6 +51,34 @@
 - (void)makeNavi{
     self.navigationItem.title = @"";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:@"Person_13" withSelectImage:@"Person_13" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTarget:self action:@selector(settingBtnAction) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(30.f, 30.f)];
+}
+- (void)makeUI{
+    WEAKSELF;
+    self.headerView = [[[NSBundle mainBundle]loadNibNamed:@"YWPersonHeaderView" owner:nil options:nil]firstObject];
+    self.headerView.chooseBtnBlock = ^(NSInteger choosedBtn){//1门店2会员3分红
+        UIViewController * vc;
+        switch (choosedBtn) {
+            case 1:{
+                vc = [[YWPersonShopViewController alloc]init];
+                break;
+            }
+            case 2:{
+                vc = [[YWPersonSubVipViewController alloc]init];
+                break;
+            }
+            case 3:{
+                vc = [[YWPersonPointViewController alloc]init];
+                break;
+            }
+                
+            default:
+                break;
+        }
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    self.headerView.iconBtnBlock = ^(){
+        [weakSelf makeLocalImagePicker];
+    };
 }
 
 - (void)dataSet{
@@ -65,6 +96,12 @@
     [self.tableView registerNib:[UINib nibWithNibName:PERSONCCELL bundle:nil] forCellReuseIdentifier:PERSONCCELL];
     
     self.subViewArr = @[@[[YWPersonNewsViewController class],[YWBankViewController class],[YWPersonWeekCountViewController class]],@[[YWPersonSuperVipViewController class],[YWPersonCooperaViewController class],[YWPersonHelpViewController class],@"",[YWPersonSuggestViewController class]],@[[YWPersonSettingViewController class]]];
+}
+
+- (void)refreshUI{
+    self.headerView.nameLabel.text = [UserSession instance].nickName;
+    [self.headerView.iconImageView sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] placeholderImage:[UIImage imageNamed:@"btn-Upload-Avatar"] completed:nil];
+    self.headerView.signatureLabel.text = [UserSession instance].personality;
 }
 
 - (void)makeLocalImagePicker{
@@ -111,7 +148,7 @@
 
 - (void)callService{
     if (![UserSession instance].phone) {
-        [self showHUDWithStr:@"获取营销顾问电话失败,请重试" withSuccess:NO];
+        [self showHUDWithStr:@"获取客服电话失败,请重试" withSuccess:NO];
         [UserSession userShoperSalePhone];
         return;
     }
@@ -150,40 +187,6 @@
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section != 0)return nil;
-    if (!self.headerView) {
-        WEAKSELF;
-        self.headerView = [[[NSBundle mainBundle]loadNibNamed:@"YWPersonHeaderView" owner:nil options:nil]firstObject];
-        self.headerView.chooseBtnBlock = ^(NSInteger choosedBtn){//1门店2会员3分红
-            UIViewController * vc;
-            switch (choosedBtn) {
-                case 1:{
-                    vc = [[YWPersonShopViewController alloc]init];
-                    break;
-                }
-                case 2:{
-                    vc = [[YWPersonSubVipViewController alloc]init];
-                    break;
-                }
-                case 3:{
-                    vc = [[YWPersonPointViewController alloc]init];
-                    break;
-                }
-                    
-                default:
-                    break;
-            }
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-        };
-        self.headerView.iconBtnBlock = ^(){
-            [weakSelf makeLocalImagePicker];
-        };
-    }
-    if ([UserSession instance].isLogin) {
-        //233333
-//        self.headerView.nameLabel.text = ;
-//        self.headerView.signatureLabel.text = ;
-//        self.headerView.iconImageView = ;
-    }
     return self.headerView;
 }
 
@@ -204,8 +207,30 @@
 
 #pragma mark - Http
 - (void)requestChangeIcon{
-    //h33333333333上传头像
+    NSDictionary * pragram = @{@"img":@"img"};
+    
+    [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.cameraImageURL = responsObj[@"data"];
+        if (!self.cameraImageURL)self.cameraImageURL=@"";
+        [self requestUpIconURL];
+    } failur:^(id errorData, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",error);
+    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h3333333333333
 }
 
+- (void)requestUpIconURL{
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
+}
 
 @end

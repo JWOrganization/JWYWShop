@@ -7,6 +7,7 @@
 //
 
 #import "YWPCBasicSetViewController.h"
+#import "YWPersonShopModel.h"
 #import "JWTextView.h"
 
 @interface YWPCBasicSetViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *subPhoneTextField;
 
 @property (nonatomic,strong)UIImage * cameraImage;
+@property (nonatomic,copy)NSString * cameraImageURL;
+@property (nonatomic,strong)YWPersonShopModel * model;
 
 @end
 
@@ -28,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"门店的基本信息";
+    self.model = [YWPersonShopModel sharePersonShop];
     [self makeUI];
 }
 
@@ -42,6 +46,7 @@
 }
 
 - (IBAction)submitBtnAction:(id)sender {
+    [self requestChangeIcon];
 }
 - (IBAction)shopIconBtnAction:(id)sender {
     [self makeLocalImagePicker];
@@ -85,11 +90,6 @@
 
 #pragma mark - Http
 - (void)requestChangeIcon{
-    //h33333333333上传门店头像
-}
-
-- (void)requestUpLoadShopInfo{
-    //h333333333333提交商店信息
     if ([self.nameTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"门店名称不能为空哟" withSuccess:NO];
         return;
@@ -109,9 +109,26 @@
         [self showHUDWithStr:@"请输入正确电话哟" withSuccess:NO];
         return;
     }
+    //h33333333333上传门店头像
+}
+
+- (void)requestUpLoadShopInfo{
+    //h333333333333提交商店信息
     
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL};
     
-    [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
+//    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
+//        MyLog(@"Regieter Code pragram is %@",pragram);
+//        MyLog(@"Regieter Code is %@",responsObj);
+//        [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            self.changeInfoBlock(self.dataArr);
+//            [self.navigationController popViewControllerAnimated:YES];
+//        });
+//    } failur:^(id responsObj, NSError *error) {
+//        MyLog(@"Regieter Code pragram is %@",pragram);
+//        MyLog(@"Regieter Code error is %@",responsObj);
+//    }];
 }
 
 @end

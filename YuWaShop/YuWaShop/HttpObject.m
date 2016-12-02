@@ -312,6 +312,9 @@
         case YuWaType_Shoper_ShopAdmin_GoodsLists://商品管理之商品列表,支持分页
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GoodsLists];
             break;
+        case YuWaType_Shoper_ShopAdmin_SetBaseInfo://设置店铺基本信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetBaseInfo];
+            break;
         case YuWaType_Shoper_ShopAdmin_BookLists://预定管理之列表
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_BookLists];
             break;

@@ -8,6 +8,7 @@
 
 #import "YWPCTimeViewController.h"
 #import "YWPCTimeTableViewCell.h"
+#import "YWPersonShopModel.h"
 #import "YWPCChooseTimeViewController.h"
 
 @interface YWPCTimeViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (nonatomic,strong)NSMutableArray * timeArr;
+@property (nonatomic,strong)YWPersonShopModel * model;
 
 @end
 
@@ -33,6 +35,7 @@
 - (void)dataSet{
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
+    self.model = [YWPersonShopModel sharePersonShop];
     
     self.timeArr = [NSMutableArray arrayWithCapacity:0];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWPCTimeTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWPCTimeTableViewCell"];

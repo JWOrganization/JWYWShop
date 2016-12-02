@@ -55,13 +55,14 @@
 @property (nonatomic,assign)NSInteger baobaoEXP;
 @property (nonatomic,assign)NSInteger baobaoNeedEXP;
 
-@property (nonatomic,copy)NSString * phone;//营销顾问电话
+@property (nonatomic,assign)BOOL isNewNoticafication;//查看新消息
+@property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证1待审核 2通过 3拒绝 4未提交
+@property (nonatomic,assign)NSInteger cut;//买单收银折扣
+@property (nonatomic,copy)NSString * phone;//客服电话
+@property (nonatomic,copy)NSString * serventPhone;//营销顾问电话,邀请人电话
+
 
 //233333333暂定
-@property (nonatomic,assign)BOOL isNewNoticafication;//查看新消息,极光暂测试
-@property(nonatomic,assign)NSInteger comfired_Status;   //是否实名认证0未认证1认证中2认证完成
-@property (nonatomic,copy)NSString * serventPhone;
-@property (nonatomic,assign)NSInteger cut;//买单收银折扣
 @property (nonatomic,copy)NSString * shopType;//店铺所属大类
 @property (nonatomic,strong)NSArray * shopSubTypeArr;//店铺所选小类
 @property (nonatomic,copy)NSString * shopTypeID;//店铺所属大类

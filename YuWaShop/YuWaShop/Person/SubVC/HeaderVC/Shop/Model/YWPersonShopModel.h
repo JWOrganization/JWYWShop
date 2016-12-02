@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YWPersonShopHeaderModel.h"
 
 @interface YWPersonShopModel : NSObject
+
+//首页
+@property (nonatomic,strong)NSMutableArray * dataArr;
+@property (nonatomic,strong)YWPersonShopHeaderModel * headerModel;
+
+//环境
+@property (nonatomic,strong)NSMutableArray * environmentDataArr;
+
++ (YWPersonShopModel *)sharePersonShop;
 
 @end

@@ -22,11 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)YWPersonShopModel * model;
 @property (nonatomic,strong)YWPersonShopHeaderView * headerView;
-@property (nonatomic,strong)YWPersonShopHeaderModel * headerModel;
 @property (nonatomic,strong)NSMutableArray * headerArr;
 @property (nonatomic,strong)NSArray * nameArr;
 @property (nonatomic,strong)NSArray * subViewClassArr;
-@property (nonatomic,strong)NSMutableArray * dataArr;
+
 
 @end
 
@@ -38,12 +37,16 @@
     [self dataSet];
     [self requestData];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 - (void)dataSet{
     NSArray * typeNameArr = @[@"",@"    基础信息",@"    附加信息",@"    寻求帮助"];
     self.nameArr = @[@[],@[@"基本信息",@"门店地图",@"营业时间"],@[@"人均消费",@"折扣设置",@"环境设置"],@[@"营销顾问"]];
     self.subViewClassArr = @[@[],@[[YWPCBasicSetViewController class],[YWPCMapViewController class],[YWPCTimeViewController class]],@[[YWPCEveryPayViewController class],[YWPCCutSetViewController class],[YWPCEnvironmentViewController class]],@[[YWPCCounselorViewController class]]];
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"",@"",@""],@[@"",@"",@""],@[@""]]];
+    self.model = [YWPersonShopModel sharePersonShop];
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 1; i < typeNameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(15.f, 0.f, kScreen_Width - 30.f, 38.f)];
@@ -58,16 +61,16 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArr.count;
+    return self.model.dataArr.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.dataArr[section] count];
+    return [self.model.dataArr[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWPersonShopTableViewCell * shopCell = [tableView dequeueReusableCellWithIdentifier:@"YWPersonShopTableViewCell"];
     shopCell.nameLabel.text = self.nameArr[indexPath.section][indexPath.row];
-    shopCell.detailLabel.text = self.dataArr[indexPath.section][indexPath.row];
+    shopCell.detailLabel.text = self.model.dataArr[indexPath.section][indexPath.row];
     return shopCell;
 }
 
@@ -88,8 +91,8 @@
             self.headerView.frame = CGRectMake(0.f, 0.f, kScreen_Width, 94.f);
             [self.headerView setNeedsLayout];
         }
-        if (self.headerModel) {
-            self.headerView.model = self.headerModel;
+        if (self.model.headerModel) {
+            self.headerView.model = self.model.headerModel;
         }
         return self.headerView;
     }else{
@@ -106,6 +109,7 @@
 
 #pragma mark - Http
 - (void)requestData{
+    if (self.model.headerModel)return;
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
     
     [[HttpObject manager]postDataWithType:YuWaType_ShopAdmin_Home withPragram:pragram success:^(id responsObj) {
@@ -118,9 +122,8 @@
     
     
     //233333333333要删
-    self.model = [[YWPersonShopModel alloc]init];//第一次可放UserSession内
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"妮可咖啡馆",@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",@"7折",@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
-    self.headerModel = [[YWPersonShopHeaderModel alloc]init];
+    self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[@"妮可咖啡馆",@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",@"7折",@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
+    self.model.headerModel = [[YWPersonShopHeaderModel alloc]init];
     //233333333333要删
     
     [self.tableView reloadData];

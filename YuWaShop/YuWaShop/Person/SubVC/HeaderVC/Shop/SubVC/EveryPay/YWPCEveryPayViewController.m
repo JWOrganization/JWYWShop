@@ -7,13 +7,14 @@
 //
 
 #import "YWPCEveryPayViewController.h"
+#import "YWPersonShopModel.h"
 
 @interface YWPCEveryPayViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UITextField *everyPayTextfield;
 @property (weak, nonatomic) IBOutlet UILabel *currentPayLabel;
-
+@property (nonatomic,strong)YWPersonShopModel * model;
 
 @end
 
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self makeNavi];
+    self.model = [YWPersonShopModel sharePersonShop];
     [self makeUI];
 }
 

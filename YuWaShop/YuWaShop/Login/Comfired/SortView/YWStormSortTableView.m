@@ -15,7 +15,7 @@
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self = [super initWithFrame:frame style:style];
     if (self) {
-        self.dataArr = [NSMutableArray arrayWithArray:@[@"美食",@"周边游",@"休闲娱乐",@"生活服务",@"旅游",@"宴会",@"时尚购",@"丽人",@"运动健身",@"母婴亲子",@"宠物",@"汽车服务",@"摄影写真",@"结婚",@"购物",@"家装",@"学习培训",@"医疗"]];
+        self.dataArr = [NSMutableArray arrayWithArray:@[@"美食",@"电影",@"酒店",@"周边游",@"休闲娱乐",@"生活服务",@"旅游",@"宴会",@"时尚购",@"丽人",@"运动健身",@"母婴亲子",@"宠物",@"汽车服务",@"摄影写真",@"结婚",@"购物",@"家装",@"学习培训",@"医疗"]];
         self.dataStateArr = [NSMutableArray arrayWithCapacity:0];
         for (int i = 0; i<self.dataArr.count; i++) {
             [self.dataStateArr addObject:@(0)];
@@ -74,7 +74,7 @@
 
 #pragma mark - Http
 - (void)requestSubTypeWithIdx:(NSInteger)index{
-    NSDictionary * pragram = @{@"cid":[NSString stringWithFormat:@"%zi",(index>=1?(index+3):(index+1))]};
+    NSDictionary * pragram = @{@"cid":[NSString stringWithFormat:@"%zi",(index+1)]};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_STORM_TAG withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

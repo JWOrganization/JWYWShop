@@ -697,6 +697,9 @@
 		B3F177F71DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */; };
 		B3F177FC1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */; };
 		B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */; };
+		C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */; };
+		C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */; };
+		C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1909,6 +1912,11 @@
 		B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeOrderNoticaficationTableViewCell.h; sourceTree = "<group>"; };
 		B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeOrderNoticaficationTableViewCell.m; sourceTree = "<group>"; };
 		B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeOrderNoticaficationTableViewCell.xib; sourceTree = "<group>"; };
+		C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWFinancialViewController.h; sourceTree = "<group>"; };
+		C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWFinancialViewController.m; sourceTree = "<group>"; };
+		C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialTableViewCell.h; sourceTree = "<group>"; };
+		C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialTableViewCell.m; sourceTree = "<group>"; };
+		C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2184,8 +2192,8 @@
 				B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */,
 				B31098EE1DE454560033A984 /* AppDelegate.h */,
 				B31098EF1DE454560033A984 /* AppDelegate.m */,
-				B3C12A481DED217F000EF099 /* HttpManager.m */,
 				B3C12A4B1DED217F000EF099 /* HttpManager.h */,
+				B3C12A481DED217F000EF099 /* HttpManager.m */,
 				B3C12A4A1DED217F000EF099 /* HttpObject.h */,
 				B3C12A4E1DED217F000EF099 /* HttpObject.m */,
 				B3C12A541DED25CA000EF099 /* User */,
@@ -4928,6 +4936,7 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				C174994B1DF5AA4A00F17B77 /* FinancialManager */,
 				B3F177F21DEFF270007DB9A3 /* Noticafication */,
 				B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */,
 				B30E4DED1DEF0397008684BA /* Coupon */,
@@ -5333,6 +5342,34 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C174994B1DF5AA4A00F17B77 /* FinancialManager */ = {
+			isa = PBXGroup;
+			children = (
+				C174994F1DF5B17800F17B77 /* view */,
+				C17499501DF5B17D00F17B77 /* model */,
+				C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */,
+				C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */,
+			);
+			path = FinancialManager;
+			sourceTree = "<group>";
+		};
+		C174994F1DF5B17800F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */,
+				C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */,
+				C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C17499501DF5B17D00F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5647,6 +5684,7 @@
 				B317AFC71DE5D3C90093C511 /* PersonHeaderBG40@2x.png in Resources */,
 				B317AFBF1DE5D3C90093C511 /* PersonHeaderBG33@2x.png in Resources */,
 				B35C9B721DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib in Resources */,
+				C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */,
 				B3F07E561DE681B6005116EA /* YWPersonSubVipViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
 				B35C9EB31DEC3FE80051E352 /* 定位.json in Resources */,
@@ -5754,6 +5792,7 @@
 				B3C12A531DED217F000EF099 /* HttpObject.m in Sources */,
 				B35C9EAA1DEC3FE80051E352 /* YWMessageAddressBookTableView.m in Sources */,
 				B30E4DDF1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m in Sources */,
+				C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */,
 				B30E4DD31DEEBD18008684BA /* YWHomeCompareViewHeaderView.m in Sources */,
 				B35C9CD21DEC3ECD0051E352 /* UIButton+EMWebCache.m in Sources */,
 				B3F177E61DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m in Sources */,
@@ -5871,6 +5910,7 @@
 				B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B35C9EC61DEC3FE80051E352 /* RBPublicToolView.m in Sources */,
+				C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */,
 				B35C9F3B1DEC3FE80051E352 /* TZAssetModel.m in Sources */,
 				B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */,
 				B35C9F291DEC3FE80051E352 /* UIScrollView+JWGifRefresh.m in Sources */,

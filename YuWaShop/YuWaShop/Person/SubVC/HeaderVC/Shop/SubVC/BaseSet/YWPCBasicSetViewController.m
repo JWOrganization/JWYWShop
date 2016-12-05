@@ -42,8 +42,9 @@
     self.textView.layer.masksToBounds = YES;
     self.textView.placeholder = @"显示简介";
     self.textView.placeholderColor = [UIColor colorWithHexString:@"#d3d3d3"];
-//    self.textView.isDrawPlaceholder = NO;//233333有简介了的话
-    
+    if (![[UserSession instance].personality isEqualToString:@"雨娃宝好棒好棒哒"]) {
+        self.textView.isDrawPlaceholder = NO;
+    }
 }
 
 - (IBAction)submitBtnAction:(id)sender {
@@ -93,7 +94,7 @@
     if ([self.nameTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"门店名称不能为空哟" withSuccess:NO];
         return;
-    }else if (!self.cameraImage) {
+    }else if (!self.cameraImage&&self.cameraImageURL) {
         [self showHUDWithStr:@"门店头像不能为空哟" withSuccess:NO];
         return;
     }else if ([self.textView.text isEqualToString:@""]) {
@@ -105,30 +106,39 @@
     }else if ([self.firstPhoneTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"首选电话不能为空哟" withSuccess:NO];
         return;
-    }else if (![JWTools isPhoneIDWithStr:self.firstPhoneTextField.text]||![JWTools isPhoneIDWithStr:self.subPhoneTextField.text]) {
+    }else if (![JWTools isPhoneIDWithStr:self.firstPhoneTextField.text]) {
         [self showHUDWithStr:@"请输入正确电话哟" withSuccess:NO];
+        return;
+    }else if ([self.subPhoneTextField.text isEqualToString:@""]&&![JWTools isPhoneIDWithStr:self.subPhoneTextField.text]){
+        [self showHUDWithStr:@"请输入次要正确电话哟" withSuccess:NO];
         return;
     }
     
-    NSDictionary * pragram = @{@"img":@"img"};
-    
-    [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
-        MyLog(@"Regieter Code pragram is %@",pragram);
-        MyLog(@"Regieter Code is %@",responsObj);
-        self.cameraImageURL = responsObj[@"data"];
-        if (!self.cameraImageURL)self.cameraImageURL=@"";
+    if (self.cameraImage) {
+        NSDictionary * pragram = @{@"img":@"img"};
+        
+        [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code is %@",responsObj);
+            self.cameraImageURL = responsObj[@"data"];
+            if (!self.cameraImageURL)self.cameraImageURL= [UserSession instance].logo;
+            [self requestUpLoadShopInfo];
+        } failur:^(id errorData, NSError *error) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code error is %@",error);
+        } withPhoto:UIImagePNGRepresentation(self.cameraImage)];
+    }else{
+        self.cameraImageURL = [UserSession instance].logo;
         [self requestUpLoadShopInfo];
-    } failur:^(id errorData, NSError *error) {
-        MyLog(@"Regieter Code pragram is %@",pragram);
-        MyLog(@"Regieter Code error is %@",error);
-    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h33333333333上传门店头像
+    }
 }
 
 - (void)requestUpLoadShopInfo{
-    //h333333333333提交商店信息
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL};
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"company_first_tel":self.firstPhoneTextField.text}];
     
-    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
+    if ([self.subPhoneTextField.text isEqualToString:@""]) [pragram setObject:self.subPhoneTextField.text forKey:@"company_second_tel"];
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
@@ -139,7 +149,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }];
+    }];//h333333333333
 }
 
 @end

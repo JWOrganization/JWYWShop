@@ -101,6 +101,10 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_DelShopPhoto,  //相册管理之删除
     YuWaType_Shoper_ShopAdmin_ShopPhotoLists,  //相册管理之列表
     
+    YuWaType_Shoper_ShopAdmin_MyNotice,   //消息通知之列表
+    YuWaType_Shoper_ShopAdmin_UpdateMyNotice,  //消息通知之更新
+    YuWaType_Shoper_ShopAdmin_Analysis,  //数据分析
+    
     YuWaType_
     
 }kYuWaType;

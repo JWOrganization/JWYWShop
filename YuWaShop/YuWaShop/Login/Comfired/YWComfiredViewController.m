@@ -23,10 +23,17 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UIButton *upImageBtn;
+@property (weak, nonatomic) IBOutlet UIButton *upUserImageBtn;
+@property (weak, nonatomic) IBOutlet UIButton *upUsersImageBtn;
+
 @property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
 @property (nonatomic,assign)BOOL isAgree;
 @property (nonatomic,strong)UIImage * cameraImage;
 @property (nonatomic,copy)NSString * cameraImageURL;
+@property (nonatomic,strong)UIImage * cameraUserImage;
+@property (nonatomic,copy)NSString * cameraUserImageURL;
+@property (nonatomic,strong)UIImage * cameraUsersImage;
+@property (nonatomic,copy)NSString * cameraUsersImageURL;
 
 @property (weak, nonatomic) IBOutlet UIView *chooseTagBGView;
 
@@ -48,6 +55,7 @@
 @property (nonatomic,assign)NSInteger addressSubType;
 @property (nonatomic,copy)NSString * addressName;
 @property (nonatomic,copy)NSString * addressSubName;
+@property (nonatomic,assign)NSInteger cameraStatus;
 
 @property (nonatomic,strong)CLGeocoder * geocoder;
 @property (nonatomic,copy)NSString * latitudeStr;
@@ -84,7 +92,10 @@
 
 - (void)makeUI{
     self.isAgree = YES;
-    [self.upImageBtn setBackgroundImage:[JWTools imageWithSize:CGSizeMake(170.f, 50.f) borderColor:[UIColor lightGrayColor] borderWidth:4.f withCornerRadius:5.f] forState:UIControlStateNormal];
+    CGFloat upImgBtnWidth = (kScreen_Width-90.f-10.f*3)/3;
+    [self.upImageBtn setBackgroundImage:[JWTools imageWithSize:CGSizeMake(upImgBtnWidth, 50.f) borderColor:[UIColor lightGrayColor] borderWidth:4.f withCornerRadius:5.f] forState:UIControlStateNormal];
+    [self.upUserImageBtn setBackgroundImage:[JWTools imageWithSize:CGSizeMake(upImgBtnWidth, 50.f) borderColor:[UIColor lightGrayColor] borderWidth:4.f withCornerRadius:5.f] forState:UIControlStateNormal];
+    [self.upUsersImageBtn setBackgroundImage:[JWTools imageWithSize:CGSizeMake(upImgBtnWidth, 50.f) borderColor:[UIColor lightGrayColor] borderWidth:4.f withCornerRadius:5.f] forState:UIControlStateNormal];
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
     
@@ -161,8 +172,18 @@
     [self requestComfired];
 }
 - (IBAction)upImageBtnAction:(UIButton *)sender {
+    self.cameraStatus = 0;
     [self makeLocalImagePicker];
 }
+- (IBAction)upUserImageBtnAction:(id)sender {
+    self.cameraStatus = 1;
+    [self makeLocalImagePicker];
+}
+- (IBAction)upUsersImageBtnAction:(id)sender {
+    self.cameraStatus = 2;
+    [self makeLocalImagePicker];
+}
+
 - (IBAction)agreeBtnAction:(UIButton *)sender {
     self.isAgree = !self.isAgree;
     [sender setImage:[UIImage imageNamed:self.isAgree?@"photo_sel_photoPickerVc":@"photo_def_previewVc"] forState:UIControlStateNormal];
@@ -186,7 +207,6 @@
     self.navigationItem.rightBarButtonItem = nil;
     self.sortTableView.hidden = YES;
     self.sortSubCollectionView.hidden = self.sortTableView.hidden;
-//    if (self.sortSubCollectionView.choosedTypeArr.count<=0)return;
     NSMutableArray * tagArr = [NSMutableArray arrayWithCapacity:0];
     [self.tagIDArr removeAllObjects];
     for (YWComfiredTypeModel * model in self.sortSubCollectionView.choosedTypeArr) {
@@ -241,27 +261,57 @@
 
 #pragma mark - ImagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    self.cameraImage = info[@"UIImagePickerControllerEditedImage"];
-    [self.upImageBtn setImage:nil forState:UIControlStateNormal];
-    [self.upImageBtn setTitle:@"" forState:UIControlStateNormal];
-    [self.upImageBtn setBackgroundImage:self.cameraImage forState:UIControlStateNormal];
+    if (self.cameraStatus == 0) {
+        self.cameraImage = info[@"UIImagePickerControllerEditedImage"];
+        [self.upImageBtn setImage:nil forState:UIControlStateNormal];
+        [self.upImageBtn setTitle:@"" forState:UIControlStateNormal];
+        [self.upImageBtn setBackgroundImage:self.cameraImage forState:UIControlStateNormal];
+    }else if (self.cameraStatus == 1){
+        self.cameraUserImage = info[@"UIImagePickerControllerEditedImage"];
+        [self.upUserImageBtn setImage:nil forState:UIControlStateNormal];
+        [self.upUserImageBtn setTitle:@"" forState:UIControlStateNormal];
+        [self.upUserImageBtn setBackgroundImage:self.cameraUserImage forState:UIControlStateNormal];
+    }else{
+        self.cameraUsersImage = info[@"UIImagePickerControllerEditedImage"];
+        [self.upUsersImageBtn setImage:nil forState:UIControlStateNormal];
+        [self.upUsersImageBtn setTitle:@"" forState:UIControlStateNormal];
+        [self.upUsersImageBtn setBackgroundImage:self.cameraUsersImage forState:UIControlStateNormal];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Http
-- (void)requestChangeIcon{
+- (void)requestChangeIconWithType:(NSInteger)type{
     NSDictionary * pragram = @{@"img":@"img"};
+    
+    UIImage * camera;
+    if (type == 0) {
+        camera = self.cameraImage;
+    }else if (type == 1){
+        camera = self.cameraUserImage;
+    }else{
+        camera = self.cameraUsersImage;
+    }
     
     [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
-        self.cameraImageURL = responsObj[@"data"];
-        if (!self.cameraImageURL)self.cameraImageURL=@"";
-        [self requestUpComfired];
+        if (type == 0) {
+            self.cameraImageURL = responsObj[@"data"];
+            if (!self.cameraImageURL)self.cameraImageURL=@"";
+        }else if (type == 1){
+            self.cameraUserImageURL = responsObj[@"data"];
+            if (!self.cameraUserImageURL)self.cameraUserImageURL=@"";
+        }else{
+            self.cameraUsersImageURL = responsObj[@"data"];
+            if (!self.cameraUsersImageURL)self.cameraUsersImageURL=@"";
+        }
+        if (self.cameraImageURL&&self.cameraUserImageURL&&self.cameraUsersImageURL)[self requestUpComfired];
     } failur:^(id errorData, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",error);
-    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h3333333333333
+    } withPhoto:UIImagePNGRepresentation(camera)];
 }
 - (void)requestComfired{
     if ([self.idTextField.text isEqualToString:@""]) {
@@ -285,6 +335,12 @@
     }else if (!self.cameraImage) {
         [self showHUDWithStr:@"请上传营业执照" withSuccess:NO];
         return;
+    }else if (!self.cameraUserImage) {
+        [self showHUDWithStr:@"请上传身份证正面照" withSuccess:NO];
+        return;
+    }else if (!self.cameraUsersImage) {
+        [self showHUDWithStr:@"请上传身份证反面照" withSuccess:NO];
+        return;
     }else if (!self.isAgree){
         [self showHUDWithStr:@"请阅读协议并同意" withSuccess:NO];
         return;
@@ -295,7 +351,9 @@
         if(!error){
             self.latitudeStr = @(pl.location.coordinate.latitude).stringValue;
             self.longitudeStr = @(pl.location.coordinate.longitude).stringValue;
-            [self requestChangeIcon];
+            [self requestChangeIconWithType:0];
+            [self requestChangeIconWithType:1];
+            [self requestChangeIconWithType:2];
         }else{
             [self showHUDWithStr:@"地址有误,请重试" withSuccess:NO];
         }
@@ -304,26 +362,11 @@
 
 - (void)requestUpComfired{
     //h3333333333提交审核
-  
-    //self.idTextField.text
-    
     NSString * subTagIDStr = self.tagIDArr[0];
     for (int i = 1; i<self.tagIDArr.count; i++) {
         subTagIDStr = [NSString stringWithFormat:@"%@,%@",subTagIDStr,self.tagIDArr[i]];
     }
-    /*
-     device_id
-     token
-     user_id
-     
-     business_licence
-     company_address
-     company_name
-     cidtag_id
-     coordinatex
-     coordinatey
-     company_near*/
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_licence":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":,@"":
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"invite_code":self.idTextField.text,@"business_licence":self.cameraImageURL,@"id_card":self.cameraUserImageURL,@"id_card_back":self.cameraUsersImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddCheckStatus withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

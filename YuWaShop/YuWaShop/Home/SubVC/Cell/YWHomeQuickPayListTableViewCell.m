@@ -30,6 +30,7 @@
     self.timeLabel.text = @"2016-10-23 15:00";
     self.priceLabel.text = [NSString stringWithFormat:@"+%@元",@"38.77"];
     self.cutLabel.text = [NSString stringWithFormat:@"原价:%@ 实付:%@ 折扣:%@折",@"300",@"250",@"8.8"];
+    self.couponLabel.text = [NSString stringWithFormat:@"优惠券减%@元",@"23"];
 }
 
 @end

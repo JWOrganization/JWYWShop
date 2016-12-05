@@ -113,12 +113,12 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"注册成功" withSuccess:YES];
-        EMError *error = [[EMClient sharedClient] registerWithUsername:account password:account];
+        EMError *error = [[EMClient sharedClient] registerWithUsername:[NSString stringWithFormat:@"2%@",account] password:account];
         if (error==nil) {
             MyLog(@"环信注册成功");
             BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
             if (!isAutoLogin) {
-                EMError *errorLog = [[EMClient sharedClient] loginWithUsername:account password:password];
+                EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",account] password:password];
                 if (errorLog==nil){
                     [[EMClient sharedClient].options setIsAutoLogin:YES];
                     MyLog(@"环信登录成功");

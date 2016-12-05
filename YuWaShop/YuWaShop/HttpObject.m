@@ -87,21 +87,14 @@
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_FRIENDS_INFO];
             break;
             
-#pragma mark - Shop VIP
+#pragma mark - Shoper
         case YuWaType_VIP_Sale_Detail://交易详情信息，支持分页
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_Detail];
-            break;
-        case YuWaType_VIP_Sale_MyMoneyHistory://收支明细
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyMoneyHistory];
             break;
         case YuWaType_VIP_Sale_DetailShow://每一条交易详情信息
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_DetailShow];
             break;
-        case YuWaType_VIP_Sale_ScoreToMoney://积分提现
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_ScoreToMoney];
-            break;
-            
-#pragma mark - Shoper
+
         case YuWaType_ShopAdmin_Home://门店管理首页
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_ShopAdmin_Home];
             break;
@@ -122,9 +115,6 @@
             break;
         case YuWaType_Shoper_ShopAdmin_AddRecord://买单收银，生成二维码
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddRecord];
-            break;
-        case YuWaType_Shoper_ShopAdmin_RecordLists://闪惠记录
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_RecordLists];
             break;
         case YuWaType_Shoper_ShopAdmin_AddGoods://商品管理之添加商品
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddGoods];
@@ -155,6 +145,12 @@
             break;
         case YuWaType_Shoper_ShopAdmin_AddCheckStatus://提交门店实名认证
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddCheckStatus];
+            break;
+        case YuWaType_Shoper_ShopAdmin_MyNotice://消息通知之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_MyNotice];
+            break;
+        case YuWaType_Shoper_ShopAdmin_Analysis://数据分析
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_Analysis];
             break;
             
            //URLStr建立
@@ -285,23 +281,19 @@
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_SHOP_GETCATEGORY];
             break;
             
-#pragma mark - Shop VIP
+#pragma mark - Shoper
         case YuWaType_VIP_BaseInfo://基本信息
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_BaseInfo];
             break;
-        case YuWaType_VIP_Sale_MyDirectUser://我的绑定用户
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyDirectUser];
-            break;
-        case YuWaType_VIP_Sale_MyInviteShop://我签约的商铺
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_VIP_Sale_MyInviteShop];
-            break;
             
-#pragma mark - Shoper
         case YuWaType_Shoper_ShopAdmin_SetShopMap://门店地图
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SetShopMap];
             break;
         case YuWaType_Shoper_ShopAdmin_GetSalePhone://获取营销顾问电话
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetSalePhone];
+            break;
+        case YuWaType_Shoper_ShopAdmin_RecordLists://闪惠记录
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_RecordLists];
             break;
         case YuWaType_Shoper_ShopAdmin_CouponList://优惠券之列表
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CouponList];
@@ -323,6 +315,9 @@
             break;
         case YuWaType_Shoper_ShopAdmin_ShopPhotoLists://相册管理之列表
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_ShopPhotoLists];
+            break;
+        case YuWaType_Shoper_ShopAdmin_UpdateMyNotice://消息通知之更新
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_UpdateMyNotice];
             break;
             
             //URLStr建立

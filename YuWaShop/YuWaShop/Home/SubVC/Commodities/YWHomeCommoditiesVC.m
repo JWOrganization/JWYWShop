@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *addCommoditiesBtn;
+@property (nonatomic,copy)NSString * pagens;
+@property (nonatomic,assign)NSInteger pages;
 @property (nonatomic,strong)NSMutableArray * dataArr;
 
 @end
@@ -26,7 +28,7 @@
     [self makeUI];
     [self dataSet];
     [self setupRefresh];
-    [self requestData];
+    [self requestDataWithPages:0];
 }
 
 - (void)makeUI{
@@ -35,6 +37,7 @@
 }
 
 - (void)dataSet{
+    self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeCommoditiesTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeCommoditiesTableViewCell"];
 }
@@ -82,28 +85,51 @@
     self.tableView.mj_header = [UIScrollView scrollRefreshGifHeaderWithImgName:@"newheader" withImageCount:60 withRefreshBlock:^{
         [self headerRereshing];
     }];
+    self.tableView.mj_footer = [UIScrollView scrollRefreshGifFooterWithImgName:@"newheader" withImageCount:60 withRefreshBlock:^{
+        [self footerRereshing];
+    }];
 }
 - (void)headerRereshing{
-    [self requestData];
+    self.pages = 0;
+    [self requestDataWithPages:0];
+}
+- (void)footerRereshing{
+    self.pages++;
+    [self requestDataWithPages:self.pages];
+}
+- (void)cancelRefreshWithIsHeader:(BOOL)isHeader{
+    if (isHeader) {
+        [self.tableView.mj_header endRefreshing];
+    }else{
+        [self.tableView.mj_footer endRefreshing];
+    }
 }
 
 #pragma mark - Http
-- (void)requestData{
+- (void)requestDataWithPages:(NSInteger)page{
     //h333333333商品列表
-    [self.dataArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
+        [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    //2333333333删
-    for (int i = 0; i<3; i++) {
-        YWHomeCommoditiesModel * model = [[YWHomeCommoditiesModel alloc]init];
-        model.commoditiesID = @"1";
-        [self.dataArr addObject:model];
-    }
-    //2333333333删
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
     
-    [self.tableView reloadData];
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_GoodsLists withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        if (page == 0)[self.dataArr removeAllObjects];
+        //2333333333删
+        for (int i = 0; i<3; i++) {
+            YWHomeCommoditiesModel * model = [[YWHomeCommoditiesModel alloc]init];
+            model.commoditiesID = @"1";
+            [self.dataArr addObject:model];
+        }
+        //2333333333删
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 - (void)requestDelWithID:(NSString *)commoditiesID withIndexPath:(NSIndexPath *)indexPath{
     //h3333333333删除商品

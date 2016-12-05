@@ -357,7 +357,6 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",error);
     } withPhoto:UIImagePNGRepresentation(model.origionalImage)];
-    
 }
 
 - (NSString *)tagArrJsonCreate{//将tag数组转成json字符串

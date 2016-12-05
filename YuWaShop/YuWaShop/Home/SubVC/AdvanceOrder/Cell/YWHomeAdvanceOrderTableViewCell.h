@@ -22,6 +22,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rePlayLabel;
 @property (weak, nonatomic) IBOutlet UIButton *rePlayBtn;
+@property (weak, nonatomic) IBOutlet UILabel *myRePlayLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *replayLabelHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *customReplayHeight;
 
 @end

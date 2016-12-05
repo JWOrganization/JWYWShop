@@ -72,11 +72,20 @@
 #pragma mark - Http
 - (void)requestSendEveryPay{
     //h333333333333上传人均消费
-    [self showHUDWithStr:@"恭喜,保存成功" withSuccess:YES];
-    //2333333333修改门户设置信息
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"per_capita":@([self.everyPayTextfield.text floatValue])};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetPerCapita withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"恭喜,保存成功" withSuccess:YES];
+        //2333333333修改门户设置信息
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 @end

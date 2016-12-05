@@ -26,14 +26,14 @@
                         <action selector="recordBtnAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="7i4-Bw-fNL"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="r4E-rh-udB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Top_IMG1" translatesAutoresizingMaskIntoConstraints="NO" id="r4E-rh-udB">
                     <rect key="frame" x="53" y="72" width="55" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="nGK-IF-5cc"/>
                         <constraint firstAttribute="width" constant="55" id="rMB-2u-e3a"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-MG-Gex">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Top_IMG0" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-MG-Gex">
                     <rect key="frame" x="213" y="72" width="55" height="55"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买单收银" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-cu-kWG">
@@ -107,6 +107,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="placeholder" width="250" height="250"/>
+        <image name="Home_Top_IMG0" width="250" height="250"/>
+        <image name="Home_Top_IMG1" width="250" height="250"/>
     </resources>
 </document>

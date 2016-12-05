@@ -78,17 +78,26 @@
 
 #pragma mark - Http
 - (void)requestDataWithPages:(NSInteger)page{
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    //233333333要删
-    for (int i = 0; i<3; i++) {
-        [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
-    }
-    //233333333要删
-    [self.tableView reloadData];
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_RecordLists withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        if (page == 0)[self.dataArr removeAllObjects];
+        //233333333要删
+        for (int i = 0; i<3; i++) {
+            [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+        }
+        //233333333要删
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 @end

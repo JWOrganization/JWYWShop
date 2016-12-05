@@ -218,7 +218,7 @@
     } failur:^(id errorData, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",error);
-    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];//h3333333333333
+    } withPhoto:UIImagePNGRepresentation(self.cameraImage)];
 }
 
 - (void)requestUpIconURL{

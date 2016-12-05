@@ -76,7 +76,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 155.f;
+    return self.status == 0?155.f:177.f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 50.f;
@@ -92,8 +92,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeAdvanceOrderTableViewCell * advanceOrderCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeAdvanceOrderTableViewCell"];
-    advanceOrderCell.model = self.dataArr[indexPath.row];
     advanceOrderCell.status = self.status;
+    advanceOrderCell.model = self.dataArr[indexPath.row];
     if (self.status <= 0) {
         advanceOrderCell.rePlayBlock = ^(){
             UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"Hello Boss" message:@"请输入您对客户的回复" preferredStyle:UIAlertControllerStyleAlert];

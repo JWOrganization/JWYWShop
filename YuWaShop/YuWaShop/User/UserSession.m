@@ -90,11 +90,24 @@ static UserSession * user=nil;
         MyLog(@"Data is %@",responsObj);
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            EMError *errorLog = [[EMClient sharedClient] loginWithUsername:user.account password:user.hxPassword];
+            EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",user.account] password:user.hxPassword];
             if (!errorLog){
                 [[EMClient sharedClient].options setIsAutoLogin:NO];
                 [[EMClient sharedClient].chatManager getAllConversations];
                 MyLog(@"环信登录成功");
+            }else{
+                EMError *error = [[EMClient sharedClient] registerWithUsername:[NSString stringWithFormat:@"2%@",[NSString stringWithFormat:@"2%@",user.account]] password:[NSString stringWithFormat:@"2%@",user.account]];
+                if (error==nil) {
+                    MyLog(@"环信注册成功");
+                    BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
+                    if (!isAutoLogin) {
+                        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",user.account] password:[NSString stringWithFormat:@"2%@",user.account]];
+                        if (errorLog==nil){
+                            [[EMClient sharedClient].options setIsAutoLogin:YES];
+                            MyLog(@"环信登录成功");
+                        }
+                    }
+                }
             }
             
             [JPUSHService setAlias:user.account callbackSelector:nil object:nil];
@@ -111,13 +124,12 @@ static UserSession * user=nil;
 + (void)saveUserInfoWithDic:(NSDictionary *)dataDic{
     user.token = dataDic[@"token"];
     user.uid = [dataDic[@"id"] integerValue];
-    [UserSession userShoperSalePhone];//商户信息
     
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
     user.nickName = dataDic[@"company_name"]?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
-    user.hxPassword = dataDic[@"mobile"];
+    user.hxPassword = [NSString stringWithFormat:@"2%@",dataDic[@"mobile"]];
     user.local = dataDic[@"address"];
     
     NSArray * SexArr = @[@"男",@"女",@"未知"];
@@ -160,11 +172,10 @@ static UserSession * user=nil;
     }
     user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
     user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
-    if (user.cut<10)user.cut = 95;
+    if (user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
     
     //233333333暂定
-    user.comfired_Status = 2;
     user.shopType = @"美食";
     user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
     user.shopTypeID = @"24";
@@ -188,7 +199,10 @@ static UserSession * user=nil;
 
 
 + (void)userToComfired{
-    if (user.isVIP ==3||user.comfired_Status == 2)return;
+    if (user.isVIP ==3||user.comfired_Status == 2){
+        [UserSession userShoperSalePhone];//商户信息
+        return;
+    }
     VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     UIViewController * vc;
     if (user.comfired_Status == 1) {

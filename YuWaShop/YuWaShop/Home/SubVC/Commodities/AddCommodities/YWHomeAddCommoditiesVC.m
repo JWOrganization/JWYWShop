@@ -78,6 +78,17 @@
 
 #pragma mark - Http
 - (void)requestChangeIcon{
+    if ([self.nameTextField.text isEqualToString:@""]) {
+        [self showHUDWithStr:@"请输入商品名称哟~" withSuccess:NO];
+        return;
+    }else if ([self.introTextField.text isEqualToString:@""]) {
+        [self showHUDWithStr:@"请输入商品介绍哟~" withSuccess:NO];
+        return;
+    }else if ([self.priceTextField.text isEqualToString:@""]||[self.priceTextField.text floatValue]<=0.f) {
+        [self showHUDWithStr:@"请输入正确的商品价格哟~" withSuccess:NO];
+        return;
+    }
+    
     //h33333333333上传商品图片
     if (!self.shopImage.image) {
         [self showHUDWithStr:@"请添加商品相片哟~" withSuccess:NO];
@@ -90,16 +101,7 @@
 - (void)requestUpData{
     //h33333333333上传商品
     
-    if ([self.nameTextField.text isEqualToString:@""]) {
-        [self showHUDWithStr:@"请输入商品名称哟~" withSuccess:NO];
-        return;
-    }else if ([self.introTextField.text isEqualToString:@""]) {
-        [self showHUDWithStr:@"请输入商品介绍哟~" withSuccess:NO];
-        return;
-    }else if ([self.priceTextField.text isEqualToString:@""]||[self.priceTextField.text floatValue]<=0.f) {
-        [self showHUDWithStr:@"请输入正确的商品价格哟~" withSuccess:NO];
-        return;
-    }
+    
     
     [self showHUDWithStr:@"恭喜!添加成功" withSuccess:YES];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

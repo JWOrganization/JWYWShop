@@ -16,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
+
+
 
 @end

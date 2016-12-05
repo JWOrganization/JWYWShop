@@ -110,10 +110,23 @@
         [UserSession saveUserLoginWithAccount:account withPassword:password];
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         [self showHUDWithStr:@"重置成功" withSuccess:YES];
-        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:account password:[UserSession instance].hxPassword];
+        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",account] password:[UserSession instance].hxPassword];
         if (!errorLog){
             [[EMClient sharedClient].options setIsAutoLogin:NO];
             MyLog(@"环信登录成功");
+        }else{
+            EMError *error = [[EMClient sharedClient] registerWithUsername:[NSString stringWithFormat:@"2%@",account] password:account];
+            if (error==nil) {
+                MyLog(@"环信注册成功");
+                BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
+                if (!isAutoLogin) {
+                    EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",account] password:[NSString stringWithFormat:@"2%@",account]];
+                    if (errorLog==nil){
+                        [[EMClient sharedClient].options setIsAutoLogin:YES];
+                        MyLog(@"环信登录成功");
+                    }
+                }
+            }
         }
         if ([UserSession instance].comfired_Status == 2){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

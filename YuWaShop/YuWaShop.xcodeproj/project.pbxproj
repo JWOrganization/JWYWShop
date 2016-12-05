@@ -424,19 +424,6 @@
 		B35C9EA81DEC3FE80051E352 /* YWMessageAddressBookHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9D4B1DEC3FE80051E352 /* YWMessageAddressBookHeader.m */; };
 		B35C9EA91DEC3FE80051E352 /* YWMessageAddressBookHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D4C1DEC3FE80051E352 /* YWMessageAddressBookHeader.xib */; };
 		B35C9EAA1DEC3FE80051E352 /* YWMessageAddressBookTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B35C9D4E1DEC3FE80051E352 /* YWMessageAddressBookTableView.m */; };
-		B35C9EAB1DEC3FE80051E352 /* tag  LV.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D531DEC3FE80051E352 /* tag  LV.json */; };
-		B35C9EAC1DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D541DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json */; };
-		B35C9EAD1DEC3FE80051E352 /* 关注的人首页数据.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D551DEC3FE80051E352 /* 关注的人首页数据.json */; };
-		B35C9EAE1DEC3FE80051E352 /* 单条笔记.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D561DEC3FE80051E352 /* 单条笔记.json */; };
-		B35C9EAF1DEC3FE80051E352 /* 单条笔记下面的 相关笔记.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D571DEC3FE80051E352 /* 单条笔记下面的 相关笔记.json */; };
-		B35C9EB01DEC3FE80051E352 /* 发送笔记.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D581DEC3FE80051E352 /* 发送笔记.json */; };
-		B35C9EB11DEC3FE80051E352 /* 国家 选择币种.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D591DEC3FE80051E352 /* 国家 选择币种.json */; };
-		B35C9EB21DEC3FE80051E352 /* 地点城市.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5A1DEC3FE80051E352 /* 地点城市.json */; };
-		B35C9EB31DEC3FE80051E352 /* 定位.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5B1DEC3FE80051E352 /* 定位.json */; };
-		B35C9EB41DEC3FE80051E352 /* 总的专辑 个人中心展示小图.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5C1DEC3FE80051E352 /* 总的专辑 个人中心展示小图.json */; };
-		B35C9EB51DEC3FE80051E352 /* 总的笔记个人.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5D1DEC3FE80051E352 /* 总的笔记个人.json */; };
-		B35C9EB61DEC3FE80051E352 /* 点进个人中心的一个专辑.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5E1DEC3FE80051E352 /* 点进个人中心的一个专辑.json */; };
-		B35C9EB71DEC3FE80051E352 /* 首页数据.json in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D5F1DEC3FE80051E352 /* 首页数据.json */; };
 		B35C9EB81DEC3FE80051E352 /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D611DEC3FE80051E352 /* country.plist */; };
 		B35C9EB91DEC3FE80051E352 /* countrycoderule.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D621DEC3FE80051E352 /* countrycoderule.plist */; };
 		B35C9EBA1DEC3FE80051E352 /* EmojisList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35C9D631DEC3FE80051E352 /* EmojisList.plist */; };
@@ -1485,19 +1472,6 @@
 		B35C9D4C1DEC3FE80051E352 /* YWMessageAddressBookHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWMessageAddressBookHeader.xib; sourceTree = "<group>"; };
 		B35C9D4D1DEC3FE80051E352 /* YWMessageAddressBookTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMessageAddressBookTableView.h; sourceTree = "<group>"; };
 		B35C9D4E1DEC3FE80051E352 /* YWMessageAddressBookTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWMessageAddressBookTableView.m; sourceTree = "<group>"; };
-		B35C9D531DEC3FE80051E352 /* tag  LV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tag  LV.json"; sourceTree = "<group>"; };
-		B35C9D541DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "个人中心 总的请求（可无视）.json"; sourceTree = "<group>"; };
-		B35C9D551DEC3FE80051E352 /* 关注的人首页数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "关注的人首页数据.json"; sourceTree = "<group>"; };
-		B35C9D561DEC3FE80051E352 /* 单条笔记.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "单条笔记.json"; sourceTree = "<group>"; };
-		B35C9D571DEC3FE80051E352 /* 单条笔记下面的 相关笔记.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "单条笔记下面的 相关笔记.json"; sourceTree = "<group>"; };
-		B35C9D581DEC3FE80051E352 /* 发送笔记.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "发送笔记.json"; sourceTree = "<group>"; };
-		B35C9D591DEC3FE80051E352 /* 国家 选择币种.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "国家 选择币种.json"; sourceTree = "<group>"; };
-		B35C9D5A1DEC3FE80051E352 /* 地点城市.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "地点城市.json"; sourceTree = "<group>"; };
-		B35C9D5B1DEC3FE80051E352 /* 定位.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "定位.json"; sourceTree = "<group>"; };
-		B35C9D5C1DEC3FE80051E352 /* 总的专辑 个人中心展示小图.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "总的专辑 个人中心展示小图.json"; sourceTree = "<group>"; };
-		B35C9D5D1DEC3FE80051E352 /* 总的笔记个人.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "总的笔记个人.json"; sourceTree = "<group>"; };
-		B35C9D5E1DEC3FE80051E352 /* 点进个人中心的一个专辑.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "点进个人中心的一个专辑.json"; sourceTree = "<group>"; };
-		B35C9D5F1DEC3FE80051E352 /* 首页数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "首页数据.json"; sourceTree = "<group>"; };
 		B35C9D611DEC3FE80051E352 /* country.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = country.plist; sourceTree = "<group>"; };
 		B35C9D621DEC3FE80051E352 /* countrycoderule.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = countrycoderule.plist; sourceTree = "<group>"; };
 		B35C9D631DEC3FE80051E352 /* EmojisList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojisList.plist; sourceTree = "<group>"; };
@@ -4011,30 +3985,9 @@
 		B35C9D511DEC3FE80051E352 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B35C9D521DEC3FE80051E352 /* Json */,
 				B35C9D601DEC3FE80051E352 /* Plist */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		B35C9D521DEC3FE80051E352 /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				B35C9D531DEC3FE80051E352 /* tag  LV.json */,
-				B35C9D541DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json */,
-				B35C9D551DEC3FE80051E352 /* 关注的人首页数据.json */,
-				B35C9D561DEC3FE80051E352 /* 单条笔记.json */,
-				B35C9D571DEC3FE80051E352 /* 单条笔记下面的 相关笔记.json */,
-				B35C9D581DEC3FE80051E352 /* 发送笔记.json */,
-				B35C9D591DEC3FE80051E352 /* 国家 选择币种.json */,
-				B35C9D5A1DEC3FE80051E352 /* 地点城市.json */,
-				B35C9D5B1DEC3FE80051E352 /* 定位.json */,
-				B35C9D5C1DEC3FE80051E352 /* 总的专辑 个人中心展示小图.json */,
-				B35C9D5D1DEC3FE80051E352 /* 总的笔记个人.json */,
-				B35C9D5E1DEC3FE80051E352 /* 点进个人中心的一个专辑.json */,
-				B35C9D5F1DEC3FE80051E352 /* 首页数据.json */,
-			);
-			path = Json;
 			sourceTree = "<group>";
 		};
 		B35C9D601DEC3FE80051E352 /* Plist */ = {
@@ -4990,7 +4943,6 @@
 				B3F07EFE1DE72CD9005116EA /* SubVC */,
 				B3F07EED1DE70B63005116EA /* Model */,
 				B3F07EEC1DE70B58005116EA /* Header */,
-				B3F07EEB1DE70B45005116EA /* Cell */,
 				B3F07E4A1DE681B6005116EA /* YWPersonShopViewController.h */,
 				B3F07E4B1DE681B6005116EA /* YWPersonShopViewController.m */,
 				B3F07E4C1DE681B6005116EA /* YWPersonShopViewController.xib */,
@@ -5177,7 +5129,8 @@
 				B3F07EF21DE70BE7005116EA /* YWPersonShopTableViewCell.m */,
 				B3F07EF31DE70BE7005116EA /* YWPersonShopTableViewCell.xib */,
 			);
-			path = Cell;
+			name = Cell;
+			path = ../../Cell;
 			sourceTree = "<group>";
 		};
 		B3F07EEC1DE70B58005116EA /* Header */ = {
@@ -5251,6 +5204,7 @@
 			isa = PBXGroup;
 			children = (
 				B32737611DE7EB87001C57DF /* Picker */,
+				B3F07EEB1DE70B45005116EA /* Cell */,
 				B3F07F091DE72DD7005116EA /* YWPCCutSetViewController.h */,
 				B3F07F0A1DE72DD7005116EA /* YWPCCutSetViewController.m */,
 				B3F07F0B1DE72DD7005116EA /* YWPCCutSetViewController.xib */,
@@ -5479,7 +5433,6 @@
 				B35C9E911DEC3FE80051E352 /* YWMessageViewController.xib in Resources */,
 				B317AF611DE5CA120093C511 /* YWHomeCollectionViewCell.xib in Resources */,
 				B317AFC51DE5D3C90093C511 /* PersonHeaderBG39@2x.png in Resources */,
-				B35C9EAB1DEC3FE80051E352 /* tag  LV.json in Resources */,
 				B35C9F341DEC3FE80051E352 /* JWImagePickerCell.xib in Resources */,
 				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B35C9EC01DEC3FE80051E352 /* RBBasicViewController.xib in Resources */,
@@ -5523,16 +5476,12 @@
 				B317AFD21DE5D3C90093C511 /* PersonHeaderBG50@2x.png in Resources */,
 				B35C9EF81DEC3FE80051E352 /* RBNodeShowViewController.xib in Resources */,
 				B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */,
-				B35C9EB11DEC3FE80051E352 /* 国家 选择币种.json in Resources */,
 				B35C9F031DEC3FE80051E352 /* RBNodeAddToAldumTableViewCell.xib in Resources */,
 				B3AA59C61DEC6150006B39CC /* YWPSRePlayTableViewCell.xib in Resources */,
 				B35C9EA91DEC3FE80051E352 /* YWMessageAddressBookHeader.xib in Resources */,
 				B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */,
-				B35C9EB61DEC3FE80051E352 /* 点进个人中心的一个专辑.json in Resources */,
-				B35C9EB21DEC3FE80051E352 /* 地点城市.json in Resources */,
 				B317AFDB1DE5D3C90093C511 /* PersonHeaderBG59@2x.png in Resources */,
 				B32347091DEBD400002C72E1 /* YWPCEnvironmentViewController.xib in Resources */,
-				B35C9EAF1DEC3FE80051E352 /* 单条笔记下面的 相关笔记.json in Resources */,
 				B310989D1DE4543E0033A984 /* LICENSE in Resources */,
 				B317AFB31DE5D3C90093C511 /* PersonHeaderBG22@2x.png in Resources */,
 				B35C9EE21DEC3FE80051E352 /* RBNodeDetailTableViewCell.xib in Resources */,
@@ -5547,11 +5496,9 @@
 				B31098791DE4543E0033A984 /* HUDLoadingShowView.xib in Resources */,
 				B35C9F261DEC3FE80051E352 /* YWSharedEditorViewController.xib in Resources */,
 				B387EAAE1DE45E110045323C /* JWLocationBasicViewController.xib in Resources */,
-				B35C9EAE1DEC3FE80051E352 /* 单条笔记.json in Resources */,
 				B35C9F0D1DEC3FE80051E352 /* MDHotelChooseTypeTableVC.xib in Resources */,
 				B317AFAC1DE5D3C90093C511 /* PersonHeaderBG16@2x.png in Resources */,
 				B31098EB1DE4543E0033A984 /* YWPersonHeaderView.xib in Resources */,
-				B35C9EB41DEC3FE80051E352 /* 总的专辑 个人中心展示小图.json in Resources */,
 				B317AFE01DE5D3C90093C511 /* PersonHeaderBG9@2x.png in Resources */,
 				B3F07EC71DE6CB35005116EA /* YWPersonPointHeaderView.xib in Resources */,
 				B32346F71DEBD095002C72E1 /* YWPersonAboutUsViewController.xib in Resources */,
@@ -5631,13 +5578,11 @@
 				B35C9B891DEC14850051E352 /* YWPCChooseWeekViewController.xib in Resources */,
 				B317AFFC1DE5E6230093C511 /* YWBankViewController.xib in Resources */,
 				B317AFDD1DE5D3C90093C511 /* PersonHeaderBG6@2x.png in Resources */,
-				B35C9EAD1DEC3FE80051E352 /* 关注的人首页数据.json in Resources */,
 				B317AFD31DE5D3C90093C511 /* PersonHeaderBG51@2x.png in Resources */,
 				B310987D1DE4543E0033A984 /* NewLanguage.strings in Resources */,
 				B3F07E671DE6938D005116EA /* YWPersonNoticaficationViewController.xib in Resources */,
 				B317AFB41DE5D3C90093C511 /* PersonHeaderBG23@2x.png in Resources */,
 				B302EAC51DED657E0000B0A0 /* YWHomeAddCommoditiesVC.xib in Resources */,
-				B35C9EB01DEC3FE80051E352 /* 发送笔记.json in Resources */,
 				B317AFD41DE5D3C90093C511 /* PersonHeaderBG52@2x.png in Resources */,
 				B35C9F171DEC3FE80051E352 /* RBNewAlbumCollectionViewCell.xib in Resources */,
 				B35C9EBD1DEC3FE80051E352 /* xhsemoji1.plist in Resources */,
@@ -5649,10 +5594,8 @@
 				B35C9B721DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib in Resources */,
 				B3F07E561DE681B6005116EA /* YWPersonSubVipViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
-				B35C9EB31DEC3FE80051E352 /* 定位.json in Resources */,
 				B3F177E71DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib in Resources */,
 				B317AFBC1DE5D3C90093C511 /* PersonHeaderBG30@2x.png in Resources */,
-				B35C9EB71DEC3FE80051E352 /* 首页数据.json in Resources */,
 				B3C12A6D1DED3575000EF099 /* YWHomeQuickPayListTableViewCell.xib in Resources */,
 				B35C9F151DEC3FE80051E352 /* RBAlbumCollectionViewCell.xib in Resources */,
 				B35C9F391DEC3FE80051E352 /* JWImgPickerAlbumChooseView.xib in Resources */,
@@ -5682,9 +5625,7 @@
 				B317AF221DE5B4C90093C511 /* YWPersonHelpViewController.xib in Resources */,
 				B35C9EBA1DEC3FE80051E352 /* EmojisList.plist in Resources */,
 				B302EACA1DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.xib in Resources */,
-				B35C9EAC1DEC3FE80051E352 /* 个人中心 总的请求（可无视）.json in Resources */,
 				B35C9EEE1DEC3FE80051E352 /* RBNodeDetailRecommendHeader.xib in Resources */,
-				B35C9EB51DEC3FE80051E352 /* 总的笔记个人.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -192,7 +192,7 @@ forRemoteNotification:(NSDictionary *)userInfo
 #pragma mark- JPUSHRegisterDelegate
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
     [UserSession instance].isNewNoticafication = YES;
-    [UserSession refreshNoticaficationWithIsNewNoticafication:YES]
+    [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
     NSDictionary * userInfo = notification.request.content.userInfo;
     
     UNNotificationRequest *request = notification.request; // 收到推送的请求

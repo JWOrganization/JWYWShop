@@ -28,9 +28,11 @@
     [super viewDidLoad];
     self.navigationItem.title = @"数据分析";
     [self makeUI];
+    [self requestData];
 }
 
 - (void)makeUI{
+    self.status = 1;
     [self.segmentControl setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor colorWithHexString:@"#25C0E9"]] forState:UIControlStateNormal];
     [self.segmentControl setTitleTextAttributes:[NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor whiteColor]] forState:UIControlStateSelected];
     self.segmentControl.tintColor = CNaviColor;
@@ -108,7 +110,7 @@
 
 #pragma mark - UIControl Action
 - (IBAction)segmentControlaction:(UISegmentedControl *)sender {
-    self.status = sender.selectedSegmentIndex;
+    self.status = sender.selectedSegmentIndex + 1;
     [self requestData];
 }
 

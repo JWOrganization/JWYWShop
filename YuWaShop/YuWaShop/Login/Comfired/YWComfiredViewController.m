@@ -306,7 +306,6 @@
     //h3333333333提交审核
   
     //self.idTextField.text
-    //self.nameTextField.text
     
     NSString * subTagIDStr = self.tagIDArr[0];
     for (int i = 1; i<self.tagIDArr.count; i++) {
@@ -319,11 +318,12 @@
      
      business_licence
      company_address
+     company_name
      cidtag_id
      coordinatex
      coordinatey
      company_near*/
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_licence":self.cameraImageURL,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":,@"":,@"":
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_licence":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":,@"":
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddCheckStatus withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

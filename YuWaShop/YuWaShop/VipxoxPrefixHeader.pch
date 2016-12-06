@@ -33,6 +33,7 @@
 //分类
 #import "UIImage+imageColor.h"
 #import "UIScrollView+JWGifRefresh.h"
+#import "JWTools.h"
 
 //自定义的视图
 #import "HUDFailureShowView.h"     //加载失败 重试

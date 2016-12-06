@@ -19,7 +19,7 @@
     imageView.backgroundColor=[UIColor greenColor];
     
     UIView*BottomView=[self viewWithTag:22];
-    BottomView.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.02];
+    BottomView.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.1];
     
     
     

@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+//'id':123,
+//'title':'图片标题',
+//'url':'http://xxx.com/xxx.jpg',
+
 @interface StorePhotoModel : NSObject
+@property(nonatomic,strong)NSString*id;
 @property(nonatomic,strong)NSString*title;
-@property(nonatomic,strong)NSString*type_status;
 @property(nonatomic,strong)NSString*url;
 
 @end

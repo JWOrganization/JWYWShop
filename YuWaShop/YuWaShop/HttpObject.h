@@ -104,6 +104,7 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_MyNotice,   //消息通知之列表
     YuWaType_Shoper_ShopAdmin_UpdateMyNotice,  //消息通知之更新
     YuWaType_Shoper_ShopAdmin_Analysis,  //数据分析
+    YuWaType_Shoper_ShopAdmin_GetShopAgreement,   //获取开店协议
     
     YuWaType_
     

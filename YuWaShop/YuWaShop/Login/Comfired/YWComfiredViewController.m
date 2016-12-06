@@ -234,14 +234,14 @@
 - (void)makeLocalImagePicker{
     WEAKSELF;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//take photo
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
         } else {
             MyLog(@"照片源不可用");
         }
     }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//to localPhotos
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
@@ -361,12 +361,11 @@
 }
 
 - (void)requestUpComfired{
-    //h3333333333提交审核
     NSString * subTagIDStr = self.tagIDArr[0];
     for (int i = 1; i<self.tagIDArr.count; i++) {
         subTagIDStr = [NSString stringWithFormat:@"%@,%@",subTagIDStr,self.tagIDArr[i]];
     }
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"invite_code":self.idTextField.text,@"business_licence":self.cameraImageURL,@"id_card":self.cameraUserImageURL,@"id_card_back":self.cameraUsersImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};//,@"":,@"":
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"invite_code":self.idTextField.text,@"business_licence":self.cameraImageURL,@"id_card":self.cameraUserImageURL,@"id_card_back":self.cameraUsersImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"cid":@(self.type),@"tag_id":subTagIDStr,@"coordinatey":self.latitudeStr,@"coordinatex":self.longitudeStr,@"company_near":@(self.addressSubType)};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddCheckStatus withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -379,8 +378,16 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-        [self showHUDWithStr:@"提交失败,请重试" withSuccess:NO];
-    }]; //h333333333   
+        if ([responsObj[@"errorMessage"]isEqualToString:@"已经提交审核，请耐心等待"]) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                YWComfiringViewController * vc = [[YWComfiringViewController alloc]init];
+                [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
+                [self.navigationController pushViewController:vc animated:YES];
+            });
+        }else{
+            [self showHUDWithStr:responsObj[@"errorMessage"]?responsObj[@"errorMessage"]:@"提交失败,请重试" withSuccess:NO];
+        }
+    }];
 }
 
 

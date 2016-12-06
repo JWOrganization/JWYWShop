@@ -118,7 +118,7 @@
 - (void)requestData{
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status)};
     
-    [[HttpObject manager]postDataWithType:YuWaType_RB_HOME withPragram:pragram success:^(id responsObj) {
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_Analysis withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
 //        self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
@@ -134,7 +134,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h3333333333
 }
 
 @end

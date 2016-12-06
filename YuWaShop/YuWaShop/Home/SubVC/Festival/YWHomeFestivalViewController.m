@@ -57,6 +57,7 @@
 }
 
 - (void)dataSet{
+    self.type = 1;
     self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     
@@ -70,7 +71,7 @@
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)sender{
-    self.type = sender.selectedSegmentIndex;
+    self.type = sender.selectedSegmentIndex+1;
     [self.tableView.mj_header beginRefreshing];
 }
 
@@ -89,20 +90,15 @@
 }
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle ==UITableViewCellEditingStyleDelete){
-        if (self.type == 2) {
+        UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             YWHomeFestivalModel * model = self.dataArr[indexPath.row];
             [self requestDelFastivalWithID:model.fastivalID withIndexPath:indexPath];
-        }else{
-            UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                YWHomeFestivalModel * model = self.dataArr[indexPath.row];
-                [self requestDelFastivalWithID:model.fastivalID withIndexPath:indexPath];
-            }];
-            UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-            UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除节日活动?" preferredStyle:UIAlertControllerStyleAlert];
-            [alertVC addAction:cancelAction];
-            [alertVC addAction:OKAction];
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
-        }
+        }];
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除节日活动?" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:cancelAction];
+        [alertVC addAction:OKAction];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
     }
 }
 #pragma mark - UITableViewDataSource
@@ -147,21 +143,39 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
-    if (page == 0)[self.dataArr removeAllObjects];
     
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.type),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
     
-    //233333333要删
-    for (int i = 0; i<3; i++) {
-        [self.dataArr addObject:[[YWHomeFestivalModel alloc]init]];
-    }
-    //233333333要删
-    [self.tableView reloadData];
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_HolidayLists withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        if (page == 0)[self.dataArr removeAllObjects];
+        
+        //233333333要删
+        for (int i = 0; i<3; i++) {
+            [self.dataArr addObject:[[YWHomeFestivalModel alloc]init]];
+        }
+        //233333333要删
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 - (void)requestDelFastivalWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{
     //h3333333333删除节日活动
-    [self.dataArr removeObjectAtIndex:indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([bankID integerValue])};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_DelHoliday withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self.dataArr removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 @end

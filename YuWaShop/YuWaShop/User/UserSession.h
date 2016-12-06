@@ -60,7 +60,7 @@
 @property (nonatomic,assign)NSInteger cut;//买单收银折扣
 @property (nonatomic,copy)NSString * phone;//客服电话
 @property (nonatomic,copy)NSString * serventPhone;//营销顾问电话,邀请人电话
-
+@property (nonatomic,copy)NSString * agreement;//认证协议
 
 //233333333暂定
 @property (nonatomic,copy)NSString * shopType;//店铺所属大类

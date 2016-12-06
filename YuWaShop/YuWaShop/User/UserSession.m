@@ -67,8 +67,8 @@ static UserSession * user=nil;
     [KUSERDEFAULT setValue:password forKey:AUTOLOGINCODE];
 }
 
-//get local saved data
-+ (void)getDataFromUserDefault{
+
++ (void)getDataFromUserDefault{//get local saved data
     NSString * accountDefault = [KUSERDEFAULT valueForKey:AUTOLOGIN];
     if (accountDefault) {
         if ([accountDefault isEqualToString:@""]){
@@ -83,8 +83,7 @@ static UserSession * user=nil;
     }
 }
 
-//auto login
-+ (void)autoLoginRequestWithPragram:(NSDictionary *)pragram{
++ (void)autoLoginRequestWithPragram:(NSDictionary *)pragram{//auto login
     [[HttpObject manager]postNoHudWithType:YuWaType_Logion withPragram:pragram success:^(id responsObj) {
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data is %@",responsObj);
@@ -120,8 +119,8 @@ static UserSession * user=nil;
     }];
 }
 
-//解析登录返回数据
-+ (void)saveUserInfoWithDic:(NSDictionary *)dataDic{
+
++ (void)saveUserInfoWithDic:(NSDictionary *)dataDic{//analyse date
     user.token = dataDic[@"token"];
     user.uid = [dataDic[@"id"] integerValue];
     
@@ -163,25 +162,24 @@ static UserSession * user=nil;
     user.today_money=dataDic[@"today_money"];
     
     
-    user.isLogin = YES;
-    
     NSString * isNewNoticafication = [KUSERDEFAULT valueForKey:IS_NEW_NOTICAFICATION];
     if (isNewNoticafication&&[isNewNoticafication isEqualToString:@"1"]) {
         user.isNewNoticafication = YES;
         [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
     }
-    user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+    if (![dataDic[@"check_status"] isKindOfClass:[NSNull class]]) {
+        user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+    }else{
+        user.comfired_Status = 4;
+    }
+    
     user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
     if (user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
     
-    //233333333暂定
-    user.shopType = @"美食";
-    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
-    user.shopTypeID = @"24";
-    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
-    //233333333暂定
     [UserSession userToComfired];
+    
+    user.isLogin = YES;
 }
 
 + (void)userShoperSalePhone{
@@ -194,23 +192,30 @@ static UserSession * user=nil;
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h333333333333
 }
 
++ (void)userCompareType{//h3333333333333333333
+    user.shopType = @"美食";
+    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
+    user.shopTypeID = @"24";
+    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
+}
 
 + (void)userToComfired{
     if (user.isVIP ==3||user.comfired_Status == 2){
-        [UserSession userShoperSalePhone];//商户信息
-        return;
-    }
-    VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController * vc;
-    if (user.comfired_Status == 1) {
-        vc = [[YWComfiringViewController alloc]init];
+        [UserSession userShoperSalePhone];
+        [UserSession userCompareType];
     }else{
-        vc = [[YWComfiredViewController alloc]init];
+        VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        UIViewController * vc;
+        if (user.comfired_Status == 1) {
+            vc = [[YWComfiringViewController alloc]init];
+        }else{
+            vc = [[YWComfiredViewController alloc]init];
+        }
+        [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
     }
-    [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
 }
 
 + (void)isLogion{

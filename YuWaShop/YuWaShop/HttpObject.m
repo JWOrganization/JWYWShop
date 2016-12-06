@@ -146,12 +146,13 @@
         case YuWaType_Shoper_ShopAdmin_AddCheckStatus://提交门店实名认证
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_AddCheckStatus];
             break;
-        case YuWaType_Shoper_ShopAdmin_MyNotice://消息通知之列表
-            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_MyNotice];
-            break;
         case YuWaType_Shoper_ShopAdmin_Analysis://数据分析
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_Analysis];
             break;
+        case YuWaType_Shoper_ShopAdmin_GetShopAgreement://获取开店协议
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetShopAgreement];
+            break;
+            
             
            //URLStr建立
         default:
@@ -300,6 +301,9 @@
             break;
         case YuWaType_Shoper_ShopAdmin_CommentList://口碑品牌之列表
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_CommentList];
+            break;
+        case YuWaType_Shoper_ShopAdmin_MyNotice://消息通知之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_MyNotice];
             break;
         case YuWaType_Shoper_ShopAdmin_GoodsLists://商品管理之商品列表,支持分页
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GoodsLists];

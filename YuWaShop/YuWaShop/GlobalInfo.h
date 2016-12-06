@@ -128,7 +128,7 @@
 #define HTTP_Shoper_ShopAdmin_MyNotice   @"/api.php/ShopAdmin/myNotice/"   //消息通知之列表
 #define HTTP_Shoper_ShopAdmin_UpdateMyNotice   @"/api.php/ShopAdmin/updateMyNotice/"   //消息通知之更新
 #define HTTP_Shoper_ShopAdmin_Analysis   @"/api.php/ShopAdmin/analysis/"   //数据分析
-
+#define HTTP_Shoper_ShopAdmin_GetShopAgreement   @"/api.php/ShopAdmin/getShopAgreement/"   //获取开店协议
 
 
 

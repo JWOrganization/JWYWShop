@@ -47,7 +47,7 @@
 }
 
 - (void)layoutSet{
-    if (self.status == 0) {
+    if (self.status == 1) {
         self.replayLabelHeight.constant = 0.f;
         self.customReplayHeight.constant = 44.f;
     }else{

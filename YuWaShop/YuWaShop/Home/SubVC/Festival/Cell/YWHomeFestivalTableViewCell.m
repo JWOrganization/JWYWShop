@@ -36,9 +36,9 @@
 }
 
 - (void)statusShow{
-    self.boardLabel.layer.borderColor = [UIColor colorWithHexString:self.status == 0?@"#3cbaea":(self.status == 1?@"#FF0000":@"#b3b3b3")].CGColor;
-    self.statusLabel.textColor = [UIColor colorWithHexString:self.status == 0?@"#3cbaea":(self.status == 1?@"#FF0000":@"#b3b3b3")];
-    self.statusLabel.text = self.status == 0?@"未开始":(self.status == 1?@"进行中":@"已结束");
+    self.boardLabel.layer.borderColor = [UIColor colorWithHexString:self.status == 1?@"#3cbaea":(self.status == 2?@"#FF0000":@"#b3b3b3")].CGColor;
+    self.statusLabel.textColor = [UIColor colorWithHexString:self.status == 1?@"#3cbaea":(self.status == 2?@"#FF0000":@"#b3b3b3")];
+    self.statusLabel.text = self.status == 1?@"未开始":(self.status == 2?@"进行中":@"已结束");
 }
 
 - (void)setModel:(YWHomeFestivalModel *)model{

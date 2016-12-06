@@ -131,13 +131,22 @@
         self.finishDayPicker.hidden = NO;
         return;
     }
+    NSString * cut = [NSString stringWithFormat:@"%zi",self.cutInter];
     
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"title":self.conTextView.text,@"rebate":@([cut floatValue]/100),@"btime":self.startTimeBtn.titleLabel.text,@"etime":self.finishTimeBtn.titleLabel.text};
     
-    //h3333333上传添加节日数据
-    [self showHUDWithStr:@"添加节日活动成功" withSuccess:YES];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddHoliday withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"添加节日活动成功" withSuccess:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
+    //h3333333333上传添加节日数据
 }
 
 @end

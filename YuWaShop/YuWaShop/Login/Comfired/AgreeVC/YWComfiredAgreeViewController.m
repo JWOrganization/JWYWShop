@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
+@property (nonatomic,assign)NSInteger faild;
 
 @end
 
@@ -21,7 +22,6 @@
     [super viewDidLoad];
     [self makeNavi];
     [self makeUI];
-    [self requestAgreeData];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -30,13 +30,19 @@
 - (void)makeNavi{
     self.title = @"协议";
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"同意协议" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(agreeAction) forControlEvents:UIControlEventTouchUpInside withWidth:60.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"同意" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(agreeAction) forControlEvents:UIControlEventTouchUpInside withWidth:60.f];
 }
 
 - (void)makeUI{
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.agreeBtn.layer.cornerRadius =  5.f;
     self.agreeBtn.layer.masksToBounds = YES;
+    if ([UserSession instance].agreement) {
+        self.textView.text = [UserSession instance].agreement;
+        [self.textView setContentOffset:CGPointMake(0.f, 0.f)];
+    }else{
+        [self requestAgreeData];
+    }
 }
 
 - (IBAction)agreeBtnAction:(id)sender {
@@ -50,8 +56,19 @@
 
 #pragma mark - Http
 - (void)requestAgreeData{
-    //h3333333333333333
-    [self.textView setContentOffset:CGPointMake(0.f, 0.f)];
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_GetShopAgreement withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+//        self.textView.text = ;
+        [self.textView setContentOffset:CGPointMake(0.f, 0.f)];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+        self.faild++;
+        if (self.faild<3)[self requestAgreeData];
+    }]; //h333333333
 }
 
 @end

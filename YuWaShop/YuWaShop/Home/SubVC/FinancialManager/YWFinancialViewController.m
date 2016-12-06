@@ -11,6 +11,10 @@
 
 
 
+#import "UIScrollView+JWGifRefresh.h"
+
+
+
 
 
 #define CELL0     @"FinancialTableViewCell"
@@ -20,16 +24,39 @@
 @property(nonatomic,strong)UISegmentedControl*typeSegmentView;
 
 @property(nonatomic,assign)NSInteger type;  //0为结算   1为记录
+@property(nonatomic,assign)int pagen;
+@property(nonatomic,assign)int pages;
+@property(nonatomic,assign)NSMutableArray*allDatasModel;
 @end
 
 @implementation YWFinancialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.navigationController.navigationBar  setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:CELL0 bundle:nil] forCellReuseIdentifier:CELL0];
     [self makeTopView];
-    
+    [self setupRefresh];
+}
+#pragma mark - TableView Refresh
+- (void)setupRefresh{
+    self.allDatasModel=[NSMutableArray array];
+    self.tableView.mj_header = [UIScrollView scrollRefreshGifHeaderWithImgName:@"newheader" withImageCount:60 withRefreshBlock:^{
+        self.pagen=10;
+        self.pages=0;
+        [self getDatas];
+     
+    }];
+    self.tableView.mj_footer = [UIScrollView scrollRefreshGifFooterWithImgName:@"newheader" withImageCount:60 withRefreshBlock:^{
+        self.pagen=10;
+        self.pages++;
+        [self getDatas];
+
+    }];
 }
 
 #pragma mark  --  UI
@@ -80,12 +107,33 @@
             
         }
         cell.textLabel.text=@"2016.11.11";
-        cell.detailTextLabel.text=@"500";
+        cell.detailTextLabel.text=@"500(已结算)";
         
         return cell;
         
     }
    
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (self.type==0) {
+        UIView*headerView=[[NSBundle mainBundle]loadNibNamed:@"FinancialHeaderView" owner:nil options:nil].firstObject;
+        headerView.frame=CGRectMake(0, 0, kScreen_Width, 170);
+        
+        return headerView;
+    }else{
+        UIView*accordView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 35)];
+        accordView.backgroundColor=[UIColor whiteColor];
+        
+        UILabel*titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, kScreen_Width/2, 20)];
+        titleLabel.centerY=accordView.centerY;
+        titleLabel.textColor=RGBCOLOR(160, 161, 165, 1);
+        titleLabel.font=[UIFont systemFontOfSize:15];
+        titleLabel.text=@"账单记录";
+        [accordView addSubview:titleLabel];
+        
+        return accordView;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,20 +146,29 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.001f;
+    if (self.type==0) {
+        return 170;
+    }
+    return 35;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.0001f;
 }
 
-
+#pragma mark  --getDatas
+-(void)getDatas{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
+    
+}
 
 #pragma mark  --touch
 - (void)segmentControlAction:(UISegmentedControl *)sender{
     self.type = sender.selectedSegmentIndex;
-//    [self.tableView.mj_header beginRefreshing];
-    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
+
 }
 
 - (void)didReceiveMemoryWarning {

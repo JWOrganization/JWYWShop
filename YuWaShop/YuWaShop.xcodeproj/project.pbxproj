@@ -700,6 +700,7 @@
 		C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */; };
 		C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */; };
 		C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */; };
+		C17499571DF64FFB00F17B77 /* FinancialHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1917,6 +1918,7 @@
 		C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialTableViewCell.h; sourceTree = "<group>"; };
 		C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialTableViewCell.m; sourceTree = "<group>"; };
 		C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
+		C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5359,6 +5361,7 @@
 				C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */,
 				C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */,
 				C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */,
+				C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -5520,6 +5523,7 @@
 				B35C9F341DEC3FE80051E352 /* JWImagePickerCell.xib in Resources */,
 				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B35C9EC01DEC3FE80051E352 /* RBBasicViewController.xib in Resources */,
+				C17499571DF64FFB00F17B77 /* FinancialHeaderView.xib in Resources */,
 				B302EADD1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib in Resources */,
 				B35C9EBB1DEC3FE80051E352 /* EmotionTextKeys.plist in Resources */,
 				B35C9EFA1DEC3FE80051E352 /* YWNodeAddAldumShowTableViewCell.xib in Resources */,

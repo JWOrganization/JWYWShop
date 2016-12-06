@@ -39,9 +39,9 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     if (self.publicPraiseView.height<300.f) {
-        self.publicPraiseView.frame = CGRectMake(0.f, 165.f, kScreen_Width, 320.f);
-        self.rankView.frame = CGRectMake(0.f, 485.f, kScreen_Width, 320.f);
-        self.popularityView.frame = CGRectMake(0.f, 805.f, kScreen_Width, 285.f);
+        self.publicPraiseView.frame = CGRectMake(0.f, 165.f, kScreen_Width, 292.f);
+        self.rankView.frame = CGRectMake(0.f, 457.f, kScreen_Width, 320.f);
+        self.popularityView.frame = CGRectMake(0.f, 777.f, kScreen_Width, 285.f);
     }
 }
 
@@ -59,21 +59,21 @@
     [self.scrollView addSubview:self.detailView];
     
     self.publicPraiseView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNPublicPraiseView" owner:nil options:nil]firstObject];
-    self.publicPraiseView.frame = CGRectMake(0.f, 165.f, kScreen_Width, 320.f);
+    self.publicPraiseView.frame = CGRectMake(0.f, 165.f, kScreen_Width, 292.f);
     [self.publicPraiseView setNeedsDisplay];
     [self.scrollView addSubview:self.publicPraiseView];
     
     self.rankView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNRankView" owner:nil options:nil]firstObject];
-    self.rankView.frame = CGRectMake(0.f, 485.f, kScreen_Width, 320.f);
+    self.rankView.frame = CGRectMake(0.f, 457.f, kScreen_Width, 320.f);
     [self.rankView setNeedsLayout];
     [self.scrollView addSubview:self.rankView];
     
     self.popularityView = [[[NSBundle mainBundle]loadNibNamed:@"YWPNPopularityView" owner:nil options:nil]firstObject];
-    self.popularityView.frame = CGRectMake(0.f, 805.f, kScreen_Width, 320.f);
+    self.popularityView.frame = CGRectMake(0.f, 777.f, kScreen_Width, 285.f);
     [self.popularityView setNeedsLayout];
     [self.scrollView addSubview:self.popularityView];
     
-    self.scrollView.contentSize = CGSizeMake(kScreen_Width, 1090.f);
+    self.scrollView.contentSize = CGSizeMake(kScreen_Width, 1062.f);
 }
 
 - (void)UIDataRefresh{//23333333333日报内容self.model设置
@@ -83,17 +83,9 @@
     self.detailView.compareLabel.text = @"数据为昨日单日数据,增长下降趋势为上周同日";
     
     
-    NSInteger goodCount = 4;//2333333好评数根据接口换
-    NSInteger badCount = 4;//2333333差评数根据接口换
-    //tag1-5为好评11-15为差评
-    for (int i = 1; i <= goodCount; i++) {
-        UIImageView * imageView = [self.publicPraiseView viewWithTag:i];
-        imageView.image = [UIImage imageNamed:@"PublicPraise-star-0"];
-    }
-    for (int i = 1; i <= badCount; i++) {
-        UIImageView * imageView = [self.publicPraiseView viewWithTag:(i+10)];
-        imageView.image = [UIImage imageNamed:@"PublicUnPraise-star-0"];
-    }
+    self.publicPraiseView.commentCountLabel.text = [NSString stringWithFormat:@"评论数·%@",@"20"];
+    self.publicPraiseView.goodCommentCountLabel.text = [NSString stringWithFormat:@"好评数·%@",@"19"];
+    self.publicPraiseView.badCommentCountLabel.text = [NSString stringWithFormat:@"差评数·%@",@"1"];
     
     
     self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:@"26" withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];

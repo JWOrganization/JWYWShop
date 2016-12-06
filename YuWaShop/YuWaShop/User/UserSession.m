@@ -68,8 +68,8 @@ static UserSession * user=nil;
     [KUSERDEFAULT setValue:password forKey:AUTOLOGINCODE];
 }
 
-//get local saved data
-+ (void)getDataFromUserDefault{
+
++ (void)getDataFromUserDefault{//get local saved data
     NSString * accountDefault = [KUSERDEFAULT valueForKey:AUTOLOGIN];
     if (accountDefault) {
         if ([accountDefault isEqualToString:@""]){
@@ -84,18 +84,30 @@ static UserSession * user=nil;
     }
 }
 
-//auto login
-+ (void)autoLoginRequestWithPragram:(NSDictionary *)pragram{
++ (void)autoLoginRequestWithPragram:(NSDictionary *)pragram{//auto login
     [[HttpObject manager]postNoHudWithType:YuWaType_Logion withPragram:pragram success:^(id responsObj) {
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data is %@",responsObj);
         [UserSession saveUserInfoWithDic:responsObj[@"data"]];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            EMError *errorLog = [[EMClient sharedClient] loginWithUsername:user.account password:user.hxPassword];
+            EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",user.account] password:user.hxPassword];
             if (!errorLog){
                 [[EMClient sharedClient].options setIsAutoLogin:NO];
                 [[EMClient sharedClient].chatManager getAllConversations];
                 MyLog(@"环信登录成功");
+            }else{
+                EMError *error = [[EMClient sharedClient] registerWithUsername:[NSString stringWithFormat:@"2%@",[NSString stringWithFormat:@"2%@",user.account]] password:[NSString stringWithFormat:@"2%@",user.account]];
+                if (error==nil) {
+                    MyLog(@"环信注册成功");
+                    BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
+                    if (!isAutoLogin) {
+                        EMError *errorLog = [[EMClient sharedClient] loginWithUsername:[NSString stringWithFormat:@"2%@",user.account] password:[NSString stringWithFormat:@"2%@",user.account]];
+                        if (errorLog==nil){
+                            [[EMClient sharedClient].options setIsAutoLogin:YES];
+                            MyLog(@"环信登录成功");
+                        }
+                    }
+                }
             }
             
             [JPUSHService setAlias:user.account callbackSelector:nil object:nil];
@@ -108,17 +120,16 @@ static UserSession * user=nil;
     }];
 }
 
-//解析登录返回数据
-+ (void)saveUserInfoWithDic:(NSDictionary *)dataDic{
+
++ (void)saveUserInfoWithDic:(NSDictionary *)dataDic{//analyse date
     user.token = dataDic[@"token"];
     user.uid = [dataDic[@"id"] integerValue];
-    [UserSession userShoperSalePhone];//商户信息
     
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
     user.nickName = dataDic[@"company_name"]?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
-    user.hxPassword = dataDic[@"mobile"];
+    user.hxPassword = [NSString stringWithFormat:@"2%@",dataDic[@"mobile"]];
     user.local = dataDic[@"address"];
     
     NSArray * SexArr = @[@"男",@"女",@"未知"];
@@ -152,26 +163,24 @@ static UserSession * user=nil;
     user.today_money=dataDic[@"today_money"];
     
     
-    user.isLogin = YES;
-    
     NSString * isNewNoticafication = [KUSERDEFAULT valueForKey:IS_NEW_NOTICAFICATION];
     if (isNewNoticafication&&[isNewNoticafication isEqualToString:@"1"]) {
         user.isNewNoticafication = YES;
         [UserSession refreshNoticaficationWithIsNewNoticafication:YES];
     }
-    user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+    if (![dataDic[@"check_status"] isKindOfClass:[NSNull class]]) {
+        user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+    }else{
+        user.comfired_Status = 4;
+    }
+    
     user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
-    if (user.cut<10)user.cut = 95;
+    if (user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
     
-    //233333333暂定
-    user.comfired_Status = 2;
-    user.shopType = @"美食";
-    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
-    user.shopTypeID = @"24";
-    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
-    //233333333暂定
     [UserSession userToComfired];
+    
+    user.isLogin = YES;
 }
 
 + (void)userShoperSalePhone{
@@ -184,20 +193,30 @@ static UserSession * user=nil;
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h333333333333
 }
 
++ (void)userCompareType{//h3333333333333333333
+    user.shopType = @"美食";
+    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
+    user.shopTypeID = @"24";
+    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
+}
 
 + (void)userToComfired{
-    if (user.isVIP ==3||user.comfired_Status == 2)return;
-    VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController * vc;
-    if (user.comfired_Status == 1) {
-        vc = [[YWComfiringViewController alloc]init];
+    if (user.isVIP ==3||user.comfired_Status == 2){
+        [UserSession userShoperSalePhone];
+        [UserSession userCompareType];
     }else{
-        vc = [[YWComfiredViewController alloc]init];
+        VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        UIViewController * vc;
+        if (user.comfired_Status == 1) {
+            vc = [[YWComfiringViewController alloc]init];
+        }else{
+            vc = [[YWComfiredViewController alloc]init];
+        }
+        [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
     }
-    [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
 }
 
 + (void)isLogion{

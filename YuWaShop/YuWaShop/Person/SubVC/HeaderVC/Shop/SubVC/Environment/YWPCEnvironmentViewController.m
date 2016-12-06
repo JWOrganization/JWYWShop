@@ -42,8 +42,8 @@
 
 - (void)dataSet{
     NSArray * typeNameArr = @[@"    停车信息",@"    免费WIFI",@"    环境信息",@"    更多配备设施"];
-    self.nameArr = [NSMutableArray arrayWithArray:@[@[@"免费停车",@"付费停车",@"无停车位",@"不显示停车信息"],@[@"免费WIFI"],@[@"有吸烟区",@"有无吸烟区",@"有包厢",@"有卡座",@"有沙发位",@"有露天位",@"有景观位",@"有宝宝椅"],@[@"有表演",@"有儿童游乐区",@"有旋转餐厅"]]];
-    self.parkChoose = 4;
+    self.nameArr = [NSMutableArray arrayWithArray:@[@[@"不显示停车信息",@"免费停车",@"付费停车",@"无停车位"],@[@"免费WIFI"],@[@"有吸烟区",@"有包厢",@"有卡座",@"有沙发位",@"有露天位",@"有景观位",@"有宝宝椅"],@[@"有表演",@"有儿童游乐区",@"有旋转餐厅"]]];
+    self.parkChoose = 0;
     self.model = [YWPersonShopModel sharePersonShop];
     if (self.model.environmentDataArr) {
         [self.model.environmentDataArr[0] enumerateObjectsUsingBlock:^(NSString * _Nonnull str, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -52,7 +52,7 @@
             }
         }];
     }
-    self.dataArr = [NSMutableArray arrayWithArray:@[@[@"0",@"0",@"0",@"0"],@[@"0"],@[@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0"],@[@"0",@"0",@"0"]]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@[@"1",@"0",@"0",@"0"],@[@"0"],@[@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0"],@[@"0",@"0",@"0"]]];
     self.headerArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 0; i < typeNameArr.count; i++) {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(15.f, 0.f, kScreen_Width - 30.f, 38.f)];
@@ -141,10 +141,26 @@
 }
 - (void)requestUpData{
     //h3333333333上传环境配套设置
+    NSArray * dataTagArr = @[@[@"wifi"],@[@"smoke",@"payroom",@"cassette",@"sofa",@"outdoor",@"sight",@"baby"],@[@"perform",@"playground",@"有旋转餐厅"]];
     //    self.dataArr
     
-    self.model.environmentDataArr = self.dataArr;
-    [self showHUDWithStr:@"设置成功" withSuccess:YES];
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"park":@(self.parkChoose)}];
+    for (int i = 0; i<dataTagArr.count; i++) {
+        NSArray * tagSubArr = dataTagArr[i];
+        for (int j = 0; j<tagSubArr.count; j++) {
+            [pragram setObject:@([self.dataArr[i+1][j] integerValue]) forKey:tagSubArr[j]];
+        }
+    }
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetEnvironment withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.model.environmentDataArr = self.dataArr;
+        [self showHUDWithStr:@"设置成功" withSuccess:YES];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333333
 }
 
 @end

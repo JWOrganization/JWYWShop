@@ -46,8 +46,8 @@
     self.sureBtn.layer.cornerRadius = 5.f;
     self.sureBtn.layer.masksToBounds = YES;
     
-    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
-    self.cutShowLabel.text = [NSString stringWithFormat:@"客服折扣%zi+5=%@ (0.5折为平台分配资金)\n\n不能低于95折",self.cut,[UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)]];
+    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",([UserSession instance].cut==100?@"全付":[NSString stringWithFormat:@"%zi折",[UserSession instance].cut])];
+    self.cutShowLabel.text = [NSString stringWithFormat:@"客服折扣%zi+5=%@ (0.5折为平台分配资金)\n\n不能低于95折",([UserSession instance].cut - 5),[UserSession instance].cut==100?@"全付":[NSString stringWithFormat:@"%zi折",[UserSession instance].cut]];
     
     [self makePickerView];
 }
@@ -62,11 +62,14 @@
     self.picker.dataSource = self;
     self.picker.backgroundColor = [UIColor whiteColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.picker selectRow:(95-[UserSession instance].cut >=0?(95-[UserSession instance].cut):0) inComponent:0 animated:YES];
+        [self.picker selectRow:(100-[UserSession instance].cut >=0?(100-[UserSession instance].cut):0) inComponent:0 animated:YES];
     });
-    self.cut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
-    self.cutInter = [UserSession instance].cut;
-    [self saveAvtion];
+    self.cutInter = [UserSession instance].cut - 5;
+    if (self.cutInter%10 == 5) {
+        self.cut = self.cutInter== 95?@"全付":[NSString stringWithFormat:@"%zi折",((self.cutInter+5)/10)];
+    }else{
+        self.cut = [NSString stringWithFormat:@"%zi折",(self.cutInter+5)];
+    }
     NSMutableArray * cutArr = [NSMutableArray arrayWithCapacity:0];
     for (int i = 95; i >= 10; i--) {
         if (i%10 == 0) {
@@ -123,18 +126,30 @@
 #pragma mark - Http
 - (void)requestSendCut{
     //h333333333333折扣设置
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"discount":@([[NSString stringWithFormat:@"0.%zi",(self.cutInter + 5)] floatValue])};
     
-    NSString * cutStr = [NSString stringWithFormat:@"0.%zi",self.cutInter];//2333333要换成str
-    
-    [UserSession instance].cut = self.cutInter;
-    NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
-    [shopArr replaceObjectAtIndex:1 withObject:([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
-    [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
-    self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)])];
-    [self showHUDWithStr:@"折扣设置成功" withSuccess:YES];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetDiscount withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [UserSession instance].cut = self.cutInter+5;
+        NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
+        NSString * showName;
+        if (self.cutInter%10 == 5) {
+            showName = self.cutInter== 95?@"全付":[NSString stringWithFormat:@"%zi折",((self.cutInter+5)/10)];
+        }else{
+            showName = [NSString stringWithFormat:@"%zi折",(self.cutInter+5)];
+        }
+        [shopArr replaceObjectAtIndex:1 withObject:showName];
+        [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
+        self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",showName];
+        [self showHUDWithStr:@"折扣设置成功" withSuccess:YES];
+        //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //        [self.navigationController popViewControllerAnimated:YES];
+        //    });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333333
 }
 
 @end

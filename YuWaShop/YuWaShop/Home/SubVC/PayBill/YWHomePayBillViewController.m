@@ -34,14 +34,14 @@
     [self makeUI];
 }
 - (void)dataSet{
-    self.cut = [UserSession instance].cut + 5;
+    self.cut = [UserSession instance].cut;
 }
 - (void)makeUI{
     NSInteger cutInter = [UserSession instance].cut;
-    if (cutInter%10 == 5) {
-        self.cutLabel.text = cutInter== 95?@"全付":[NSString stringWithFormat:@"%zi折",((cutInter+5)/10)];
+    if (cutInter%10 == 0) {
+        self.cutLabel.text = cutInter== 100?@"全付":[NSString stringWithFormat:@"%zi折",(cutInter/10)];
     }else{
-        self.cutLabel.text = [NSString stringWithFormat:@"%zi折",(cutInter+5)];
+        self.cutLabel.text = [NSString stringWithFormat:@"%zi折",cutInter];
     }
     
     self.cutShowBtn.layer.cornerRadius = 3.f;
@@ -65,21 +65,15 @@
         return;
     }
     
-    if (self.costNumber<=0.f) {
-        self.costTextField.text = @"";
-        [self showHUDWithStr:@"付款不能小于0元哟~" withSuccess:NO];
+    if (self.costNumber <= self.cutNumber) {
+        [self showHUDWithStr:@"不打折金额不能大于消费总额哟" withSuccess:NO];
         return;
     }
-    if (self.cutNumber<=0.f){
-        self.cutTextField.text = @"";
-    }
     
-    if (self.costNumber < self.cutNumber){
-        self.cutTextField.text = self.costTextField.text;
-        self.cutNumber = self.costNumber;
-    }
+    if (self.costNumber<=0.f)self.costTextField.text = @"";
+    if (self.cutNumber<=0.f)self.cutTextField.text = @"";
     
-    self.payNumber = (self.costNumber - self.cutNumber)*(self.isCut?self.cut:100) /100;
+    self.payNumber = (self.costNumber - self.cutNumber)*(self.isCut?self.cut:100) /100 + self.cutNumber;
     self.payLabel.text = [NSString stringWithFormat:@"￥%.2f",self.payNumber];
     self.QRCodeImageView.image = nil;
 }
@@ -114,9 +108,16 @@
         return;
     }
     
-    //h3333333333333生成支付二维码
-    self.QRCodeImageView.image = [UIImage imageNamed:@"placeholder"];//233333333接入接口后换URL图片或者自己生成
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"total_money":@(self.costNumber),@"non_discount_money":@(self.cutNumber),@"discount":@(self.cut/100)};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddRecord withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self.QRCodeImageView sd_setImageWithURL:[NSURL URLWithString:responsObj[@"data"][@"url"]] placeholderImage:[UIImage imageNamed:@"placeholder"] completed:nil];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333333
 }
-
 
 @end

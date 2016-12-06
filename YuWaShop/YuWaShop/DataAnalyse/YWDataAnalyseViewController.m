@@ -116,18 +116,25 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h333333333消费分析
-//    self.status
-    self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
-    self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status)};
     
-    self.customersView.xValues = @[@1, @2, @3, @4, @5, @6, @7];
-    self.customersView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
-    
-    self.consumptionView.xValues = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
-    self.consumptionView.yValues = @[@350, @1000, @800, @400, @500, @130, @50, @750,@250, @100, @640, @950, @333, @510];
-    
-    [self reDrawChart];
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_Analysis withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+//        self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
+//        self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
+//        
+//        self.customersView.xValues = @[@1, @2, @3, @4, @5, @6, @7];
+//        self.customersView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
+//        
+//        self.consumptionView.xValues = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
+//        self.consumptionView.yValues = @[@350, @1000, @800, @400, @500, @130, @50, @750,@250, @100, @640, @950, @333, @510];
+        
+        [self reDrawChart];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h3333333333
 }
 
 @end

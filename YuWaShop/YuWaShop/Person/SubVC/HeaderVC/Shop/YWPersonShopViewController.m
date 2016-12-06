@@ -115,17 +115,21 @@
     [[HttpObject manager]postDataWithType:YuWaType_ShopAdmin_Home withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
+        
+        self.model.headerModel = [YWPersonShopHeaderModel yy_modelWithDictionary:responsObj[@"data"]];
+        NSString * showCut;
+        if ([UserSession instance].cut%10 == 0) {
+            showCut = [UserSession instance].cut== 100?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut/10)];
+        }else{
+            showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
+        }
+        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",showCut,@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
+        
+        [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
-    
-    //233333333333要删
-    self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)]),@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
-    self.model.headerModel = [[YWPersonShopHeaderModel alloc]init];
-    //233333333333要删
-    
-    [self.tableView reloadData];
+    }]; //h33333333333333
 }
 
 @end

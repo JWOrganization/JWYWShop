@@ -24,7 +24,13 @@ static YWPersonShopModel * shop =nil;
 }
 
 + (void)defaultInfoSet{
-    shop.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"",@""],@[@"",([UserSession instance].cut==95?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut+5)]),@""],@[@""]]];
+    NSString * showCut;
+    if ([UserSession instance].cut%10 == 0) {
+        showCut = [UserSession instance].cut== 100?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut/10)];
+    }else{
+        showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
+    }
+    shop.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"",@""],@[@"",showCut,@""],@[@""]]];
 }
 
 

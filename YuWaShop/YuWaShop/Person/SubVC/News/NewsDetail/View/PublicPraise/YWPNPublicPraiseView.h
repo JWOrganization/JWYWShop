@@ -16,4 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 //tag1-5为好评11-15为差评
 
+
+@property (weak, nonatomic) IBOutlet UILabel *commentCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badCommentCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodCommentCountLabel;
+
+
 @end

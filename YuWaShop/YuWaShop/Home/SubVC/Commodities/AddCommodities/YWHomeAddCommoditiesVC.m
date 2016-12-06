@@ -78,18 +78,6 @@
 
 #pragma mark - Http
 - (void)requestChangeIcon{
-    //h33333333333上传商品图片
-    if (!self.shopImage.image) {
-        [self showHUDWithStr:@"请添加商品相片哟~" withSuccess:NO];
-        return;
-    }
-    
-//    self.cameraImageStr = @"";//233333商品相片URL
-    [self requestUpData];
-}
-- (void)requestUpData{
-    //h33333333333上传商品
-    
     if ([self.nameTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"请输入商品名称哟~" withSuccess:NO];
         return;
@@ -101,10 +89,40 @@
         return;
     }
     
-    [self showHUDWithStr:@"恭喜!添加成功" withSuccess:YES];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    if (!self.shopImage.image) {
+        [self showHUDWithStr:@"请添加商品相片哟~" withSuccess:NO];
+        return;
+    }
+    
+    NSDictionary * pragram = @{@"img":@"img"};
+    
+    [[HttpObject manager]postPhotoWithType:YuWaType_IMG_UP withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.cameraImageStr = responsObj[@"data"];
+        if (!self.cameraImageStr)self.cameraImageStr=@"";
+        [self requestUpData];;
+    } failur:^(id errorData, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",error);
+    } withPhoto:UIImagePNGRepresentation(self.shopImage.image)];
+}
+- (void)requestUpData{
+    //h333333333333上传商品
+    
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"goods_name":self.nameTextField.text,@"goods_info":self.introTextField.text,@"goods_price":@([self.priceTextField.text floatValue]),@"goods_img":self.cameraImageStr};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddGoods withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"恭喜!添加成功" withSuccess:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 @end

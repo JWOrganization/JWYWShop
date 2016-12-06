@@ -7,6 +7,7 @@
 //
 
 #import "YWComfiringViewController.h"
+#import "YWLoginViewController.h"
 
 @interface YWComfiringViewController ()
 
@@ -21,17 +22,13 @@
 - (void)makeNavi{
     self.title = @"认证中";
     
-    self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"退出登录" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(outLogion) forControlEvents:UIControlEventTouchUpInside withWidth:60.f];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)outLogion{
+    [UserSession clearUser];
+    YWLoginViewController * vc = [[YWLoginViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-*/
 
 @end

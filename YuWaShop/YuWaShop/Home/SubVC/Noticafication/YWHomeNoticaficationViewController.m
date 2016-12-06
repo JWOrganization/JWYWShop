@@ -73,6 +73,7 @@
 }
 
 - (void)dataSet{
+    self.status = 1;
     self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     
@@ -81,7 +82,7 @@
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)sender{
-    self.status = sender.selectedSegmentIndex;
+    self.status = sender.selectedSegmentIndex+1;
     [self.tableView.mj_header beginRefreshing];
 }
 
@@ -103,14 +104,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.status == 0) {
+    if (self.status == 1) {
         YWHomeQuickPayListTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeQuickPayListTableViewCell"];
         listCell.model = self.dataArr[indexPath.row];
         return listCell;
     }
     YWHomeOrderNoticaficationTableViewCell * orderCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeOrderNoticaficationTableViewCell"];
     orderCell.model = self.dataArr[indexPath.row];
-    __weak typeof(orderCell)weakOrderCell = orderCell;
     orderCell.rePlayBlock = ^(){
         UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"Hello Boss" message:@"请输入您对客户的回复" preferredStyle:UIAlertControllerStyleAlert];
         [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField){
@@ -119,11 +119,11 @@
         }];
         UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
-            [self requestDelOrderWithReplay:replayTextField.text withOrderID:weakOrderCell.model.orderID withCell:weakOrderCell];
+            [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:2];
         }];
         UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
-            [self requestCancelOrderWithReplay:replayTextField.text withOrderID:weakOrderCell.model.orderID withCell:weakOrderCell];
+            [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:3];
         }];
         [alertVC addAction:delAction];
         [alertVC addAction:OKAction];
@@ -170,38 +170,68 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    if (self.status==0) {
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status),@"pagen":@(1),@"pages":@(page)};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_MyNotice withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
-        //233333333要删
-        for (int i = 0; i<3; i++) {
-            [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+        if (self.status == 1) {
+            //233333333要删
+            for (int i = 0; i<3; i++) {
+                [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+            }
+            //233333333要删
+        }else{
+            //233333333要删
+            for (int i = 0; i<3; i++) {
+                YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
+                model.orderID = @"233333333";
+                model.status = [NSString stringWithFormat:@"%zi",i];
+                [self.dataArr addObject:model];
+            }
+            //233333333要删
         }
-        //233333333要删
+        
+        //            for (int i = 0; i < dataArr.count; i++) {
+        //                if (status == 未读) {
+        //                    [self requestCancelNoticaficationWithID:noticaid];
+        //                }
+        //            }
         [self.tableView reloadData];
-    }else{
-        if (page == 0)[self.dataArr removeAllObjects];
-        //233333333要删
-        for (int i = 0; i<3; i++) {
-            YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
-            model.orderID = @"233333333";
-            model.status = [NSString stringWithFormat:@"%zi",i];
-            [self.dataArr addObject:model];
-        }
-        //233333333要删
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
+}
+- (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
+    //h3333333333删除回复了的订单,并提交回复
+    YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
+    
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":@"23333333xx店xx物品预定成功",@"push_content":rePlay};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_BookReply withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self.dataArr removeObjectAtIndex:indexPath.row];
         [self.tableView reloadData];
-    }
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
-
-- (void)requestDelOrderWithReplay:(NSString *)rePlay withOrderID:(NSString *)orderID withCell:(YWHomeOrderNoticaficationTableViewCell *)orderCell{
-    //h3333333333订单提交回复
-    //    rePlay//回复信息
-    orderCell.status = 1;//233333可能会变
-}
-
-- (void)requestCancelOrderWithReplay:(NSString *)rePlay withOrderID:(NSString *)orderID withCell:(YWHomeOrderNoticaficationTableViewCell *)orderCell{
-    //h3333333333订单提交回复
-    //    rePlay//回复信息
-    orderCell.status = 2;//233333可能会变
+- (void)requestCancelNoticaficationWithID:(NSInteger)noticaID{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@(noticaID)};
+        
+        [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_UpdateMyNotice withPragram:pragram success:^(id responsObj) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code is %@",responsObj);
+        } failur:^(id responsObj, NSError *error) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code error is %@",responsObj);
+        }]; //h333333333
+    });
 }
 
 @end

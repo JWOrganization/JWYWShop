@@ -89,7 +89,7 @@
 }
 
 - (void)tapPress:(UIGestureRecognizer*)gestureRecognizer {
-    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];//这里touchPoint是点击的某点在地图控件中的位置
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
     self.touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     self.location.lat = self.touchMapCoordinate.latitude;
     [YWLocation saveLat:self.touchMapCoordinate.latitude];
@@ -137,8 +137,21 @@
 #pragma mark - Http
 - (void)requestUpDateLocation{
     //h3333333333333上传当前位置,经纬度
-//    self.touchMapCoordinate.latitude//纬度
-//    self.touchMapCoordinate.longitude//经度
+    
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"coordinatey":@(self.touchMapCoordinate.latitude),@"coordinatex":@(self.touchMapCoordinate.longitude)};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetShopMap withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"上传成功" withSuccess:YES];
+        //23333333333333修改model
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333333
 }
 
 @end

@@ -86,24 +86,21 @@
 
 
 
-#pragma mark - Shop VIP
+#pragma mark - Shoper
 #define HTTP_VIP_BaseInfo   @"/api.php/ShopAdmin/getBaseInfo/"   //基本信息
 #define HTTP_VIP_Sale_Detail   @"/api.php/ShopAdmin/detail/"   //交易详情信息，支持分页
 #define HTTP_VIP_Sale_DetailShow   @"/api.php/ShopAdmin/detailShow/"   //每一条交易详情信息
 
-#define HTTP_VIP_Sale_MyDirectUser   @"/api.php/Sale/myDirectUser/"   //我的绑定用户
-#define HTTP_VIP_Sale_MyInviteShop   @"/api.php/Sale/myInviteShop/"   //我签约的商铺
-#define HTTP_VIP_Sale_MyMoneyHistory   @"/api.php/Sale/myMoneyHistory/"   //收支明细
-#define HTTP_VIP_Sale_ScoreToMoney   @"/api.php/Sale/scoreToMoney/"   //积分提现
-
-#pragma mark - Shoper
 #define HTTP_VIP_ShopAdmin_Home   @"/api.php/ShopAdmin/home/"   //门店管理首页
 #define HTTP_Shoper_ShopAdmin_SetBaseInfo   @"/api.php/ShopAdmin/setBaseInfo/"   //设置店铺基本信息
 #define HTTP_Shoper_ShopAdmin_SetShopMap   @"/api.php/ShopAdmin/setShopMap/"   //门店地图
 //#define HTTP_Shoper_   @""   //设置营业时间
 #define HTTP_Shoper_ShopAdmin_GetSalePhone   @"/api.php/ShopAdmin/getSalePhone/"   //获取营销顾问电话
-#define HTTP_Shoper_ShopAdmin_SetEnvironment   @"/api.php/ShopAdmin/setEnvironment/"   //设置门店环境信息
+#define HTTP_Shoper_ShopAdmin_SetEnvironment   @"/api.php/ShopAdmin/setEnvironment/"   //设置环境信息
 #define HTTP_Shoper_ShopAdmin_SetDiscount   @"/api.php/ShopAdmin/setDiscount/"   //设置门店折扣
+//#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡列表
+//#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡删除
+//#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡添加
 #define HTTP_Shoper_ShopAdmin_SetPerCapita   @"/api.php/ShopAdmin/setPerCapita/"   //设置人均消费
 #define HTTP_Shoper_ShopAdmin_MyDividendMoney   @"/api.php/ShopAdmin/myDividendMoney/"   //我的分红
 //#define HTTP_Shoper_   @""   //经营日报
@@ -117,7 +114,6 @@
 #define HTTP_Shoper_ShopAdmin_CouponList   @"/api.php/ShopAdmin/couponList/"   //优惠券之列表
 #define HTTP_Shoper_ShopAdmin_CommentList   @"/api.php/ShopAdmin/commentList/"   //口碑品牌之列表
 #define HTTP_Shoper_ShopAdmin_CommentReply   @"/api.php/ShopAdmin/commentReply/"   //口碑品牌之回复
-
 #define HTTP_Shoper_ShopAdmin_AddCheckStatus   @"/api.php/ShopAdmin/addCheckStatus/"   //提交门店实名认证
 #define HTTP_Shoper_ShopAdmin_BookLists   @"/api.php/ShopAdmin/bookLists/"   //预定管理之列表
 #define HTTP_Shoper_ShopAdmin_BookReply   @"/api.php/ShopAdmin/bookReply/"   //预定管理之回复
@@ -127,10 +123,12 @@
 #define HTTP_Shoper_ShopAdmin_AddShopPhoto   @"/api.php/ShopAdmin/addShopPhoto/"   //相册管理之添加
 #define HTTP_Shoper_ShopAdmin_DelShopPhoto   @"/api.php/ShopAdmin/delShopPhoto/"   //相册管理之删除
 #define HTTP_Shoper_ShopAdmin_ShopPhotoLists   @"/api.php/ShopAdmin/shopPhotoLists/"   //相册管理之列表
-//#define HTTP_Shoper_ShopAdmin   @""   //同业排行
-//#define HTTP_Shoper_ShopAdmin   @""   //消息
-//#define HTTP_Shoper_ShopAdmin   @""   //数据分析
 
+//#define HTTP_Shoper_ShopAdmin_   @""   //同业排行
+#define HTTP_Shoper_ShopAdmin_MyNotice   @"/api.php/ShopAdmin/myNotice/"   //消息通知之列表
+#define HTTP_Shoper_ShopAdmin_UpdateMyNotice   @"/api.php/ShopAdmin/updateMyNotice/"   //消息通知之更新
+#define HTTP_Shoper_ShopAdmin_Analysis   @"/api.php/ShopAdmin/analysis/"   //数据分析
+#define HTTP_Shoper_ShopAdmin_GetShopAgreement   @"/api.php/ShopAdmin/getShopAgreement/"   //获取开店协议
 
 
 

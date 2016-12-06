@@ -150,10 +150,8 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     if (page == 0)[self.dataArr removeAllObjects];
-    
 //    self.typeID//对比分类ID
 //    self.status//对比类型
-    
     //233333333要删
     self.myModel = [[YWHomeCompareMyModel alloc]init];
     self.myModel.status = self.status;

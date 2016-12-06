@@ -95,7 +95,7 @@
     YWHomeAdvanceOrderTableViewCell * advanceOrderCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeAdvanceOrderTableViewCell"];
     advanceOrderCell.status = self.status;
     advanceOrderCell.model = self.dataArr[indexPath.row];
-    if (self.status <= 0) {
+    if (self.status <= 1) {
         advanceOrderCell.rePlayBlock = ^(){
             UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"Hello Boss" message:@"请输入您对客户的回复" preferredStyle:UIAlertControllerStyleAlert];
             [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField){
@@ -174,11 +174,10 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h33333333333333
 }
 
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
-    //h3333333333删除回复了的订单,并提交回复
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
     
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":@"23333333xx店xx物品预定成功",@"push_content":rePlay};
@@ -191,7 +190,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h3333333333333删除回复了的订单,并提交回复
 }
 
 @end

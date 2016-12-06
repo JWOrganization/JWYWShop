@@ -68,7 +68,7 @@
         MyLog(@"Regieter Code error is %@",responsObj);
         self.faild++;
         if (self.faild<3)[self requestAgreeData];
-    }]; //h333333333
+    }]; //h3333333333333
 }
 
 @end

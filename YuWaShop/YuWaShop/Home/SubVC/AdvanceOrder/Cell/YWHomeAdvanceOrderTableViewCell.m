@@ -36,14 +36,14 @@
     self.timeLabel.text = @"2016-11-20 15:00";
     self.nmberLabel.text = [NSString stringWithFormat:@"%@人",@"22"];
     self.rePlayLabel.text = @"技师发型师007";
-    if (self.status != 0) {
+    if (self.status != 1) {
         self.myRePlayLabel.text = @"回复你";
     }
 }
 
 - (void)setStatus:(NSInteger)status{
     _status = status;
-    self.rePlayBtn.hidden = status != 0;
+    self.rePlayBtn.hidden = status != 1;
 }
 
 - (void)layoutSet{

@@ -1781,6 +1781,7 @@
 		B3ACF1161DEF070C0056FD64 /* YWHomeCouponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeCouponTableViewCell.m; sourceTree = "<group>"; };
 		B3ACF1171DEF070C0056FD64 /* YWHomeCouponTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCouponTableViewCell.xib; sourceTree = "<group>"; };
 		B3ACF11A1DEF07380056FD64 /* YWHomeCouponHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeCouponHeaderView.xib; sourceTree = "<group>"; };
+		B3BE795B1DF6E08B0027702C /* YWHttpBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWHttpBase.h; sourceTree = "<group>"; };
 		B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipxoxPrefixHeader.pch; sourceTree = "<group>"; };
 		B3C12A481DED217F000EF099 /* HttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
 		B3C12A491DED217F000EF099 /* GlobalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalInfo.h; sourceTree = "<group>"; };
@@ -2215,6 +2216,7 @@
 				B3C12A4F1DED217F000EF099 /* YWLocation.h */,
 				B3C12A4D1DED217F000EF099 /* YWLocation.m */,
 				B31097041DE44EA00033A984 /* main.m */,
+				B3BE795B1DF6E08B0027702C /* YWHttpBase.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

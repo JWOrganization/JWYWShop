@@ -45,10 +45,10 @@
 
 - (void)setStatus:(NSInteger)status{
     _status = status;
-    [self.rePlayBtn setTitleColor:[UIColor colorWithHexString:status==0?@"#25C0E9":@"#908F95"] forState:UIControlStateNormal];
-    self.rePlayBtn.layer.borderColor = [UIColor colorWithHexString:status==0?@"#25C0E9":@"#908F95"].CGColor;
-    [self.rePlayBtn setTitle:self.status==0?@"回复":(self.status == 1?@"已回复":@"已拒绝") forState:UIControlStateNormal];
-    [self.rePlayBtn setUserInteractionEnabled:status==0];
+    [self.rePlayBtn setTitleColor:[UIColor colorWithHexString:status==1?@"#25C0E9":@"#908F95"] forState:UIControlStateNormal];
+    self.rePlayBtn.layer.borderColor = [UIColor colorWithHexString:status==1?@"#25C0E9":@"#908F95"].CGColor;
+    [self.rePlayBtn setTitle:self.status==1?@"回复":(self.status == 1?@"已回复":@"已拒绝") forState:UIControlStateNormal];
+    [self.rePlayBtn setUserInteractionEnabled:status==1];
 }
 
 - (IBAction)rePlayBtnAction:(id)sender {

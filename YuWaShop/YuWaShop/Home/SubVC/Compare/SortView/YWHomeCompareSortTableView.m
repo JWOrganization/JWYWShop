@@ -14,7 +14,6 @@
     self = [super initWithFrame:frame style:style];
     if (self) {
         self.dataArr = [NSMutableArray arrayWithCapacity:0];
-        
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
         self.backgroundColor = [UIColor whiteColor];

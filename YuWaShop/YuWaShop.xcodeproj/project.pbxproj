@@ -688,6 +688,16 @@
 		C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */; };
 		C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */; };
 		C17499571DF64FFB00F17B77 /* FinancialHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */; };
+		C174995D1DF68F0600F17B77 /* ShowMoreCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */; };
+		C17499611DF68F4500F17B77 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */; };
+		C17499621DF68F4500F17B77 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */; };
+		C17499651DF68F4D00F17B77 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499641DF68F4D00F17B77 /* CommentModel.m */; };
+		C17499681DF68F9E00F17B77 /* ShopdetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499671DF68F9E00F17B77 /* ShopdetailModel.m */; };
+		C174996A1DF6AC2D00F17B77 /* CommentHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */; };
+		C17499771DF6B59900F17B77 /* StorePhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C174996E1DF6B59900F17B77 /* StorePhotoModel.m */; };
+		C17499781DF6B59900F17B77 /* StorePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499701DF6B59900F17B77 /* StorePhotoViewController.m */; };
+		C174997A1DF6B59900F17B77 /* StorePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */; };
+		C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1893,6 +1903,23 @@
 		C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialTableViewCell.m; sourceTree = "<group>"; };
 		C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
 		C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialHeaderView.xib; sourceTree = "<group>"; };
+		C174995B1DF68F0600F17B77 /* ShowMoreCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMoreCommitViewController.h; sourceTree = "<group>"; };
+		C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMoreCommitViewController.m; sourceTree = "<group>"; };
+		C174995E1DF68F4500F17B77 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		C17499631DF68F4D00F17B77 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		C17499641DF68F4D00F17B77 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		C17499661DF68F9E00F17B77 /* ShopdetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopdetailModel.h; sourceTree = "<group>"; };
+		C17499671DF68F9E00F17B77 /* ShopdetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopdetailModel.m; sourceTree = "<group>"; };
+		C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentHeadView.xib; sourceTree = "<group>"; };
+		C174996D1DF6B59900F17B77 /* StorePhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoModel.h; sourceTree = "<group>"; };
+		C174996E1DF6B59900F17B77 /* StorePhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoModel.m; sourceTree = "<group>"; };
+		C174996F1DF6B59900F17B77 /* StorePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoViewController.h; sourceTree = "<group>"; };
+		C17499701DF6B59900F17B77 /* StorePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoViewController.m; sourceTree = "<group>"; };
+		C17499741DF6B59900F17B77 /* StorePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4891,6 +4918,8 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				C174996B1DF6B59900F17B77 /* PhotoAlbumManager */,
+				C17499581DF68ED900F17B77 /* commentManager */,
 				C174994B1DF5AA4A00F17B77 /* FinancialManager */,
 				B3F177F21DEFF270007DB9A3 /* Noticafication */,
 				B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */,
@@ -5327,6 +5356,69 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		C17499581DF68ED900F17B77 /* commentManager */ = {
+			isa = PBXGroup;
+			children = (
+				C174995B1DF68F0600F17B77 /* ShowMoreCommitViewController.h */,
+				C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */,
+				C17499591DF68EE400F17B77 /* view */,
+				C174995A1DF68EE400F17B77 /* model */,
+			);
+			path = commentManager;
+			sourceTree = "<group>";
+		};
+		C17499591DF68EE400F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C174995E1DF68F4500F17B77 /* CommentTableViewCell.h */,
+				C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */,
+				C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */,
+				C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C174995A1DF68EE400F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C17499631DF68F4D00F17B77 /* CommentModel.h */,
+				C17499641DF68F4D00F17B77 /* CommentModel.m */,
+				C17499661DF68F9E00F17B77 /* ShopdetailModel.h */,
+				C17499671DF68F9E00F17B77 /* ShopdetailModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C174996B1DF6B59900F17B77 /* PhotoAlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				C17499711DF6B59900F17B77 /* view */,
+				C174996C1DF6B59900F17B77 /* model */,
+				C174996F1DF6B59900F17B77 /* StorePhotoViewController.h */,
+				C17499701DF6B59900F17B77 /* StorePhotoViewController.m */,
+			);
+			path = PhotoAlbumManager;
+			sourceTree = "<group>";
+		};
+		C174996C1DF6B59900F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C174996D1DF6B59900F17B77 /* StorePhotoModel.h */,
+				C174996E1DF6B59900F17B77 /* StorePhotoModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C17499711DF6B59900F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C17499741DF6B59900F17B77 /* StorePhotoCollectionViewCell.h */,
+				C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */,
+				C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5575,6 +5667,7 @@
 				B31097131DE44EA00033A984 /* LaunchScreen.storyboard in Resources */,
 				B317AFB61DE5D3C90093C511 /* PersonHeaderBG25@2x.png in Resources */,
 				B35C9E961DEC3FE80051E352 /* YWMessageChatViewController.xib in Resources */,
+				C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */,
 				B35C9F331DEC3FE80051E352 /* JWSearchView.xib in Resources */,
 				B35C9E9D1DEC3FE80051E352 /* YWMessageNotificationViewController.xib in Resources */,
 				B317AFBA1DE5D3C90093C511 /* PersonHeaderBG29@2x.png in Resources */,
@@ -5589,6 +5682,7 @@
 				B3F07E611DE68C51005116EA /* YWBasicTableViewCell.xib in Resources */,
 				B31097101DE44EA00033A984 /* Assets.xcassets in Resources */,
 				B31098691DE4543E0033A984 /* YWDataAnalyseViewController.xib in Resources */,
+				C17499621DF68F4500F17B77 /* CommentTableViewCell.xib in Resources */,
 				B317AFBD1DE5D3C90093C511 /* PersonHeaderBG31@2x.png in Resources */,
 				B35C9EE61DEC3FE80051E352 /* RBNodeDetailCommendFooter.xib in Resources */,
 				B317AFB51DE5D3C90093C511 /* PersonHeaderBG24@2x.png in Resources */,
@@ -5601,6 +5695,7 @@
 				B317AFB21DE5D3C90093C511 /* PersonHeaderBG21@2x.png in Resources */,
 				B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */,
 				B3F07F0D1DE72DD7005116EA /* YWPCCutSetViewController.xib in Resources */,
+				C174996A1DF6AC2D00F17B77 /* CommentHeadView.xib in Resources */,
 				B317AFB11DE5D3C90093C511 /* PersonHeaderBG20@2x.png in Resources */,
 				B317AFC41DE5D3C90093C511 /* PersonHeaderBG38@2x.png in Resources */,
 				B35C9EBC1DEC3FE80051E352 /* xhsemoji.plist in Resources */,
@@ -5747,6 +5842,7 @@
 				B317AF261DE5B5110093C511 /* YWPersonCooperaViewController.m in Sources */,
 				B35C9CF91DEC3ECD0051E352 /* EaseLocationViewController.m in Sources */,
 				B3F07EAF1DE6B89C005116EA /* YWBankTableViewCell.m in Sources */,
+				C174997A1DF6B59900F17B77 /* StorePhotoCollectionViewCell.m in Sources */,
 				B31098B21DE4543E0033A984 /* MJRefreshAutoNormalFooter.m in Sources */,
 				B31098A01DE4543E0033A984 /* MASConstraintMaker.m in Sources */,
 				B35C9CF61DEC3ECD0051E352 /* EaseEmotionManager.m in Sources */,
@@ -5786,6 +5882,7 @@
 				B35C9CF41DEC3ECD0051E352 /* EaseEmojiEmoticons.m in Sources */,
 				B31098B61DE4543E0033A984 /* MJRefreshBackStateFooter.m in Sources */,
 				B35C9D071DEC3ECD0051E352 /* EaseBubbleView+Text.m in Sources */,
+				C174995D1DF68F0600F17B77 /* ShowMoreCommitViewController.m in Sources */,
 				B35C9CCC1DEC3ECD0051E352 /* EMSDWebImageDownloader.m in Sources */,
 				B35C9EE51DEC3FE80051E352 /* RBNodeDetailCommendFooter.m in Sources */,
 				B35C9F2D1DEC3FE80051E352 /* JWTagCollectionView.m in Sources */,
@@ -5800,6 +5897,7 @@
 				B35C9CEE1DEC3ECD0051E352 /* UIViewController+DismissKeyboard.m in Sources */,
 				B35C9CE41DEC3ECD0051E352 /* PSTGridLayoutRow.m in Sources */,
 				B31098D11DE4543E0033A984 /* UIImage+MultiFormat.m in Sources */,
+				C17499781DF6B59900F17B77 /* StorePhotoViewController.m in Sources */,
 				B3F07E8B1DE6A7A8005116EA /* NSArray+Log.m in Sources */,
 				B35C9EC31DEC3FE80051E352 /* RBPublicTagSaveModel.m in Sources */,
 				B323470E1DEBD718002C72E1 /* YWPCESelTableViewCell.m in Sources */,
@@ -5837,6 +5935,7 @@
 				B31098941DE4543E0033A984 /* AFSecurityPolicy.m in Sources */,
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
+				C17499651DF68F4D00F17B77 /* CommentModel.m in Sources */,
 				B35557D91DF03C74002E15A4 /* JWChatTableViewCell.m in Sources */,
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
 				B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */,
@@ -5884,6 +5983,7 @@
 				B35C9CFF1DEC3ECD0051E352 /* EaseBaseMessageCell.m in Sources */,
 				B310989B1DE4543E0033A984 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				B35C9EFB1DEC3FE80051E352 /* YWNodeAddAldumTitleTableViewCell.m in Sources */,
+				C17499611DF68F4500F17B77 /* CommentTableViewCell.m in Sources */,
 				B31098971DE4543E0033A984 /* AFURLResponseSerialization.m in Sources */,
 				B35C9F2B1DEC3FE80051E352 /* JWTagCollectionViewCell.m in Sources */,
 				B3F07EF41DE70BE7005116EA /* YWPersonShopTableViewCell.m in Sources */,
@@ -6015,6 +6115,7 @@
 				B3C12A5B1DED3312000EF099 /* YWUserShopAdminModel.m in Sources */,
 				B3F07EB41DE6B9E8005116EA /* YWBankModel.m in Sources */,
 				B31098D21DE4543E0033A984 /* UIImage+WebP.m in Sources */,
+				C17499681DF68F9E00F17B77 /* ShopdetailModel.m in Sources */,
 				B32347141DEBD73C002C72E1 /* YWPCEOnTableViewCell.m in Sources */,
 				B35C9F461DEC3FE80051E352 /* XHBranchPoint.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
@@ -6088,6 +6189,7 @@
 				B3F07EBC1DE6CA77005116EA /* YWPersonPointTableViewCell.m in Sources */,
 				B35C9CF51DEC3ECD0051E352 /* EaseEmotionEscape.m in Sources */,
 				B35C9ED71DEC3FE80051E352 /* RBHomeCollectionViewCell.m in Sources */,
+				C17499771DF6B59900F17B77 /* StorePhotoModel.m in Sources */,
 				B35C9ED51DEC3FE80051E352 /* RBPublicTagEditorViewController.m in Sources */,
 				B3C12A671DED3445000EF099 /* YWHomeQuickPayListVC.m in Sources */,
 				B31098761DE4543E0033A984 /* HUDFailureShowView.m in Sources */,

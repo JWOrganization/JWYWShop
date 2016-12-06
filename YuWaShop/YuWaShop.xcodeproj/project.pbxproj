@@ -684,6 +684,20 @@
 		B3F177F71DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */; };
 		B3F177FC1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */; };
 		B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */; };
+		C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */; };
+		C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */; };
+		C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */; };
+		C17499571DF64FFB00F17B77 /* FinancialHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */; };
+		C174995D1DF68F0600F17B77 /* ShowMoreCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */; };
+		C17499611DF68F4500F17B77 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */; };
+		C17499621DF68F4500F17B77 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */; };
+		C17499651DF68F4D00F17B77 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499641DF68F4D00F17B77 /* CommentModel.m */; };
+		C17499681DF68F9E00F17B77 /* ShopdetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499671DF68F9E00F17B77 /* ShopdetailModel.m */; };
+		C174996A1DF6AC2D00F17B77 /* CommentHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */; };
+		C17499771DF6B59900F17B77 /* StorePhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C174996E1DF6B59900F17B77 /* StorePhotoModel.m */; };
+		C17499781DF6B59900F17B77 /* StorePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499701DF6B59900F17B77 /* StorePhotoViewController.m */; };
+		C174997A1DF6B59900F17B77 /* StorePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */; };
+		C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1884,6 +1898,29 @@
 		B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeOrderNoticaficationTableViewCell.h; sourceTree = "<group>"; };
 		B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeOrderNoticaficationTableViewCell.m; sourceTree = "<group>"; };
 		B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeOrderNoticaficationTableViewCell.xib; sourceTree = "<group>"; };
+		C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWFinancialViewController.h; sourceTree = "<group>"; };
+		C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWFinancialViewController.m; sourceTree = "<group>"; };
+		C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialTableViewCell.h; sourceTree = "<group>"; };
+		C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialTableViewCell.m; sourceTree = "<group>"; };
+		C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
+		C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinancialHeaderView.xib; sourceTree = "<group>"; };
+		C174995B1DF68F0600F17B77 /* ShowMoreCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMoreCommitViewController.h; sourceTree = "<group>"; };
+		C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMoreCommitViewController.m; sourceTree = "<group>"; };
+		C174995E1DF68F4500F17B77 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		C17499631DF68F4D00F17B77 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		C17499641DF68F4D00F17B77 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		C17499661DF68F9E00F17B77 /* ShopdetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopdetailModel.h; sourceTree = "<group>"; };
+		C17499671DF68F9E00F17B77 /* ShopdetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopdetailModel.m; sourceTree = "<group>"; };
+		C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentHeadView.xib; sourceTree = "<group>"; };
+		C174996D1DF6B59900F17B77 /* StorePhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoModel.h; sourceTree = "<group>"; };
+		C174996E1DF6B59900F17B77 /* StorePhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoModel.m; sourceTree = "<group>"; };
+		C174996F1DF6B59900F17B77 /* StorePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoViewController.h; sourceTree = "<group>"; };
+		C17499701DF6B59900F17B77 /* StorePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoViewController.m; sourceTree = "<group>"; };
+		C17499741DF6B59900F17B77 /* StorePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2159,8 +2196,8 @@
 				B3C12A471DED217F000EF099 /* VipxoxPrefixHeader.pch */,
 				B31098EE1DE454560033A984 /* AppDelegate.h */,
 				B31098EF1DE454560033A984 /* AppDelegate.m */,
-				B3C12A481DED217F000EF099 /* HttpManager.m */,
 				B3C12A4B1DED217F000EF099 /* HttpManager.h */,
+				B3C12A481DED217F000EF099 /* HttpManager.m */,
 				B3C12A4A1DED217F000EF099 /* HttpObject.h */,
 				B3C12A4E1DED217F000EF099 /* HttpObject.m */,
 				B3C12A541DED25CA000EF099 /* User */,
@@ -4883,6 +4920,9 @@
 		B3C12A5C1DED3368000EF099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				C174996B1DF6B59900F17B77 /* PhotoAlbumManager */,
+				C17499581DF68ED900F17B77 /* commentManager */,
+				C174994B1DF5AA4A00F17B77 /* FinancialManager */,
 				B3F177F21DEFF270007DB9A3 /* Noticafication */,
 				B3F177E21DEFD60A007DB9A3 /* AdvanceOrder */,
 				B30E4DED1DEF0397008684BA /* Coupon */,
@@ -5289,6 +5329,98 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C174994B1DF5AA4A00F17B77 /* FinancialManager */ = {
+			isa = PBXGroup;
+			children = (
+				C174994F1DF5B17800F17B77 /* view */,
+				C17499501DF5B17D00F17B77 /* model */,
+				C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */,
+				C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */,
+			);
+			path = FinancialManager;
+			sourceTree = "<group>";
+		};
+		C174994F1DF5B17800F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */,
+				C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */,
+				C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */,
+				C17499561DF64FFB00F17B77 /* FinancialHeaderView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C17499501DF5B17D00F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C17499581DF68ED900F17B77 /* commentManager */ = {
+			isa = PBXGroup;
+			children = (
+				C174995B1DF68F0600F17B77 /* ShowMoreCommitViewController.h */,
+				C174995C1DF68F0600F17B77 /* ShowMoreCommitViewController.m */,
+				C17499591DF68EE400F17B77 /* view */,
+				C174995A1DF68EE400F17B77 /* model */,
+			);
+			path = commentManager;
+			sourceTree = "<group>";
+		};
+		C17499591DF68EE400F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C174995E1DF68F4500F17B77 /* CommentTableViewCell.h */,
+				C174995F1DF68F4500F17B77 /* CommentTableViewCell.m */,
+				C17499601DF68F4500F17B77 /* CommentTableViewCell.xib */,
+				C17499691DF6AC2D00F17B77 /* CommentHeadView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C174995A1DF68EE400F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C17499631DF68F4D00F17B77 /* CommentModel.h */,
+				C17499641DF68F4D00F17B77 /* CommentModel.m */,
+				C17499661DF68F9E00F17B77 /* ShopdetailModel.h */,
+				C17499671DF68F9E00F17B77 /* ShopdetailModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C174996B1DF6B59900F17B77 /* PhotoAlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				C17499711DF6B59900F17B77 /* view */,
+				C174996C1DF6B59900F17B77 /* model */,
+				C174996F1DF6B59900F17B77 /* StorePhotoViewController.h */,
+				C17499701DF6B59900F17B77 /* StorePhotoViewController.m */,
+			);
+			path = PhotoAlbumManager;
+			sourceTree = "<group>";
+		};
+		C174996C1DF6B59900F17B77 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C174996D1DF6B59900F17B77 /* StorePhotoModel.h */,
+				C174996E1DF6B59900F17B77 /* StorePhotoModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C17499711DF6B59900F17B77 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C17499741DF6B59900F17B77 /* StorePhotoCollectionViewCell.h */,
+				C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */,
+				C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5438,6 +5570,7 @@
 				B35C9F341DEC3FE80051E352 /* JWImagePickerCell.xib in Resources */,
 				B3F07F171DE72E04005116EA /* YWPCBasicSetViewController.xib in Resources */,
 				B35C9EC01DEC3FE80051E352 /* RBBasicViewController.xib in Resources */,
+				C17499571DF64FFB00F17B77 /* FinancialHeaderView.xib in Resources */,
 				B302EADD1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.xib in Resources */,
 				B35C9EBB1DEC3FE80051E352 /* EmotionTextKeys.plist in Resources */,
 				B35C9EFA1DEC3FE80051E352 /* YWNodeAddAldumShowTableViewCell.xib in Resources */,
@@ -5536,6 +5669,7 @@
 				B31097131DE44EA00033A984 /* LaunchScreen.storyboard in Resources */,
 				B317AFB61DE5D3C90093C511 /* PersonHeaderBG25@2x.png in Resources */,
 				B35C9E961DEC3FE80051E352 /* YWMessageChatViewController.xib in Resources */,
+				C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */,
 				B35C9F331DEC3FE80051E352 /* JWSearchView.xib in Resources */,
 				B35C9E9D1DEC3FE80051E352 /* YWMessageNotificationViewController.xib in Resources */,
 				B317AFBA1DE5D3C90093C511 /* PersonHeaderBG29@2x.png in Resources */,
@@ -5550,6 +5684,7 @@
 				B3F07E611DE68C51005116EA /* YWBasicTableViewCell.xib in Resources */,
 				B31097101DE44EA00033A984 /* Assets.xcassets in Resources */,
 				B31098691DE4543E0033A984 /* YWDataAnalyseViewController.xib in Resources */,
+				C17499621DF68F4500F17B77 /* CommentTableViewCell.xib in Resources */,
 				B317AFBD1DE5D3C90093C511 /* PersonHeaderBG31@2x.png in Resources */,
 				B35C9EE61DEC3FE80051E352 /* RBNodeDetailCommendFooter.xib in Resources */,
 				B317AFB51DE5D3C90093C511 /* PersonHeaderBG24@2x.png in Resources */,
@@ -5562,6 +5697,7 @@
 				B317AFB21DE5D3C90093C511 /* PersonHeaderBG21@2x.png in Resources */,
 				B317AF2C1DE5B53C0093C511 /* YWPersonSuperVipViewController.xib in Resources */,
 				B3F07F0D1DE72DD7005116EA /* YWPCCutSetViewController.xib in Resources */,
+				C174996A1DF6AC2D00F17B77 /* CommentHeadView.xib in Resources */,
 				B317AFB11DE5D3C90093C511 /* PersonHeaderBG20@2x.png in Resources */,
 				B317AFC41DE5D3C90093C511 /* PersonHeaderBG38@2x.png in Resources */,
 				B35C9EBC1DEC3FE80051E352 /* xhsemoji.plist in Resources */,
@@ -5594,6 +5730,7 @@
 				B317AFC71DE5D3C90093C511 /* PersonHeaderBG40@2x.png in Resources */,
 				B317AFBF1DE5D3C90093C511 /* PersonHeaderBG33@2x.png in Resources */,
 				B35C9B721DEC03390051E352 /* YWPCTIsAllDayTableViewCell.xib in Resources */,
+				C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */,
 				B3F07E561DE681B6005116EA /* YWPersonSubVipViewController.xib in Resources */,
 				B317AFBB1DE5D3C90093C511 /* PersonHeaderBG2@2x.png in Resources */,
 				B3F177E71DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.xib in Resources */,
@@ -5697,6 +5834,7 @@
 				B3C12A531DED217F000EF099 /* HttpObject.m in Sources */,
 				B35C9EAA1DEC3FE80051E352 /* YWMessageAddressBookTableView.m in Sources */,
 				B30E4DDF1DEEBD9D008684BA /* YWHomeCompareMyTableViewCell.m in Sources */,
+				C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */,
 				B30E4DD31DEEBD18008684BA /* YWHomeCompareViewHeaderView.m in Sources */,
 				B35C9CD21DEC3ECD0051E352 /* UIButton+EMWebCache.m in Sources */,
 				B3F177E61DEFD62F007DB9A3 /* YWHomeAdvanceOrderViewController.m in Sources */,
@@ -5706,6 +5844,7 @@
 				B317AF261DE5B5110093C511 /* YWPersonCooperaViewController.m in Sources */,
 				B35C9CF91DEC3ECD0051E352 /* EaseLocationViewController.m in Sources */,
 				B3F07EAF1DE6B89C005116EA /* YWBankTableViewCell.m in Sources */,
+				C174997A1DF6B59900F17B77 /* StorePhotoCollectionViewCell.m in Sources */,
 				B31098B21DE4543E0033A984 /* MJRefreshAutoNormalFooter.m in Sources */,
 				B31098A01DE4543E0033A984 /* MASConstraintMaker.m in Sources */,
 				B35C9CF61DEC3ECD0051E352 /* EaseEmotionManager.m in Sources */,
@@ -5745,6 +5884,7 @@
 				B35C9CF41DEC3ECD0051E352 /* EaseEmojiEmoticons.m in Sources */,
 				B31098B61DE4543E0033A984 /* MJRefreshBackStateFooter.m in Sources */,
 				B35C9D071DEC3ECD0051E352 /* EaseBubbleView+Text.m in Sources */,
+				C174995D1DF68F0600F17B77 /* ShowMoreCommitViewController.m in Sources */,
 				B35C9CCC1DEC3ECD0051E352 /* EMSDWebImageDownloader.m in Sources */,
 				B35C9EE51DEC3FE80051E352 /* RBNodeDetailCommendFooter.m in Sources */,
 				B35C9F2D1DEC3FE80051E352 /* JWTagCollectionView.m in Sources */,
@@ -5759,6 +5899,7 @@
 				B35C9CEE1DEC3ECD0051E352 /* UIViewController+DismissKeyboard.m in Sources */,
 				B35C9CE41DEC3ECD0051E352 /* PSTGridLayoutRow.m in Sources */,
 				B31098D11DE4543E0033A984 /* UIImage+MultiFormat.m in Sources */,
+				C17499781DF6B59900F17B77 /* StorePhotoViewController.m in Sources */,
 				B3F07E8B1DE6A7A8005116EA /* NSArray+Log.m in Sources */,
 				B35C9EC31DEC3FE80051E352 /* RBPublicTagSaveModel.m in Sources */,
 				B323470E1DEBD718002C72E1 /* YWPCESelTableViewCell.m in Sources */,
@@ -5796,6 +5937,7 @@
 				B31098941DE4543E0033A984 /* AFSecurityPolicy.m in Sources */,
 				B31098BA1DE4543E0033A984 /* MJChiBaoZiFooter.m in Sources */,
 				B31098CB1DE4543E0033A984 /* SDWebImageDownloader.m in Sources */,
+				C17499651DF68F4D00F17B77 /* CommentModel.m in Sources */,
 				B35557D91DF03C74002E15A4 /* JWChatTableViewCell.m in Sources */,
 				B31098BF1DE4543E0033A984 /* MJDIYHeader.m in Sources */,
 				B3F07F161DE72E04005116EA /* YWPCBasicSetViewController.m in Sources */,
@@ -5814,6 +5956,7 @@
 				B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
 				B35C9EC61DEC3FE80051E352 /* RBPublicToolView.m in Sources */,
+				C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */,
 				B35C9F3B1DEC3FE80051E352 /* TZAssetModel.m in Sources */,
 				B387EAAD1DE45E110045323C /* JWLocationBasicViewController.m in Sources */,
 				B35C9F291DEC3FE80051E352 /* UIScrollView+JWGifRefresh.m in Sources */,
@@ -5842,6 +5985,7 @@
 				B35C9CFF1DEC3ECD0051E352 /* EaseBaseMessageCell.m in Sources */,
 				B310989B1DE4543E0033A984 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				B35C9EFB1DEC3FE80051E352 /* YWNodeAddAldumTitleTableViewCell.m in Sources */,
+				C17499611DF68F4500F17B77 /* CommentTableViewCell.m in Sources */,
 				B31098971DE4543E0033A984 /* AFURLResponseSerialization.m in Sources */,
 				B35C9F2B1DEC3FE80051E352 /* JWTagCollectionViewCell.m in Sources */,
 				B3F07EF41DE70BE7005116EA /* YWPersonShopTableViewCell.m in Sources */,
@@ -5973,6 +6117,7 @@
 				B3C12A5B1DED3312000EF099 /* YWUserShopAdminModel.m in Sources */,
 				B3F07EB41DE6B9E8005116EA /* YWBankModel.m in Sources */,
 				B31098D21DE4543E0033A984 /* UIImage+WebP.m in Sources */,
+				C17499681DF68F9E00F17B77 /* ShopdetailModel.m in Sources */,
 				B32347141DEBD73C002C72E1 /* YWPCEOnTableViewCell.m in Sources */,
 				B35C9F461DEC3FE80051E352 /* XHBranchPoint.m in Sources */,
 				B31098D01DE4543E0033A984 /* UIImage+GIF.m in Sources */,
@@ -6046,6 +6191,7 @@
 				B3F07EBC1DE6CA77005116EA /* YWPersonPointTableViewCell.m in Sources */,
 				B35C9CF51DEC3ECD0051E352 /* EaseEmotionEscape.m in Sources */,
 				B35C9ED71DEC3FE80051E352 /* RBHomeCollectionViewCell.m in Sources */,
+				C17499771DF6B59900F17B77 /* StorePhotoModel.m in Sources */,
 				B35C9ED51DEC3FE80051E352 /* RBPublicTagEditorViewController.m in Sources */,
 				B3C12A671DED3445000EF099 /* YWHomeQuickPayListVC.m in Sources */,
 				B31098761DE4543E0033A984 /* HUDFailureShowView.m in Sources */,

@@ -9,6 +9,7 @@
 #import "JWBasicViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
+
 @interface JWLocationBasicViewController : JWBasicViewController<CLLocationManagerDelegate>
 
 @property (nonatomic,strong)YWLocation * location;

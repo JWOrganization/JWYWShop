@@ -23,7 +23,11 @@ static YWLocation * location = nil;
         [YWLocation getDataFromDefault];
     });
     return location;
+    
+    
 }
+
+
 
 + (void)saveLat:(CGFloat)lat{
     [KUSERDEFAULT setObject:[NSString stringWithFormat:@"%f",lat] forKey:LOCATION_LAT];

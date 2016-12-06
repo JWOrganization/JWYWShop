@@ -30,7 +30,8 @@ static UserSession * user=nil;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [UserSession getDataFromUserDefault];
         });
-    }
+        
+          }
     
     return user;
 }
@@ -228,6 +229,8 @@ static UserSession * user=nil;
             [UserSession userToComfired];
         }
     });
+    
+    
 }
 
 + (void)refreshNoticaficationWithIsNewNoticafication:(BOOL)isNewNoticafication{

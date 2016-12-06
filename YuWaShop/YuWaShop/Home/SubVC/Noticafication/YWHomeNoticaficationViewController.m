@@ -192,22 +192,21 @@
             }
             //233333333要删
         }
-        
-        //            for (int i = 0; i < dataArr.count; i++) {
-        //                if (status == 未读) {
-        //                    [self requestCancelNoticaficationWithID:noticaid];
-        //                }
-        //            }
+        dispatch_async(dispatch_get_main_queue(), ^{//2333333未读标识已读
+            //            for (int i = 0; i < dataArr.count; i++) {
+            //                if (status == 未读) {
+            //                    [self requestCancelNoticaficationWithID:noticaid];
+            //                }
+            //            }
+        });
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h3333333333333
 }
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
-    //h3333333333删除回复了的订单,并提交回复
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
-    
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":@"23333333xx店xx物品预定成功",@"push_content":rePlay};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_BookReply withPragram:pragram success:^(id responsObj) {
@@ -218,7 +217,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h33333333333333删除回复了的订单,并提交回复
 }
 - (void)requestCancelNoticaficationWithID:(NSInteger)noticaID{
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -230,7 +229,7 @@
         } failur:^(id responsObj, NSError *error) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code error is %@",responsObj);
-        }]; //h333333333
+        }]; //h33333333333333
     });
 }
 

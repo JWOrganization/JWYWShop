@@ -30,6 +30,10 @@
     [self setupRefresh];
     [self requestDataWithPages:0];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
+}
 
 - (void)makeUI{
     self.addCommoditiesBtn.layer.cornerRadius = 5.f;
@@ -107,7 +111,6 @@
 
 #pragma mark - Http
 - (void)requestDataWithPages:(NSInteger)page{
-    //h333333333商品列表
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
@@ -129,10 +132,9 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333
+    }]; //h3333333333333商品列表
 }
 - (void)requestDelWithID:(NSString *)commoditiesID withIndexPath:(NSIndexPath *)indexPath{
-    //h3333333333删除商品
     YWHomeCommoditiesModel * model = self.dataArr[indexPath.row];
     
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"goods_id":@([model.commoditiesID integerValue])};
@@ -146,7 +148,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h3333333333333删除商品
 }
 
 @end

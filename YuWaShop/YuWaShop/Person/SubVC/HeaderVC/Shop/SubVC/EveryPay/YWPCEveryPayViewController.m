@@ -71,7 +71,6 @@
 
 #pragma mark - Http
 - (void)requestSendEveryPay{
-    //h333333333333上传人均消费
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"per_capita":@([self.everyPayTextfield.text floatValue])};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetPerCapita withPragram:pragram success:^(id responsObj) {
@@ -85,7 +84,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333
+    }]; //h333333333333上传人均消费
 }
 
 @end

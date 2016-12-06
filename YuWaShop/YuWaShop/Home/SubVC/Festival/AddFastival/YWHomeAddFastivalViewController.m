@@ -145,8 +145,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
-    //h3333333333上传添加节日数据
+    }]; //h3333333333上传添加节日数据
 }
 
 @end

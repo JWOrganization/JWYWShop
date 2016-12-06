@@ -38,6 +38,7 @@
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

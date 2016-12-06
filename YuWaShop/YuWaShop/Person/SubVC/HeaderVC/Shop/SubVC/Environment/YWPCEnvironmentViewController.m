@@ -140,7 +140,6 @@
     [self.tableView reloadData];
 }
 - (void)requestUpData{
-    //h3333333333上传环境配套设置
     NSArray * dataTagArr = @[@[@"wifi"],@[@"smoke",@"payroom",@"cassette",@"sofa",@"outdoor",@"sight",@"baby"],@[@"perform",@"playground",@"有旋转餐厅"]];
     //    self.dataArr
     
@@ -160,7 +159,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }]; //h3333333333上传环境配套设置
 }
 
 @end

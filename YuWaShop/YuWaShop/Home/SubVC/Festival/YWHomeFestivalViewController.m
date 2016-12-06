@@ -35,6 +35,11 @@
     [self requestDataWithPages:0];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
+}
+
 - (void)makeUI{
     self.addFastivalBtn.layer.cornerRadius = 5.f;
     self.addFastivalBtn.layer.masksToBounds = YES;
@@ -160,11 +165,10 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h33333333333333
 }
 
 - (void)requestDelFastivalWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{
-    //h3333333333删除节日活动
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([bankID integerValue])};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_DelHoliday withPragram:pragram success:^(id responsObj) {
@@ -175,7 +179,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h3333333333333删除节日活动
 }
 
 @end

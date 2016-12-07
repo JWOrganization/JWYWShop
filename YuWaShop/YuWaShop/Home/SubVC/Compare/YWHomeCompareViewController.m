@@ -42,9 +42,15 @@
 }
 
 - (void)dataSet{
+    if ([[UserSession instance].shopTypeID isEqualToString:@"0"]){
+        [UserSession userCompareType];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self reFreshData];
+        });
+    }
     self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
-    self.typeID = [UserSession instance].shopTypeID;//2333333333333根据UserSession传
+    self.typeID = [UserSession instance].shopTypeID;
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeCompareMyTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeCompareMyTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeCompareOtherTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeCompareOtherTableViewCell"];
 }
@@ -55,7 +61,7 @@
     
     self.sortSubView = [[YWHomeCompareSortTableView alloc]initWithFrame:CGRectMake(0.f, 0.f, self.headerView.width, self.headerView.height-1.f)];
     self.sortSubView.hidden = YES;
-    self.sortSubView.dataArr = [NSMutableArray arrayWithArray:[UserSession instance].shopSubTypeArr];//233333333333333根据[UserSession instance].shopSubTypeArr内数据更换
+    self.sortSubView.dataArr = [NSMutableArray arrayWithArray:[UserSession instance].shopSubTypeArr];
     self.sortSubView.choosedTypeBlock = ^(NSInteger subTypeIdx){
         weakSelf.subTypeIdx = subTypeIdx;
         NSString * typeID = [UserSession instance].shopSubTypeArr[weakSelf.subTypeIdx];
@@ -70,7 +76,7 @@
     
     self.headerView.showTypeBlock = ^(BOOL isShowAllType){
         if (isShowAllType) {
-            weakSelf.typeID = [UserSession instance].shopTypeID;//2333333333333根据UserSession传
+            weakSelf.typeID = [UserSession instance].shopTypeID;
         }else{
             NSString * typeID = [UserSession instance].shopSubTypeArr[weakSelf.subTypeIdx];
             weakSelf.typeID = typeID?typeID:@"44";
@@ -117,6 +123,11 @@
     YWHomeCompareOtherTableViewCell * otherCompareCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeCompareOtherTableViewCell"];
     otherCompareCell.model = self.dataArr[indexPath.row - (self.myModel?1:0)];
     return otherCompareCell;
+}
+
+- (void)reFreshData{
+    self.typeID = [UserSession instance].shopTypeID;
+    self.sortSubView.dataArr = [NSMutableArray arrayWithArray:[UserSession instance].shopSubTypeArr];
 }
 
 #pragma mark - TableView Refresh

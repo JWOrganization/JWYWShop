@@ -90,7 +90,6 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_CouponList,//优惠券之列表
     YuWaType_Shoper_ShopAdmin_CommentList,//口碑品牌之列表
     YuWaType_Shoper_ShopAdmin_CommentReply,//口碑品牌之回复
-    
     YuWaType_Shoper_ShopAdmin_AddCheckStatus, //提交门店实名认证
     YuWaType_Shoper_ShopAdmin_BookLists,  //预定管理之列表
     YuWaType_Shoper_ShopAdmin_BookReply,  //预定管理之回复
@@ -100,11 +99,15 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_AddShopPhoto,  //相册管理之添加
     YuWaType_Shoper_ShopAdmin_DelShopPhoto,  //相册管理之删除
     YuWaType_Shoper_ShopAdmin_ShopPhotoLists,  //相册管理之列表
-    
     YuWaType_Shoper_ShopAdmin_MyNotice,   //消息通知之列表
     YuWaType_Shoper_ShopAdmin_UpdateMyNotice,  //消息通知之更新
     YuWaType_Shoper_ShopAdmin_Analysis,  //数据分析
     YuWaType_Shoper_ShopAdmin_GetShopAgreement,   //获取开店协议
+    YuWaType_Shoper_ShopAdmin_GetCatTag,   //获取主分类及小标签
+    
+    YuWaType_Shoper_ShopAdmin_GetEnvironment,   //获取环境信息
+    YuWaType_Shoper_GetBusinessHours,   //获取营业时间
+    YuWaType_Shoper_SetBusinessHours,   //设置营业时间
     
     YuWaType_
     

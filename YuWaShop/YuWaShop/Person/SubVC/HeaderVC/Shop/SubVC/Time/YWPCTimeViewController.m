@@ -89,14 +89,21 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h333333333333时间信息
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
     
-    //2333333333删
-    YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
-    model.timeID = @"1";
-    [self.timeArr addObject:model];
-    //2333333333删
-    [self.tableView reloadData];
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_GetBusinessHours withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        //2333333333删
+        YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
+        model.timeID = @"1";
+        [self.timeArr addObject:model];
+        //2333333333删
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 - (void)requestDelTimeWithID:(NSString *)timeID withIndexPath:(NSIndexPath *)indexPath{

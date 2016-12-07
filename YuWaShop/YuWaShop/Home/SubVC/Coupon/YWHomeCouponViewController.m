@@ -60,7 +60,6 @@
 
 - (IBAction)addCouponBtnAction:(id)sender {
     YWHomeAddCouponViewController * vc = [[YWHomeAddCouponViewController alloc]init];
-    //23333333若新加优惠券返回数据不全则接口请求，否则Block新加
     [self.navigationController pushViewController:vc animated:YES];
 }
 

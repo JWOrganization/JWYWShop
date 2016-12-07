@@ -71,7 +71,6 @@
 
 - (IBAction)addFastivalBtnAction:(id)sender {
     YWHomeAddFastivalViewController * vc = [[YWHomeAddFastivalViewController alloc]init];
-    //23333333若新加商品返回数据不全则接口请求，否则Block新加
     [self.navigationController pushViewController:vc animated:YES];
 }
 

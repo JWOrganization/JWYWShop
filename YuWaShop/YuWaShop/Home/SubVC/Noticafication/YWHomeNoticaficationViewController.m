@@ -170,29 +170,30 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status),@"pagen":@(1),@"pages":@(page)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status==1?2:1),@"pagen":@(1),@"pages":@(page)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_MyNotice withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
         if (self.status == 1) {
-            //233333333要删
+            
+            //233333333333要删
             for (int i = 0; i<3; i++) {
                 [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
             }
-            //233333333要删
+            //233333333333要删
         }else{
-            //233333333要删
+            //233333333333要删
             for (int i = 0; i<3; i++) {
                 YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
                 model.orderID = @"233333333";
                 model.status = [NSString stringWithFormat:@"%zi",i];
                 [self.dataArr addObject:model];
             }
-            //233333333要删
+            //233333333333要删
         }
-        dispatch_async(dispatch_get_main_queue(), ^{//2333333未读标识已读
+        dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
             //            for (int i = 0; i < dataArr.count; i++) {
             //                if (status == 未读) {
             //                    [self requestCancelNoticaficationWithID:noticaid];

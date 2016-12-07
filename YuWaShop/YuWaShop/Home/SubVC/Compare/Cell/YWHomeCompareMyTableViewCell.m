@@ -33,13 +33,13 @@
     NSString * countStr;
     switch (self.model.status) {
         case 0:
-            countStr = [NSString stringWithFormat:@"浏览人数:%@人",@"233333"];
+            countStr = [NSString stringWithFormat:@"浏览人数:%@人",@"2333333333"];
             break;
         case 1:
-            countStr = [NSString stringWithFormat:@"消费人数:%@人",@"2333"];
+            countStr = [NSString stringWithFormat:@"消费人数:%@人",@"2333333333"];
             break;
         case 2:
-            countStr = [NSString stringWithFormat:@"消费金额%@元",@"23333"];
+            countStr = [NSString stringWithFormat:@"消费金额%@元",@"233333333"];
             break;
         case 3:
             countStr = [NSString stringWithFormat:@"总评分:%@分",@"5"];

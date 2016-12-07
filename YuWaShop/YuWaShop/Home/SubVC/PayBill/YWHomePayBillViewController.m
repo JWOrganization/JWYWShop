@@ -108,7 +108,8 @@
         return;
     }
     
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"total_money":@(self.costNumber),@"non_discount_money":@(self.cutNumber),@"discount":@(self.cut/100)};
+    CGFloat cut = self.isCut?self.cut:100.f;
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"total_money":@(self.costNumber),@"non_discount_money":@(self.cutNumber),@"discount":@(cut/100)};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddRecord withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -117,7 +118,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }];
 }
 
 @end

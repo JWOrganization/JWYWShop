@@ -53,7 +53,7 @@
     //233333333333要删
     for (int i = 0; i<3; i++) {
         YWPSRePlayModel * model = [[YWPSRePlayModel alloc]init];
-        model.con = @"2333333";
+        model.con = @"2333333333";
         model.time = [NSString stringWithFormat:@"1480594%zi51",i];
         model.status = i%2==0?1:0;
         [self.dataArr addObject:model];

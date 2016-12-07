@@ -177,6 +177,17 @@ static UserSession * user=nil;
     user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
     if (user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
+    user.star = [(dataDic[@"star"]?dataDic[@"star"]:@"5.0") floatValue];
+    NSArray * infrastructure = dataDic[@"infrastructure"];
+    if (!infrastructure) infrastructure=@[];
+    if (infrastructure.count>0) {
+        user.infrastructure = infrastructure[0];
+        for (int i = 1; i<infrastructure.count; i++) {
+            user.infrastructure = [NSString stringWithFormat:@"%@,%@",user.infrastructure,infrastructure[i]];
+        }
+    }else{
+        user.infrastructure = @"";
+    }
     
     [UserSession userToComfired];
     
@@ -193,14 +204,40 @@ static UserSession * user=nil;
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }];
 }
 
-+ (void)userCompareType{//h3333333333333333333
-    user.shopType = @"美食";
-    user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
-    user.shopTypeID = @"24";
-    user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
++ (void)userCompareType{
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":user.token,@"user_id":@(user.uid)};
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_GetCatTag withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        NSDictionary * dataDic = responsObj[@"data"];
+        user.shopType = dataDic[@"cat"][@"name"]?dataDic[@"cat"][@"name"]:@"美食";
+        user.shopTypeID = dataDic[@"cat"][@"id"]?dataDic[@"id"][@"name"]:@"1";
+        NSArray * dataArr = dataDic[@"tag"];
+        if (dataArr.count <= 0) {
+            user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
+            user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
+        }else{
+            NSMutableArray * typeArr = [NSMutableArray arrayWithCapacity:0];
+            NSMutableArray * typeIDArr = [NSMutableArray arrayWithCapacity:0];
+            for (int i = 0; i < dataArr.count;i++) {
+                [typeArr addObject:dataArr[i][@"tag_name"]?dataArr[i][@"tag_name"]:@"生日蛋糕"];
+                [typeIDArr addObject:dataArr[i][@"tag_name"]?dataArr[i][@"tag_id"]:@"45"];
+            }
+            user.shopSubTypeArr = [NSArray arrayWithArray:typeArr];
+            user.shopSubTypeIDArr = [NSArray arrayWithArray:typeIDArr];
+        }
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+        user.shopType = @"美食";
+        user.shopTypeID = @"0";
+        user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];
+        user.shopSubTypeIDArr = @[@"44",@"45",@"47",@"50"];
+    }];
 }
 
 + (void)userToComfired{

@@ -44,7 +44,7 @@
 - (void)makeUI{
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
-    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"233333"];
+    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"233333333"];
 }
 
 - (BOOL)saveInfoAction{

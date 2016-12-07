@@ -152,7 +152,15 @@
         case YuWaType_Shoper_ShopAdmin_GetShopAgreement://获取开店协议
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetShopAgreement];
             break;
-            
+        case YuWaType_Shoper_SetBusinessHours://设置营业时间
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_SetBusinessHours];
+            break;
+        case YuWaType_Shoper_ShopAdmin_GetEnvironment://获取环境信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetEnvironment];
+            break;
+        case YuWaType_Shoper_GetBusinessHours://获取营业时间
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_GetBusinessHours];
+            break;
             
            //URLStr建立
         default:
@@ -322,6 +330,15 @@
             break;
         case YuWaType_Shoper_ShopAdmin_UpdateMyNotice://消息通知之更新
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_UpdateMyNotice];
+            break;
+        case YuWaType_Shoper_ShopAdmin_GetCatTag://获取主分类及小标签
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetCatTag];
+            break;
+        case YuWaType_Shoper_ShopAdmin_GetEnvironment://获取环境信息
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_GetEnvironment];
+            break;
+        case YuWaType_Shoper_GetBusinessHours://获取营业时间
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_GetBusinessHours];
             break;
             
             //URLStr建立

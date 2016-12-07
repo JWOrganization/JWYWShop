@@ -94,9 +94,11 @@
 #define HTTP_VIP_ShopAdmin_Home   @"/api.php/ShopAdmin/home/"   //门店管理首页
 #define HTTP_Shoper_ShopAdmin_SetBaseInfo   @"/api.php/ShopAdmin/setBaseInfo/"   //设置店铺基本信息
 #define HTTP_Shoper_ShopAdmin_SetShopMap   @"/api.php/ShopAdmin/setShopMap/"   //门店地图
-//#define HTTP_Shoper_   @""   //设置营业时间
+#define HTTP_Shoper_GetBusinessHours   @"/api.php/ShopAdmin/getBusinessHours/"   //获取营业时间
+#define HTTP_Shoper_SetBusinessHours   @"/api.php/ShopAdmin/setBusinessHours/"   //设置营业时间
 #define HTTP_Shoper_ShopAdmin_GetSalePhone   @"/api.php/ShopAdmin/getSalePhone/"   //获取营销顾问电话
 #define HTTP_Shoper_ShopAdmin_SetEnvironment   @"/api.php/ShopAdmin/setEnvironment/"   //设置环境信息
+#define HTTP_Shoper_ShopAdmin_GetEnvironment   @"/api.php/ShopAdmin/getEnvironment/"   //获取环境信息
 #define HTTP_Shoper_ShopAdmin_SetDiscount   @"/api.php/ShopAdmin/setDiscount/"   //设置门店折扣
 //#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡列表
 //#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡删除
@@ -129,7 +131,7 @@
 #define HTTP_Shoper_ShopAdmin_UpdateMyNotice   @"/api.php/ShopAdmin/updateMyNotice/"   //消息通知之更新
 #define HTTP_Shoper_ShopAdmin_Analysis   @"/api.php/ShopAdmin/analysis/"   //数据分析
 #define HTTP_Shoper_ShopAdmin_GetShopAgreement   @"/api.php/ShopAdmin/getShopAgreement/"   //获取开店协议
-
+#define HTTP_Shoper_ShopAdmin_GetCatTag   @"/api.php/ShopAdmin/getCatTag/"   //获取主分类及小标签
 
 
 

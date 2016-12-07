@@ -29,7 +29,7 @@
 }
 
 - (void)dataSet{
-    //23333333
+    //233333333333
     self.timeLabel.text = [JWTools dateWithStr:self.model.time];
     if (self.model.status==0) {
         [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"2333333333"] placeholderImage:[UIImage imageNamed:@"YW_IMG"] completed:nil];

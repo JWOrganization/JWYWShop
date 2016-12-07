@@ -143,7 +143,7 @@
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //233333修改model,
+            //233333333333修改model,
             [self.navigationController popViewControllerAnimated:YES];
         });
     } failur:^(id responsObj, NSError *error) {

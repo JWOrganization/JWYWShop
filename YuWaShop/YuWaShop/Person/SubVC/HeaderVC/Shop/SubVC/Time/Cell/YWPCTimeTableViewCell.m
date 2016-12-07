@@ -25,7 +25,7 @@
     [self dataSet];
 }
 
-- (void)dataSet{//233333333
+- (void)dataSet{//233333333333
 //    self.timeLabel.text
 //    self.subTimeLabel.text 
     

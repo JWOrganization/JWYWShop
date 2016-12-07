@@ -61,14 +61,15 @@
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_GetShopAgreement withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
-//        self.textView.text = ;
+        self.textView.text = responsObj[@"data"]?responsObj[@"data"]:@"";
+        if (![self.textView.text isEqualToString:@""])[UserSession instance].agreement = self.textView.text;
         [self.textView setContentOffset:CGPointMake(0.f, 0.f)];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
         self.faild++;
         if (self.faild<3)[self requestAgreeData];
-    }]; //h3333333333333
+    }];
 }
 
 @end

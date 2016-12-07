@@ -10,6 +10,7 @@
 
 @interface YWHomeCommoditiesModel : NSObject
 
-@property (nonatomic,strong)NSString * commoditiesID;
+@property (nonatomic,copy)NSString * commoditiesID;
+
 
 @end

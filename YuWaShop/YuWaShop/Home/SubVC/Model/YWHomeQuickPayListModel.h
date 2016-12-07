@@ -10,7 +10,10 @@
 
 @interface YWHomeQuickPayListModel : NSObject
 
-
+@property (nonatomic,copy)NSString * status;
+@property (nonatomic,copy)NSString * quickPayID;
+@property (nonatomic,copy)NSString * title;
+@property (nonatomic,copy)NSString * content;
 
 
 @end

@@ -48,7 +48,6 @@
 
 - (IBAction)addCommoditiesBtnAction:(id)sender {
     YWHomeAddCommoditiesVC * vc = [[YWHomeAddCommoditiesVC alloc]init];
-    //23333333若新加商品返回数据不全则接口请求，否则Block新加
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -127,7 +126,7 @@
             model.commoditiesID = @"1";
             [self.dataArr addObject:model];
         }
-        //2333333333删
+        //23333333333删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);

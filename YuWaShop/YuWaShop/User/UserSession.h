@@ -62,12 +62,13 @@
 @property (nonatomic,copy)NSString * serventPhone;//营销顾问电话,邀请人电话
 @property (nonatomic,copy)NSString * agreement;//认证协议
 
-//233333333暂定
 @property (nonatomic,copy)NSString * shopType;//店铺所属大类
 @property (nonatomic,strong)NSArray * shopSubTypeArr;//店铺所选小类
 @property (nonatomic,copy)NSString * shopTypeID;//店铺所属大类
 @property (nonatomic,strong)NSArray * shopSubTypeIDArr;//店铺所选小类
-//233333333暂定
+
+@property (nonatomic,assign)CGFloat star;
+@property (nonatomic,copy)NSString * infrastructure;
 
 
 + (UserSession*)instance;  //创建单例
@@ -80,7 +81,7 @@
 + (void)autoLoginRequestWithPragram:(NSDictionary *)pragram;
 
 + (void)userToComfired;
-
++ (void)userCompareType;
 + (void)refreshNoticaficationWithIsNewNoticafication:(BOOL)isNewNoticafication;
 
 @end

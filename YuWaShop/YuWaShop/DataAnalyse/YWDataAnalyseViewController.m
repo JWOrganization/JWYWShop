@@ -49,7 +49,6 @@
     [self.view addSubview:self.scrollView];
     
     [self doWithCreateUI];
-    [self requestData];
 }
 
 - (void)doWithCreateUI{

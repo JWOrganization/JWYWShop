@@ -684,6 +684,9 @@
 		B3F177F71DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177F51DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.xib */; };
 		B3F177FC1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */; };
 		B3F177FD1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */; };
+		C14BA3021DF7A982001BDFBD /* DayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14BA3001DF7A982001BDFBD /* DayDetailViewController.m */; };
+		C14BA3031DF7A982001BDFBD /* DayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14BA3011DF7A982001BDFBD /* DayDetailViewController.xib */; };
+		C14BA30B1DF7B0E8001BDFBD /* ForMoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C14BA30A1DF7B0E8001BDFBD /* ForMoneyModel.m */; };
 		C174994E1DF5AE0F00F17B77 /* YWFinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */; };
 		C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499521DF5B24A00F17B77 /* FinancialTableViewCell.m */; };
 		C17499551DF5B24A00F17B77 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499531DF5B24A00F17B77 /* FinancialTableViewCell.xib */; };
@@ -1902,6 +1905,11 @@
 		B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeOrderNoticaficationTableViewCell.h; sourceTree = "<group>"; };
 		B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeOrderNoticaficationTableViewCell.m; sourceTree = "<group>"; };
 		B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeOrderNoticaficationTableViewCell.xib; sourceTree = "<group>"; };
+		C14BA2FF1DF7A982001BDFBD /* DayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayDetailViewController.h; sourceTree = "<group>"; };
+		C14BA3001DF7A982001BDFBD /* DayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayDetailViewController.m; sourceTree = "<group>"; };
+		C14BA3011DF7A982001BDFBD /* DayDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayDetailViewController.xib; sourceTree = "<group>"; };
+		C14BA3091DF7B0E8001BDFBD /* ForMoneyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForMoneyModel.h; sourceTree = "<group>"; };
+		C14BA30A1DF7B0E8001BDFBD /* ForMoneyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForMoneyModel.m; sourceTree = "<group>"; };
 		C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWFinancialViewController.h; sourceTree = "<group>"; };
 		C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWFinancialViewController.m; sourceTree = "<group>"; };
 		C17499511DF5B24A00F17B77 /* FinancialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialTableViewCell.h; sourceTree = "<group>"; };
@@ -5349,6 +5357,9 @@
 				C17499501DF5B17D00F17B77 /* model */,
 				C174994C1DF5AE0F00F17B77 /* YWFinancialViewController.h */,
 				C174994D1DF5AE0F00F17B77 /* YWFinancialViewController.m */,
+				C14BA2FF1DF7A982001BDFBD /* DayDetailViewController.h */,
+				C14BA3001DF7A982001BDFBD /* DayDetailViewController.m */,
+				C14BA3011DF7A982001BDFBD /* DayDetailViewController.xib */,
 			);
 			path = FinancialManager;
 			sourceTree = "<group>";
@@ -5371,6 +5382,8 @@
 				C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */,
 				C17499861DF70A8800F17B77 /* FinancailListModel.h */,
 				C17499871DF70A8800F17B77 /* FinancailListModel.m */,
+				C14BA3091DF7B0E8001BDFBD /* ForMoneyModel.h */,
+				C14BA30A1DF7B0E8001BDFBD /* ForMoneyModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5734,6 +5747,7 @@
 				B317AFC91DE5D3C90093C511 /* PersonHeaderBG42@2x.png in Resources */,
 				B317AFC61DE5D3C90093C511 /* PersonHeaderBG3@2x.png in Resources */,
 				B32737981DE8255E001C57DF /* YWPNPopularityView.xib in Resources */,
+				C14BA3031DF7A982001BDFBD /* DayDetailViewController.xib in Resources */,
 				B317AFD51DE5D3C90093C511 /* PersonHeaderBG53@2x.png in Resources */,
 				B317AFD81DE5D3C90093C511 /* PersonHeaderBG56@2x.png in Resources */,
 				B30E4DF21DEF03B7008684BA /* YWHomeCouponViewController.xib in Resources */,
@@ -5933,6 +5947,7 @@
 				B323470E1DEBD718002C72E1 /* YWPCESelTableViewCell.m in Sources */,
 				B35C9F2F1DEC3FE80051E352 /* JWEditTextField.m in Sources */,
 				B31098BB1DE4543E0033A984 /* MJChiBaoZiFooter2.m in Sources */,
+				C14BA3021DF7A982001BDFBD /* DayDetailViewController.m in Sources */,
 				B35C9F271DEC3FE80051E352 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				B31098C91DE4543E0033A984 /* SDWebImageCompat.m in Sources */,
 				B35C9EC81DEC3FE80051E352 /* RBPublicEditorCollectionViewCell.m in Sources */,
@@ -6068,6 +6083,7 @@
 				B35C9CC61DEC3ECD0051E352 /* MWTapDetectingView.m in Sources */,
 				B35C9CEC1DEC3ECD0051E352 /* NSDateFormatter+Category.m in Sources */,
 				B317AF601DE5CA120093C511 /* YWHomeCollectionViewCell.m in Sources */,
+				C14BA30B1DF7B0E8001BDFBD /* ForMoneyModel.m in Sources */,
 				B3F07EE01DE6E01F005116EA /* YWPersonSubVipTableViewCell.m in Sources */,
 				B35C9CCD1DEC3ECD0051E352 /* EMSDWebImageDownloaderOperation.m in Sources */,
 				B35C9E931DEC3FE80051E352 /* YWMessageNotificationModel.m in Sources */,

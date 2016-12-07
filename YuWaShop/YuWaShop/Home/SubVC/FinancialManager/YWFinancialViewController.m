@@ -15,6 +15,9 @@
 #import "UIScrollView+JWGifRefresh.h"
 
 
+#import "DayDetailViewController.h"
+
+
 
 
 
@@ -141,6 +144,17 @@
     }
    
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.type==1) {
+        //记录
+        DayDetailViewController*vc=[[DayDetailViewController alloc]init];
+        vc.user_id=@"12";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+}
+
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (self.type==0) {

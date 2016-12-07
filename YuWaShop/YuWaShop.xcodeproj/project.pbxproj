@@ -698,6 +698,10 @@
 		C17499781DF6B59900F17B77 /* StorePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499701DF6B59900F17B77 /* StorePhotoViewController.m */; };
 		C174997A1DF6B59900F17B77 /* StorePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */; };
 		C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */; };
+		C17499811DF6E9E600F17B77 /* MDPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174997E1DF6E9E600F17B77 /* MDPhotoImageView.m */; };
+		C17499821DF6E9E600F17B77 /* MDPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499801DF6E9E600F17B77 /* MDPhotoScrollView.m */; };
+		C17499851DF6FF7200F17B77 /* FinancailBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */; };
+		C17499881DF70A8800F17B77 /* FinancailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499871DF70A8800F17B77 /* FinancailListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1921,6 +1925,14 @@
 		C17499741DF6B59900F17B77 /* StorePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		C17499751DF6B59900F17B77 /* StorePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		C174997D1DF6E9E600F17B77 /* MDPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPhotoImageView.h; sourceTree = "<group>"; };
+		C174997E1DF6E9E600F17B77 /* MDPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPhotoImageView.m; sourceTree = "<group>"; };
+		C174997F1DF6E9E600F17B77 /* MDPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPhotoScrollView.h; sourceTree = "<group>"; };
+		C17499801DF6E9E600F17B77 /* MDPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPhotoScrollView.m; sourceTree = "<group>"; };
+		C17499831DF6FF7200F17B77 /* FinancailBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancailBaseModel.h; sourceTree = "<group>"; };
+		C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancailBaseModel.m; sourceTree = "<group>"; };
+		C17499861DF70A8800F17B77 /* FinancailListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancailListModel.h; sourceTree = "<group>"; };
+		C17499871DF70A8800F17B77 /* FinancailListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancailListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2262,6 +2274,7 @@
 		B310973C1DE4543E0033A984 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				C174997C1DF6E9E600F17B77 /* PhotoScrollView */,
 				B310973D1DE4543E0033A984 /* color */,
 				B31097431DE4543E0033A984 /* image+categroy */,
 				B31097461DE4543E0033A984 /* JRToast */,
@@ -5354,6 +5367,10 @@
 		C17499501DF5B17D00F17B77 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C17499831DF6FF7200F17B77 /* FinancailBaseModel.h */,
+				C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */,
+				C17499861DF70A8800F17B77 /* FinancailListModel.h */,
+				C17499871DF70A8800F17B77 /* FinancailListModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5419,6 +5436,17 @@
 				C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		C174997C1DF6E9E600F17B77 /* PhotoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C174997F1DF6E9E600F17B77 /* MDPhotoScrollView.h */,
+				C17499801DF6E9E600F17B77 /* MDPhotoScrollView.m */,
+				C174997D1DF6E9E600F17B77 /* MDPhotoImageView.h */,
+				C174997E1DF6E9E600F17B77 /* MDPhotoImageView.m */,
+			);
+			path = PhotoScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5920,6 +5948,7 @@
 				B35C9CB91DEC3ECD0051E352 /* EMCDDeviceManagerBase.m in Sources */,
 				B32737691DE80F01001C57DF /* YWPCTimeTableViewCell.m in Sources */,
 				B31098731DE4543E0033A984 /* NSObject+YYModel.m in Sources */,
+				C17499881DF70A8800F17B77 /* FinancailListModel.m in Sources */,
 				B302EAD71DEDAA0C0000B0A0 /* YWHomeFestivalModel.m in Sources */,
 				B31098A71DE4543E0033A984 /* ViewController+MASAdditions.m in Sources */,
 				B31098AD1DE4543E0033A984 /* MJRefreshBackFooter.m in Sources */,
@@ -6009,6 +6038,7 @@
 				B35C9B921DEC1F830051E352 /* YWPCCHooseTimePickerView.m in Sources */,
 				B31098B01DE4543E0033A984 /* MJRefreshHeader.m in Sources */,
 				B31098D41DE4543E0033A984 /* UIImageView+WebCache.m in Sources */,
+				C17499851DF6FF7200F17B77 /* FinancailBaseModel.m in Sources */,
 				B31098921DE4543E0033A984 /* AFHTTPSessionManager.m in Sources */,
 				B35C9EA01DEC3FE80051E352 /* YWMessageFriendAddCell.m in Sources */,
 				B31098A11DE4543E0033A984 /* MASLayoutConstraint.m in Sources */,
@@ -6088,6 +6118,7 @@
 				B35C9CD01DEC3ECD0051E352 /* MKAnnotationView+EMWebCache.m in Sources */,
 				B35C9D0B1DEC3ECD0051E352 /* EaseChatToolbar.m in Sources */,
 				B35C9D081DEC3ECD0051E352 /* EaseBubbleView+Video.m in Sources */,
+				C17499821DF6E9E600F17B77 /* MDPhotoScrollView.m in Sources */,
 				B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */,
 				B35C9CE31DEC3ECD0051E352 /* PSTGridLayoutItem.m in Sources */,
 				B3F07E551DE681B6005116EA /* YWPersonSubVipViewController.m in Sources */,
@@ -6131,6 +6162,7 @@
 				B35C9ED01DEC3FE80051E352 /* RBPublicLocationViewController.m in Sources */,
 				B35C9F401DEC3FE80051E352 /* TZPhotoPreviewCell.m in Sources */,
 				B31098D51DE4543E0033A984 /* UIView+WebCacheOperation.m in Sources */,
+				C17499811DF6E9E600F17B77 /* MDPhotoImageView.m in Sources */,
 				B3F07E661DE6938D005116EA /* YWPersonNoticaficationViewController.m in Sources */,
 				B35C9EF71DEC3FE80051E352 /* RBNodeShowViewController.m in Sources */,
 				B31098C71DE4543E0033A984 /* NSData+ImageContentType.m in Sources */,

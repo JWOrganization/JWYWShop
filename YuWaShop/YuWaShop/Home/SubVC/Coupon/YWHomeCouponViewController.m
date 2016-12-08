@@ -32,19 +32,17 @@
     [self makeUI];
     [self dataSet];
     [self setupRefresh];
-    [self requestDataWithPages:0];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.f];
 }
-
 - (void)makeUI{
     self.segmentControl = [YJSegmentedControl segmentedControlFrame:CGRectMake(0.f, 0.f, kScreen_Width, 40.f) titleDataSource:@[@"可用",@"不可用"] backgroundColor:[UIColor clearColor] titleColor:CNaviColor titleFont:[UIFont boldSystemFontOfSize:15.f] selectColor:CNaviColor buttonDownColor:CNaviColor Delegate:self];
     self.segmentControl.backgroundColor = [UIColor whiteColor];
@@ -80,14 +78,25 @@
     return self.segmentControl;
 }
 
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.status == 1)return;
+    if (editingStyle ==UITableViewCellEditingStyleDelete){
+        YWHomeCouponModel * model = self.dataArr[indexPath.row];
+        [self requestDelWithID:model.couponID withIndexPath:indexPath];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArr.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeCouponTableViewCell * couponCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeCouponTableViewCell"];
     couponCell.model = self.dataArr[indexPath.row];
+    [couponCell setUserInteractionEnabled:self.status==2];
     return couponCell;
 }
 
@@ -128,17 +137,30 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
-        
-        //233333333要删
-        for (int i = 0; i<3; i++) {
-            [self.dataArr addObject:[[YWHomeCouponModel alloc]init]];
+        NSArray * dataArr = responsObj[@"data"];
+        for (int i = 0; i<dataArr.count; i++) {
+            [self.dataArr addObject:[YWHomeCouponModel yy_modelWithDictionary:dataArr[i]]];
         }
-        //233333333要删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }];
+}
+
+- (void)requestDelWithID:(NSString *)couponID withIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    
+//    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_DelGoods withPragram:pragram success:^(id responsObj) {
+//        MyLog(@"Regieter Code pragram is %@",pragram);
+//        MyLog(@"Regieter Code is %@",responsObj);
+//        [self.dataArr removeObjectAtIndex:indexPath.row];
+//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+//        [self.tableView reloadData];
+//    } failur:^(id responsObj, NSError *error) {
+//        MyLog(@"Regieter Code pragram is %@",pragram);
+//        MyLog(@"Regieter Code error is %@",responsObj);
+//    }];//h333333333333333
 }
 
 @end

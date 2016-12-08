@@ -24,11 +24,14 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
-//    self.showImageView
-    self.nameLabel.text = @"绝味鸭脖";
-    self.conLabel.text = @"绝味鸭脖是绝味食品股份有限公司的核心品牌";
-    self.priceLabel.text = [NSString stringWithFormat:@"￥%@",@"35.5"];
+- (void)dataSet{
+    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:self.model.goods_img] placeholderImage:[UIImage imageNamed:@"placeholder"] completed:nil];
+    self.nameLabel.text = self.model.goods_name;
+    self.conLabel.text = self.model.goods_info;
+    
+    NSString * priceStr = [self.model.goods_price stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    priceStr = [priceStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%@",priceStr];
 }
 
 @end

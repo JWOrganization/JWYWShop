@@ -68,7 +68,9 @@
     
     self.cutPicker = [[YWPCCutPickerView alloc]initWithFrame:CGRectMake(0.f, 64.f, kScreen_Width, kScreen_Height - 64.f)];
     self.cutPicker.hidden = YES;
+    self.cutInter = 70;
     self.cutPicker.saveBlock = ^(NSString * name,NSInteger cut,NSString * showName){
+        weakSelf.cutInter = cut;
         weakSelf.cutBtnWidth.constant = 60.f;
         [weakSelf.cutBtn updateConstraints];
         [weakSelf.cutBtn setTitle:name forState:UIControlStateNormal];
@@ -120,10 +122,10 @@
     }else if ([self.cutBtn.titleLabel.text isEqualToString:@"请输入"]) {
         [self showHUDWithStr:@"请选择折扣哟~" withSuccess:NO];
         return;
-    }else if ([self.startTimeBtn.titleLabel.text isEqualToString:@"请输入"]) {
+    }else if ([self.startTimeBtn.titleLabel.text isEqualToString:@"请选择"]) {
         [self showHUDWithStr:@"请选择开始时间哟~" withSuccess:NO];
         return;
-    }else if ([self.finishTimeBtn.titleLabel.text isEqualToString:@"请输入"]) {
+    }else if ([self.finishTimeBtn.titleLabel.text isEqualToString:@"请选择"]) {
         [self showHUDWithStr:@"请输入结束时间哟~" withSuccess:NO];
         return;
     }else if (![JWTools firstDate:[JWTools dateTimeWithStr:self.startTimeBtn.titleLabel.text] withCompareDate:[JWTools dateTimeWithStr:self.finishTimeBtn.titleLabel.text]]) {
@@ -131,7 +133,7 @@
         self.finishDayPicker.hidden = NO;
         return;
     }
-    NSString * cut = [NSString stringWithFormat:@"%zi",self.cutInter];
+    NSString * cut = [NSString stringWithFormat:@"%zi",(self.cutInter + 5)];
     
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"title":self.conTextView.text,@"rebate":@([cut floatValue]/100),@"btime":self.startTimeBtn.titleLabel.text,@"etime":self.finishTimeBtn.titleLabel.text};
     
@@ -145,7 +147,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333上传添加节日数据
+    }];
 }
 
 @end

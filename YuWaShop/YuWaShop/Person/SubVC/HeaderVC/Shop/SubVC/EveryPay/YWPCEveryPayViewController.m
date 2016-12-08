@@ -44,7 +44,7 @@
 - (void)makeUI{
     self.submitBtn.layer.cornerRadius = 5.f;
     self.submitBtn.layer.masksToBounds = YES;
-    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@元",@"233333333"];
+    self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%@",([self.model.dataArr[2][0] integerValue] == 0?@"0元":self.model.dataArr[2][0])];
 }
 
 - (BOOL)saveInfoAction{
@@ -77,7 +77,11 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"恭喜,保存成功" withSuccess:YES];
-        //2333333333修改门户设置信息
+        NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
+        self.currentPayLabel.text = [NSString stringWithFormat:@"当前人均消费%zi元",[self.everyPayTextfield.text integerValue]];
+        [shopArr replaceObjectAtIndex:0 withObject:[NSString stringWithFormat:@"%zi元",[self.everyPayTextfield.text integerValue]]];
+        [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
+        [self showHUDWithStr:@"设置人均消费成功" withSuccess:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });

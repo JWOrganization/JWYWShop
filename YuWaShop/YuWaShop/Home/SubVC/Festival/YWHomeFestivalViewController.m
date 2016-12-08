@@ -22,6 +22,7 @@
 @property (nonatomic,strong)UISegmentedControl * typeSegmentView;
 @property (nonatomic,assign)NSInteger type;
 
+
 @end
 
 @implementation YWHomeFestivalViewController
@@ -32,12 +33,11 @@
     [self makeUI];
     [self dataSet];
     [self setupRefresh];
-    [self requestDataWithPages:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)makeUI{
@@ -154,17 +154,16 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
+        NSArray * dataArr = responsObj[@"data"];
         
-        //233333333要删
-        for (int i = 0; i<3; i++) {
-            [self.dataArr addObject:[[YWHomeFestivalModel alloc]init]];
+        for (int i = 0; i<dataArr.count; i++) {
+            [self.dataArr addObject:[YWHomeFestivalModel yy_modelWithDictionary:dataArr[i]]];
         }
-        //233333333要删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333333
+    }];
 }
 
 - (void)requestDelFastivalWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{
@@ -175,10 +174,11 @@
         MyLog(@"Regieter Code is %@",responsObj);
         [self.dataArr removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self showHUDWithStr:@"删除成功" withSuccess:YES];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333删除节日活动
+    }];
 }
 
 @end

@@ -140,7 +140,10 @@ static UserSession * user=nil;
     user.money = dataDic[@"money"];
     user.inviteID = dataDic[@"invite_uid"];
     user.logo = dataDic[@"company_img"]?dataDic[@"company_img"]:@"";
-    user.personality = dataDic[@"company_mark"]?dataDic[@"company_mark"]:@"雨娃宝好棒好棒哒";
+    user.personality = dataDic[@"company_mark"]?dataDic[@"company_mark"]:@"尚未设置门店简介哟";
+    if ([user.personality isEqualToString:@""]) {
+        user.personality = @"尚未设置门店简介哟";
+    }
     user.aldumCount = dataDic[@"aldumcount"];
     user.collected = dataDic[@"collected"];
     user.praised = dataDic[@"praised"];
@@ -180,13 +183,16 @@ static UserSession * user=nil;
     user.star = [(dataDic[@"star"]?dataDic[@"star"]:@"5.0") floatValue];
     NSArray * infrastructure = dataDic[@"infrastructure"];
     if (!infrastructure) infrastructure=@[];
-    if (infrastructure.count>0) {
-        user.infrastructure = infrastructure[0];
-        for (int i = 1; i<infrastructure.count; i++) {
+    if (infrastructure.count>1) {
+        user.infrastructure = infrastructure[1];
+        for (int i = 2; i<infrastructure.count; i++) {
+            if (i>3)break;
             user.infrastructure = [NSString stringWithFormat:@"%@,%@",user.infrastructure,infrastructure[i]];
         }
+    }else if (infrastructure[0]) {
+        user.infrastructure = infrastructure[0];
     }else{
-        user.infrastructure = @"";
+        user.infrastructure = @"暂无设置";
     }
     
     [UserSession userToComfired];

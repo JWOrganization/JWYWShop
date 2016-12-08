@@ -39,7 +39,7 @@
     //    self.timeLabel.text = [JWTools dateWithStr:<#(NSString *)#>];
     self.timeLabel.text = @"2016-11-20 15:00";
     self.nmberLabel.text = [NSString stringWithFormat:@"%@人",@"22"];
-    self.status = [self.model.status integerValue];
+    self.status = [self.model.stats integerValue];
     self.rePlayLabel.text = @"技师发型师007";
 }
 

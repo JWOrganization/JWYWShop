@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
 @property (nonatomic,strong)UIPickerView * picker;
-@property (nonatomic,copy)NSString * cut;//23333333可能写单例或放UserSession设置模型内
+@property (nonatomic,copy)NSString * cut;
 @property (nonatomic,assign)NSInteger cutInter;
 @property (nonatomic,strong)NSArray * cutArr;
 @property (nonatomic,strong)YWPersonShopModel * model;
@@ -125,8 +125,7 @@
 
 #pragma mark - Http
 - (void)requestSendCut{
-    //h333333333333折扣设置
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"discount":@([[NSString stringWithFormat:@"0.%zi",(self.cutInter + 5)] floatValue])};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"discount":@([[NSString stringWithFormat:@"0.%zi",self.cutInter] floatValue])};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetDiscount withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -143,13 +142,10 @@
         [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
         self.currentCutLabel.text = [NSString stringWithFormat:@"当前折扣%@",showName];
         [self showHUDWithStr:@"折扣设置成功" withSuccess:YES];
-        //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //        [self.navigationController popViewControllerAnimated:YES];
-        //    });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }];
 }
 
 @end

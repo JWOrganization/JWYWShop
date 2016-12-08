@@ -10,4 +10,8 @@
 
 @implementation YWHomeCouponModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"couponID" : @"id"};
+}
+
 @end

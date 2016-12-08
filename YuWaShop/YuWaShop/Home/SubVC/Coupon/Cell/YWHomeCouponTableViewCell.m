@@ -7,6 +7,7 @@
 //
 
 #import "YWHomeCouponTableViewCell.h"
+#import "JWTools.h"
 
 @implementation YWHomeCouponTableViewCell
 
@@ -24,11 +25,15 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
-    self.cutNumberLabel.text = [NSString stringWithFormat:@"%@元",@"20"];
-    self.conditionLabel.text = [NSString stringWithFormat:@"满%@减",@"100"];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@抵用券(本店专用)",@"上海派柯"];
-    self.timeLabel.text = [NSString stringWithFormat:@"有效期%@至%@",@"2016-11-10",@"2016-11-20"];
+- (void)dataSet{
+    NSString * cutNumberStr = [self.model.discount_fee stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    cutNumberStr = [cutNumberStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    self.cutNumberLabel.text = [NSString stringWithFormat:@"%@元",cutNumberStr];
+    NSString * conditionStr = [self.model.min_fee stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    conditionStr = [conditionStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    self.conditionLabel.text = [NSString stringWithFormat:@"满%@减",conditionStr];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@",self.model.name];
+    self.timeLabel.text = [NSString stringWithFormat:@"有效期%@至%@",[JWTools dateWithYearMonthDayStr:self.model.begin_time],[JWTools dateWithYearMonthDayStr:self.model.end_time]];
 }
 
 @end

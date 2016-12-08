@@ -44,7 +44,7 @@
                                 <constraint firstAttribute="height" constant="30" id="nx1-8p-S56"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入商品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upX-mN-st9">
@@ -65,7 +65,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEc-7I-Yek">
                             <rect key="frame" x="20" y="163" width="560" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入商品介绍" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPM-Jb-nly">
@@ -80,7 +80,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDM-ax-l0W">
                             <rect key="frame" x="20" y="252" width="560" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入商品价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUP-or-TEi">
@@ -95,11 +95,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irY-ot-6oW">
                             <rect key="frame" x="20" y="341" width="560" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNZ-Y4-Ve7">
-                            <rect key="frame" x="20" y="377" width="170" height="130"/>
+                            <rect key="frame" x="215" y="377" width="170" height="130"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_camera" translatesAutoresizingMaskIntoConstraints="NO" id="8WB-sq-sHT">
                                     <rect key="frame" x="48" y="15" width="75" height="75"/>
@@ -178,6 +178,7 @@
                         <constraint firstItem="rUP-or-TEi" firstAttribute="height" secondItem="upX-mN-st9" secondAttribute="height" id="XX1-87-WVo"/>
                         <constraint firstItem="hKx-TK-6iA" firstAttribute="top" secondItem="gqm-W2-Diy" secondAttribute="top" constant="74" id="a9T-ZC-wng"/>
                         <constraint firstItem="LmG-oo-GGc" firstAttribute="top" secondItem="gqm-W2-Diy" secondAttribute="top" constant="152" id="ajZ-cT-Vhx"/>
+                        <constraint firstItem="kNZ-Y4-Ve7" firstAttribute="centerX" secondItem="gqm-W2-Diy" secondAttribute="centerX" id="bpu-JQ-j9h"/>
                         <constraint firstItem="OEc-7I-Yek" firstAttribute="trailing" secondItem="hKx-TK-6iA" secondAttribute="trailing" id="cp9-jN-q7v"/>
                         <constraint firstItem="irY-ot-6oW" firstAttribute="trailing" secondItem="hKx-TK-6iA" secondAttribute="trailing" id="drc-2d-oJl"/>
                         <constraint firstItem="rUP-or-TEi" firstAttribute="top" secondItem="rDM-ax-l0W" secondAttribute="bottom" id="g1K-VQ-1Dk"/>
@@ -197,6 +198,7 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="ECj-99-PJa"/>
+                            <exclude reference="6N4-Ez-jsW"/>
                         </mask>
                     </variation>
                 </view>

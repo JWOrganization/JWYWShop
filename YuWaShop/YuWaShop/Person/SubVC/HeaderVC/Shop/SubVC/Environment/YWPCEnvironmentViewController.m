@@ -130,18 +130,42 @@
 #pragma mark - Http
 - (void)requestData{
     if (self.model.environmentDataArr){
-        self.dataArr = self.model.environmentDataArr;
+        self.dataArr = [NSMutableArray arrayWithArray:self.model.environmentDataArr];
         [self.tableView reloadData];
         return;
     }
     
-    //h3333333333请求环境配置
-//    self.model.environmentDataArr =
-    [self.tableView reloadData];
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)}];
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_GetEnvironment withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        NSDictionary * dataDic = responsObj[@"data"];
+        NSMutableArray * dataArrTemp = [NSMutableArray arrayWithArray:@[@[@"wifi"],@[@"smoke",@"payroom",@"cassette",@"sofa",@"outdoor",@"sight",@"baby"],@[@"perform",@"playground",@"revolving"]]];
+        
+        for (int i = 0; i<dataArrTemp.count; i++) {
+            NSMutableArray * tagSubArr = [NSMutableArray arrayWithArray:dataArrTemp[i]];
+            for (int j = 0; j<tagSubArr.count; j++) {
+                [tagSubArr replaceObjectAtIndex:j withObject:dataDic[tagSubArr[j]]?dataDic[tagSubArr[j]]:@"0"];
+            }
+            [dataArrTemp replaceObjectAtIndex:i withObject:tagSubArr];
+        }
+        self.parkChoose = [(dataDic[@"park"]?dataDic[@"park"]:@"0") integerValue];
+        NSMutableArray * parkArr = [NSMutableArray arrayWithCapacity:0];
+        for (int i = 0; i<4; i++) {
+            [parkArr addObject:(self.parkChoose==i?@"1":@"0")];
+        }
+        [dataArrTemp insertObject:parkArr atIndex:0];
+        self.dataArr = dataArrTemp;
+        self.model.environmentDataArr = [NSMutableArray arrayWithArray:dataArrTemp];
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }];
 }
 - (void)requestUpData{
-    NSArray * dataTagArr = @[@[@"wifi"],@[@"smoke",@"payroom",@"cassette",@"sofa",@"outdoor",@"sight",@"baby"],@[@"perform",@"playground",@"有旋转餐厅"]];
-    //    self.dataArr
+    NSArray * dataTagArr = @[@[@"wifi"],@[@"smoke",@"payroom",@"cassette",@"sofa",@"outdoor",@"sight",@"baby"],@[@"perform",@"playground",@"revolving"]];
     
     NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"park":@(self.parkChoose)}];
     for (int i = 0; i<dataTagArr.count; i++) {
@@ -155,11 +179,45 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         self.model.environmentDataArr = self.dataArr;
-        [self showHUDWithStr:@"设置成功" withSuccess:YES];
+        
+        NSArray * nameArr = @[@[@"免费WIFI"],@[@"有吸烟区",@"有包厢",@"有卡座",@"有沙发位",@"有露天位",@"有景观位",@"有宝宝椅"],@[@"有表演",@"有儿童游乐区",@"有旋转餐厅"]];
+        NSMutableArray * nameAddArr = [NSMutableArray arrayWithCapacity:0];
+        for (int i = 1; i < self.dataArr.count; i++) {
+            NSArray * dataSubArr = self.dataArr[i];
+            for (int j = 0; j<dataSubArr.count; j++) {
+                if ([dataSubArr[j] isEqualToString:@"1"]) {
+                    [nameAddArr addObject:nameArr[i-1][j]];
+                }
+            }
+        }
+        if (nameAddArr.count>1) {
+            [UserSession instance].infrastructure = nameAddArr[0];
+            for (int i = 1; i<nameAddArr.count; i++) {
+                if (i>2)break;
+                [UserSession instance].infrastructure = [NSString stringWithFormat:@"%@,%@",[UserSession instance].infrastructure,nameAddArr[i]];
+            }
+        }else if (nameAddArr.count == 1){
+            [UserSession instance].infrastructure = nameAddArr[0];
+        }else if(self.parkChoose>0){
+            NSArray * parkNameArr = @[@"不显示停车信息",@"免费停车",@"付费停车",@"无停车位"];
+            [UserSession instance].infrastructure = parkNameArr[self.parkChoose];
+        }else{
+            [UserSession instance].infrastructure = @"暂无设置";
+        }
+        
+        NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
+        [shopArr replaceObjectAtIndex:2 withObject:[UserSession instance].infrastructure];
+        [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
+        
+        [self showHUDWithStr:@"环境配套设置成功" withSuccess:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333上传环境配套设置
+        [self showHUDWithStr:responsObj[@"errorMessage"] withSuccess:NO];
+    }];
 }
 
 @end

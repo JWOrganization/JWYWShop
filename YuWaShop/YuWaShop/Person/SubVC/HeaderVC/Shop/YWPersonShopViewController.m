@@ -117,13 +117,17 @@
         MyLog(@"Regieter Code is %@",responsObj);
         
         self.model.headerModel = [YWPersonShopHeaderModel yy_modelWithDictionary:responsObj[@"data"]];
+        [UserSession instance].nickName = self.model.headerModel.company_name;
+        [UserSession instance].cut = (int)([self.model.headerModel.discount floatValue]*100);
+        [UserSession instance].logo = self.model.headerModel.company_img;
+        
         NSString * showCut;
         if ([UserSession instance].cut%10 == 0) {
             showCut = [UserSession instance].cut== 100?@"全付":[NSString stringWithFormat:@"%zi折",([UserSession instance].cut/10)];
         }else{
             showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
         }
-        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,@"有地图",@"09:00-21:00 周一,周二,周五"],@[@"23333元",showCut,@""],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
+        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),self.model.headerModel.business_hours],@[@"23333元",showCut,[UserSession instance].infrastructure],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
         
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {

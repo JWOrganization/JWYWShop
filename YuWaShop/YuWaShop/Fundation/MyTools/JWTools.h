@@ -138,6 +138,14 @@
 +(NSString*)currentTime;
 
 /**
+ *  传一个日期字符串,返回年月日
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 修改完的日期字符串
+ */
++ (NSString *)dateWithYearMonthDayStr:(NSString *)dateStr;
+/**
  *  传一个日期字符串，判断是否是昨天，或者是今天的日期
  *
  *  @param dateStr 日期字符串
@@ -211,6 +219,23 @@
  *  @return json字符串
  */
 + (NSString *)jsonStrWithArr:(NSArray *)arr;
+
+/**
+ *  json格式字符串转字典
+ *
+ *  @param jsonString json格式字符串
+ *
+ *  @return 字典
+ */
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+/**
+ *  字典转json格式字符串
+ *
+ *  @param dic 字典
+ *
+ *  @return json格式字符串
+ */
++ (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
 /**
  *  字符串组成UTF8文件

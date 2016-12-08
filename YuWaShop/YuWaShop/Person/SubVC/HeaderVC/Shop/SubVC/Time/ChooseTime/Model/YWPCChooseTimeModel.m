@@ -23,11 +23,15 @@
 - (void)setIsPayAllDay:(BOOL)isPayAllDay{
     if (_isPayAllDay == isPayAllDay)return;
     _isPayAllDay = isPayAllDay;
-    if (_isPayAllDay) {
-        [self.payTimeArr removeAllObjects];
-    }else{
+    if (!_isPayAllDay) {
         [self.payTimeArr removeAllObjects];
         [self.payTimeArr addObject:[[YWPCChooseSubTimeModel alloc]init]];
+    }else{
+        [self.payTimeArr removeAllObjects];
+        YWPCChooseSubTimeModel * model = [[YWPCChooseSubTimeModel alloc]init];
+        model.name = @"24小时营业";
+        model.time = @"00:00-24:00";
+        [self.payTimeArr addObject:model];
     }
 }
 

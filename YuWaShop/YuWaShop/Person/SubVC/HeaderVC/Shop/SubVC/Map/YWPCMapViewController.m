@@ -44,7 +44,7 @@
 }
 
 - (void)makeUI{
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.location.coordinate, 5000, 5000) animated:YES];//设置地图的默认显示区域
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.location.coordinate, 5000, 5000) animated:YES];
     UITapGestureRecognizer *mTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
     [self.mapView addGestureRecognizer:mTap];
 }
@@ -78,6 +78,10 @@
 }
 
 - (void)isSendLocation{
+    if (!self.locationStr) {
+        [self showHUDWithStr:@"请选择位置" withSuccess:NO];
+        return;
+    }
     UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self requestUpDateLocation];
     }];
@@ -123,7 +127,7 @@
         self.isSearch = YES;
     }
     YWStormAnnotationModel * model = [[YWStormAnnotationModel alloc]init];
-    model.coordinate = self.touchMapCoordinate;//纬经度
+    model.coordinate = self.touchMapCoordinate;
     [self.mapView addAnnotation:model];
     
     CLLocation * location = [[CLLocation alloc]initWithLatitude:self.touchMapCoordinate.latitude longitude:self.touchMapCoordinate.longitude];
@@ -136,22 +140,22 @@
 
 #pragma mark - Http
 - (void)requestUpDateLocation{
-    //h3333333333333上传当前位置,经纬度
-    
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"coordinatey":@(self.touchMapCoordinate.latitude),@"coordinatex":@(self.touchMapCoordinate.longitude)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SetShopMap withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"上传成功" withSuccess:YES];
-        //23333333333333修改model
+        NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[1]];
+        [shopArr replaceObjectAtIndex:1 withObject:@"有地图"];
+        [self.model.dataArr replaceObjectAtIndex:1 withObject:shopArr];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }];
 }
 
 @end

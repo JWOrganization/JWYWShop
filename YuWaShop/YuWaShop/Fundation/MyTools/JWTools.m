@@ -236,6 +236,26 @@
 }
 #pragma mark - NSDate
 /**
+ *  传一个日期字符串,返回年月日
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 修改完的日期字符串
+ */
++ (NSString *)dateWithYearMonthDayStr:(NSString *)dateStr{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *date = [dateFormatter dateFromString:dateStr];
+    
+    if (!date) {
+        date = [NSDate dateWithTimeIntervalSince1970:[dateStr doubleValue]];
+    }
+    
+    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    return [dateFormatter stringFromDate:date];
+}
+/**
  *  传一个日期字符串，判断是否是昨天，或者是今天的日期
  *
  *  @param dateStr 日期字符串
@@ -446,6 +466,40 @@
     NSString *jsonStr=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     
     return jsonStr;
+}
+
+/**
+ *  json格式字符串转字典
+ *
+ *  @param jsonString json格式字符串
+ *
+ *  @return 字典
+ */
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (!jsonString)return nil;
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+/**
+ *  字典转json格式字符串
+ *
+ *  @param dic 字典
+ *
+ *  @return json格式字符串
+ */
++ (NSString*)dictionaryToJson:(NSDictionary *)dic{
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 /**
  *  字符串组成UTF8文件

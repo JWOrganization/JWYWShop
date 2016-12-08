@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,45 +25,45 @@
                             <constraint firstAttribute="height" constant="40" id="luy-fR-r87"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="小雨娃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-Ke-2ig">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小雨娃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-Ke-2ig">
                         <rect key="frame" x="65" y="15" width="37" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="打分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-ZW-mfe">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-ZW-mfe">
                         <rect key="frame" x="65" y="33" width="25" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" tag="30" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="t25-RJ-wsG">
+                    <imageView userInteractionEnabled="NO" tag="30" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="t25-RJ-wsG">
                         <rect key="frame" x="95" y="35" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="VbN-hK-kkQ"/>
                             <constraint firstAttribute="height" constant="12" id="hM9-dZ-FGE"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-tF-kTu">
+                    <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-tF-kTu">
                         <rect key="frame" x="110" y="35" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="9DY-zW-uQq"/>
                             <constraint firstAttribute="width" constant="12" id="Bee-ye-SqE"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" tag="32" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Q7-s2-YsX">
+                    <imageView userInteractionEnabled="NO" tag="32" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Q7-s2-YsX">
                         <rect key="frame" x="125" y="35" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="B2A-xV-ivC"/>
                             <constraint firstAttribute="width" constant="12" id="gcO-Fm-pWZ"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" tag="33" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIm-ov-O8P">
+                    <imageView userInteractionEnabled="NO" tag="33" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIm-ov-O8P">
                         <rect key="frame" x="140" y="35" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="2op-el-4BN"/>
                             <constraint firstAttribute="width" constant="12" id="yAj-BG-CQl"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" tag="34" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="f41-jJ-KaO">
+                    <imageView userInteractionEnabled="NO" tag="34" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_lightStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="f41-jJ-KaO">
                         <rect key="frame" x="155" y="35" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="cVP-1f-wGV"/>
@@ -75,7 +79,7 @@
                         <rect key="frame" x="330" y="38" width="30" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="回复">
-                            <color key="titleColor" red="0.14778482913970947" green="0.75102478265762329" blue="0.91425001621246338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.14563451707363129" green="0.69851028919219971" blue="0.89202189445495605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                 </subviews>

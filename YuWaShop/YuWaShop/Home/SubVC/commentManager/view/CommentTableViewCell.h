@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class CommentModel;
+@class ShopdetailModel;
 
 @interface CommentTableViewCell : UITableViewCell
 
-//@property(nonatomic,strong)NSDictionary*allDatas;
 
--(void)giveValueWithModel:(CommentModel*)model;
-+(CGFloat)getCellHeight:(CommentModel*)model;
+
+-(void)giveValueWithModel:(ShopdetailModel*)model;
++(CGFloat)getCellHeight:(ShopdetailModel*)model;
 
 @end

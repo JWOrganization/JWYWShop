@@ -15,6 +15,9 @@
 #import "UIScrollView+JWGifRefresh.h"
 
 
+#import "DayDetailViewController.h"
+
+
 
 
 
@@ -141,6 +144,19 @@
     }
    
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.type==1) {
+        //记录
+        FinancailListModel*model=self.allDatasModel[indexPath.row];
+        
+        DayDetailViewController*vc=[[DayDetailViewController alloc]init];
+        vc.ctime=model.ctime;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+}
+
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (self.type==0) {

@@ -11,7 +11,7 @@
 @implementation CommentModel
 
 //+ (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
-//    return @{@"shop":ShopdetailModel.class};
+//    return @{@"lists":ShopdetailModel.class};
 //    
 //}
 

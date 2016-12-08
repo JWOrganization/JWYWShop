@@ -51,8 +51,10 @@
             MyLog(@"照片源不可用");
         }
     }]];
+
     [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];

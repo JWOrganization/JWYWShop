@@ -10,6 +10,7 @@
 #import "YWPersonTableViewCell.h"
 #import "YWPersonHeaderView.h"
 #import "YWPersonVC.h"
+#import "YWBusinessMemberViewController.h"   //商务会员
 
 #define PERSONCCELL @"YWPersonTableViewCell"
 
@@ -63,10 +64,12 @@
                 break;
             }
             case 2:{
+                //2会员
                 vc = [[YWPersonSubVipViewController alloc]init];
                 break;
             }
             case 3:{
+                //3分红
                 vc = [[YWPersonPointViewController alloc]init];
                 break;
             }

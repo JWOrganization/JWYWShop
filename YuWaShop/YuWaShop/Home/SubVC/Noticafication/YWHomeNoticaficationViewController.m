@@ -183,7 +183,8 @@
                 [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
                 //233333333333要删
             }
-            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //233333333333未读标识已读
                 for (int i = 0; i < dataArr.count; i++) {
 //                    if (status == 未读) {
 //                        [self requestCancelNoticaficationWithID:noticaid];
@@ -200,7 +201,8 @@
                 model.stats = @"1";
                 [self.dataArr addObject:model];
             }
-            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //233333333333未读标识已读
                 for (int i = 0; i < dataArr.count; i++) {
 //                    if (status == 未读) {
 //                        [self requestCancelNoticaficationWithID:noticaid];

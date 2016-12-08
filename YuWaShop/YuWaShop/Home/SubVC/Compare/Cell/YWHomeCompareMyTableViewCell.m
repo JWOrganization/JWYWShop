@@ -27,16 +27,17 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
+- (void)dataSet{
+    //233333333
     //    self.showImageView.image;
     self.nameLabel.text = @"店23333";
     NSString * countStr;
     switch (self.model.status) {
         case 0:
-            countStr = [NSString stringWithFormat:@"浏览人数:%@人",@"2333333333"];
+            countStr = [NSString stringWithFormat:@"浏览人数:%@人",@"23333333"];
             break;
         case 1:
-            countStr = [NSString stringWithFormat:@"消费人数:%@人",@"2333333333"];
+            countStr = [NSString stringWithFormat:@"消费人数:%@人",@"23333333"];
             break;
         case 2:
             countStr = [NSString stringWithFormat:@"消费金额%@元",@"233333333"];
@@ -50,7 +51,7 @@
     }
     self.countLabel.text = countStr;
     
-    NSMutableAttributedString * compareStr= [NSString stringWithFirstStr:@"排名高于泉州其他" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#f7de46"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:15.f] withColor:CNaviColor];
+    NSMutableAttributedString * compareStr= [NSString stringWithFirstStr:@"排名高于同城其他" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#f7de46"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:15.f] withColor:CNaviColor];
     [compareStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"的%@类同行",@"餐饮"] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#f7de46"],NSFontAttributeName:[UIFont systemFontOfSize:15.f]}]];
     self.compareLabel.attributedText = compareStr;
 }

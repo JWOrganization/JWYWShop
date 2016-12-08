@@ -110,6 +110,8 @@
 
 #pragma mark - Http
 - (void)requestData{
+    if (self.model.headerModel)return;
+    
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
     
     [[HttpObject manager]postDataWithType:YuWaType_ShopAdmin_Home withPragram:pragram success:^(id responsObj) {
@@ -128,7 +130,6 @@
             showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
         }
         self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),self.model.headerModel.business_hours],@[@"23333元",showCut,[UserSession instance].infrastructure],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
-        
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);

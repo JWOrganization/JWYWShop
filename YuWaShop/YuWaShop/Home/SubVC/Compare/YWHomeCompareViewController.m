@@ -160,10 +160,12 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
-    if (page == 0)[self.dataArr removeAllObjects];
+    
 //    self.typeID//对比分类ID
 //    self.status//对比类型
-    //233333333要删
+    
+    if (page == 0)[self.dataArr removeAllObjects];
+    //23333333333要删
     self.myModel = [[YWHomeCompareMyModel alloc]init];
     self.myModel.status = self.status;
     for (int i = 0; i<3; i++) {
@@ -171,7 +173,7 @@
         model.status = self.status;
         [self.dataArr addObject:model];
     }
-    //233333333要删
+    //23333333333要删
     [self.tableView reloadData];
 }
 

@@ -148,8 +148,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.type==1) {
         //记录
+        FinancailListModel*model=self.allDatasModel[indexPath.row];
+        
         DayDetailViewController*vc=[[DayDetailViewController alloc]init];
-        vc.user_id=@"12";
+        vc.ctime=model.ctime;
         [self.navigationController pushViewController:vc animated:YES];
     }
     

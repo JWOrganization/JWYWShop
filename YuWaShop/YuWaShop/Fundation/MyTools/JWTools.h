@@ -133,6 +133,10 @@
 + (NSString *)saveJImage:(UIImage *)image;
 
 #pragma mark - NSDate
+
+//得到当前时间
++(NSString*)currentTime;
+
 /**
  *  传一个日期字符串，判断是否是昨天，或者是今天的日期
  *

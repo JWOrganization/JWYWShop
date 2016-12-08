@@ -9,7 +9,8 @@
 #import "ShowMoreCommitViewController.h"
 #import "CommentTableViewCell.h"
 
-#import "CommentModel.h"
+#import "CommentModel.h"       //就3个label的数据
+#import "ShopdetailModel.h"    //每一条的评论的数据
 
 #import "JWTools.h"
 #import "UIScrollView+JWGifRefresh.h"
@@ -31,8 +32,10 @@
 
 @property(nonatomic,assign)int pagen;
 @property(nonatomic,assign)int pages;
-@property(nonatomic,assign)NSInteger status;
+@property(nonatomic,assign)NSInteger status;  // 1全部 2好评 3中差评
+@property(nonatomic,strong)CommentModel*mainModel;
 @property(nonatomic,strong)NSMutableArray*maMallDatas;
+
 @end
 
 @implementation ShowMoreCommitViewController
@@ -77,13 +80,23 @@
 #pragma mark  -- UI
 
 -(void)makeTopHeader{
+    UIView*backgroundView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 80+50)];
+    
+    
     UIView*topView=[[NSBundle mainBundle]loadNibNamed:@"CommentHeadView" owner:nil options:nil].firstObject;
     topView.frame=CGRectMake(0, 0, kScreen_Width, 80);
-    self.tableView.tableHeaderView=topView;
+    [backgroundView addSubview:topView];
     
     self.label1=[topView viewWithTag:1];
     self.label2=[topView viewWithTag:2];
     self.label3=[topView viewWithTag:3];
+    
+    [self giveValueForThreeLabel];
+    
+    self.headerView.frame=CGRectMake(0, 80, kScreen_Width, 50);
+    [backgroundView addSubview:self.headerView];
+    
+    self.tableView.tableHeaderView=backgroundView;
     
 }
 
@@ -122,8 +135,10 @@
     CommentTableViewCell*cell=[tableView dequeueReusableCellWithIdentifier:CELL0];
     cell.selectionStyle=NO;
     
-     CommentModel*model=self.maMallDatas[indexPath.section];
+     ShopdetailModel*model=self.maMallDatas[indexPath.section];
+    
      [cell giveValueWithModel:model];
+
       return cell;
     
     
@@ -166,24 +181,25 @@
 
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-         return self.headerView;
-    }
+//    if (section==0) {
+//         return self.headerView;
+//    }
     return nil;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    CommentModel*model=self.maMallDatas[indexPath.section];
+    ShopdetailModel*model=self.maMallDatas[indexPath.section];
     return [CommentTableViewCell getCellHeight:model];
 
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-        return 50;
-    }
-    return 10;
+//    if (section==0) {
+//        return 50;
+//    }
+//    return 10;
+    return 0.01;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -199,10 +215,11 @@
 
 #pragma mark  --getDatas
 -(void)getDatas{
-    NSString*pages=[NSString stringWithFormat:@"%d",self.pages];
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_COMMENTLIST];
     NSString*pagen=[NSString stringWithFormat:@"%d",self.pagen];
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_HOME_MORECOMMIT];
-    NSDictionary*params=@{@"shop_id":@"6",@"pagen":pagen,@"pages":pages};
+    NSString*pages=[NSString stringWithFormat:@"%d",self.pages];
+    NSString*type=[NSString stringWithFormat:@"%zi",self.status];
+    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":type,@"pagen":pagen,@"pages":pages};
     
     HttpManager*manager=[[HttpManager alloc]init];
     [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
@@ -210,15 +227,18 @@
         NSNumber*number=data[@"errorCode"];
         NSString*errorCode=[NSString stringWithFormat:@"%@",number];
         if ([errorCode isEqualToString:@"0"]) {
-            for (NSDictionary*dict in data[@"data"]) {
-                CommentModel*model=[CommentModel yy_modelWithDictionary:dict];
+            self.mainModel=[[CommentModel alloc]init];
+            self.mainModel.total_comment=data[@"data"][@"total_comment"];
+            self.mainModel.totay_comment=data[@"data"][@"totay_comment"];
+            self.mainModel.totay_bad_comment=data[@"data"][@"totay_bad_comment"];
+
+            for (NSDictionary*dict in data[@"data"][@"lists"]) {
+                ShopdetailModel*model=[ShopdetailModel yy_modelWithDictionary:dict];
                 [self.maMallDatas addObject:model];
-                
             }
+            
+            [self giveValueForThreeLabel];
             [self.tableView reloadData];
-            
-            
-            
             
         }else{
             [JRToast showWithText:data[@"errorMessage"]];
@@ -226,14 +246,46 @@
         
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
+
         
     }];
     
+    
 }
+
+
+-(void)giveValueForThreeLabel{
+    self.label1.text=self.mainModel.total_comment;
+    self.label2.text=self.mainModel.totay_comment;
+    self.label3.text=self.mainModel.totay_bad_comment;
+    
+}
+
 
 //回复的内容
 -(void)getJiekouWithNumber:(NSInteger)number andText:(NSString*)text{
     MyLog(@"111");
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_COMMENTREPLY];
+    ShopdetailModel*model=self.maMallDatas[number];
+    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":model.id,@"seller_content":text};
+    HttpManager*manager=[[HttpManager alloc]init];
+    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+        MyLog(@"%@",data);
+        NSNumber*number=data[@"errorCode"];
+        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
+        if ([errorCode isEqualToString:@"0"]) {
+            [JRToast showWithText:data[@"data"]];
+            [self.tableView.mj_header beginRefreshing];
+            
+        }else{
+            [JRToast showWithText:data[@"errorMessage"]];
+              [self.tableView.mj_header beginRefreshing];
+        }
+        
+        
+    }];
+    
+    
     
     
 }

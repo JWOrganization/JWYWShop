@@ -10,5 +10,5 @@
 
 @interface DayDetailViewController : UIViewController
 
-@property(nonatomic,strong)NSString*user_id;
+@property(nonatomic,strong)NSString*ctime;
 @end

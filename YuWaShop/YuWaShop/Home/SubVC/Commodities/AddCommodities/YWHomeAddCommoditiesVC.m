@@ -52,7 +52,7 @@
         }
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//to localPhotos
-        [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];

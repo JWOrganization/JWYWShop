@@ -17,7 +17,7 @@
 @interface DayDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic,assign)NSInteger pagens;
+@property (nonatomic,assign)NSInteger pagen;
 @property (nonatomic,assign)NSInteger pages;
 @property (nonatomic,strong)NSMutableArray * allDatasList;
 @property(nonatomic,strong)NSMutableArray*allDatasMoney;
@@ -35,7 +35,7 @@
 }
 
 - (void)dataSet{
-    self.pagens = 10;
+    self.pagen = 10;
     self.pages=0;
     self.allDatasList = [NSMutableArray arrayWithCapacity:0];
     self.allDatasMoney=[NSMutableArray arrayWithCapacity:0];
@@ -150,9 +150,36 @@
     
     self.allDatasList=[accord mutableCopy];
     
-    [self.tableView reloadData];
+
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
+    
+    
+    
+    
+//    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_EVERY_RECORD];
+//    NSString*pagen=[NSString stringWithFormat:@"%ld",(long)self.pagen];
+//    NSString*pages=[NSString stringWithFormat:@"%zi",self.pages];
+//    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"ctime":self.ctime,@"pagen":pagen,@"pages":pages};
+//    HttpManager*manager=[[HttpManager alloc]init];
+//    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+//        MyLog(@"%@",data);
+//        NSNumber*number=data[@"errorCode"];
+//        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
+//        if ([errorCode isEqualToString:@"0"]) {
+//            
+//            
+//            [self.tableView reloadData];
+//        }else{
+//            [JRToast showWithText:data[@"errorMessage"]];
+//        }
+//        
+//        [self.tableView.mj_header endRefreshing];
+//        [self.tableView.mj_footer endRefreshing];
+//
+//        
+//    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

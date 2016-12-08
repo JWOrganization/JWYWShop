@@ -190,6 +190,17 @@
 //商务会员
 #define HTTP_BUSINESS_HOME         @"/api.php/Sale/getBaseInfo/"    //商务会员首页
 #define HTTP_BUSINESS_SALEINFO     @"/api.php/Sale/detail/"    //交易详情信息
+#define HTTP_MY_ORDER_SHOP         @"/api.php/Sale/myInviteShop/" //我签约的店铺
+#define HTTP_MY_USER               @"/api.php/Sale/myDirectUser/"  //我的绑定用户
+#define HTTP_POINTGETMONEY         @"/api.php/Sale/scoreToMoney/" //积分提现
+#define HTTP_DEAL_DETAIL           @"/api.php/Sale/detailShow/"  //每一条交易详情
+//收支明细
+#define HTTP_INCOMEOUT             @"/api.php/Sale/myMoneyHistory/"  //收支明细
+//普通消费者
+#define HTTP_PERSON_INTRODUCE      @"/api.php/Customer/getBaseInfo/"  //普通消费者的介绍分红
+#define HTTP_PERSON_SALEINFO       @"/api.php/Customer/detail/"   //普通消费者的交易详情
+#define HTTP_PERSON_DETAIL         @"/api.php/Customer/detailShow/"  //普通消费者的详情
+
 
 
 

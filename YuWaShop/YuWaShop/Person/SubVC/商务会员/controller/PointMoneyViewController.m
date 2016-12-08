@@ -45,6 +45,10 @@
     view.frame=CGRectMake(0, 0, kScreen_Width, 300);
     [self.view addSubview:view];
     
+    
+    UILabel*label2=[view viewWithTag:2];
+    label2.text=[NSString stringWithFormat:@"当前兑换比例:%@",self.model.pay_scale];
+    
     UILabel*label3=[view viewWithTag:3];
     label3.text=[NSString stringWithFormat:@"当前积分：%@",self.model.my_score];
     self.currentPointLabel=label3;

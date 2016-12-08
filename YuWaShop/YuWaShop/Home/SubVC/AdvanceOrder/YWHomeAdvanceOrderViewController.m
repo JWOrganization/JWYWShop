@@ -162,14 +162,11 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
-        
-        //233333333要删
-        for (int i = 0; i<3; i++) {
-            YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
-            model.orderID = @"233333333";
+        NSArray * dataArr = responsObj[@"data"];
+        for (int i = 0; i<dataArr.count; i++) {
+            YWHomeAdvanceOrderModel * model =[YWHomeAdvanceOrderModel yy_modelWithDictionary:dataArr[i]];
             [self.dataArr addObject:model];
         }
-        //233333333要删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -180,17 +177,18 @@
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
     
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":@"23333333xx店xx物品预定成功",@"push_content":rePlay};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":[NSString stringWithFormat:@"%@的订单%@",[UserSession instance].nickName,(type==2?@"预定成功":@"已被取消")],@"push_content":rePlay};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_BookReply withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self.dataArr removeObjectAtIndex:indexPath.row];
+        [self showHUDWithStr:@"回复成功" withSuccess:YES];
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333删除回复了的订单,并提交回复
+    }];
 }
 
 @end

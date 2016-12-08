@@ -32,7 +32,6 @@
     self.hidden = YES;
 }
 
-//获取uidatepickerview数据
 - (void)dateViewAction:(id)sender{
     UIDatePicker * picker = (UIDatePicker *)sender;
     [self getSelectedDateWithDate:picker.date];
@@ -76,7 +75,7 @@
     
     [self addSubview:self.pickerView];
 }
-//去黑线
+
 - (void)clearSeparatorWithView:(UIView * )view{
     if(view.subviews != 0  ){
         if(view.bounds.size.height < 5)view.backgroundColor = [UIColor clearColor];

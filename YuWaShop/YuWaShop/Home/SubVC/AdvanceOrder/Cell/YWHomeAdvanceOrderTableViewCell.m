@@ -30,14 +30,13 @@
     [self dataSet];
     [self layoutSet];
 }
-- (void)dataSet{//233333333
-    self.phoneLabel.text = @"13789384585";
-//    self.timeLabel.text = [JWTools dateWithStr:<#(NSString *)#>];
-    self.timeLabel.text = @"2016-11-20 15:00";
-    self.nmberLabel.text = [NSString stringWithFormat:@"%@人",@"22"];
-    self.rePlayLabel.text = @"技师发型师007";
+- (void)dataSet{
+    self.phoneLabel.text = [NSString stringWithFormat:@"%@  %@",self.model.customer_phone,self.model.customer_name];
+    self.timeLabel.text = [JWTools dateWithStr:self.model.customer_time];
+    self.nmberLabel.text = [NSString stringWithFormat:@"%@人",self.model.customer_num];
+    self.rePlayLabel.text = self.model.customer_message;
     if (self.status != 1) {
-        self.myRePlayLabel.text = @"回复你";
+        self.myRePlayLabel.text = [self.model.seller_message isEqualToString:@""]?@"已回复":self.model.seller_message;
     }
 }
 

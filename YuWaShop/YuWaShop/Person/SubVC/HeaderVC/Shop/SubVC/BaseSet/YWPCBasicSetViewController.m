@@ -42,9 +42,17 @@
     self.textView.layer.masksToBounds = YES;
     self.textView.placeholder = @"显示简介";
     self.textView.placeholderColor = [UIColor colorWithHexString:@"#d3d3d3"];
-    if (![[UserSession instance].personality isEqualToString:@"雨娃宝好棒好棒哒"]) {
+    if (![[UserSession instance].personality isEqualToString:@"尚未设置门店简介哟"]) {
         self.textView.isDrawPlaceholder = NO;
+        self.textView.text = [UserSession instance].personality;
     }
+    
+    if (![JWTools isPhoneIDWithStr:[UserSession instance].nickName]) self.nameTextField.text = [UserSession instance].nickName;
+    
+    [self.shopIconBtn sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"Person_Shop_Add_Img"] completed:nil];
+    
+    //233333333333que地址首选电话，次选电话
+    
 }
 
 - (IBAction)submitBtnAction:(id)sender {
@@ -57,14 +65,14 @@
 - (void)makeLocalImagePicker{
     WEAKSELF;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//take photo
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
         } else {
             MyLog(@"照片源不可用");
         }
     }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//to localPhotos
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
@@ -142,8 +150,8 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
+        //233333333333修改model,User
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //233333333333修改model,
             [self.navigationController popViewControllerAnimated:YES];
         });
     } failur:^(id responsObj, NSError *error) {

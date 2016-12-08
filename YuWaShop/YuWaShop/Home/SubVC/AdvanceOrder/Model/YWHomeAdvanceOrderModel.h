@@ -11,7 +11,14 @@
 @interface YWHomeAdvanceOrderModel : NSObject
 
 @property (nonatomic,copy)NSString * orderID;
+@property (nonatomic,copy)NSString * customer_message;
+@property (nonatomic,copy)NSString * customer_time;
+@property (nonatomic,copy)NSString * customer_num;
+@property (nonatomic,copy)NSString * customer_phone;
+@property (nonatomic,copy)NSString * customer_name;
+@property (nonatomic,copy)NSString * customer_id;
+@property (nonatomic,copy)NSString * seller_message;
 
-@property (nonatomic,copy)NSString * status;
+@property (nonatomic,copy)NSString * stats;
 
 @end

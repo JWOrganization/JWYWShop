@@ -168,8 +168,26 @@
 
 #pragma mark - Http
 - (void)requestUpData{
-    //h33333333333上传数据
-//    self.model内数据
+    for (int i = 0; i<self.model.payTimeArr.count; i++) {
+        YWPCChooseSubTimeModel * model = self.model.payTimeArr[i];
+        if (!model.time)break;
+        NSDictionary * dataDic = @{@"payDays":self.model.payDays,@"name":(model.name?model.name:@"营业时间"),@"time":model.time};
+        MyLog(@"%@",dataDic);
+        NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_hours":[JWTools dictionaryToJson:dataDic]};
+        
+        [[HttpObject manager]postDataWithType:YuWaType_Shoper_SetBusinessHours withPragram:pragram success:^(id responsObj) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code is %@",responsObj);
+            [self showHUDWithStr:@"设置成功" withSuccess:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+        } failur:^(id responsObj, NSError *error) {
+            MyLog(@"Regieter Code pragram is %@",pragram);
+            MyLog(@"Regieter Code error is %@",responsObj);
+        }];
+        if (self.model.isPayAllDay)break;
+    }
 }
 
 

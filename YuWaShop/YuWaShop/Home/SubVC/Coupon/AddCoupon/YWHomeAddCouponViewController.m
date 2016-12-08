@@ -102,7 +102,7 @@
     }
     
     if ([self.baseNumberTextField.text floatValue] < [self.cutNumberTextField.text floatValue]){
-        self.cutNumberTextField.text = self.baseNumberTextField.text;
+        self.cutNumberTextField.text = [NSString stringWithFormat:@"%zi",([self.baseNumberTextField.text integerValue]-1)];
     }
     
     NSString * showStr = [NSString stringWithFormat:@"确认创建%@-%@\n消费满%@减%@的%@张优惠券?",self.startTimeLabel.text,self.finishTimeLabel.text,self.baseNumberTextField.text,self.cutNumberTextField.text,self.countTextField.text];
@@ -134,8 +134,6 @@
 
 #pragma mark - Http
 - (void)requestCreateCoupon{
-    //h33333333上传添加节日数据
-        
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"name":self.nameTextField.text,@"total_num":@([self.countTextField.text integerValue]),@"min_fee":@([self.baseNumberTextField.text floatValue]),@"discount_fee":@([self.cutNumberTextField.text floatValue]),@"content":self.nameTextField.text,@"b_time":self.startTimeLabel.text,@"e_time":self.finishTimeLabel.text};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddCoupon withPragram:pragram success:^(id responsObj) {
@@ -148,7 +146,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }]; 
 }
 
 @end

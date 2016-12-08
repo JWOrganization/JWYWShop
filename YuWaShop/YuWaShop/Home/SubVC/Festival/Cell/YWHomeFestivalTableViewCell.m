@@ -7,6 +7,7 @@
 //
 
 #import "YWHomeFestivalTableViewCell.h"
+#import "JWTools.h"
 
 @implementation YWHomeFestivalTableViewCell
 
@@ -46,8 +47,17 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
+- (void)dataSet{
+    NSString * showName;
+    NSInteger cut = (int)[self.model.rebate floatValue]*100;
+    if (cut%10 == 0) {
+        showName = cut== 100?@"全付":[NSString stringWithFormat:@"%zi折",(cut/10)];
+    }else{
+        showName = [NSString stringWithFormat:@"%zi折",cut];
+    }
     
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ 全场%@",self.model.title,showName];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@~%@",[JWTools dateWithYearMonthDayStr:self.model.btime],[JWTools dateWithYearMonthDayStr:self.model.etime]];;
 }
 
 @end

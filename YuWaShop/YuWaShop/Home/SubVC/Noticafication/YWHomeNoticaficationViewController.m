@@ -170,36 +170,44 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status==1?2:1),@"pagen":@(1),@"pages":@(page)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.status==1?2:1),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_MyNotice withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
         if (self.status == 1) {
-            
-            //233333333333要删
-            for (int i = 0; i<3; i++) {
+            NSArray * dataArr = responsObj[@"data"][@"lists"];
+            for (int i = 0; i<dataArr.count; i++) {
+                //233333333333要删
                 [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+                //233333333333要删
             }
-            //233333333333要删
+            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+                for (int i = 0; i < dataArr.count; i++) {
+//                    if (status == 未读) {
+//                        [self requestCancelNoticaficationWithID:noticaid];
+//                    }
+                }
+            });
         }else{
-            //233333333333要删
-            for (int i = 0; i<3; i++) {
+            NSArray * dataArr = responsObj[@"data"][@"lists"];
+            for (int i = 0; i<dataArr.count; i++){
+                //233333333333要删
                 YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
                 model.orderID = @"233333333";
-                model.status = [NSString stringWithFormat:@"%zi",i];
+                //233333333333要删
+                model.stats = @"1";
                 [self.dataArr addObject:model];
             }
-            //233333333333要删
+            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+                for (int i = 0; i < dataArr.count; i++) {
+//                    if (status == 未读) {
+//                        [self requestCancelNoticaficationWithID:noticaid];
+//                    }
+                }
+            });
         }
-        dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
-            //            for (int i = 0; i < dataArr.count; i++) {
-            //                if (status == 未读) {
-            //                    [self requestCancelNoticaficationWithID:noticaid];
-            //                }
-            //            }
-        });
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -208,17 +216,18 @@
 }
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":@"23333333xx店xx物品预定成功",@"push_content":rePlay};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":[NSString stringWithFormat:@"%@的订单%@",[UserSession instance].nickName,(type==2?@"预定成功":@"已被取消")],@"push_content":rePlay};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_BookReply withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self.dataArr removeObjectAtIndex:indexPath.row];
+        [self showHUDWithStr:@"回复成功" withSuccess:YES];
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333333删除回复了的订单,并提交回复
+    }];
 }
 - (void)requestCancelNoticaficationWithID:(NSInteger)noticaID{
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -230,7 +239,7 @@
         } failur:^(id responsObj, NSError *error) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code error is %@",responsObj);
-        }]; //h33333333333333
+        }];
     });
 }
 

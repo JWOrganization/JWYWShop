@@ -123,12 +123,12 @@
 
 #pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 2;//列数
+    return 2;
 }
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return component==0?self.timeArr.count:self.timeSubArr.count;
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{// 中指定列和列表项的标题文本
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     return component==0?self.timeArr[row]:self.timeSubArr[row];
 }
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view{

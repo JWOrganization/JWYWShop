@@ -10,4 +10,8 @@
 
 @implementation YWHomeFestivalModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"fastivalID" : @"id"};
+}
+
 @end

@@ -44,14 +44,14 @@
 - (void)makeLocalImagePicker{
     WEAKSELF;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//take photo
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
         } else {
             MyLog(@"照片源不可用");
         }
     }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {//to localPhotos
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
@@ -85,6 +85,7 @@
         [self showHUDWithStr:@"请输入商品介绍哟~" withSuccess:NO];
         return;
     }else if ([self.priceTextField.text isEqualToString:@""]||[self.priceTextField.text floatValue]<=0.f) {
+        self.priceTextField.text = @"";
         [self showHUDWithStr:@"请输入正确的商品价格哟~" withSuccess:NO];
         return;
     }
@@ -93,6 +94,8 @@
         [self showHUDWithStr:@"请添加商品相片哟~" withSuccess:NO];
         return;
     }
+    
+    self.priceTextField.text = [NSString stringWithFormat:@"%.2f",[self.priceTextField.text floatValue]];
     
     NSDictionary * pragram = @{@"img":@"img"};
     
@@ -108,8 +111,6 @@
     } withPhoto:UIImagePNGRepresentation(self.shopImage.image)];
 }
 - (void)requestUpData{
-    //h333333333333上传商品
-    
     NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"goods_name":self.nameTextField.text,@"goods_info":self.introTextField.text,@"goods_price":@([self.priceTextField.text floatValue]),@"goods_img":self.cameraImageStr};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_AddGoods withPragram:pragram success:^(id responsObj) {
@@ -122,7 +123,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }];
 }
 
 @end

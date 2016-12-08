@@ -28,11 +28,10 @@
     [self makeUI];
     [self dataSet];
     [self setupRefresh];
-    [self requestDataWithPages:0];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (self.dataArr.count>0)[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)makeUI{
@@ -120,18 +119,16 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
-        //2333333333删
-        for (int i = 0; i<3; i++) {
-            YWHomeCommoditiesModel * model = [[YWHomeCommoditiesModel alloc]init];
-            model.commoditiesID = @"1";
+        NSArray * dataArr = responsObj[@"data"];
+        for (int i = 0; i<dataArr.count; i++) {
+            YWHomeCommoditiesModel * model = [YWHomeCommoditiesModel yy_modelWithDictionary:dataArr[i]];
             [self.dataArr addObject:model];
         }
-        //23333333333删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333商品列表
+    }];
 }
 - (void)requestDelWithID:(NSString *)commoditiesID withIndexPath:(NSIndexPath *)indexPath{
     YWHomeCommoditiesModel * model = self.dataArr[indexPath.row];
@@ -147,7 +144,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333删除商品
+    }];
 }
 
 @end

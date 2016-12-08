@@ -10,4 +10,8 @@
 
 @implementation YWHomeAdvanceOrderModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"orderID" : @"id"};
+}
+
 @end

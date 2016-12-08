@@ -110,7 +110,9 @@
     UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self requestCreateCoupon];
     }];
+    
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    
     UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"确认创建" message:showStr preferredStyle:UIAlertControllerStyleAlert];
     [alertVC addAction:cancelAction];
     [alertVC addAction:OKAction];

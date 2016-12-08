@@ -82,6 +82,7 @@
 }
 
 - (void)messageAction{
+    if (![UserSession userToComfired])return;
     YWHomeNoticaficationViewController * vc = [[YWHomeNoticaficationViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -91,12 +92,16 @@
     YWHomeCollectionHeaderView * header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView" forIndexPath:indexPath];
     WEAKSELF;
     header.payBlock = ^(){
-        YWHomePayBillViewController * vc = [[YWHomePayBillViewController alloc]init];
+        if ([UserSession userToComfired]){
+            YWHomePayBillViewController * vc = [[YWHomePayBillViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
     };
     header.recordBlock = ^(){
-        YWHomeQuickPayListVC * vc = [[YWHomeQuickPayListVC alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        if ([UserSession userToComfired]){
+            YWHomeQuickPayListVC * vc = [[YWHomeQuickPayListVC alloc]init];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
     };
     return header;
 }
@@ -113,6 +118,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (![UserSession userToComfired])return;
     Class viewClass = (Class)self.subVCArr[indexPath.row];
     UIViewController * vc = [[viewClass alloc]init];
     [self.navigationController pushViewController:vc animated:YES];

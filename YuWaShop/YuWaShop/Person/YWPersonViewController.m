@@ -41,6 +41,7 @@
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
     [self refreshUI];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [UserSession userToComfired];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

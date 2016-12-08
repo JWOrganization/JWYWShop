@@ -117,14 +117,17 @@
             textField.placeholder = @"请输入您对客户的回复";
             textField.secureTextEntry = NO;
         }];
+        
         UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
             [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:2];
         }];
+        
         UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
             [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:3];
         }];
+        
         [alertVC addAction:delAction];
         [alertVC addAction:OKAction];
         self.alertVC = alertVC;

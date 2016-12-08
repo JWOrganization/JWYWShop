@@ -19,6 +19,7 @@
 @property (nonatomic,strong)CFLineChartView * pageviewView;
 @property (nonatomic,strong)CFLineChartView * customersView;
 @property (nonatomic,strong)CFLineChartView * consumptionView;
+@property (nonatomic,assign)BOOL isRequest;
 
 @end
 
@@ -28,7 +29,12 @@
     [super viewDidLoad];
     self.navigationItem.title = @"数据分析";
     [self makeUI];
-    [self requestData];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([UserSession userToComfired]&&self.isRequest) {
+        [self requestData];
+    }
 }
 
 - (void)makeUI{
@@ -120,6 +126,7 @@
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_Analysis withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
+        self.isRequest = YES;
 //        self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
 //        self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
 //        

@@ -195,7 +195,10 @@ static UserSession * user=nil;
         user.infrastructure = @"暂无设置";
     }
     
-    [UserSession userToComfired];
+    if (user.isVIP ==3||user.comfired_Status == 2){
+        [UserSession userShoperSalePhone];
+        [UserSession userCompareType];
+    }
     
     user.isLogin = YES;
 }
@@ -246,10 +249,9 @@ static UserSession * user=nil;
     }];
 }
 
-+ (void)userToComfired{
++ (BOOL)userToComfired{
     if (user.isVIP ==3||user.comfired_Status == 2){
-        [UserSession userShoperSalePhone];
-        [UserSession userCompareType];
+        return YES;
     }else{
         VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         UIViewController * vc;
@@ -259,6 +261,7 @@ static UserSession * user=nil;
             vc = [[YWComfiredViewController alloc]init];
         }
         [rootTabBarVC.selectedViewController pushViewController:vc animated:YES];
+        return NO;
     }
 }
 

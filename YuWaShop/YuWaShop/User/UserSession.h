@@ -80,7 +80,7 @@
 + (void)saveUserInfoWithDic:(NSDictionary *)dataDic;//save user data
 + (void)autoLoginRequestWithPragram:(NSDictionary *)pragram;
 
-+ (void)userToComfired;
++ (BOOL)userToComfired;
 + (void)userCompareType;
 + (void)refreshNoticaficationWithIsNewNoticafication:(BOOL)isNewNoticafication;
 

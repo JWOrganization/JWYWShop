@@ -117,14 +117,17 @@
             textField.placeholder = @"请输入您对客户的回复";
             textField.secureTextEntry = NO;
         }];
+        
         UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
             [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:2];
         }];
+        
         UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
             [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:3];
         }];
+        
         [alertVC addAction:delAction];
         [alertVC addAction:OKAction];
         self.alertVC = alertVC;
@@ -183,7 +186,8 @@
                 [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
                 //233333333333要删
             }
-            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //233333333333未读标识已读
                 for (int i = 0; i < dataArr.count; i++) {
 //                    if (status == 未读) {
 //                        [self requestCancelNoticaficationWithID:noticaid];
@@ -200,7 +204,8 @@
                 model.stats = @"1";
                 [self.dataArr addObject:model];
             }
-            dispatch_async(dispatch_get_main_queue(), ^{//233333333333未读标识已读
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //233333333333未读标识已读
                 for (int i = 0; i < dataArr.count; i++) {
 //                    if (status == 未读) {
 //                        [self requestCancelNoticaficationWithID:noticaid];

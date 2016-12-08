@@ -59,7 +59,9 @@
                 [[UIApplication sharedApplication] openURL:url];
             }
         }];
+        
         UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"暂不" style:UIAlertActionStyleDefault handler:nil];
+        
         UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"定位服务未开启" message:@"请在系统设置中开启定位服务" preferredStyle:UIAlertControllerStyleAlert];
         [alertVC addAction:cancelAction];
         [alertVC addAction:OKAction];

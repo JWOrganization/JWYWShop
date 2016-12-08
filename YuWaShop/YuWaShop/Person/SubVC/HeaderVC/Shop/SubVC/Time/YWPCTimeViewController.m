@@ -45,12 +45,12 @@
     YWPCChooseTimeViewController * vc = [[YWPCChooseTimeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
-    //2333333333删
+    //23333333333删
     YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
     model.timeID = @"1";
     [self.timeArr addObject:model];
     [self.tableView reloadData];
-    //2333333333删
+    //23333333333删
 }
 
 #pragma mark - UITableViewDelegate

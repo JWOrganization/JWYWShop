@@ -190,6 +190,7 @@
                 }
             }
         }
+        
         if (nameAddArr.count>1) {
             [UserSession instance].infrastructure = nameAddArr[0];
             for (int i = 1; i<nameAddArr.count; i++) {
@@ -198,7 +199,7 @@
             }
         }else if (nameAddArr.count == 1){
             [UserSession instance].infrastructure = nameAddArr[0];
-        }else if(self.parkChoose>0){
+        }else if(self.parkChoose > 0){
             NSArray * parkNameArr = @[@"不显示停车信息",@"免费停车",@"付费停车",@"无停车位"];
             [UserSession instance].infrastructure = parkNameArr[self.parkChoose];
         }else{
@@ -208,8 +209,8 @@
         NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[2]];
         [shopArr replaceObjectAtIndex:2 withObject:[UserSession instance].infrastructure];
         [self.model.dataArr replaceObjectAtIndex:2 withObject:shopArr];
-        
         [self showHUDWithStr:@"环境配套设置成功" withSuccess:YES];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });

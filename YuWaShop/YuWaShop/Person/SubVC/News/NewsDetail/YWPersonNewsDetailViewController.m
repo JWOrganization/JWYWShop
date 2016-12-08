@@ -91,10 +91,9 @@
     self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:@"26" withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
     self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:@"⬆︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@名",@"2"] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
     self.rankView.rankDetailLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"您在同城同行%@家商户中排行 ",@"23333"] withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:@"2333" withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
-    NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];//99%要换2333333
+    NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];//要换233333333
     [rankCheerStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"的同行,请再接再厉" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#343434"],NSFontAttributeName:[UIFont systemFontOfSize:15.f]}]];
     self.rankView.rankCheerLabel.attributedText = rankCheerStr;
-    
     
     self.popularityView.compareLabel.attributedText = [NSString stringWithFirstStr:@"⬇︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"50"] withFont:[UIFont systemFontOfSize:28.f] withColor:[UIColor whiteColor]];
     self.popularityView.pageViewCountLabel.attributedText = [NSString stringWithFirstStr:@"门店浏览人数  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",@"6"] withFont:[UIFont systemFontOfSize:26.f] withColor:[UIColor blackColor]];
@@ -106,6 +105,8 @@
 #pragma mark - Http
 - (void)requestData{
     //h3333333333日报详情
+    
+    
     //2333333333333要删
     self.model = [[YWPersonNewsDetailModel alloc]init];
     //2333333333333要删

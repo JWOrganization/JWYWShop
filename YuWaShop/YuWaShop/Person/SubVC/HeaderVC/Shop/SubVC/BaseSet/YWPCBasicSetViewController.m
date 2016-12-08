@@ -50,9 +50,7 @@
     if (![JWTools isPhoneIDWithStr:[UserSession instance].nickName]) self.nameTextField.text = [UserSession instance].nickName;
     
     [self.shopIconBtn sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"Person_Shop_Add_Img"] completed:nil];
-    
-    //233333333333que地址首选电话，次选电话
-    
+    //233333333333缺地址首选电话，次选电话
 }
 
 - (IBAction)submitBtnAction:(id)sender {

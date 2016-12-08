@@ -7,6 +7,7 @@
 //
 
 #import "HttpObject.h"
+#import "JWHttpManger.h"
 
 @implementation HttpObject
 + (id)manager{
@@ -18,7 +19,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [super allocWithZone:zone];
-        
+        [JWHttpManger shareManager];
     });
     return manager;
 }
@@ -38,8 +39,7 @@
         default:
             break;
     }
-    HttpManager * manager= [[HttpManager alloc]init];
-    [manager getDatasNoHudWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
+    [[JWHttpManger shareManager] getDatasNoHudWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
         if (data&&[data[@"errorCode"] integerValue] == 0) {
             success(data);
         }else{
@@ -166,8 +166,7 @@
         default:
             break;
     }
-    HttpManager * manager= [[HttpManager alloc]init];
-    [manager postDatasWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
+    [[JWHttpManger shareManager] postDatasWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
         if (data&&[data[@"errorCode"] integerValue] == 0) {
             success(data);
         }else{
@@ -345,8 +344,7 @@
         default:
             break;
     }
-    HttpManager * manager= [[HttpManager alloc]init];
-    [manager postDatasNoHudWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
+    [[JWHttpManger shareManager] postDatasNoHudWithUrl:urlStr withParams:pragram compliation:^(id data, NSError *error) {
         if (data&&[data[@"errorCode"] integerValue] == 0) {
             success(data);
         }else{
@@ -367,8 +365,7 @@
         default:
             break;
     }
-    HttpManager * manager= [[HttpManager alloc]init];
-    [manager postUpdatePohotoWithUrl:urlStr withParams:pragram withPhoto:photo compliation:^(id data, NSError *error) {
+    [[JWHttpManger shareManager] postUpdatePohotoWithUrl:urlStr withParams:pragram withPhoto:photo compliation:^(id data, NSError *error) {
         if (data&&[data[@"errorCode"] integerValue] == 0) {
             success(data);
             

@@ -73,7 +73,9 @@
                     [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationLeft];
                 }
             }];
+            
             UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            
             UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除好友?" preferredStyle:UIAlertControllerStyleAlert];
             [alertVC addAction:cancelAction];
             [alertVC addAction:OKAction];

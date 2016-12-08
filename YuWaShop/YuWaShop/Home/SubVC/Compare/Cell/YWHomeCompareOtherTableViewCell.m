@@ -27,7 +27,8 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
+- (void)dataSet{
+    //233333333
 //    self.showImageView.image;
     self.nameLabel.text = @"店23333";
     NSString * countStr;

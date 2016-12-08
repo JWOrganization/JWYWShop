@@ -189,7 +189,7 @@ static UserSession * user=nil;
             if (i>3)break;
             user.infrastructure = [NSString stringWithFormat:@"%@,%@",user.infrastructure,infrastructure[i]];
         }
-    }else if (infrastructure[0]) {
+    }else if (infrastructure.count>0) {
         user.infrastructure = infrastructure[0];
     }else{
         user.infrastructure = @"暂无设置";

@@ -15,16 +15,17 @@
 
 #import "BusinessBaseInfoModel.h"   
 #import "introduceModel.h"
-#import "BusinessMoneyModel.h"
+//#import "BusinessMoneyModel.h"
 #import "ScoreModel.h"
 #import "BindingPersonModel.h"
 
 
 #import "IntroduceMoneyViewController.h"   //介绍分红
-#import "BusinessMoneyViewController.h"   //商务分红
+//#import "BusinessMoneyViewController.h"   //商务分红
 #import "PointMoneyViewController.h"     //积分分红界面
-#import "YWShowGetMoneyViewController.h"   //展示收入界面
 #import "SignUserViewController.h"    //我锁定的人
+
+#import "YWShowGetMoneyViewController.h"   //展示收入界面
 
 #define CELL0  @"BusinessMoneyTableViewCell"
 #define CELL1  @"MyUserCell"
@@ -36,13 +37,15 @@
 
 @property(nonatomic,strong)BusinessBaseInfoModel*base_infoModel;
 @property(nonatomic,strong)introduceModel*introduceModel;
-@property(nonatomic,strong)BusinessMoneyModel*businessModel;
 @property(nonatomic,strong)ScoreModel*scoreModel;
 @property(nonatomic,strong)BindingPersonModel*BiningModel;
+
+
 
 @end
 
 @implementation YWBusinessMemberViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +58,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:CELL1 bundle:nil] forCellReuseIdentifier:CELL1];
     
     [self setUpMJRefresh];
+    
+
     
 }
 
@@ -111,7 +116,7 @@
 
 #pragma mark  --UI
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
@@ -153,19 +158,6 @@
         waitLabel.text=self.introduceModel.settlement_introduce;
         
     }else if (indexPath.section==1){
-        //商务分红
-        imageView.image=[UIImage imageNamed:@"商务会员分红"];
-        titleLabel.text=@"商务会员分红";
-        topLabel.text=[NSString stringWithFormat:@"%@",self.businessModel.my_shop_nums];
-        subLabel.text=@"门店数量";
-        timeLabel.text=[JWTools currentTime];
-        
-        totailLabel.text=[NSString stringWithFormat:@"%@",self.businessModel.total_business];
-        todayLabel.text=[NSString stringWithFormat:@"%@",self.businessModel.today_business];
-        waitLabel.text=[NSString stringWithFormat:@"%@",self.businessModel.settlement_business];
-
-        
-    }else if (indexPath.section==2){
         // 积分分红
          imageView.image=[UIImage imageNamed:@"积分分红"];
         titleLabel.text=@"积分分红";
@@ -182,7 +174,7 @@
     }
     
     
-    if (indexPath.section==3) {
+    if (indexPath.section==2) {
         MyUserCell*cell=[tableView dequeueReusableCellWithIdentifier:CELL1];
         cell.selectionStyle=NO;
         
@@ -204,17 +196,12 @@
         vc.model=self.introduceModel;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section==1){
-        BusinessMoneyViewController*vc=[[BusinessMoneyViewController alloc]init];
-        vc.model=self.businessModel;
-        [self.navigationController pushViewController:vc animated:YES];
-        
-    }else if (indexPath.section==2){
         PointMoneyViewController*vc=[[PointMoneyViewController alloc]init];
         vc.model=self.scoreModel;
         [self.navigationController pushViewController:vc animated:YES];
         
         
-    }else if (indexPath.section==3){
+    }else if (indexPath.section==2){
         SignUserViewController*vc=[[SignUserViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
         
@@ -291,17 +278,44 @@
 
 #pragma mark  --getDatas
 -(void)getDatas{
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_BUSINESS_HOME];
+//    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_BUSINESS_HOME];
+//    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+//    HttpManager*manager=[[HttpManager alloc]init];
+//    [manager postDatasWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+//        MyLog(@"%@",data);
+//        NSNumber*number=data[@"errorCode"];
+//        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
+//        if ([errorCode isEqualToString:@"0"]) {
+//            self.base_infoModel=[BusinessBaseInfoModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
+//            self.introduceModel=[introduceModel yy_modelWithDictionary:data[@"data"][@"introduce"]];
+//            self.businessModel=[BusinessMoneyModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
+//            self.scoreModel=[ScoreModel yy_modelWithDictionary:data[@"data"][@"score"]];
+//            self.BiningModel=[[BindingPersonModel alloc]init];
+//            self.BiningModel.my_direct_user_nums=data[@"data"][@"my_direct_user_nums"];
+//            self.BiningModel.my_indirect_user_nums=data[@"data"][@"my_indirect_user_nums"];
+//            
+//            [self.tableView reloadData];
+//            
+//        }else{
+//            [JRToast showWithText:data[@"errorMessage"]];
+//        }
+//        
+//          [self.tableView.mj_header endRefreshing];
+//        
+//    }];
+    
+    
+    
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_HOME_SHAREMONEY];
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
     HttpManager*manager=[[HttpManager alloc]init];
-    [manager postDatasWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
         MyLog(@"%@",data);
         NSNumber*number=data[@"errorCode"];
         NSString*errorCode=[NSString stringWithFormat:@"%@",number];
         if ([errorCode isEqualToString:@"0"]) {
             self.base_infoModel=[BusinessBaseInfoModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
             self.introduceModel=[introduceModel yy_modelWithDictionary:data[@"data"][@"introduce"]];
-            self.businessModel=[BusinessMoneyModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
             self.scoreModel=[ScoreModel yy_modelWithDictionary:data[@"data"][@"score"]];
             self.BiningModel=[[BindingPersonModel alloc]init];
             self.BiningModel.my_direct_user_nums=data[@"data"][@"my_direct_user_nums"];
@@ -313,10 +327,12 @@
             [JRToast showWithText:data[@"errorMessage"]];
         }
         
-          [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+
+        
+        
         
     }];
-    
     
     
     

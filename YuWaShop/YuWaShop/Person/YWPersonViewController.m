@@ -70,7 +70,7 @@
             }
             case 3:{
                 //3分红
-                vc = [[YWPersonPointViewController alloc]init];
+                vc = [[YWBusinessMemberViewController alloc]init];
                 break;
             }
                 

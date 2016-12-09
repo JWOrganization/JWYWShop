@@ -26,7 +26,7 @@
 
 - (void)makeNavi{
     self.title = @"添加每周营业日";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"保存" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(saveInfo) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"保存" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(saveInfo) forControlEvents:UIControlEventTouchUpInside withWidth:33.f];
 }
 
 - (void)dataSet{

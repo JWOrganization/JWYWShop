@@ -26,7 +26,6 @@
 @property (nonatomic,strong)NSArray * nameArr;
 @property (nonatomic,strong)NSArray * subViewClassArr;
 
-
 @end
 
 @implementation YWPersonShopViewController
@@ -35,10 +34,10 @@
     [super viewDidLoad];
     self.title = @"门店管理";
     [self dataSet];
-    [self requestData];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self requestData];
     [self.tableView reloadData];
 }
 
@@ -129,12 +128,12 @@
         }else{
             showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
         }
-        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),self.model.headerModel.business_hours],@[@"23333元",showCut,[UserSession instance].infrastructure],@[@""]]];//有接口后要根据model内数据替换有非空文字的内容
+        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),self.model.headerModel.business_hours],@[[NSString stringWithFormat:@"%@元",self.model.headerModel.per_capita],showCut,[UserSession instance].infrastructure],@[@""]]];
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333333
+    }];
 }
 
 @end

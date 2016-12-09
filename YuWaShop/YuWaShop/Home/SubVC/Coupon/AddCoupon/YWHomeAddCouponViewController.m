@@ -34,7 +34,7 @@
 }
 - (void)makeNavi{
     self.title = @"创建优惠券";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"创建" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(createCouponAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"创建" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(createCouponAction) forControlEvents:UIControlEventTouchUpInside withWidth:33.f];
 }
 
 - (void)makeUI{

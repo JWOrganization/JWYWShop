@@ -17,7 +17,6 @@
 @interface YWPersonViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic,strong)YWPersonHeaderView * headerView;
 @property (nonatomic,strong)NSArray * countArr;
 @property (nonatomic,strong)NSArray * subViewArr;
@@ -35,7 +34,6 @@
     [self makeUI];
     [self dataSet];
 }
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.f];
@@ -43,7 +41,6 @@
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [UserSession userToComfired];
 }
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.f];

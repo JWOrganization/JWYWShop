@@ -22,7 +22,6 @@
 @property (nonatomic,strong)UISegmentedControl * typeSegmentView;
 @property (nonatomic,assign)NSInteger type;
 
-
 @end
 
 @implementation YWHomeFestivalViewController

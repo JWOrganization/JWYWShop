@@ -12,7 +12,7 @@
 
 @property (nonatomic,assign)BOOL isOther;
 
--(instancetype)initWithFrame:(CGRect)frame andArray:(NSMutableArray*)allDatas withIsOther:(BOOL)isOther;
+//-(instancetype)initWithFrame:(CGRect)frame andArray:(NSMutableArray*)allDatas withIsOther:(BOOL)isOther;
 
 -(instancetype)initWithFrame:(CGRect)frame andArray:(NSMutableArray*)allDatas;
 

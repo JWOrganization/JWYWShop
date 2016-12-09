@@ -75,12 +75,5 @@
 }
 
 
-//跳转到店铺的  转代理
-//-(void)DelegateToShop:(NSString*)shopid{
-//    if ([self.delegate respondsToSelector:@selector(DelegateForToShopDetail:)]) {
-//        [self.delegate DelegateForToShopDetail:shopid];
-//    }
-//    
-//}
 
 @end

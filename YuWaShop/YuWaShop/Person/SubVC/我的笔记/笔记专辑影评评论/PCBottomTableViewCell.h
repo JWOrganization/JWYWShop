@@ -23,10 +23,6 @@ typedef NS_ENUM(NSInteger,showViewCategory){
 -(void)DelegateForAlbum:(NSInteger)number andMax:(NSInteger)maxNumber;  //专辑
 
 
-////选中了评论下面的 那个按钮
-//-(void)DelegateForSelectedWhichButton:(NSInteger)section;
-//点击了评论那里的店铺按钮
-//-(void)DelegateForToShopDetail:(NSString*)shopid;
 
 @end
 
@@ -34,7 +30,6 @@ typedef NS_ENUM(NSInteger,showViewCategory){
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andDatas:(NSMutableArray*)allDatas andWhichCategory:(showViewCategory)number;
 
--(instancetype)initWithOtherStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andDatas:(NSMutableArray*)allDatas andWhichCategory:(showViewCategory)number;
 
 @property(nonatomic,assign)id<PCBottomTableViewCellDelegate>delegate;
 @end

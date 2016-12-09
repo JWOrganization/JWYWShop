@@ -5751,8 +5751,6 @@
 				C1B4273F1DFA772100A3132E /* 我的专辑列表 */,
 				C1B427261DFA741600A3132E /* 笔记专辑影评评论 */,
 				C1B427201DFA5E4A00A3132E /* Controller */,
-				C1B427211DFA5E4A00A3132E /* model */,
-				C1B427221DFA5E4A00A3132E /* view */,
 			);
 			path = "我的笔记";
 			sourceTree = "<group>";
@@ -5764,20 +5762,6 @@
 				C1B427241DFA5E9500A3132E /* YWMyContactViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C1B427211DFA5E4A00A3132E /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		C1B427221DFA5E4A00A3132E /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		C1B427261DFA741600A3132E /* 笔记专辑影评评论 */ = {

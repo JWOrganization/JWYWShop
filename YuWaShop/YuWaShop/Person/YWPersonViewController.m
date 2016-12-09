@@ -11,7 +11,7 @@
 #import "YWPersonHeaderView.h"
 #import "YWPersonVC.h"
 #import "YWBusinessMemberViewController.h"   //商务会员
-#import "SignUserViewController.h"     //锁定会员
+#import "YWMyContactViewController.h"      //我的笔记
 
 #define PERSONCCELL @"YWPersonTableViewCell"
 
@@ -67,7 +67,7 @@
             }
             case 2:{
                 //2会员
-                vc =[[SignUserViewController alloc]init];
+                vc =[[YWMyContactViewController  alloc]init];
                 break;
             }
             case 3:{

@@ -39,6 +39,9 @@
     [self makeTopChooseView];
     [self setUpMJRefresh];
     
+//    UILabel*label=[[UILabel alloc]init];
+    UIImage*image=[[UIImage alloc]init];
+    
 }
 
 #pragma mark  --UI

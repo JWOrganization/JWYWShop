@@ -751,6 +751,15 @@
 		C174997B1DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17499761DF6B59900F17B77 /* StorePhotoCollectionViewCell.xib */; };
 		C17499851DF6FF7200F17B77 /* FinancailBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */; };
 		C17499881DF70A8800F17B77 /* FinancailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17499871DF70A8800F17B77 /* FinancailListModel.m */; };
+		C1B427251DFA5E9500A3132E /* YWMyContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B427241DFA5E9500A3132E /* YWMyContactViewController.m */; };
+		C1B427381DFA741600A3132E /* PCBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B427281DFA741600A3132E /* PCBottomTableViewCell.m */; };
+		C1B427391DFA741600A3132E /* AlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B4272B1DFA741600A3132E /* AlbumView.m */; };
+		C1B4273A1DFA741600A3132E /* PCNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B4272F1DFA741600A3132E /* PCNoteView.m */; };
+		C1B427471DFA772100A3132E /* YWAldumDetailIndoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B427421DFA772100A3132E /* YWAldumDetailIndoModel.m */; };
+		C1B427481DFA772100A3132E /* YWAldumDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B427441DFA772100A3132E /* YWAldumDetailModel.m */; };
+		C1B427491DFA772100A3132E /* MyAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B427461DFA772100A3132E /* MyAlbumViewController.m */; };
+		C1B4274D1DFA784E00A3132E /* YWPersonCenterDelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B4274B1DFA784E00A3132E /* YWPersonCenterDelView.m */; };
+		C1B4274E1DFA784E00A3132E /* YWPersonCenterDelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B4274C1DFA784E00A3132E /* YWPersonCenterDelView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2068,6 +2077,23 @@
 		C17499841DF6FF7200F17B77 /* FinancailBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancailBaseModel.m; sourceTree = "<group>"; };
 		C17499861DF70A8800F17B77 /* FinancailListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancailListModel.h; sourceTree = "<group>"; };
 		C17499871DF70A8800F17B77 /* FinancailListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancailListModel.m; sourceTree = "<group>"; };
+		C1B427231DFA5E9500A3132E /* YWMyContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMyContactViewController.h; sourceTree = "<group>"; };
+		C1B427241DFA5E9500A3132E /* YWMyContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWMyContactViewController.m; sourceTree = "<group>"; };
+		C1B427271DFA741600A3132E /* PCBottomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCBottomTableViewCell.h; sourceTree = "<group>"; };
+		C1B427281DFA741600A3132E /* PCBottomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBottomTableViewCell.m; sourceTree = "<group>"; };
+		C1B4272A1DFA741600A3132E /* AlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumView.h; sourceTree = "<group>"; };
+		C1B4272B1DFA741600A3132E /* AlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumView.m; sourceTree = "<group>"; };
+		C1B4272E1DFA741600A3132E /* PCNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCNoteView.h; sourceTree = "<group>"; };
+		C1B4272F1DFA741600A3132E /* PCNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNoteView.m; sourceTree = "<group>"; };
+		C1B427411DFA772100A3132E /* YWAldumDetailIndoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAldumDetailIndoModel.h; sourceTree = "<group>"; };
+		C1B427421DFA772100A3132E /* YWAldumDetailIndoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAldumDetailIndoModel.m; sourceTree = "<group>"; };
+		C1B427431DFA772100A3132E /* YWAldumDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAldumDetailModel.h; sourceTree = "<group>"; };
+		C1B427441DFA772100A3132E /* YWAldumDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAldumDetailModel.m; sourceTree = "<group>"; };
+		C1B427451DFA772100A3132E /* MyAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlbumViewController.h; sourceTree = "<group>"; };
+		C1B427461DFA772100A3132E /* MyAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAlbumViewController.m; sourceTree = "<group>"; };
+		C1B4274A1DFA784E00A3132E /* YWPersonCenterDelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPersonCenterDelView.h; sourceTree = "<group>"; };
+		C1B4274B1DFA784E00A3132E /* YWPersonCenterDelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPersonCenterDelView.m; sourceTree = "<group>"; };
+		C1B4274C1DFA784E00A3132E /* YWPersonCenterDelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWPersonCenterDelView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3006,6 +3032,7 @@
 		B317AF151DE5B3CD0093C511 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				C1B4271F1DFA5E4A00A3132E /* 我的笔记 */,
 				C14BA3551DF93A9F001BDFBD /* 商务会员 */,
 				B3F07E5C1DE68C32005116EA /* Cell */,
 				B317AFF31DE5E6230093C511 /* Bank */,
@@ -5718,6 +5745,78 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		C1B4271F1DFA5E4A00A3132E /* 我的笔记 */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4273F1DFA772100A3132E /* 我的专辑列表 */,
+				C1B427261DFA741600A3132E /* 笔记专辑影评评论 */,
+				C1B427201DFA5E4A00A3132E /* Controller */,
+			);
+			path = "我的笔记";
+			sourceTree = "<group>";
+		};
+		C1B427201DFA5E4A00A3132E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1B427231DFA5E9500A3132E /* YWMyContactViewController.h */,
+				C1B427241DFA5E9500A3132E /* YWMyContactViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1B427261DFA741600A3132E /* 笔记专辑影评评论 */ = {
+			isa = PBXGroup;
+			children = (
+				C1B427271DFA741600A3132E /* PCBottomTableViewCell.h */,
+				C1B427281DFA741600A3132E /* PCBottomTableViewCell.m */,
+				C1B427291DFA741600A3132E /* 专辑 */,
+				C1B4272D1DFA741600A3132E /* 笔记 */,
+			);
+			path = "笔记专辑影评评论";
+			sourceTree = "<group>";
+		};
+		C1B427291DFA741600A3132E /* 专辑 */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4272A1DFA741600A3132E /* AlbumView.h */,
+				C1B4272B1DFA741600A3132E /* AlbumView.m */,
+			);
+			path = "专辑";
+			sourceTree = "<group>";
+		};
+		C1B4272D1DFA741600A3132E /* 笔记 */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4272E1DFA741600A3132E /* PCNoteView.h */,
+				C1B4272F1DFA741600A3132E /* PCNoteView.m */,
+			);
+			path = "笔记";
+			sourceTree = "<group>";
+		};
+		C1B4273F1DFA772100A3132E /* 我的专辑列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4274A1DFA784E00A3132E /* YWPersonCenterDelView.h */,
+				C1B4274B1DFA784E00A3132E /* YWPersonCenterDelView.m */,
+				C1B4274C1DFA784E00A3132E /* YWPersonCenterDelView.xib */,
+				C1B427401DFA772100A3132E /* Model */,
+				C1B427451DFA772100A3132E /* MyAlbumViewController.h */,
+				C1B427461DFA772100A3132E /* MyAlbumViewController.m */,
+			);
+			path = "我的专辑列表";
+			sourceTree = "<group>";
+		};
+		C1B427401DFA772100A3132E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1B427411DFA772100A3132E /* YWAldumDetailIndoModel.h */,
+				C1B427421DFA772100A3132E /* YWAldumDetailIndoModel.m */,
+				C1B427431DFA772100A3132E /* YWAldumDetailModel.h */,
+				C1B427441DFA772100A3132E /* YWAldumDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5836,6 +5935,7 @@
 				C14BA3B51DF93A9F001BDFBD /* MybindingShopTableViewCell.xib in Resources */,
 				B35C9B6D1DEC031A0051E352 /* YWPCTWeekDayTableViewCell.xib in Resources */,
 				B31098E11DE4543E0033A984 /* YWHomeViewController.xib in Resources */,
+				C1B4274E1DFA784E00A3132E /* YWPersonCenterDelView.xib in Resources */,
 				B317AFAA1DE5D3C90093C511 /* PersonHeaderBG14@2x.png in Resources */,
 				B31098771DE4543E0033A984 /* HUDFailureShowView.xib in Resources */,
 				B30E4DD51DEEBD2A008684BA /* YWHomeCompareViewHeaderView.xib in Resources */,
@@ -6123,6 +6223,7 @@
 				B35C9EFF1DEC3FE80051E352 /* RBNodeShowCommentDetailVC.m in Sources */,
 				B31098AF1DE4543E0033A984 /* MJRefreshFooter.m in Sources */,
 				B317AF211DE5B4C90093C511 /* YWPersonHelpViewController.m in Sources */,
+				C1B427471DFA772100A3132E /* YWAldumDetailIndoModel.m in Sources */,
 				B35C9EDA1DEC3FE80051E352 /* RBHomeListGoodsModel.m in Sources */,
 				B35C9E9E1DEC3FE80051E352 /* YWMessageAddressBookTableViewCell.m in Sources */,
 				B35C9CDB1DEC3ECD0051E352 /* PSTCollectionViewCell.m in Sources */,
@@ -6138,6 +6239,7 @@
 				B31098EA1DE4543E0033A984 /* YWPersonHeaderView.m in Sources */,
 				B35C9CDE1DEC3ECD0051E352 /* PSTCollectionViewFlowLayout.m in Sources */,
 				B31098CC1DE4543E0033A984 /* SDWebImageDownloaderOperation.m in Sources */,
+				C1B427251DFA5E9500A3132E /* YWMyContactViewController.m in Sources */,
 				B35C9CD11DEC3ECD0051E352 /* NSData+EMImageContentType.m in Sources */,
 				B302EADC1DEDAA370000B0A0 /* YWHomeFestivalTableViewCell.m in Sources */,
 				B35C9CD81DEC3ECD0051E352 /* UIView+EMWebCacheOperation.m in Sources */,
@@ -6163,6 +6265,7 @@
 				B35C9CF61DEC3ECD0051E352 /* EaseEmotionManager.m in Sources */,
 				B35C9EF21DEC3FE80051E352 /* RBNodeShowShowInfoModel.m in Sources */,
 				B32346F61DEBD095002C72E1 /* YWPersonAboutUsViewController.m in Sources */,
+				C1B427491DFA772100A3132E /* MyAlbumViewController.m in Sources */,
 				B31098AC1DE4543E0033A984 /* MJRefreshAutoFooter.m in Sources */,
 				C14BA3451DF841FE001BDFBD /* SDBaseProgressView.m in Sources */,
 				B31098A31DE4543E0033A984 /* MASViewConstraint.m in Sources */,
@@ -6274,6 +6377,7 @@
 				B35C9D0C1DEC3ECD0051E352 /* EaseChatToolbarItem.m in Sources */,
 				B310986E1DE4543E0033A984 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				B35C9EC11DEC3FE80051E352 /* UIImage+Utility.m in Sources */,
+				C1B427391DFA741600A3132E /* AlbumView.m in Sources */,
 				B35C9B711DEC03390051E352 /* YWPCTIsAllDayTableViewCell.m in Sources */,
 				B35C9D111DEC3ECD0051E352 /* EaseChatBarMoreView.m in Sources */,
 				B327378A1DE824D3001C57DF /* YWPNRankView.m in Sources */,
@@ -6282,6 +6386,7 @@
 				C14BA3B81DF93A9F001BDFBD /* ShowGetMoneyTableViewCell.m in Sources */,
 				B302EAC91DED65AA0000B0A0 /* YWHomeCommoditiesTableViewCell.m in Sources */,
 				B31098E41DE4543E0033A984 /* YWRegisterViewController.m in Sources */,
+				C1B4273A1DFA741600A3132E /* PCNoteView.m in Sources */,
 				B35C9EC61DEC3FE80051E352 /* RBPublicToolView.m in Sources */,
 				C17499541DF5B24A00F17B77 /* FinancialTableViewCell.m in Sources */,
 				B35C9F3B1DEC3FE80051E352 /* TZAssetModel.m in Sources */,
@@ -6350,6 +6455,7 @@
 				B32737601DE7D3E1001C57DF /* YWStormPinAnnotationView.m in Sources */,
 				B3F177F61DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m in Sources */,
 				B317AC881DE530780093C511 /* YWStormSortTableView.m in Sources */,
+				C1B4274D1DFA784E00A3132E /* YWPersonCenterDelView.m in Sources */,
 				B35C9EE31DEC3FE80051E352 /* RBNodeDRecommendTableViewCell.m in Sources */,
 				B35C9CB31DEC3ECD0051E352 /* EMAudioPlayerUtil.m in Sources */,
 				B3BE98201DF9588200B82FB3 /* JWHttpManger.m in Sources */,
@@ -6408,6 +6514,7 @@
 				B35C9B8E1DEC16770051E352 /* YWPCChooseWeekTableViewCell.m in Sources */,
 				B317AFF11DE5E1330093C511 /* YWPersonSettingViewController.m in Sources */,
 				B31098AB1DE4543E0033A984 /* MBProgressHUD.m in Sources */,
+				C1B427481DFA772100A3132E /* YWAldumDetailModel.m in Sources */,
 				B3F07ED91DE6DFE4005116EA /* YWPersonSubVipModel.m in Sources */,
 				B317AC861DE530780093C511 /* YWStormSubSortCollectionViewCell.m in Sources */,
 				B31098C61DE4543E0033A984 /* MKAnnotationView+WebCache.m in Sources */,
@@ -6545,6 +6652,7 @@
 				B35C9EBF1DEC3FE80051E352 /* RBBasicViewController.m in Sources */,
 				B317AC891DE530780093C511 /* YWStormSubSortCollectionView.m in Sources */,
 				B35C9F421DEC3FE80051E352 /* TZVideoPlayerController.m in Sources */,
+				C1B427381DFA741600A3132E /* PCBottomTableViewCell.m in Sources */,
 				B31098F01DE454560033A984 /* AppDelegate.m in Sources */,
 				B35C9CB61DEC3ECD0051E352 /* EMCDDeviceManager+Microphone.m in Sources */,
 				B310986D1DE4543E0033A984 /* JRToast.m in Sources */,

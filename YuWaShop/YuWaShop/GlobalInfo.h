@@ -29,4 +29,7 @@
 
 #define SHOP_COMMENTLIST        @"/api.php/ShopAdmin/commentList/"    //口碑品牌之列表
 #define SHOP_COMMENTREPLY       @"/api.php/ShopAdmin/commentReply/"   //口碑回复
+
+
+#define SHOP_HOME_SHAREMONEY    @"/api.php/ShopAdmin/myDividendMoney/"  //我的分红的首页
 #endif /* GlobalInfo_h */

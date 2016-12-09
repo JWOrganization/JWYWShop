@@ -11,6 +11,7 @@
 #import "YWPersonHeaderView.h"
 #import "YWPersonVC.h"
 #import "YWBusinessMemberViewController.h"   //商务会员
+#import "YWMyContactViewController.h"      //我的笔记
 
 #define PERSONCCELL @"YWPersonTableViewCell"
 
@@ -63,12 +64,12 @@
             }
             case 2:{
                 //2会员
-                vc = [[YWPersonSubVipViewController alloc]init];
+                vc =[[YWMyContactViewController  alloc]init];
                 break;
             }
             case 3:{
                 //3分红
-                vc = [[YWPersonPointViewController alloc]init];
+                vc = [[YWBusinessMemberViewController alloc]init];
                 break;
             }
                 

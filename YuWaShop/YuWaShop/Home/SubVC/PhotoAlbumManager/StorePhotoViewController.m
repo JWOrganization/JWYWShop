@@ -288,6 +288,28 @@
 
 //改变相片的名字
 -(void)changePhotoTitle:(NSInteger)selectedNumber andTitle:(NSString*)title{
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_PHOTI_CHANGE_TITLE];
+      StorePhotoModel*model=self.allDatasModel[selectedNumber];
+     NSString*idd=model.id;
+    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":idd,@"title":title};
+    HttpManager*manager=[[HttpManager alloc]init];
+    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+        MyLog(@"%@",data);
+        NSNumber*number=data[@"errorCode"];
+        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
+        if ([errorCode isEqualToString:@"0"]) {
+            [JRToast showWithText:data[@"data"]];
+            [self.collectionView.mj_header beginRefreshing];
+            
+        }else{
+            [JRToast showWithText:data[@"errorMessage"]];
+        }
+        
+      
+    }];
+
+
+    
     
     
 };

@@ -278,34 +278,7 @@
 
 #pragma mark  --getDatas
 -(void)getDatas{
-//    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_BUSINESS_HOME];
-//    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
-//    HttpManager*manager=[[HttpManager alloc]init];
-//    [manager postDatasWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
-//        MyLog(@"%@",data);
-//        NSNumber*number=data[@"errorCode"];
-//        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
-//        if ([errorCode isEqualToString:@"0"]) {
-//            self.base_infoModel=[BusinessBaseInfoModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
-//            self.introduceModel=[introduceModel yy_modelWithDictionary:data[@"data"][@"introduce"]];
-//            self.businessModel=[BusinessMoneyModel yy_modelWithDictionary:data[@"data"][@"base_info"]];
-//            self.scoreModel=[ScoreModel yy_modelWithDictionary:data[@"data"][@"score"]];
-//            self.BiningModel=[[BindingPersonModel alloc]init];
-//            self.BiningModel.my_direct_user_nums=data[@"data"][@"my_direct_user_nums"];
-//            self.BiningModel.my_indirect_user_nums=data[@"data"][@"my_indirect_user_nums"];
-//            
-//            [self.tableView reloadData];
-//            
-//        }else{
-//            [JRToast showWithText:data[@"errorMessage"]];
-//        }
-//        
-//          [self.tableView.mj_header endRefreshing];
-//        
-//    }];
-    
-    
-    
+   
     NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_HOME_SHAREMONEY];
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
     HttpManager*manager=[[HttpManager alloc]init];

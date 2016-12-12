@@ -118,10 +118,10 @@
 
 
 -(void)getMoneyDatas{
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_POINTGETMONEY];
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_POINT_GETMONEY];
     if (!self.model.my_score) {
-        MyLog(@"aa");
-        self.model.my_score=@"1";
+      
+        self.model.my_score=@"0.00";
     }
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"score":self.model.my_score};
     HttpManager*manager=[[HttpManager alloc]init];

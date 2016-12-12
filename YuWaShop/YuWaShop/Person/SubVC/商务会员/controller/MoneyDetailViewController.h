@@ -13,5 +13,5 @@
 
 @property(nonatomic,strong)NSString*idd;
 
-@property(nonatomic,assign)IntroduceType introducetype;
+
 @end

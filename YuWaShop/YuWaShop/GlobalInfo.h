@@ -19,7 +19,7 @@
 #define SHOP_PHOTO_ALBUM        @"/api.php/ShopAdmin/shopPhotoLists/"  //获取相册列表
 #define SHOP_PHOTO_DELETE       @"/api.php/ShopAdmin/delShopPhoto/"   //删除相册
 #define SHOP_PHOTO_ADD          @"/api.php/ShopAdmin/addShopPhoto/"   //添加新的图片
-#define SHOP_PHOTI_CHANGE_TITLE @""                                   //修改图片名字
+#define SHOP_PHOTI_CHANGE_TITLE @"/api.php/ShopAdmin/savePhotoName/"  //修改图片名字
 
 
 
@@ -32,4 +32,11 @@
 
 
 #define SHOP_HOME_SHAREMONEY    @"/api.php/ShopAdmin/myDividendMoney/"  //我的分红的首页
+#define SHOP_Filter_LIST        @"/api.php/ShopAdmin/myDividendDetail/"  //筛选列表
+#define SHOP_Filter_DETAIL      @"/api.php/ShopAdmin/myDividendDetailShow/" //每条信息的详细
+#define SHOP_BIND_USER          @"/api.php/Sale/myDirectUser/"             //绑定的用户
+#define SHOP_POINT_GETMONEY     @"/api.php/ShopAdmin/scoreToMoney/"      //分红提现
+
+
+
 #endif /* GlobalInfo_h */

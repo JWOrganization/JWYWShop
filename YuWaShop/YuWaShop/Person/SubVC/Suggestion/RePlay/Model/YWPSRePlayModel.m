@@ -10,4 +10,8 @@
 
 @implementation YWPSRePlayModel
 
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{@"hotelID" : @"id"};
+//}
+
 @end

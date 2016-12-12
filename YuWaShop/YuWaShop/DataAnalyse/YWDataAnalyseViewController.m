@@ -140,7 +140,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h33333333333333
+    }]; //h3333333333333
 }
 
 @end

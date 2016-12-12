@@ -82,10 +82,16 @@
     return @"删除";
 }
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.status == 1)return;
     if (editingStyle ==UITableViewCellEditingStyleDelete){
         YWHomeCouponModel * model = self.dataArr[indexPath.row];
-        [self requestDelWithID:model.couponID withIndexPath:indexPath];
+        UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self requestDelWithID:model.couponID withIndexPath:indexPath];
+        }];
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除这张优惠券?" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:cancelAction];
+        [alertVC addAction:OKAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
 }
 
@@ -96,7 +102,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWHomeCouponTableViewCell * couponCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeCouponTableViewCell"];
     couponCell.model = self.dataArr[indexPath.row];
-    [couponCell setUserInteractionEnabled:self.status==2];
     return couponCell;
 }
 
@@ -160,7 +165,7 @@
 //    } failur:^(id responsObj, NSError *error) {
 //        MyLog(@"Regieter Code pragram is %@",pragram);
 //        MyLog(@"Regieter Code error is %@",responsObj);
-//    }];//h333333333333333
+//    }];//h33333333333333
 }
 
 @end

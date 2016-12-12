@@ -38,7 +38,7 @@
 }
 
 - (void)addBankAction{
-    //2333333333333添加银行卡
+    //233333333333添加银行卡
     //2333333333333删
     YWBankModel * model = [[YWBankModel alloc]init];
     model.bankID = @"1";

@@ -191,6 +191,24 @@
 + (NSString *)dateTimeWithStr:(NSString *)dateStr;
 
 /**
+ *  今日年月日
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 今日年月日
+ */
++ (NSString *)dateWithTodayYearMonthDayStr;
+
+/**
+ *  今日年月日数字
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 今日年月日数字
+ */
++ (NSString *)dateWithTodayYearMonthDayNumberStr;
+
+/**
  *  第一个时间是否小于第二个时间
  *
  *  @param firstDateStr   第一个时间
@@ -280,6 +298,14 @@
  *  @return 是否是纯数字
  */
 + (BOOL)isNumberWithStr:(NSString *)numberStr;
+/**
+ *  两位小数
+ *
+ *  @param numberStr numberStr
+ *
+ *  @return 是否是两位小数
+ */
++ (BOOL)isValidateMoney:(NSString *)numberStr;
 /**
  *  邮箱验证
  *

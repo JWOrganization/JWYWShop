@@ -34,7 +34,7 @@
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//233333333
+- (void)dataSet{//2333333333
     self.phoneLabel.text = @"13789384585";
     //    self.timeLabel.text = [JWTools dateWithStr:<#(NSString *)#>];
     self.timeLabel.text = @"2016-11-20 15:00";

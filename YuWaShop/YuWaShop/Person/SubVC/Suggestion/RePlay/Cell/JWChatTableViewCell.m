@@ -29,32 +29,31 @@
 }
 
 - (void)dataSet{
-    //233333333333
     self.timeLabel.text = [JWTools dateWithStr:self.model.time];
-    if (self.model.status==0) {
-        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"2333333333"] placeholderImage:[UIImage imageNamed:@"YW_IMG"] completed:nil];
+    if (self.model.status==1) {
+        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] placeholderImage:[UIImage imageNamed:@"YW_IMG"] completed:nil];
     }
     [self.contentButton setBackgroundImage:[[UIImage imageNamed:self.model.status == 1?@"chat_send_nor":@"chat_recive_press_pic"] resizableImageWithImage] forState:UIControlStateNormal];
+    self.nameLabel.text = self.model.status==0?@"雨娃宝":[UserSession instance].nickName;
+    self.nameLabel.textAlignment = self.model.status==0?NSTextAlignmentLeft:NSTextAlignmentRight;
 }
 
 - (void)layoutSet{
-    [self contentSizeWidthText:self.model.con];
+    [self contentBtnSize];
     if (self.model.status == 1) {
         self.iconImageViewLeftEndge.constant = kScreen_Width - 64.f;
         self.buttonLeftEndge.constant = kScreen_Width - 66.f - self.buttonWidth.constant;
     }
     [self setNeedsLayout];
 }
-- (void)contentSizeWidthText:(NSString *)text{
+
+- (void)contentBtnSize{
     self.contentButton.titleEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.contentButton setTitle:self.model.con forState:UIControlStateNormal];
     
     NSDictionary *attributes = @{NSFontAttributeName:self.contentButton.titleLabel.font};
-    /**
-     [text boundingRectWithSize:控件大小，高度尽量大]
-     */
-    CGRect rect = [text boundingRectWithSize:CGSizeMake(130.f, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
+    CGRect rect = [self.model.con boundingRectWithSize:CGSizeMake(kScreen_Width - 182.f, kScreen_Height) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     self.buttonWidth.constant = rect.size.width + 50.f;
     self.buttonHeight.constant = rect.size.height + 20.f;
 }

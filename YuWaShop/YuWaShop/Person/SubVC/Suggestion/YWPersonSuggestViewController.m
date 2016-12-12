@@ -55,7 +55,6 @@
 - (IBAction)submitBtnAction:(id)sender {
     [self requestSendSuggestion];
 }
-
 - (void)toSeeplay{
     YWPersonSuggRePlayViewController * vc = [[YWPersonSuggRePlayViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -81,12 +80,21 @@
         return;
     }
     
-    //h333333333333传建议
-    [self showHUDWithStr:@"感谢您的建议" withSuccess:YES];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.textView resignFirstResponder];
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_ReplySuggest withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self showHUDWithStr:@"感谢您的建议" withSuccess:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.textView resignFirstResponder];
+            self.textView.text = @"";
+            self.textView.isDrawPlaceholder = YES;
+        });
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h3333333333333
 }
 
 @end

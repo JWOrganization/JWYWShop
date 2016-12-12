@@ -146,15 +146,29 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
+    NSInteger status;
+    switch (self.type) {
+        case 1:
+            status = 2;
+            break;
+        case 2:
+            status = 1;
+            break;
+        case 3:
+            status = 3;
+            break;
+            
+        default:
+            break;
+    }
     
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(self.type),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(status),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_HolidayLists withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
         NSArray * dataArr = responsObj[@"data"];
-        
         for (int i = 0; i<dataArr.count; i++) {
             [self.dataArr addObject:[YWHomeFestivalModel yy_modelWithDictionary:dataArr[i]]];
         }

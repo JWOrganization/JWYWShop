@@ -165,7 +165,7 @@
 //    self.status//对比类型
     
     if (page == 0)[self.dataArr removeAllObjects];
-    //23333333333要删
+    //233333333333要删
     self.myModel = [[YWHomeCompareMyModel alloc]init];
     self.myModel.status = self.status;
     for (int i = 0; i<3; i++) {

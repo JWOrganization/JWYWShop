@@ -76,41 +76,44 @@
     self.scrollView.contentSize = CGSizeMake(kScreen_Width, 1062.f);
 }
 
-- (void)UIDataRefresh{//23333333333日报内容self.model设置
-    self.detailView.nameLabel.text = @"Drink me咖啡店";
-    self.detailView.timeLabel.text = @"2016-11-11";
-    self.detailView.conLabel.text = @"您的门店经营状况平稳,超过同城99%的同业商家";
+- (void)UIDataRefresh{
+    self.detailView.nameLabel.text = [UserSession instance].nickName;
+    self.detailView.timeLabel.text = self.newsTime;
+    self.detailView.conLabel.text = [NSString stringWithFormat:@"您的门店经营状况平稳,超过同城%@的同业商家",self.model.my_star_buzz];
     self.detailView.compareLabel.text = @"数据为昨日单日数据,增长下降趋势为上周同日";
     
+    self.publicPraiseView.commentCountLabel.text = [NSString stringWithFormat:@"评论数·%zi",self.model.all_comment_nums];
+    self.publicPraiseView.goodCommentCountLabel.text = [NSString stringWithFormat:@"好评数·%zi",self.model.good_comment_nums];
+    self.publicPraiseView.badCommentCountLabel.text = [NSString stringWithFormat:@"差评数·%zi",self.model.bad_comment_nums];
     
-    self.publicPraiseView.commentCountLabel.text = [NSString stringWithFormat:@"评论数·%@",@"20"];
-    self.publicPraiseView.goodCommentCountLabel.text = [NSString stringWithFormat:@"好评数·%@",@"19"];
-    self.publicPraiseView.badCommentCountLabel.text = [NSString stringWithFormat:@"差评数·%@",@"1"];
+    self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"%zi",self.model.my_star] withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
+    self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:@"⬆︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@名",@"2"] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];//上升排名23333333
+    self.rankView.rankDetailLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"您在同城同行%@家商户中排行 ",self.model.shop_nums] withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%zi",self.model.my_star] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
     
-    
-    self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:@"26" withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
-    self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:@"⬆︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@名",@"2"] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
-    self.rankView.rankDetailLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"您在同城同行%@家商户中排行 ",@"23333"] withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:@"2333" withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
-    NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"99"] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];//要换233333333
+    NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",self.model.my_star_buzz] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
     [rankCheerStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"的同行,请再接再厉" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#343434"],NSFontAttributeName:[UIFont systemFontOfSize:15.f]}]];
     self.rankView.rankCheerLabel.attributedText = rankCheerStr;
     
-    self.popularityView.compareLabel.attributedText = [NSString stringWithFirstStr:@"⬇︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@%%",@"50"] withFont:[UIFont systemFontOfSize:28.f] withColor:[UIColor whiteColor]];
-    self.popularityView.pageViewCountLabel.attributedText = [NSString stringWithFirstStr:@"门店浏览人数  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",@"6"] withFont:[UIFont systemFontOfSize:26.f] withColor:[UIColor blackColor]];
-    NSMutableAttributedString * pageViewCompareStr =[NSString stringWithFirstStr:@"店铺浏览量相比昨天  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",@"⬇︎"] withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor colorWithHexString:@"#4ed761"]];
-    [pageViewCompareStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@%%",@"50"] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#4ed761"],NSFontAttributeName:[UIFont systemFontOfSize:28.f]}]];
+    self.popularityView.compareLabel.attributedText = [NSString stringWithFirstStr:([self.model.buzz integerValue]>0?@"⬆︎":@"⬇︎") withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%zi%%",([self.model.buzz integerValue]>0?[self.model.buzz integerValue]:(-[self.model.buzz integerValue]))] withFont:[UIFont systemFontOfSize:28.f] withColor:[UIColor whiteColor]];
+    self.popularityView.pageViewCountLabel.attributedText = [NSString stringWithFirstStr:@"门店浏览人数  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",self.model.today_log] withFont:[UIFont systemFontOfSize:26.f] withColor:[UIColor blackColor]];
+    NSMutableAttributedString * pageViewCompareStr =[NSString stringWithFirstStr:@"店铺浏览量相比昨天  " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",([self.model.buzz integerValue]>0?@"⬆︎":@"⬇︎")] withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor colorWithHexString:@"#4ed761"]];
+    [pageViewCompareStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%zi%%",([self.model.buzz integerValue]>0?[self.model.buzz integerValue]:(-[self.model.buzz integerValue]))] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#4ed761"],NSFontAttributeName:[UIFont systemFontOfSize:28.f]}]];
     self.popularityView.pageViewCompareLabel.attributedText = pageViewCompareStr;
 }
 
 #pragma mark - Http
 - (void)requestData{
-    //h3333333333日报详情
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"date":self.newsTime};
     
-    
-    //2333333333333要删
-    self.model = [[YWPersonNewsDetailModel alloc]init];
-    //2333333333333要删
-    [self UIDataRefresh];
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_DailyOperation withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        self.model = [YWPersonNewsDetailModel yy_modelWithDictionary:responsObj[@"data"]];
+        [self UIDataRefresh];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; //h333333333
 }
 
 @end

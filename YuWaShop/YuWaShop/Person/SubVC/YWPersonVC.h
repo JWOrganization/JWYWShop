@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "YWPersonShopViewController.h"
-#import "YWPersonSubVipViewController.h"
-#import "YWPersonPointViewController.h"
 
 #import "YWPersonNewsViewController.h"
 #import "YWBankViewController.h"

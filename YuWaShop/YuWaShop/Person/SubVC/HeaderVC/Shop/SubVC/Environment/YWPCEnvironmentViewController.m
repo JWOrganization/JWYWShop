@@ -179,7 +179,6 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         self.model.environmentDataArr = self.dataArr;
-        
         NSArray * nameArr = @[@[@"免费WIFI"],@[@"有吸烟区",@"有包厢",@"有卡座",@"有沙发位",@"有露天位",@"有景观位",@"有宝宝椅"],@[@"有表演",@"有儿童游乐区",@"有旋转餐厅"]];
         NSMutableArray * nameAddArr = [NSMutableArray arrayWithCapacity:0];
         for (int i = 1; i < self.dataArr.count; i++) {

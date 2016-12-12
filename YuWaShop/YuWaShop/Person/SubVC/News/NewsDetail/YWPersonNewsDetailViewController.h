@@ -10,6 +10,6 @@
 
 @interface YWPersonNewsDetailViewController : JWBasicViewController
 
-@property (nonatomic,copy)NSString * newsID;
+@property (nonatomic,copy)NSString * newsTime;
 
 @end

@@ -105,10 +105,9 @@
 //#define HTTP_Shoper_ShopAdmin_   @""   //设置银行卡添加
 #define HTTP_Shoper_ShopAdmin_SetPerCapita   @"/api.php/ShopAdmin/setPerCapita/"   //设置人均消费
 #define HTTP_Shoper_ShopAdmin_MyDividendMoney   @"/api.php/ShopAdmin/myDividendMoney/"   //我的分红
-//#define HTTP_Shoper_   @""   //经营日报
+#define HTTP_Shoper_DailyOperation   @"/api.php/ShopAdmin/dailyOperation/"   //经营日报
 #define HTTP_Shoper_ShopAdmin_AddRecord   @"/api.php/ShopAdmin/addRecord/"   //买单收银，生成二维码
 #define HTTP_Shoper_ShopAdmin_RecordLists   @"/api.php/ShopAdmin/recordLists/"   //闪惠记录
-//#define HTTP_Shoper_   @""   //财务管理
 #define HTTP_Shoper_ShopAdmin_GoodsLists   @"/api.php/ShopAdmin/goodsLists/"   //商品管理之商品列表,支持分页
 #define HTTP_Shoper_ShopAdmin_AddGoods   @"/api.php/ShopAdmin/addGoods/"   //商品管理之添加商品
 #define HTTP_Shoper_ShopAdmin_DelGoods   @"/api.php/ShopAdmin/delGoods/"   //商品管理之删除商品
@@ -132,6 +131,15 @@
 #define HTTP_Shoper_ShopAdmin_Analysis   @"/api.php/ShopAdmin/analysis/"   //数据分析
 #define HTTP_Shoper_ShopAdmin_GetShopAgreement   @"/api.php/ShopAdmin/getShopAgreement/"   //获取开店协议
 #define HTTP_Shoper_ShopAdmin_GetCatTag   @"/api.php/ShopAdmin/getCatTag/"   //获取主分类及小标签
+#define HTTP_Shoper_ShopAdmin_SeeSuggest   @"/api.php/ShopAdmin/seeSuggest/"   //意见反馈之查看新意见
+#define HTTP_Shoper_ShopAdmin_SuggestLists   @"/api.php/ShopAdmin/suggestLists/"   //意见反馈之列表
+#define HTTP_Shoper_ShopAdmin_ReplySuggest   @"/api.php/ShopAdmin/replySuggest/"   //意见反馈之反馈意见
+
+
+
+
+
+
 
 
 

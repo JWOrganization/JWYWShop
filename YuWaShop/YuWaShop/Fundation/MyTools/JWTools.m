@@ -255,6 +255,33 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     return [dateFormatter stringFromDate:date];
 }
+
+/**
+ *  今日年月日
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 今日年月日
+ */
++ (NSString *)dateWithTodayYearMonthDayStr{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *date = [NSDate date];
+    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    return [dateFormatter stringFromDate:date];
+}
+
+/**
+ *  今日年月日数字
+ *
+ *  @param dateStr 日期字符串
+ *
+ *  @return 今日年月日数字
+ */
++ (NSString *)dateWithTodayYearMonthDayNumberStr{
+    return [JWTools dateTimeWithStr:[JWTools dateWithTodayYearMonthDayStr]];
+}
+
 /**
  *  传一个日期字符串，判断是否是昨天，或者是今天的日期
  *
@@ -560,6 +587,19 @@
     NSString * numberRegex = @"^[0-9]{1,99}+$";
     NSPredicate * numberPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",numberRegex];
     return [numberPredicate evaluateWithObject:numberStr];
+}
+
+/**
+ *  两位小数
+ *
+ *  @param numberStr numberStr
+ *
+ *  @return 是否是两位小数
+ */
++ (BOOL)isValidateMoney:(NSString *)numberStr{
+    NSString *phoneRegex = @"^[0-9]+(\\.[0-9]{1,2})?$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
+    return [phoneTest evaluateWithObject:numberStr];
 }
 
 /**

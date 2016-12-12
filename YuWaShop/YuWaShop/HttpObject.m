@@ -161,6 +161,15 @@
         case YuWaType_Shoper_GetBusinessHours://获取营业时间
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_GetBusinessHours];
             break;
+        case YuWaType_Shoper_ShopAdmin_SeeSuggest://意见反馈之查看新意见
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SeeSuggest];
+            break;
+        case YuWaType_Shoper_ShopAdmin_ReplySuggest://意见反馈之反馈意见
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_ReplySuggest];
+            break;
+        case YuWaType_Shoper_DailyOperation://经营日报
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_DailyOperation];
+            break;
             
            //URLStr建立
         default:
@@ -338,6 +347,9 @@
             break;
         case YuWaType_Shoper_GetBusinessHours://获取营业时间
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_GetBusinessHours];
+            break;
+        case YuWaType_Shoper_ShopAdmin_SuggestLists://意见反馈之列表
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SuggestLists];
             break;
             
             //URLStr建立

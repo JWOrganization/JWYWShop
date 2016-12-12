@@ -49,21 +49,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     YWPersonNewsModel * model = self.dataArr[indexPath.row];
     YWPersonNewsDetailViewController * vc = [[YWPersonNewsDetailViewController alloc]init];
-    vc.newsID = model.newsID;
+    vc.newsTime = model.newsTime;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Http
 - (void)requestData{
-    //h33333333333门店日报
-    //233333333333333要删
+    NSInteger timeCount = [[JWTools dateWithTodayYearMonthDayNumberStr] integerValue];
+    NSInteger regCount = [[UserSession instance].reg_time integerValue] + 86400*7;
     for (int i = 0; i<7; i++) {
+        timeCount -= 86400;
+        if (timeCount<regCount)break;
         YWPersonNewsModel * model = [[YWPersonNewsModel alloc]init];
-        model.newsID = @"1";
-        model.newsTime = @"2016-11-22";
+        model.newsTime = [JWTools dateWithYearMonthDayStr:[NSString stringWithFormat:@"%zi",timeCount]];
         [self.dataArr addObject:model];
     }
-    //233333333333333要删
+    if (self.dataArr.count<=0)[self showHUDWithStr:@"经营时间一周后才有日报哟" withSuccess:NO];
     [self.tableView reloadData];
 }
 

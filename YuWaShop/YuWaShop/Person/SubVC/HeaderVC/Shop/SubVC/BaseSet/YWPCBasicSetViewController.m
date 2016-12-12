@@ -50,7 +50,9 @@
     if (![JWTools isPhoneIDWithStr:[UserSession instance].nickName]) self.nameTextField.text = [UserSession instance].nickName;
     
     [self.shopIconBtn sd_setImageWithURL:[NSURL URLWithString:[UserSession instance].logo] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"Person_Shop_Add_Img"] completed:nil];
-    //233333333333缺地址首选电话，次选电话
+    if (self.model.headerModel.company_address)self.addressTextField.text = self.model.headerModel.company_address;
+    if (self.model.headerModel.company_first_tel)self.firstPhoneTextField.text = self.model.headerModel.company_first_tel;
+    if (self.model.headerModel.company_second_tel&&![self.model.headerModel.company_second_tel isEqualToString:self.model.headerModel.company_first_tel])self.subPhoneTextField.text = self.model.headerModel.company_second_tel;
 }
 
 - (IBAction)submitBtnAction:(id)sender {
@@ -100,9 +102,6 @@
     if ([self.nameTextField.text isEqualToString:@""]) {
         [self showHUDWithStr:@"门店名称不能为空哟" withSuccess:NO];
         return;
-    }else if (!self.cameraImage&&self.cameraImageURL) {
-        [self showHUDWithStr:@"门店头像不能为空哟" withSuccess:NO];
-        return;
     }else if ([self.textView.text isEqualToString:@""]) {
         [self showHUDWithStr:@"门店简介不能为空哟" withSuccess:NO];
         return;
@@ -115,7 +114,7 @@
     }else if (![JWTools isPhoneIDWithStr:self.firstPhoneTextField.text]) {
         [self showHUDWithStr:@"请输入正确电话哟" withSuccess:NO];
         return;
-    }else if ([self.subPhoneTextField.text isEqualToString:@""]&&![JWTools isPhoneIDWithStr:self.subPhoneTextField.text]){
+    }else if (![self.subPhoneTextField.text isEqualToString:@""]&&![JWTools isPhoneIDWithStr:self.subPhoneTextField.text]){
         [self showHUDWithStr:@"请输入次要正确电话哟" withSuccess:NO];
         return;
     }
@@ -134,28 +133,44 @@
             MyLog(@"Regieter Code error is %@",error);
         } withPhoto:UIImagePNGRepresentation(self.cameraImage)];
     }else{
+        if ([[UserSession instance].logo isEqualToString:@""]) {
+            [self showHUDWithStr:@"请选择门店头像" withSuccess:NO];
+            return;
+        }
         self.cameraImageURL = [UserSession instance].logo;
         [self requestUpLoadShopInfo];
     }
 }
 
 - (void)requestUpLoadShopInfo{
-    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"company_first_tel":self.firstPhoneTextField.text}];
-    
-    if ([self.subPhoneTextField.text isEqualToString:@""]) [pragram setObject:self.subPhoneTextField.text forKey:@"company_second_tel"];
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"company_first_tel":self.firstPhoneTextField.text,@"company_second_tel":([self.subPhoneTextField.text isEqualToString:@""]?self.firstPhoneTextField.text:self.subPhoneTextField.text)}];
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         [self showHUDWithStr:@"恭喜,修改成功" withSuccess:YES];
-        //233333333333修改model,User
+        [UserSession instance].logo = self.cameraImageURL;
+        [UserSession instance].nickName = self.nameTextField.text;
+        [UserSession instance].personality = self.textView.text;
+        ;
+        self.model.headerModel.company_address = self.addressTextField.text;
+        self.model.headerModel.company_first_tel = self.firstPhoneTextField.text;
+        self.model.headerModel.company_second_tel = self.subPhoneTextField.text;
+        self.model.headerModel.company_name = self.nameTextField.text;
+        self.model.headerModel.company_img = self.cameraImageURL;
+        
+        NSMutableArray * shopArr = [NSMutableArray arrayWithArray:self.model.dataArr[1]];
+        [shopArr replaceObjectAtIndex:0 withObject:self.nameTextField.text];
+        [self.model.dataArr replaceObjectAtIndex:1 withObject:shopArr];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }];//h333333333333
+        [self showHUDWithStr:@"设置门店信息失败" withSuccess:NO];
+    }];
 }
 
 @end

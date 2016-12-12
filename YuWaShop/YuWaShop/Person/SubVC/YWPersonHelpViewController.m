@@ -18,7 +18,6 @@
     [super viewDidLoad];
     self.title = @"帮助中心";
 }
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     [self callService];

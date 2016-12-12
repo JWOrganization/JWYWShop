@@ -17,5 +17,9 @@
 @property (nonatomic,copy)NSString * company_img;
 @property (nonatomic,copy)NSString * discount;
 @property (nonatomic,copy)NSString * is_map;
+@property (nonatomic,copy)NSString * company_first_tel;
+@property (nonatomic,copy)NSString * company_address;
+@property (nonatomic,copy)NSString * company_second_tel;
+@property (nonatomic,copy)NSString * per_capita;
 
 @end

@@ -23,10 +23,8 @@
     [self dataSet];
     [self requestData];
 }
-
 - (void)dataSet{
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"JWChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"JWChatTableViewCell"];
 }
 

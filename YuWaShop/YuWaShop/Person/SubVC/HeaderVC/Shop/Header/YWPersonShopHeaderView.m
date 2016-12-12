@@ -54,7 +54,7 @@
 }
 
 - (void)layoutSet{
-    self.imageCountBGWidth.constant = [JWTools labelWidthWithLabel:self.imageCountLabel];
+    self.imageCountBGWidth.constant = [JWTools labelWidthWithLabel:self.imageCountLabel] + 5.f;
     [self setNeedsLayout];
 }
 

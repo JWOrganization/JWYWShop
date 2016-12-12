@@ -106,6 +106,7 @@
                 UITextField * replayTextField = alertVC.textFields.firstObject;
                 [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:2];
             }];
+            
             UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 UITextField * replayTextField = alertVC.textFields.firstObject;
                 [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:3];
@@ -118,13 +119,11 @@
     }
     return advanceOrderCell;
 }
-
 - (void)tapAction{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.alertVC dismissViewControllerAnimated:NO completion:nil];
     });
 }
-
 #pragma mark - TableView Refresh
 - (void)setupRefresh{
     self.tableView.mj_header = [UIScrollView scrollRefreshGifHeaderWithImgName:@"newheader" withImageCount:60 withRefreshBlock:^{
@@ -149,7 +148,6 @@
         [self.tableView.mj_footer endRefreshing];
     }
 }
-
 #pragma mark - Http
 - (void)requestDataWithPages:(NSInteger)page{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -173,7 +171,6 @@
         MyLog(@"Regieter Code error is %@",responsObj);
     }]; //h33333333333333
 }
-
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
     

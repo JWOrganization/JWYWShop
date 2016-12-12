@@ -40,12 +40,10 @@
     [self setupRefresh];
     [self requestDataWithPages:0];
 }
-
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [[UIApplication sharedApplication].keyWindow removeGestureRecognizer:self.tap];
 }
-
 - (void)makeUI{
     self.headerView = [[UIView alloc]initWithFrame:CGRectMake(0.f, 0.f, kScreen_Width, 50.f)];
     self.headerView.backgroundColor = [UIColor whiteColor];

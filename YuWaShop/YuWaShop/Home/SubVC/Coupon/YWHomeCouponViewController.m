@@ -141,7 +141,6 @@
         for (int i = 0; i<dataArr.count; i++) {
             [self.dataArr addObject:[YWHomeCouponModel yy_modelWithDictionary:dataArr[i]]];
         }
-        
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);

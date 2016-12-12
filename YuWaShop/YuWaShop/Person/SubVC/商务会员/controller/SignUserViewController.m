@@ -21,7 +21,7 @@
 @property(nonatomic,strong)UITableView*tableView;
 
 @property(nonatomic,strong)NSMutableArray*maMallDatas;
-@property(nonatomic,strong)NSString*type;
+@property(nonatomic,strong)NSString*type;   //0直接绑定  1间接绑定
 @property(nonatomic,assign)int pagen;
 @property(nonatomic,assign)int pages;
 
@@ -40,7 +40,7 @@
     [self setUpMJRefresh];
     
 //    UILabel*label=[[UILabel alloc]init];
-    UIImage*image=[[UIImage alloc]init];
+
     
 }
 
@@ -123,7 +123,7 @@
 
 #pragma mark  --getDatas
 -(void)getDatas{
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_MY_USER];
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_BIND_USER];
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":self.type};
     
     HttpManager*manager=[[HttpManager alloc]init];

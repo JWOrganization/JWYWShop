@@ -114,7 +114,6 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
       ShowDetailModel*model=self.maMallDatas[indexPath.row];
     MoneyDetailViewController*vc=[[MoneyDetailViewController alloc]init];
-    vc.introducetype=self.introducetype;
     vc.idd=model.id;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -165,23 +164,9 @@
 -(void)getDatas{
     
    
-    switch (self.introducetype) {
-        case IntroduceTypeBusinesser:{
-            //商务会员
+             //商务会员
             [self businesserDatas];
             
-            break;}
-        case IntroduceTypeUser:{
-            //普通用户
-            [self commonUserDatas];
-            
-            break;}
-
-            
-        default:
-            break;
-    }
-    
     
     
 }
@@ -190,7 +175,7 @@
 -(void)businesserDatas{
     NSString*pagen=[NSString stringWithFormat:@"%d",self.pagen];
     NSString*pages=[NSString stringWithFormat:@"%d",self.pages];
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_BUSINESS_SALEINFO];
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_Filter_LIST];
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"pagen":pagen,@"pages":pages,@"time":self.time,@"type":self.type};
     
     HttpManager*manager=[[HttpManager alloc]init];
@@ -223,41 +208,6 @@
     
 }
 
--(void)commonUserDatas{
-    NSString*pagen=[NSString stringWithFormat:@"%d",self.pagen];
-    NSString*pages=[NSString stringWithFormat:@"%d",self.pages];
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_PERSON_SALEINFO];
-    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"pagen":pagen,@"pages":pages,@"time":self.time,@"type":self.type};
-    
-    HttpManager*manager=[[HttpManager alloc]init];
-    [manager postDatasWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
-        MyLog(@"%@",data);
-        NSNumber*number=data[@"errorCode"];
-        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
-        if ([errorCode isEqualToString:@"0"]) {
-            
-            self.total_money=data[@"data"][@"total_money"];
-            self.total_settlement=data[@"data"][@"total_settlement"];
-            
-            for (NSDictionary*dict in data[@"data"][@"lists"]) {
-                ShowDetailModel*model=[ShowDetailModel yy_modelWithDictionary:dict];
-                [self.maMallDatas addObject:model];
-                [self.tableView reloadData];
-                
-            }
-            
-            
-        }else{
-            [JRToast showWithText:data[@"errorMessage"]];
-        }
-        
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_footer endRefreshing];
-        
-    }];
-
-    
-}
 
 #pragma mark  --touch
 //-(void)touchRightButton{

@@ -26,25 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   self.title=@"交易详情";
+    self.title=@"交易详情";
     
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:CELL0 bundle:nil] forCellReuseIdentifier:CELL0];
     
-    switch (self.introducetype) {
-        case IntroduceTypeBusinesser:{
-            //商务会员
-              [self getDatas];
-            break;}
-        case IntroduceTypeUser:{
-            //个人
-            [self getPersonDatas];
-            break;}
+    //商务会员
+    [self getDatas];
     
-        default:
-            break;
-    }
-  
 }
 
 
@@ -153,7 +142,7 @@
 
 #pragma mark  --getDatas
 -(void)getDatas{
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_DEAL_DETAIL];
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_Filter_DETAIL];
     NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":self.idd};
     
     HttpManager*manager=[[HttpManager alloc]init];
@@ -175,28 +164,6 @@
 }
 
 
--(void)getPersonDatas{
-    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_PERSON_DETAIL];
-    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":self.idd};
-    
-    HttpManager*manager=[[HttpManager alloc]init];
-    [manager postDatasWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
-        MyLog(@"%@",data);
-        NSNumber*number=data[@"errorCode"];
-        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
-        if ([errorCode isEqualToString:@"0"]) {
-            self.model=[DealDetailModel yy_modelWithDictionary:data[@"data"]];
-            
-            [self.tableView reloadData];
-            
-        }else{
-            [JRToast showWithText:data[@"errorMessage"]];
-        }
-        
-    }];
-
-    
-}
 
 
 - (void)didReceiveMemoryWarning {

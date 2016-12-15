@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YWHomeAdvanceOrderModel.h"
+#import "YWHomeNoPayListModel.h"
 
 @interface YWHomeOrderNoticaficationTableViewCell : UITableViewCell
 
 @property (nonatomic,copy)void (^rePlayBlock)();
 
-@property (nonatomic,strong)YWHomeAdvanceOrderModel * model;
-
-@property (nonatomic,assign)NSInteger status;//0未回复1已回复2已取消
-
+@property (nonatomic,strong)YWHomeNoPayListModel * model;
 
 @property (weak, nonatomic) IBOutlet UIView *BGView;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;

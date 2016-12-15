@@ -154,18 +154,18 @@
 }
 
 - (void)requestDelWithID:(NSString *)couponID withIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([couponID integerValue])};
     
-//    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_DelGoods withPragram:pragram success:^(id responsObj) {
-//        MyLog(@"Regieter Code pragram is %@",pragram);
-//        MyLog(@"Regieter Code is %@",responsObj);
-//        [self.dataArr removeObjectAtIndex:indexPath.row];
-//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-//        [self.tableView reloadData];
-//    } failur:^(id responsObj, NSError *error) {
-//        MyLog(@"Regieter Code pragram is %@",pragram);
-//        MyLog(@"Regieter Code error is %@",responsObj);
-//    }];//h33333333333333
+    [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_DelCoupon withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        [self.dataArr removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }];//h33333333333333
 }
 
 @end

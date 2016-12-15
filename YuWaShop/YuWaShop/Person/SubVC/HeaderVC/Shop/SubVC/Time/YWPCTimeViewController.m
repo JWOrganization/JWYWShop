@@ -10,6 +10,7 @@
 #import "YWPCTimeTableViewCell.h"
 #import "YWPersonShopModel.h"
 #import "YWPCChooseTimeViewController.h"
+#import "YWPersonShopModel.h"
 
 @interface YWPCTimeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -28,6 +29,15 @@
     [self requestData];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.timeArr.count>0) {
+        [self.timeArr removeAllObjects];
+        [self.timeArr addObject:[YWPCTimeModel yy_modelWithDictionary:self.model.headerModel.business_time]];
+        [self.tableView reloadData];
+    }
+}
+
 - (IBAction)submitBtnAction:(id)sender {
     [self addTimeAction];
 }
@@ -44,13 +54,6 @@
 - (void)addTimeAction{
     YWPCChooseTimeViewController * vc = [[YWPCChooseTimeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-    
-    //23333333333删
-    YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
-    model.timeID = @"1";
-    [self.timeArr addObject:model];
-    [self.tableView reloadData];
-    //23333333333删
 }
 
 #pragma mark - UITableViewDelegate
@@ -58,23 +61,23 @@
     return 70.f;
 }
 
-- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除";
-}
-
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (editingStyle ==UITableViewCellEditingStyleDelete){
-        UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            YWPCTimeModel * model = self.timeArr[indexPath.row];
-            [self requestDelTimeWithID:model.timeID withIndexPath:indexPath];
-        }];
-        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除经营时间?" preferredStyle:UIAlertControllerStyleAlert];
-        [alertVC addAction:cancelAction];
-        [alertVC addAction:OKAction];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
-    }
-}
+//- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return @"删除";
+//}
+//
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (editingStyle ==UITableViewCellEditingStyleDelete){
+//        UIAlertAction * OKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            YWPCTimeModel * model = self.timeArr[indexPath.row];
+//            [self requestDelTimeWithID:model.timeID withIndexPath:indexPath];
+//        }];
+//        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+//        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除经营时间?" preferredStyle:UIAlertControllerStyleAlert];
+//        [alertVC addAction:cancelAction];
+//        [alertVC addAction:OKAction];
+//        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
+//    }
+//}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -95,9 +98,7 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         //2333333333删
-        YWPCTimeModel * model = [[YWPCTimeModel alloc]init];
-        model.timeID = @"1";
-//        [JWTools dictionaryWithJsonString:<#(NSString *)#>];
+        YWPCTimeModel * model = [YWPCTimeModel yy_modelWithDictionary:[JWTools dictionaryWithJsonString:responsObj[@"data"]]];
         [self.timeArr addObject:model];
         //2333333333删
         [self.tableView reloadData];

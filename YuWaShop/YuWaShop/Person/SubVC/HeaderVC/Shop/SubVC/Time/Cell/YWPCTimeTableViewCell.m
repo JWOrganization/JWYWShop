@@ -25,10 +25,9 @@
     [self dataSet];
 }
 
-- (void)dataSet{//233333333333
-//    self.timeLabel.text
-//    self.subTimeLabel.text 
-    
+- (void)dataSet{
+    self.timeLabel.text = [NSString stringWithFormat:@"%@  %@",self.model.time,self.model.name];
+    self.subTimeLabel.text = self.model.payDays;
 }
 
 

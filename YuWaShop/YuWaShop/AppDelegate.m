@@ -265,7 +265,7 @@ forRemoteNotification:(NSDictionary *)userInfo
     UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     //    center.delegate = self;
-    content.title = @"雨娃";// 标题
+    content.title = @"雨娃开店宝";// 标题
     content.subtitle = @"";// 子标题
     content.body = con;// 内容
     content.badge = @0;// 标记个数

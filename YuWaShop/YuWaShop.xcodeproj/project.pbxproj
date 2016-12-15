@@ -597,6 +597,12 @@
 		B387EAC21DE4732D0045323C /* YWComfiringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EAC01DE4732D0045323C /* YWComfiringViewController.xib */; };
 		B387EAC61DE478160045323C /* YWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B387EAC41DE478160045323C /* YWLoginViewController.m */; };
 		B387EAC71DE478160045323C /* YWLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387EAC51DE478160045323C /* YWLoginViewController.xib */; };
+		B394563A1DFF8F9500A1A67F /* YWPSSellerRePlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B39456391DFF8F9500A1A67F /* YWPSSellerRePlayModel.m */; };
+		B394563E1DFF973400A1A67F /* YWHomeNoPayListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B394563D1DFF973400A1A67F /* YWHomeNoPayListModel.m */; };
+		B39456421DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39456401DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.xib */; };
+		B39456431DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B39456411DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.m */; };
+		B39456461DFF989100A1A67F /* YWHomeNoPayOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B39456451DFF989100A1A67F /* YWHomeNoPayOrderListModel.m */; };
+		B39456491DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B39456481DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.m */; };
 		B3AA59CA1DEC7414006B39CC /* YWPSRePlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */; };
 		B3ACF10D1DEF06C40056FD64 /* YWHomeAddCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ACF10B1DEF06C40056FD64 /* YWHomeAddCouponViewController.m */; };
 		B3ACF10E1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ACF10C1DEF06C40056FD64 /* YWHomeAddCouponViewController.xib */; };
@@ -1807,6 +1813,17 @@
 		B387EAC31DE478160045323C /* YWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWLoginViewController.h; sourceTree = "<group>"; };
 		B387EAC41DE478160045323C /* YWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWLoginViewController.m; sourceTree = "<group>"; };
 		B387EAC51DE478160045323C /* YWLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWLoginViewController.xib; sourceTree = "<group>"; };
+		B39456381DFF8F9500A1A67F /* YWPSSellerRePlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSSellerRePlayModel.h; sourceTree = "<group>"; };
+		B39456391DFF8F9500A1A67F /* YWPSSellerRePlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSSellerRePlayModel.m; sourceTree = "<group>"; };
+		B394563C1DFF973400A1A67F /* YWHomeNoPayListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeNoPayListModel.h; sourceTree = "<group>"; };
+		B394563D1DFF973400A1A67F /* YWHomeNoPayListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeNoPayListModel.m; sourceTree = "<group>"; };
+		B394563F1DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeNoPayListTableViewCell.h; sourceTree = "<group>"; };
+		B39456401DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWHomeNoPayListTableViewCell.xib; sourceTree = "<group>"; };
+		B39456411DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeNoPayListTableViewCell.m; sourceTree = "<group>"; };
+		B39456441DFF989100A1A67F /* YWHomeNoPayOrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeNoPayOrderListModel.h; sourceTree = "<group>"; };
+		B39456451DFF989100A1A67F /* YWHomeNoPayOrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeNoPayOrderListModel.m; sourceTree = "<group>"; };
+		B39456471DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeNoReserveOrderListModel.h; sourceTree = "<group>"; };
+		B39456481DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWHomeNoReserveOrderListModel.m; sourceTree = "<group>"; };
 		B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWPSRePlayModel.h; sourceTree = "<group>"; };
 		B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWPSRePlayModel.m; sourceTree = "<group>"; };
 		B3ACF10A1DEF06C40056FD64 /* YWHomeAddCouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWHomeAddCouponViewController.h; sourceTree = "<group>"; };
@@ -4971,6 +4988,19 @@
 			path = Comfired;
 			sourceTree = "<group>";
 		};
+		B394563B1DFF970800A1A67F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B394563C1DFF973400A1A67F /* YWHomeNoPayListModel.h */,
+				B394563D1DFF973400A1A67F /* YWHomeNoPayListModel.m */,
+				B39456441DFF989100A1A67F /* YWHomeNoPayOrderListModel.h */,
+				B39456451DFF989100A1A67F /* YWHomeNoPayOrderListModel.m */,
+				B39456471DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.h */,
+				B39456481DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3AA59C11DEC611C006B39CC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -4986,6 +5016,8 @@
 			children = (
 				B3AA59C81DEC7414006B39CC /* YWPSRePlayModel.h */,
 				B3AA59C91DEC7414006B39CC /* YWPSRePlayModel.m */,
+				B39456381DFF8F9500A1A67F /* YWPSSellerRePlayModel.h */,
+				B39456391DFF8F9500A1A67F /* YWPSSellerRePlayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5354,6 +5386,7 @@
 		B3F177F21DEFF270007DB9A3 /* Noticafication */ = {
 			isa = PBXGroup;
 			children = (
+				B394563B1DFF970800A1A67F /* Model */,
 				B3F177F81DEFF45E007DB9A3 /* Cell */,
 				B3F177F31DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.h */,
 				B3F177F41DEFF28D007DB9A3 /* YWHomeNoticaficationViewController.m */,
@@ -5365,6 +5398,9 @@
 		B3F177F81DEFF45E007DB9A3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B394563F1DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.h */,
+				B39456411DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.m */,
+				B39456401DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.xib */,
 				B3F177F91DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.h */,
 				B3F177FA1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.m */,
 				B3F177FB1DEFF48D007DB9A3 /* YWHomeOrderNoticaficationTableViewCell.xib */,
@@ -5818,6 +5854,7 @@
 				B32737961DE8254A001C57DF /* YWPNRankView.xib in Resources */,
 				C14BA3C01DF93A9F001BDFBD /* pointMoneyHeaderView.xib in Resources */,
 				B317AF661DE5CFB80093C511 /* YWHomeCollectionHeaderView.xib in Resources */,
+				B39456421DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.xib in Resources */,
 				B30E4DC71DEE900D008684BA /* YWHomePayBillViewController.xib in Resources */,
 				B317AFDC1DE5D3C90093C511 /* PersonHeaderBG5@2x.png in Resources */,
 				B35C9ED41DEC3FE80051E352 /* RBPublicNodeViewController.xib in Resources */,
@@ -6091,6 +6128,7 @@
 				B3F07F111DE72DE9005116EA /* YWPCEveryPayViewController.m in Sources */,
 				B35C9CFE1DEC3ECD0051E352 /* EaseUserCell.m in Sources */,
 				B35C9CF01DEC3ECD0051E352 /* EaseChineseToPinyin.m in Sources */,
+				B394563A1DFF8F9500A1A67F /* YWPSSellerRePlayModel.m in Sources */,
 				B310988B1DE4543E0033A984 /* JWThirdTools.m in Sources */,
 				B3ACF1181DEF070C0056FD64 /* YWHomeCouponTableViewCell.m in Sources */,
 				C14BA3A31DF93A9F001BDFBD /* BindingPersonModel.m in Sources */,
@@ -6141,6 +6179,7 @@
 				B30E4DCC1DEEBB02008684BA /* YWHomeCompareViewController.m in Sources */,
 				B35C9F1A1DEC3FE80051E352 /* RBCenterAlbumModel.m in Sources */,
 				C14BA3321DF84109001BDFBD /* JLPhoto.m in Sources */,
+				B39456461DFF989100A1A67F /* YWHomeNoPayOrderListModel.m in Sources */,
 				B35C9D131DEC3ECD0051E352 /* EaseConversationCell.m in Sources */,
 				B35C9F2E1DEC3FE80051E352 /* JWTagScrollView.m in Sources */,
 				C14BA3A21DF93A9F001BDFBD /* YWShowGetMoneyViewController.m in Sources */,
@@ -6316,6 +6355,7 @@
 				B35C9EE31DEC3FE80051E352 /* RBNodeDRecommendTableViewCell.m in Sources */,
 				B35C9CB31DEC3ECD0051E352 /* EMAudioPlayerUtil.m in Sources */,
 				B3BE98201DF9588200B82FB3 /* JWHttpManger.m in Sources */,
+				B39456431DFF97E900A1A67F /* YWHomeNoPayListTableViewCell.m in Sources */,
 				B310989E1DE4543E0033A984 /* MASCompositeConstraint.m in Sources */,
 				B3F07EFB1DE70C5D005116EA /* YWPersonShopHeaderModel.m in Sources */,
 				B35C9F3F1DEC3FE80051E352 /* TZPhotoPickerController.m in Sources */,
@@ -6357,6 +6397,7 @@
 				B35C9ECC1DEC3FE80051E352 /* RBPublicEditorViewController.m in Sources */,
 				B35C9CF31DEC3ECD0051E352 /* EaseEmoji.m in Sources */,
 				B35C9F021DEC3FE80051E352 /* RBNodeAddToAldumTableViewCell.m in Sources */,
+				B39456491DFFAA0500A1A67F /* YWHomeNoReserveOrderListModel.m in Sources */,
 				B35C9CD51DEC3ECD0051E352 /* UIImage+EMWebP.m in Sources */,
 				B35C9F351DEC3FE80051E352 /* JWImagePickerTableViewCell.m in Sources */,
 				B35C9D101DEC3ECD0051E352 /* EaseFacialView.m in Sources */,
@@ -6486,6 +6527,7 @@
 				B32737641DE7EBB0001C57DF /* YWPCCutPickerView.m in Sources */,
 				B327376E1DE812A2001C57DF /* YWPCTimeModel.m in Sources */,
 				B387EABC1DE46C3C0045323C /* YWComfiredViewController.m in Sources */,
+				B394563E1DFF973400A1A67F /* YWHomeNoPayListModel.m in Sources */,
 				B3C12A521DED217F000EF099 /* YWLocation.m in Sources */,
 				B31098B11DE4543E0033A984 /* MJRefreshAutoGifFooter.m in Sources */,
 				B3F177F01DEFDEE5007DB9A3 /* YWHomeAdvanceOrderTableViewCell.m in Sources */,

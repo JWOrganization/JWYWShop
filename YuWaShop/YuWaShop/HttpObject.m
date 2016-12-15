@@ -170,6 +170,9 @@
         case YuWaType_Shoper_DailyOperation://经营日报
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_DailyOperation];
             break;
+        case YuWaType_Shoper_ShopAdmin_DelCoupon://优惠券之删除
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_DelCoupon];
+            break;
             
            //URLStr建立
         default:

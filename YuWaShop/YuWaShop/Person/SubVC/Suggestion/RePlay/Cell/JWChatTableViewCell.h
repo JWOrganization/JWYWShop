@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YWPSRePlayModel.h"
+#import "YWPSSellerRePlayModel.h"
 #import "UIImage+JWImageReSize.h"
 
 @interface JWChatTableViewCell : UITableViewCell

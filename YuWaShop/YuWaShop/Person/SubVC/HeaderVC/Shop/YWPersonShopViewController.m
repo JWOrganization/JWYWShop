@@ -118,6 +118,7 @@
         MyLog(@"Regieter Code is %@",responsObj);
         
         self.model.headerModel = [YWPersonShopHeaderModel yy_modelWithDictionary:responsObj[@"data"]];
+        self.model.headerModel.business_time = [JWTools dictionaryWithJsonString:self.model.headerModel.business_hours];
         [UserSession instance].nickName = self.model.headerModel.company_name;
         [UserSession instance].cut = (int)([self.model.headerModel.discount floatValue]*100);
         [UserSession instance].logo = self.model.headerModel.company_img;
@@ -128,7 +129,7 @@
         }else{
             showCut = [NSString stringWithFormat:@"%zi折",[UserSession instance].cut];
         }
-        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),self.model.headerModel.business_hours],@[[NSString stringWithFormat:@"%@元",self.model.headerModel.per_capita],showCut,[UserSession instance].infrastructure],@[@""]]];
+        self.model.dataArr = [NSMutableArray arrayWithArray:@[@[],@[[UserSession instance].nickName,([self.model.headerModel.is_map integerValue]==0?@"无地图":@"有地图"),(self.model.headerModel.business_time[@"payDays"]?:@"")],@[[NSString stringWithFormat:@"%@元",self.model.headerModel.per_capita],showCut,[UserSession instance].infrastructure],@[@""]]];
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);

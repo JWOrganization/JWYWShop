@@ -8,7 +8,7 @@
 
 #import "YWHomeNoticaficationViewController.h"
 #import "YWHomeOrderNoticaficationTableViewCell.h"
-#import "YWHomeQuickPayListTableViewCell.h"
+#import "YWHomeNoPayListTableViewCell.h"
 #import "NSDictionary+Attributes.h"
 
 @interface YWHomeNoticaficationViewController ()
@@ -76,9 +76,8 @@
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeOrderNoticaficationTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeOrderNoticaficationTableViewCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeQuickPayListTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeQuickPayListTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeNoPayListTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeNoPayListTableViewCell"];
 }
-
 - (void)segmentControlAction:(UISegmentedControl *)sender{
     self.status = sender.selectedSegmentIndex+1;
     [self.tableView.mj_header beginRefreshing];
@@ -86,13 +85,13 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return self.status==0?66.f:155.f;
+    return self.status==1?66.f:155.f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 50.f;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    self.lineView.hidden = self.status==1;
+    self.lineView.hidden = self.status==2;
     return self.headerView;
 }
 
@@ -103,7 +102,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.status == 1) {
-        YWHomeQuickPayListTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeQuickPayListTableViewCell"];
+        YWHomeNoPayListTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"YWHomeNoPayListTableViewCell"];
         listCell.model = self.dataArr[indexPath.row];
         return listCell;
     }
@@ -120,6 +119,9 @@
             UITextField * replayTextField = alertVC.textFields.firstObject;
             [self requestDelOrderWithReplay:replayTextField.text withIndexPath:indexPath withType:2];
         }];
+        if (self.navigationItem.rightBarButtonItem) {
+            [[UIApplication sharedApplication].keyWindow.rootViewController.navigationController.viewControllers firstObject];
+        }
         
         UIAlertAction * delAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * replayTextField = alertVC.textFields.firstObject;
@@ -177,49 +179,34 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
-        if (self.status == 1) {
-            NSArray * dataArr = responsObj[@"data"][@"lists"];
-            for (int i = 0; i<dataArr.count; i++) {
-                //233333333333要删
-                [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
-                //2333333333333要删
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //233333333333未读标识已读
-                for (int i = 0; i < dataArr.count; i++) {
-//                    if (status == 未读) {
-//                        [self requestCancelNoticaficationWithID:noticaid];
-//                    }
+        NSArray * dataArr = responsObj[@"data"][@"lists"];
+        for (int i = 0; i<dataArr.count; i++) {
+            if (self.status == 2) {
+                YWHomeNoPayListModel * model =[YWHomeNoPayListModel yy_modelWithDictionary:dataArr[i]];
+                if ([model.title isEqualToString:@""]||!model.title) {
+                    [self.dataArr addObject:model];
                 }
-            });
-        }else{
-            NSArray * dataArr = responsObj[@"data"][@"lists"];
-            for (int i = 0; i<dataArr.count; i++){
-                //233333333333要删
-                YWHomeAdvanceOrderModel * model =[[YWHomeAdvanceOrderModel alloc]init];
-                model.orderID = @"233333333";
-                //233333333333要删
-                model.stats = @"1";
-                [self.dataArr addObject:model];
+            }else{
+                [self.dataArr addObject:[YWHomeNoPayListModel yy_modelWithDictionary:dataArr[i]]];
             }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //233333333333未读标识已读
-                for (int i = 0; i < dataArr.count; i++) {
-//                    if (status == 未读) {
-//                        [self requestCancelNoticaficationWithID:noticaid];
-//                    }
-                }
-            });
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (int i = 0; i < self.dataArr.count; i++) {
+                YWHomeNoPayListModel * model = self.dataArr[i];
+                if ([model.status isEqualToString:@"0"]) {
+                    [self requestCancelNoticaficationWithID:[model.quickPayID integerValue]];
+                }
+            }
+        });
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }];
 }
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
-    YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.orderID integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":[NSString stringWithFormat:@"%@的订单%@",[UserSession instance].nickName,(type==2?@"预定成功":@"已被取消")],@"push_content":rePlay};
+    YWHomeNoPayListModel * model = self.dataArr[indexPath.row];
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"id":@([model.order_id integerValue]),@"seller_message":rePlay,@"status":@(type),@"push_title":[NSString stringWithFormat:@"%@的订单%@",[UserSession instance].nickName,(type==2?@"预定成功":@"已被取消")],@"push_content":rePlay};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_BookReply withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -239,6 +226,10 @@
         [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_UpdateMyNotice withPragram:pragram success:^(id responsObj) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code is %@",responsObj);
+            NSArray * dataArr = responsObj[@"data"];
+            for (int i = 0; i<dataArr.count; i++) {
+                [self.dataArr addObject:[YWHomeNoPayListModel yy_modelWithDictionary:dataArr[i]]];
+            }
         } failur:^(id responsObj, NSError *error) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code error is %@",responsObj);

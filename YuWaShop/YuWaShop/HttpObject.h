@@ -88,6 +88,7 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_DelGoods,//商品管理之删除商品
     YuWaType_Shoper_ShopAdmin_AddCoupon,//优惠券之生成优惠券
     YuWaType_Shoper_ShopAdmin_CouponList,//优惠券之列表
+    YuWaType_Shoper_ShopAdmin_DelCoupon,   //优惠券之删除
     YuWaType_Shoper_ShopAdmin_CommentList,//口碑品牌之列表
     YuWaType_Shoper_ShopAdmin_CommentReply,//口碑品牌之回复
     YuWaType_Shoper_ShopAdmin_AddCheckStatus, //提交门店实名认证

@@ -11,7 +11,9 @@
 @interface YWPCTimeModel : NSObject
 
 @property (nonatomic,copy)NSString * timeID;
-
+@property (nonatomic,copy)NSString * payDays;
+@property (nonatomic,copy)NSString * name;
+@property (nonatomic,copy)NSString * time;
 
 
 @end

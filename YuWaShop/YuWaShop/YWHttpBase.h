@@ -113,6 +113,7 @@
 #define HTTP_Shoper_ShopAdmin_DelGoods   @"/api.php/ShopAdmin/delGoods/"   //商品管理之删除商品
 #define HTTP_Shoper_ShopAdmin_AddCoupon   @"/api.php/ShopAdmin/addCoupon/"   //优惠券之生成优惠券
 #define HTTP_Shoper_ShopAdmin_CouponList   @"/api.php/ShopAdmin/couponList/"   //优惠券之列表
+#define HTTP_Shoper_ShopAdmin_DelCoupon   @"/api.php/ShopAdmin/delCoupon/"   //优惠券之删除
 #define HTTP_Shoper_ShopAdmin_CommentList   @"/api.php/ShopAdmin/commentList/"   //口碑品牌之列表
 #define HTTP_Shoper_ShopAdmin_CommentReply   @"/api.php/ShopAdmin/commentReply/"   //口碑品牌之回复
 #define HTTP_Shoper_ShopAdmin_AddCheckStatus   @"/api.php/ShopAdmin/addCheckStatus/"   //提交门店实名认证
@@ -133,7 +134,7 @@
 #define HTTP_Shoper_ShopAdmin_GetCatTag   @"/api.php/ShopAdmin/getCatTag/"   //获取主分类及小标签
 #define HTTP_Shoper_ShopAdmin_SeeSuggest   @"/api.php/ShopAdmin/seeSuggest/"   //意见反馈之查看新意见
 #define HTTP_Shoper_ShopAdmin_SuggestLists   @"/api.php/ShopAdmin/suggestLists/"   //意见反馈之列表
-#define HTTP_Shoper_ShopAdmin_ReplySuggest   @"/api.php/ShopAdmin/replySuggest/"   //意见反馈之反馈意见
+#define HTTP_Shoper_ShopAdmin_ReplySuggest   @"/api.php/ShopAdmin/addSuggest/"   //意见反馈之反馈意见
 
 
 

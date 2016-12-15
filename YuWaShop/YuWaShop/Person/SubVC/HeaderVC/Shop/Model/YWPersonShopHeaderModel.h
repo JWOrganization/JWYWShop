@@ -13,6 +13,7 @@
 @property (nonatomic,copy)NSString * company_name;
 @property (nonatomic,copy)NSString * score;
 @property (nonatomic,copy)NSString * business_hours;
+@property (nonatomic,strong)NSDictionary * business_time;
 @property (nonatomic,copy)NSString * img_nums;
 @property (nonatomic,copy)NSString * company_img;
 @property (nonatomic,copy)NSString * discount;

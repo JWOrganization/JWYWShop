@@ -28,7 +28,7 @@
 - (void)dataSet{
     self.nameLabel.text = self.model.order.customer_name;
     self.timeLabel.text = [JWTools dateWithStr:(![self.model.order.pay_time isEqualToString:@""]?self.model.order.create_time:self.model.order.pay_time)];
-    self.priceLabel.text = [NSString stringWithFormat:@"%@元",self.model.order.seller_money];
+    self.priceLabel.text = [NSString stringWithFormat:@"+%@元",self.model.order.seller_money];
     
     NSString * cutStr;
     NSInteger cutInter = (int)[self.model.order.discount floatValue]*100;

@@ -25,10 +25,14 @@
 }
 
 - (void)callService{
+    if (![UserSession instance].phone||[[UserSession instance].phone isEqualToString:@""]) {
+        [self showHUDWithStr:@"暂无数据,请稍后重试" withSuccess:NO];
+        return;
+    }
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertController addAction:[UIAlertAction actionWithTitle:[UserSession instance].phone style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIWebView* callWebview =[[UIWebView alloc] init];
-        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"233333333333"]];
+        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",[UserSession instance].phone]];
         [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
         [self.view addSubview:callWebview];
     }]];

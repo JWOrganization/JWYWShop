@@ -32,7 +32,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([UserSession userToComfired]&&self.isRequest) {
+    if ([UserSession userToComfired]&&!self.isRequest) {
         [self requestData];
     }
 }
@@ -113,6 +113,37 @@
     [self setupConditions];
 }
 
+- (NSString *)strWithoutYear:(NSString *)str{
+    if (!str)str=@"";
+    return self.status == 3?str:[str substringFromIndex:5];
+}
+
+- (NSArray *)valueYArrWithArr:(NSArray *)dataArr{
+    NSMutableArray * valueArr = [NSMutableArray arrayWithCapacity:0];
+    for (int i = 0; i<dataArr.count; i++) {
+        NSDictionary * dataDic = dataArr[i];
+        if (valueArr.count <= 0) {
+            [valueArr addObject:@(dataDic[@"nums"]?[dataDic[@"nums"] integerValue]:0)];
+        }else{
+            [valueArr insertObject:@(dataDic[@"nums"]?[dataDic[@"nums"] integerValue]:0) atIndex:0];
+        }
+    }
+    return valueArr;
+}
+- (NSArray *)valueXArrWithArr:(NSArray *)dataArr{
+    if (self.status==2)return @[@"第一周",@"第二周",@"第三周",@"第四周"];
+    NSMutableArray * valueArr = [NSMutableArray arrayWithCapacity:0];
+    for (int i = 0; i<dataArr.count; i++) {
+        NSDictionary * dataDic = dataArr[i];
+        if (valueArr.count <= 0) {
+            [valueArr addObject:[self strWithoutYear:dataDic[@"mtime"]]];
+        }else{
+            [valueArr insertObject:[self strWithoutYear:dataDic[@"mtime"]] atIndex:0];
+        }
+    }
+    return valueArr;
+}
+
 #pragma mark - UIControl Action
 - (IBAction)segmentControlaction:(UISegmentedControl *)sender {
     self.status = sender.selectedSegmentIndex + 1;
@@ -127,20 +158,24 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         self.isRequest = YES;
-//        self.pageviewView.xValues = @[@"1日", @"2日", @"3日", @"4日", @"5日", @"6日", @"7日"];
-//        self.pageviewView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
-//        
-//        self.customersView.xValues = @[@1, @2, @3, @4, @5, @6, @7];
-//        self.customersView.yValues = @[@35, @5, @80, @40, @50, @13, @50];
-//        
-//        self.consumptionView.xValues = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
-//        self.consumptionView.yValues = @[@350, @1000, @800, @400, @500, @130, @50, @750,@250, @100, @640, @950, @333, @510];
+        NSArray * logArr = responsObj[@"data"][@"log"];
+        NSArray * customersArr = responsObj[@"data"][@"customers"];
+        NSArray * payArr = responsObj[@"data"][@"pay_money"];
+        
+        self.pageviewView.xValues = [self valueXArrWithArr:logArr];
+        self.pageviewView.yValues = [self valueYArrWithArr:logArr];
+        
+        self.customersView.xValues = [self valueXArrWithArr:customersArr];
+        self.customersView.yValues = [self valueYArrWithArr:customersArr];
+        
+        self.consumptionView.xValues = [self valueXArrWithArr:payArr];
+        self.consumptionView.yValues = [self valueYArrWithArr:payArr];
         
         [self reDrawChart];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }];
 }
 
 @end

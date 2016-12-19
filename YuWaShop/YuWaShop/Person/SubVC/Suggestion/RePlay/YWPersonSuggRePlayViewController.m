@@ -67,26 +67,41 @@
         [self.tableView.mj_header endRefreshing];
     });
     
-    if (page == 0)[self.dataArr removeAllObjects]; 
-    //233333333333要删
-    for (int i = 0; i<3; i++) {
-        YWPSRePlayModel * model = [[YWPSRePlayModel alloc]init];
-        model.con = @"2333333333";
-        model.time = [NSString stringWithFormat:@"1480594%zi51",i];
-        model.status = i%2==0?1:0;
-        if (self.dataArr.count<=0) {
-            [self.dataArr addObject:model];
-        }else{
-            [self.dataArr insertObject:model atIndex:0];
-        }
-    }//2333333333333model算内容,数组insert
-    //233333333333要删
-    //h33333333333获取建议回复
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":@(1),@"pagen":@([self.pagens integerValue]),@"pages":@(page)};
     
-    [self.tableView reloadData];
-    if (page == 0) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(self.dataArr.count-1) inSection:0]  atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-    }
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_SuggestLists withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        NSArray * dataArr = responsObj[@"data"];
+        if (page == 0)[self.dataArr removeAllObjects];
+        for (int i = 0; i<dataArr.count; i++) {
+            YWPSSellerRePlayModel * sellerModel = [YWPSSellerRePlayModel yy_modelWithDictionary:dataArr[i]];
+            sellerModel.status = 0;
+            YWPSRePlayModel * model = [YWPSRePlayModel yy_modelWithDictionary:dataArr[i]];
+            model.status = 1;
+            if (self.dataArr.count<=0) {
+                if (![sellerModel.ctime isEqualToString:@"0"]&&![sellerModel.customer_content isEqualToString:@""]) {
+                    [self.dataArr addObject:sellerModel];
+                    [self.dataArr insertObject:model atIndex:0];
+                }else{
+                    [self.dataArr addObject:model];
+                }
+            }else{
+                if (![sellerModel.ctime isEqualToString:@"0"]&&![sellerModel.customer_content isEqualToString:@""]) {
+                    [self.dataArr insertObject:sellerModel atIndex:0];
+                }
+                [self.dataArr insertObject:model atIndex:0];
+            }
+        }
+        
+        [self.tableView reloadData];
+        if (page == 0) {
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(self.dataArr.count-1) inSection:0]  atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        }
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+    }]; 
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "YWPCTTimeNameTableViewCell.h"
 #import "YWPCTDayTimeAddTableViewCell.h"
 
+#import "YWPersonShopModel.h"
 #import "YWPCChooseTimeModel.h"
 
 @interface YWPCChooseTimeViewController ()
@@ -178,10 +179,17 @@
         [[HttpObject manager]postDataWithType:YuWaType_Shoper_SetBusinessHours withPragram:pragram success:^(id responsObj) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code is %@",responsObj);
-            [self showHUDWithStr:@"设置成功" withSuccess:YES];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self.navigationController popViewControllerAnimated:YES];
-            });
+            if (i >= self.model.payTimeArr.count-1) {
+                [self showHUDWithStr:@"设置成功" withSuccess:YES];
+                [YWPersonShopModel sharePersonShop].headerModel.business_time = dataDic;
+                NSMutableArray * shopArr = [NSMutableArray arrayWithArray:[YWPersonShopModel sharePersonShop].dataArr[1]];
+                [shopArr replaceObjectAtIndex:2 withObject:(dataDic[@"payDays"]?:@"")];
+                [[YWPersonShopModel sharePersonShop].dataArr replaceObjectAtIndex:1 withObject:shopArr];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            }
         } failur:^(id responsObj, NSError *error) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code error is %@",responsObj);

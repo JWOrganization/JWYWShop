@@ -8,6 +8,7 @@
 
 #import "YWForgetPassWordViewController.h"
 #import "JPUSHService.h"
+#import "VIPTabBarController.h"
 
 @interface YWForgetPassWordViewController ()
 
@@ -133,6 +134,11 @@
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             });
+        }else{
+            VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            rootTabBarVC.selectedIndex = 0;
+            rootTabBarVC.hidesBottomBarWhenPushed = NO;
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);

@@ -163,13 +163,14 @@
         NSArray * dataArr = responsObj[@"data"];
         for (int i = 0; i<dataArr.count; i++) {
             YWHomeAdvanceOrderModel * model =[YWHomeAdvanceOrderModel yy_modelWithDictionary:dataArr[i]];
+            model.customer_time = [model.customer_time integerValue]>0?model.customer_time:[JWTools dateWithTodayYearMonthDayNumberStr];
             [self.dataArr addObject:model];
         }
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }];
 }
 - (void)requestDelOrderWithReplay:(NSString *)rePlay withIndexPath:(NSIndexPath *)indexPath withType:(NSInteger)type{
     YWHomeAdvanceOrderModel * model = self.dataArr[indexPath.row];

@@ -194,7 +194,6 @@ static UserSession * user=nil;
     }else{
         user.infrastructure = @"暂无设置";
     }
-    
     if (user.isVIP ==3||user.comfired_Status == 2){
         [UserSession userShoperSalePhone];
         [UserSession userCompareType];

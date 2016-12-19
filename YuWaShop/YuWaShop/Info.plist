@@ -10,11 +10,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-    
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>此 App 需要您的同意才能读取媒体资料库</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>此 App 需要您的同意才能读取媒体资料库</string>
 	<key>CFBundleName</key>
-	<string>雨娃宝</string>
+	<string>雨娃开店宝</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundlePackageType</key>

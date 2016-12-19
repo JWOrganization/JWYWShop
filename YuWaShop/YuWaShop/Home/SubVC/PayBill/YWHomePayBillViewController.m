@@ -64,7 +64,6 @@
         [self showHUDWithStr:@"支付金额太大,请多次支付哟" withSuccess:NO];
         return;
     }
-    
     if (self.costNumber <= self.cutNumber) {
         [self showHUDWithStr:@"不打折金额不能大于消费总额哟" withSuccess:NO];
         return;

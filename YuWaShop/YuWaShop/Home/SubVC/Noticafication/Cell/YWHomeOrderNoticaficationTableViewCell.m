@@ -29,26 +29,21 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setModel:(YWHomeAdvanceOrderModel *)model{
+- (void)setModel:(YWHomeNoPayListModel *)model{
     if (!model)return;
     _model = model;
     [self dataSet];
 }
-- (void)dataSet{//2333333333
-    self.phoneLabel.text = @"13789384585";
-    //    self.timeLabel.text = [JWTools dateWithStr:<#(NSString *)#>];
-    self.timeLabel.text = @"2016-11-20 15:00";
-    self.nmberLabel.text = [NSString stringWithFormat:@"%@人",@"22"];
-    self.status = [self.model.stats integerValue];
-    self.rePlayLabel.text = @"技师发型师007";
-}
-
-- (void)setStatus:(NSInteger)status{
-    _status = status;
-    [self.rePlayBtn setTitleColor:[UIColor colorWithHexString:status==1?@"#25C0E9":@"#908F95"] forState:UIControlStateNormal];
-    self.rePlayBtn.layer.borderColor = [UIColor colorWithHexString:status==1?@"#25C0E9":@"#908F95"].CGColor;
-    [self.rePlayBtn setTitle:self.status==1?@"回复":(self.status == 1?@"已回复":@"已拒绝") forState:UIControlStateNormal];
-    [self.rePlayBtn setUserInteractionEnabled:status==1];
+- (void)dataSet{
+    [self.rePlayBtn setTitleColor:[UIColor colorWithHexString:@"#25C0E9"] forState:UIControlStateNormal];
+    self.rePlayBtn.layer.borderColor = [UIColor colorWithHexString:@"#25C0E9"].CGColor;
+    [self.rePlayBtn setTitle:@"回复" forState:UIControlStateNormal];
+    [self.rePlayBtn setUserInteractionEnabled:YES];
+    
+    self.phoneLabel.text = [NSString stringWithFormat:@"%@ (%@%@)",(self.model.reserve.customer_phone?self.model.reserve.customer_phone:@"匿名"),(self.model.reserve.customer_name?self.model.reserve.customer_name:@""),([self.model.reserve.customer_sex isEqualToString:@"1"]?@"先生":@"女士")];
+    self.timeLabel.text = [self.model.reserve.ctime integerValue]>0?[JWTools dateWithStr:self.model.reserve.ctime]:@"不详";
+    self.nmberLabel.text = [NSString stringWithFormat:@"%zi人",[self.model.reserve.customer_num integerValue]];
+    self.rePlayLabel.text = ([self.model.reserve.customer_message isEqualToString:@""]||!self.model.reserve.customer_message)?@"无留言":self.model.reserve.customer_message;
 }
 
 - (IBAction)rePlayBtnAction:(id)sender {

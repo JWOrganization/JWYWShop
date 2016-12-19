@@ -36,7 +36,7 @@
 
 - (void)makeNavi{
     self.title = @"意见反馈";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"查看意见反馈" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(toSeeplay) forControlEvents:UIControlEventTouchUpInside withWidth:98.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"查看意见反馈" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(toSeePlayAction) forControlEvents:UIControlEventTouchUpInside withWidth:98.f];
 }
 
 - (void)makeUI{
@@ -55,7 +55,7 @@
 - (IBAction)submitBtnAction:(id)sender {
     [self requestSendSuggestion];
 }
-- (void)toSeeplay{
+- (void)toSeePlayAction{
     YWPersonSuggRePlayViewController * vc = [[YWPersonSuggRePlayViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -75,12 +75,11 @@
     if ([self.textView.text isEqualToString:@""]) {
         [self showHUDWithStr:@"建议不能为空哟~" withSuccess:NO];
         return;
-    }else if (self.textView.text.length < 10){
+    }else if (self.textView.text.length < 5){
         [self showHUDWithStr:@"字数不够呐" withSuccess:NO];
         return;
     }
-    
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"customer_content":self.textView.text};
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_ReplySuggest withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -90,11 +89,12 @@
             [self.textView resignFirstResponder];
             self.textView.text = @"";
             self.textView.isDrawPlaceholder = YES;
+            self.textView.placeholder = @"请输入您宝贵的建议(最少5字)";
         });
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h3333333333333
+    }];
 }
 
 @end

@@ -1101,6 +1101,21 @@
     
 }
 
++(NSString*)getHourAndMinTime:(NSString*)detailNumber{
+    NSDateFormatter*dateFormatter=[[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat=@"yyyy-MM-dd HH:mm";
+    NSDate*date=[dateFormatter dateFromString:detailNumber];
+    
+    if (!date) {
+        date=[NSDate dateWithTimeIntervalSinceNow:[detailNumber doubleValue]];
+    }
+    
+
+    dateFormatter.dateFormat=@"yyyy-MM-dd HH:mm";
+  return [dateFormatter stringFromDate:date];
+
+}
+
 
 +(UIView*)addLoadingViewWithframe:(CGRect)frame{
     UIView*loadingView=[[NSBundle mainBundle]loadNibNamed:@"HUDLoadingShowView" owner:nil options:nil].firstObject;

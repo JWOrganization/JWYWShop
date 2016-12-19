@@ -89,8 +89,9 @@
         MyLog(@"Regieter Code is %@",responsObj);
         if (page == 0)[self.dataArr removeAllObjects];
         //233333333要删
-        for (int i = 0; i<3; i++) {
-            [self.dataArr addObject:[[YWHomeQuickPayListModel alloc]init]];
+        for (int i = 0; i<[responsObj[@"data"] count]; i++) {
+            YWHomeQuickPayListModel*model=[YWHomeQuickPayListModel yy_modelWithDictionary:responsObj[@"data"][i]];
+            [self.dataArr addObject:model];
         }
         //233333333要删
         [self.tableView reloadData];

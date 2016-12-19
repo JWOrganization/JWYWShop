@@ -481,6 +481,11 @@
 +(NSString*)getTime:(NSString*)number;
 
 
+/**
+ 有带小时和分的时间
+ */
++(NSString*)getHourAndMinTime:(NSString*)detailNumber;
+
 /*
  * 加上loading图
  

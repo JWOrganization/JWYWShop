@@ -84,7 +84,7 @@
     NSString*detailStr=model.customer_content;
     UILabel*detailLabel=[self viewWithTag:112];
     if (!detailLabel) {
-        detailLabel=[[UILabel alloc]initWithFrame:CGRectMake(65, 50, kScreen_Width-65-30, 0)];
+        detailLabel=[[UILabel alloc]initWithFrame:CGRectMake(65, 50, kScreen_Width-65-50, 0)];
         detailLabel.font=FONT_CN_24;
         detailLabel.numberOfLines=0;
         detailLabel.tag=112;
@@ -92,7 +92,7 @@
     }
     
        detailLabel.text=detailStr;
-    CGFloat strHeight=[detailStr boundingRectWithSize:CGSizeMake(kScreen_Width-65-30, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
+    CGFloat strHeight=[detailStr boundingRectWithSize:CGSizeMake(kScreen_Width-65-50, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
     detailLabel.height=strHeight;
   
     
@@ -126,12 +126,20 @@
     
     //图片的底部
     NSUInteger VNumber=(imageArray.count-1)/3;
-    CGFloat imageVHeight=Height+(Height+VJianJu)*VNumber+10;
-    CGFloat realImageViewBottom=Top+imageVHeight;
+    CGFloat imageVHeight;
+
+    if (imageArray.count>0) {
+        imageVHeight=Height+(Height+VJianJu)*VNumber+10;
+    }else{
+        imageVHeight=0;
+    }
+    
+       CGFloat realImageViewBottom=Top+imageVHeight;     //图片底部的位置
     
     [self.lineView removeFromSuperview];
     [self.messageImageView removeFromSuperview];
     [self.sellerShowLabel removeFromSuperview];
+    self.sellerShowLabel=nil;
     
     
     
@@ -169,7 +177,7 @@
 +(CGFloat)getCellHeight:(ShopdetailModel*)model{
 
      NSString*detailStr=model.customer_content;
-    CGFloat strHeight=[detailStr boundingRectWithSize:CGSizeMake(kScreen_Width-65-30, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
+    CGFloat strHeight=[detailStr boundingRectWithSize:CGSizeMake(kScreen_Width-65-50, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
     CGFloat imageTop =50+strHeight+10;
     
       NSArray*imageArray=model.img_url;

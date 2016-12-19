@@ -34,7 +34,7 @@
 #define SHOP_HOME_SHAREMONEY    @"/api.php/ShopAdmin/myDividendMoney/"  //我的分红的首页
 #define SHOP_Filter_LIST        @"/api.php/ShopAdmin/myDividendDetail/"  //筛选列表
 #define SHOP_Filter_DETAIL      @"/api.php/ShopAdmin/myDividendDetailShow/" //每条信息的详细
-#define SHOP_BIND_USER          @"/api.php/Sale/myDirectUser/"             //绑定的用户
+#define SHOP_BIND_USER          @"/api.php/ShopAdmin/myDirectUser/"  //绑定的用户
 #define SHOP_POINT_GETMONEY     @"/api.php/ShopAdmin/scoreToMoney/"      //分红提现
 
 

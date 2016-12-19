@@ -97,19 +97,19 @@
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_GetBusinessHours withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
-        //2333333333删
+        //23333333333删
         YWPCTimeModel * model = [YWPCTimeModel yy_modelWithDictionary:[JWTools dictionaryWithJsonString:responsObj[@"data"]]];
         [self.timeArr addObject:model];
-        //2333333333删
+        //23333333333删
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333
+    }]; //h33333333333
 }
 
 - (void)requestDelTimeWithID:(NSString *)timeID withIndexPath:(NSIndexPath *)indexPath{
-    //h3333333333删除经营时间
+    //h33333333333删除经营时间
     [self.timeArr removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 }

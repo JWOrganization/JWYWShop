@@ -135,7 +135,7 @@
 #define HTTP_Shoper_ShopAdmin_SeeSuggest   @"/api.php/ShopAdmin/seeSuggest/"   //意见反馈之查看新意见
 #define HTTP_Shoper_ShopAdmin_SuggestLists   @"/api.php/ShopAdmin/suggestLists/"   //意见反馈之列表
 #define HTTP_Shoper_ShopAdmin_ReplySuggest   @"/api.php/ShopAdmin/addSuggest/"   //意见反馈之反馈意见
-
+#define HTTP_Shoper_ShopAdmin_RankLists   @"/api.php/ShopAdmin/rankLists/"   //同业排行
 
 
 

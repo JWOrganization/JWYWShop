@@ -87,7 +87,7 @@
     self.publicPraiseView.badCommentCountLabel.text = [NSString stringWithFormat:@"差评数·%zi",self.model.bad_comment_nums];
     
     self.rankView.rankLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"%zi",self.model.my_star] withFont:[UIFont boldSystemFontOfSize:32.f] withColor:[UIColor whiteColor] withSecondtStr:@"名" withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
-    self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:@"⬆︎" withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%@名",@"2"] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];//上升排名23333333
+    self.rankView.rankCompareLabel.attributedText = [NSString stringWithFirstStr:([self.model.ranking_change integerValue]>=0?@"⬆︎":@"⬇︎") withFont:[UIFont systemFontOfSize:17.f] withColor:[UIColor whiteColor] withSecondtStr:[NSString stringWithFormat:@"%zi名",([self.model.buzz integerValue]>=0?[self.model.ranking_change integerValue]:(-[self.model.ranking_change integerValue]))] withFont:[UIFont systemFontOfSize:24.f] withColor:[UIColor whiteColor]];
     self.rankView.rankDetailLabel.attributedText = [NSString stringWithFirstStr:[NSString stringWithFormat:@"您在同城同行%@家商户中排行 ",self.model.shop_nums] withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%zi",self.model.my_star] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
     
     NSMutableAttributedString * rankCheerStr =[NSString stringWithFirstStr:@"领先" withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor colorWithHexString:@"#343434"] withSecondtStr:[NSString stringWithFormat:@"%@",self.model.my_star_buzz] withFont:[UIFont systemFontOfSize:22.f] withColor:[UIColor colorWithHexString:@"#343434"]];
@@ -113,7 +113,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }]; //h333333333333
+    }]; //h3333333333333
 }
 
 @end

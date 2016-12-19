@@ -10,6 +10,11 @@
 
 @interface YWHomeCompareMyModel : NSObject
 
+@property (nonatomic,copy)NSString * my_star;
+@property (nonatomic,copy)NSString * shop_nums;
+@property (nonatomic,copy)NSString * my_star_buzz;
+
 @property (nonatomic,assign)NSInteger status;
+@property (nonatomic,copy)NSString * typeName;
 
 @end

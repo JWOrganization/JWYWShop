@@ -354,6 +354,9 @@
         case YuWaType_Shoper_ShopAdmin_SuggestLists://意见反馈之列表
             urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_SuggestLists];
             break;
+        case YuWaType_Shoper_ShopAdmin_RankLists://同业排行
+            urlStr = [NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,HTTP_Shoper_ShopAdmin_RankLists];
+            break;
             
             //URLStr建立
         default:

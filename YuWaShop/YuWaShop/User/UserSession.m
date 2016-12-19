@@ -223,7 +223,7 @@ static UserSession * user=nil;
         MyLog(@"Regieter Code is %@",responsObj);
         NSDictionary * dataDic = responsObj[@"data"];
         user.shopType = dataDic[@"cat"][@"name"]?dataDic[@"cat"][@"name"]:@"美食";
-        user.shopTypeID = dataDic[@"cat"][@"id"]?dataDic[@"id"][@"name"]:@"1";
+        user.shopTypeID = dataDic[@"cat"][@"id"]?dataDic[@"cat"][@"id"]:@"1";
         NSArray * dataArr = dataDic[@"tag"];
         if (dataArr.count <= 0) {
             user.shopSubTypeArr = @[@"火锅",@"生日蛋糕",@"自助餐",@"西餐"];

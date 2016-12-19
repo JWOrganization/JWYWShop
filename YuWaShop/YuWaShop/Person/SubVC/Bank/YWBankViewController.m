@@ -38,13 +38,13 @@
 }
 
 - (void)addBankAction{
-    //233333333333添加银行卡
-    //2333333333333删
+    //2333333333333添加银行卡
+    //23333333333333删
     YWBankModel * model = [[YWBankModel alloc]init];
     model.bankID = @"1";
     [self.bankArr addObject:model];
     [self.tableView reloadData];
-    //233333333333删
+    //2333333333333删
 }
 
 #pragma mark - UITableViewDelegate
@@ -82,14 +82,14 @@
 
 #pragma mark - Http
 - (void)requestData{
-    //h333333333333银行信息
+    //h33333333333银行信息
     
-    //2333333333删
-    YWBankModel * model = [[YWBankModel alloc]init];
-    model.bankID = @"1";
-    [self.bankArr addObject:model];
-    //2333333333删
-    [self.tableView reloadData];
+    //23333333333删
+//    YWBankModel * model = [[YWBankModel alloc]init];
+//    model.bankID = @"1";
+//    [self.bankArr addObject:model];
+    //23333333333删
+//    [self.tableView reloadData];
 }
 
 - (void)requestDelBankWithID:(NSString *)bankID withIndexPath:(NSIndexPath *)indexPath{

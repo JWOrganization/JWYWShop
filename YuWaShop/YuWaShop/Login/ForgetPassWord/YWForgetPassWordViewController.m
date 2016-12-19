@@ -77,8 +77,7 @@
     }
 }
 
-//重置文字
-- (void)securityCodeBtnTextSet{
+- (void)securityCodeBtnTextSet{//重置文字
     if (self.time <= 0) {
         [self.timer invalidate];
         self.timer = nil;
@@ -145,7 +144,6 @@
         MyLog(@"Data Error error is %@",responsObj);
         MyLog(@"Error is %@",error);
         [self showHUDWithStr:responsObj[@"errorMessage"] withSuccess:NO];
-        
         self.time = 0;//    失败后重置验证码
         [self securityCodeBtnTextSet];
     }];

@@ -161,11 +161,13 @@
         MyLog(@"Regieter Code is %@",responsObj);
         [self.dataArr removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self showHUDWithStr:@"删除优惠券成功" withSuccess:YES];
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-    }];//h33333333333333
+        [self showHUDWithStr:@"删除优惠券失败,请重试" withSuccess:NO];
+    }];//h3333333333333
 }
 
 @end

@@ -10,6 +10,8 @@
 
 @interface YWPersonHelpViewController ()
 
+@property (nonatomic,copy)NSString * phoneStr;
+
 @end
 
 @implementation YWPersonHelpViewController
@@ -17,22 +19,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"帮助中心";
+    [self requestPhoneNumber];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    [self callService];
+    if (self.phoneStr) {
+        [self callService];
+    }else{
+        [self requestPhoneNumber];
+    }
 }
 
 - (void)callService{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertController addAction:[UIAlertAction actionWithTitle:[UserSession instance].phone style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIWebView* callWebview =[[UIWebView alloc] init];
-        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"233333333333"]];
+        NSURL * telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.phoneStr]];
         [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
         [self.view addSubview:callWebview];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - Http
+- (void)requestPhoneNumber{
+    self.phoneStr = [UserSession instance].phone;//2333333333
 }
 
 @end

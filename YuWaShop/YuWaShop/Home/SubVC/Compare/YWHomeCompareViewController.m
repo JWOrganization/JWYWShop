@@ -22,6 +22,7 @@
 @property (nonatomic,assign)NSInteger status;
 @property (nonatomic,assign)NSInteger subTypeIdx;//子类位置
 @property (nonatomic,copy)NSString * typeID;//比较类型
+@property (nonatomic,copy)NSString * typeName;
 @property (nonatomic,strong)YWHomeCompareMyModel * myModel;
 
 @property (nonatomic,strong)YWHomeCompareSortTableView * sortSubView;
@@ -51,6 +52,7 @@
     self.pagens = @"10";
     self.dataArr = [NSMutableArray arrayWithCapacity:0];
     self.typeID = [UserSession instance].shopTypeID;
+    self.typeName = [UserSession instance].shopType;
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeCompareMyTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeCompareMyTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"YWHomeCompareOtherTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWHomeCompareOtherTableViewCell"];
 }
@@ -161,20 +163,44 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-//    self.typeID//对比分类ID
-//    self.status//对比类型
-    
-    if (page == 0)[self.dataArr removeAllObjects];
-    //233333333333要删
-    self.myModel = [[YWHomeCompareMyModel alloc]init];
-    self.myModel.status = self.status;
-    for (int i = 0; i<3; i++) {
-        YWHomeCompareOtherModel * model =[[YWHomeCompareOtherModel alloc]init];
-        model.status = self.status;
-        [self.dataArr addObject:model];
+    //    self.status//对比类型23333333
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)}];
+    if (![self.typeID isEqualToString:[UserSession instance].shopTypeID]) {
+        [pragram setObject:self.typeID forKey:@"tag_id"];
+        for (int i = 0; i < [UserSession instance].shopSubTypeIDArr.count; i++) {
+            if ([[UserSession instance].shopSubTypeIDArr[i] isEqualToString:self.typeID]) {
+                self.typeName = [UserSession instance].shopSubTypeIDArr[i];
+            }
+        }
+    }else{
+        self.typeName = [UserSession instance].shopType;
     }
-    //23333333333要删
-    [self.tableView reloadData];
+    
+    [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_RankLists withPragram:pragram success:^(id responsObj) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code is %@",responsObj);
+        if (page == 0) {
+            [self.dataArr removeAllObjects];
+            self.myModel = [YWHomeCompareMyModel yy_modelWithDictionary:responsObj[@"data"]];
+            self.myModel.status = self.status;
+            self.myModel.typeName = self.typeName;
+        }
+        //233333333333要删
+//        for (int i = 0; i<3; i++) {
+//            YWHomeCompareOtherModel * model =[[YWHomeCompareOtherModel alloc]init];
+//            model.status = self.status;
+//            [self.dataArr addObject:model];
+//        }
+        //23333333333要删
+        [self.tableView reloadData];
+    } failur:^(id responsObj, NSError *error) {
+        MyLog(@"Regieter Code pragram is %@",pragram);
+        MyLog(@"Regieter Code error is %@",responsObj);
+        if (page == 0) {
+            
+            [self.tableView reloadData];
+        }
+    }]; //h33333333333
 }
 
 @end

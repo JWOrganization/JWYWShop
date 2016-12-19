@@ -13,11 +13,12 @@
 @property (nonatomic,strong)YWHomeQuickPayListModel * model;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GetMoneyLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *cutLabel;
-@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
+
 
 
 

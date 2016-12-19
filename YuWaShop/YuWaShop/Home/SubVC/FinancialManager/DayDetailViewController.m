@@ -100,22 +100,20 @@
 
     }else{
         if (indexPath.section==0) {
-            listCell.cutLabel.text=@"";
-            listCell.couponLabel.text=@"";
-            
-            //more
-            if (indexPath.row==0) {
-                listCell.nameLabel.text=@"介绍分红";
-            }else{
-                listCell.nameLabel.text=@"积分提现";
-            }
+            ForMoneyModel*model=self.allDatasMoney[indexPath.row];
+            listCell.nameLabel.text=model.name;
+            listCell.timerLabel.text=model.time;
+            listCell.GetMoneyLabel.text=[NSString stringWithFormat:@"+%@",model.money];
+            listCell.showLabel.text=@"";
             
             return listCell;
+            
+            
         }else{
-         
+            
             listCell.model = self.allDatasList[indexPath.row];
             return listCell;
- 
+            
             
         }
         
@@ -140,45 +138,57 @@
 
 #pragma mark  --setDatas
 -(void)getDatas{
-    NSArray*accord=@[@"",@"",@"",@"",@"",@"",@""];
-    NSArray*money=@[@{},@{}];
-    
-    for (NSDictionary*dict in money) {
-        ForMoneyModel*model=[ForMoneyModel yy_modelWithDictionary:dict];
-        [self.allDatasMoney addObject:model];
-    }
-    
-    self.allDatasList=[accord mutableCopy];
-    
-    [self.tableView reloadData];
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-    
-    
+//    NSArray*accord=@[@"",@"",@"",@"",@"",@"",@""];
+//    NSArray*money=@[@{},@{}];
+//    
+//    for (NSDictionary*dict in money) {
+//        ForMoneyModel*model=[ForMoneyModel yy_modelWithDictionary:dict];
+//        [self.allDatasMoney addObject:model];
+//    }
+//    
+//    self.allDatasList=[accord mutableCopy];
+//    
+//    [self.tableView reloadData];
+//    [self.tableView.mj_header endRefreshing];
+//    [self.tableView.mj_footer endRefreshing];
     
     
-//    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_EVERY_RECORD];
-//    NSString*pagen=[NSString stringWithFormat:@"%ld",(long)self.pagen];
-//    NSString*pages=[NSString stringWithFormat:@"%zi",self.pages];
-//    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"ctime":self.ctime,@"pagen":pagen,@"pages":pages};
-//    HttpManager*manager=[[HttpManager alloc]init];
-//    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
-//        MyLog(@"%@",data);
-//        NSNumber*number=data[@"errorCode"];
-//        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
-//        if ([errorCode isEqualToString:@"0"]) {
-//            
-//            
-//            [self.tableView reloadData];
-//        }else{
-//            [JRToast showWithText:data[@"errorMessage"]];
-//        }
-//        
-//        [self.tableView.mj_header endRefreshing];
-//        [self.tableView.mj_footer endRefreshing];
-//
-//        
-//    }];
+    
+    
+    NSString*urlStr=[NSString stringWithFormat:@"%@%@",HTTP_ADDRESS,SHOP_EVERY_RECORD];
+    NSString*pagen=[NSString stringWithFormat:@"%ld",(long)self.pagen];
+    NSString*pages=[NSString stringWithFormat:@"%zi",self.pages];
+    NSDictionary*params=@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"ctime":self.ctime,@"pagen":pagen,@"pages":pages};
+    HttpManager*manager=[[HttpManager alloc]init];
+    [manager postDatasNoHudWithUrl:urlStr withParams:params compliation:^(id data, NSError *error) {
+        MyLog(@"%@",data);
+        NSNumber*number=data[@"errorCode"];
+        NSString*errorCode=[NSString stringWithFormat:@"%@",number];
+        if ([errorCode isEqualToString:@"0"]) {
+            NSArray*MoneyArray=data[@"data"][@"money"];
+            NSArray*listsArray=data[@"data"][@"lists"];
+            
+            for (NSDictionary*dict in MoneyArray) {
+                ForMoneyModel*model=[ForMoneyModel yy_modelWithDictionary:dict];
+                [self.allDatasMoney addObject:model];
+            }
+            
+            for (NSDictionary*dict in listsArray) {
+                YWHomeQuickPayListModel*model=[YWHomeQuickPayListModel yy_modelWithDictionary:dict];
+                [self.allDatasList addObject:model];
+            }
+            
+            
+            [self.tableView reloadData];
+        }else{
+            [JRToast showWithText:data[@"errorMessage"]];
+        }
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+
+        
+    }];
     
 }
 

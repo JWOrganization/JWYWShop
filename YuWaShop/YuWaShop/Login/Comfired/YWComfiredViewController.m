@@ -78,7 +78,7 @@
 }
 
 - (void)makeNavi{
-    self.title = @"商务会员签约";
+    self.title = @"店铺签约";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"退出登录" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(outLogion) forControlEvents:UIControlEventTouchUpInside withWidth:66.f];
     self.type = 1;

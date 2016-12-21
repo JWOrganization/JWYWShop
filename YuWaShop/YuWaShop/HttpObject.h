@@ -108,6 +108,7 @@ typedef enum YuWaType{
     YuWaType_Shoper_ShopAdmin_GetEnvironment,   //获取环境信息
     YuWaType_Shoper_GetBusinessHours,   //获取营业时间
     YuWaType_Shoper_SetBusinessHours,   //设置营业时间
+    YuWaType_Shoper_DelBusinessHours,  //设置营业时间
     YuWaType_Shoper_ShopAdmin_SeeSuggest,   //意见反馈之查看新意见
     YuWaType_Shoper_ShopAdmin_SuggestLists,   //意见反馈之列表
     YuWaType_Shoper_ShopAdmin_ReplySuggest,   //意见反馈之反馈意见

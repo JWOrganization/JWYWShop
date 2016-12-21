@@ -167,7 +167,7 @@
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
         [self showHUDWithStr:@"删除优惠券失败,请重试" withSuccess:NO];
-    }];//h3333333333333
+    }];
 }
 
 @end

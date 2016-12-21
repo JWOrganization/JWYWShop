@@ -38,12 +38,13 @@
 }
 
 - (void)addBankAction{
+    [self showHUDWithStr:@"敬请期待" withSuccess:NO];
     //2333333333333添加银行卡
     //23333333333333删
-    YWBankModel * model = [[YWBankModel alloc]init];
-    model.bankID = @"1";
-    [self.bankArr addObject:model];
-    [self.tableView reloadData];
+//    YWBankModel * model = [[YWBankModel alloc]init];
+//    model.bankID = @"1";
+//    [self.bankArr addObject:model];
+//    [self.tableView reloadData];
     //2333333333333删
 }
 

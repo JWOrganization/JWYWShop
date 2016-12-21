@@ -118,7 +118,11 @@
         MyLog(@"Regieter Code is %@",responsObj);
         
         self.model.headerModel = [YWPersonShopHeaderModel yy_modelWithDictionary:responsObj[@"data"]];
-        self.model.headerModel.business_time = [JWTools dictionaryWithJsonString:self.model.headerModel.business_hours];
+        if (self.model.headerModel.business_hours) {
+            if (self.model.headerModel.business_hours.count>0) {
+                self.model.headerModel.business_time = [JWTools dictionaryWithJsonString:self.model.headerModel.business_hours[0][@"time"]];
+            }
+        }
         [UserSession instance].nickName = self.model.headerModel.company_name;
         [UserSession instance].cut = (int)([self.model.headerModel.discount floatValue]*100);
         [UserSession instance].logo = self.model.headerModel.company_img;

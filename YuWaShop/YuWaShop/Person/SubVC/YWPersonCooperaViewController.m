@@ -46,7 +46,11 @@
 
 #pragma mark - Http
 - (void)requestPhoneNumber{
-    self.phoneStr = [UserSession instance].phone;//2333333333
+    if (![UserSession instance].phone||[[UserSession instance].phone isEqualToString:@""]) {
+        [self showHUDWithStr:@"暂无数据,请稍后重试" withSuccess:NO];
+        return;
+    }
+    self.phoneStr = [UserSession instance].phone;
 }
 
 @end

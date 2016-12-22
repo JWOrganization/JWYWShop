@@ -163,8 +163,7 @@
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });
     
-    //    self.status//对比类型23333333
-    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)}];
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"type":[NSString stringWithFormat:@"%zi",(self.status+1)],@"pagen":@([self.pagens integerValue]),@"pages":@(page)}];
     if (![self.typeID isEqualToString:[UserSession instance].shopTypeID]) {
         [pragram setObject:self.typeID forKey:@"tag_id"];
         for (int i = 0; i < [UserSession instance].shopSubTypeIDArr.count; i++) {
@@ -179,28 +178,24 @@
     [[HttpObject manager]postNoHudWithType:YuWaType_Shoper_ShopAdmin_RankLists withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
+        NSDictionary * dataDic = responsObj[@"data"];
         if (page == 0) {
             [self.dataArr removeAllObjects];
-            self.myModel = [YWHomeCompareMyModel yy_modelWithDictionary:responsObj[@"data"]];
+            self.myModel = [YWHomeCompareMyModel yy_modelWithDictionary:dataDic[@"shop"]];
             self.myModel.status = self.status;
             self.myModel.typeName = self.typeName;
         }
-        //233333333333要删
-//        for (int i = 0; i<3; i++) {
-//            YWHomeCompareOtherModel * model =[[YWHomeCompareOtherModel alloc]init];
-//            model.status = self.status;
-//            [self.dataArr addObject:model];
-//        }
-        //23333333333要删
+        NSArray * dataArr = dataDic[@"lists"];
+        for (int i = 0; i<dataArr.count; i++) {
+            YWHomeCompareOtherModel * model =[YWHomeCompareOtherModel yy_modelWithDictionary:dataArr[i]];
+            model.status = self.status;
+            [self.dataArr addObject:model];
+        }
         [self.tableView reloadData];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
-        if (page == 0) {
-            
-            [self.tableView reloadData];
-        }
-    }]; //h33333333333
+    }];
 }
 
 @end

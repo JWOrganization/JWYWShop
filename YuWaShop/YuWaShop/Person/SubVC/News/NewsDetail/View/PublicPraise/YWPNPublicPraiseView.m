@@ -13,11 +13,12 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    NSMutableAttributedString * praiseStr = [NSString stringWithFirstStr:@"用户可以在新版雨娃给您的商户 " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor blackColor] withSecondtStr:@"点赞" withFont:[UIFont systemFontOfSize:20.f] withColor:[UIColor blackColor]];
+    NSMutableAttributedString * praiseStr = [NSString stringWithFirstStr:@"用户可以在新版雨娃宝给您的商户 " withFont:[UIFont systemFontOfSize:15.f] withColor:[UIColor blackColor] withSecondtStr:@"点赞" withFont:[UIFont systemFontOfSize:20.f] withColor:[UIColor blackColor]];
     [praiseStr appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@" 啦" attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:15.f]}]];
     self.showLabel.attributedText = praiseStr;
     
     self.showImageView.layer.cornerRadius = 68.f;
     self.showImageView.layer.masksToBounds = YES;
 }
+
 @end

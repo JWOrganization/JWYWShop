@@ -174,17 +174,13 @@
         if (!model.time)break;
         NSDictionary * dataDic = @{@"payDays":self.model.payDays,@"name":(model.name?model.name:@"营业时间"),@"time":model.time};
         MyLog(@"%@",dataDic);
-        NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"business_hours":[JWTools dictionaryToJson:dataDic]};
+        NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"time":[JWTools dictionaryToJson:dataDic]};
         
         [[HttpObject manager]postDataWithType:YuWaType_Shoper_SetBusinessHours withPragram:pragram success:^(id responsObj) {
             MyLog(@"Regieter Code pragram is %@",pragram);
             MyLog(@"Regieter Code is %@",responsObj);
             if (i >= self.model.payTimeArr.count-1) {
                 [self showHUDWithStr:@"设置成功" withSuccess:YES];
-                [YWPersonShopModel sharePersonShop].headerModel.business_time = dataDic;
-                NSMutableArray * shopArr = [NSMutableArray arrayWithArray:[YWPersonShopModel sharePersonShop].dataArr[1]];
-                [shopArr replaceObjectAtIndex:2 withObject:(dataDic[@"payDays"]?:@"")];
-                [[YWPersonShopModel sharePersonShop].dataArr replaceObjectAtIndex:1 withObject:shopArr];
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popViewControllerAnimated:YES];

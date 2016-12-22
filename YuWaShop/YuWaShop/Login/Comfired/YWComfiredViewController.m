@@ -19,7 +19,8 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@interface YWComfiredViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface YWComfiredViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate,MBProgressHUDDelegate>
+@property(nonatomic,strong)MBProgressHUD*HUD;
 
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UIButton *upImageBtn;
@@ -70,6 +71,12 @@
     [self makeNavi];
     [self makeUI];
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.HUD hide:YES];
+}
+
 - (CLGeocoder *)geocoder{
     if (!_geocoder) {
         _geocoder = [[CLGeocoder alloc]init];
@@ -165,6 +172,17 @@
     sender.layer.borderColor = [UIColor colorWithHexString:@"#D6D6D6"].CGColor;
     sender.layer.cornerRadius = 5.f;
     sender.layer.masksToBounds = YES;
+}
+
+- (MBProgressHUD *)HUD{
+    if (!_HUD) {
+        _HUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
+        _HUD.delegate = self;
+        _HUD.userInteractionEnabled = NO;
+        _HUD.dimBackground = NO;
+        _HUD.removeFromSuperViewOnHide = YES;
+    }
+    return _HUD;
 }
 
 #pragma mark - Button Action
@@ -288,6 +306,7 @@
     UIImage * camera;
     if (type == 0) {
         camera = self.cameraImage;
+        [self.HUD show:YES];
     }else if (type == 1){
         camera = self.cameraUserImage;
     }else{
@@ -307,10 +326,14 @@
             self.cameraUsersImageURL = responsObj[@"data"];
             if (!self.cameraUsersImageURL)self.cameraUsersImageURL=@"";
         }
-        if (self.cameraImageURL&&self.cameraUserImageURL&&self.cameraUsersImageURL)[self requestUpComfired];
+        if (self.cameraImageURL&&self.cameraUserImageURL&&self.cameraUsersImageURL){
+            [self requestUpComfired];
+            [self.HUD hide:YES];
+        }
     } failur:^(id errorData, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",error);
+        [self.HUD hide:YES];
     } withPhoto:UIImagePNGRepresentation(camera)];
 }
 - (void)requestComfired{

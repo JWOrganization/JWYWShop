@@ -12,13 +12,13 @@
 #define HTTP_ADDRESS        @"http://114.215.252.104"    //地址
 
 #pragma mark - Logion & Register
-#define HTTP_REGISTER       @"/api.php/Login/reg/" //注册账号
-#define HTTP_REGISTER_CODE   @"/api.php/Login/getRegisterCode/" //注册验证码
-#define HTTP_LOGION_CODE   @"/api.php/Login/getRegisterCode/" //快捷登录验证码
-#define HTTP_RESET_CODE   @"/api.php/Login/getRegisterCode/" //重置密码验证码
-#define HTTP_LOGIN          @"/api.php/Login/login/" //登入
-#define HTTP_LOGIN_Quick      @"/api.php/Login/phoneLogin/" //快捷登录
-#define HTTP_LOGIN_FORGET_TEL @"/api.php/Login/resetPassword/" //找回密码
+#define HTTP_REGISTER       @"/api.php/ShopLogin/reg/" //注册账号
+#define HTTP_REGISTER_CODE   @"/api.php/ShopLogin/getRegisterCode/" //注册验证码
+#define HTTP_LOGION_CODE   @"/api.php/ShopLogin/getRegisterCode/" //快捷登录验证码
+#define HTTP_RESET_CODE   @"/api.php/ShopLogin/getRegisterCode/" //重置密码验证码
+#define HTTP_LOGIN          @"/api.php/ShopLogin/login/" //登入
+#define HTTP_LOGIN_Quick      @"/api.php/ShopLogin/phoneLogin/" //快捷登录
+#define HTTP_LOGIN_FORGET_TEL @"/api.php/ShopLogin/resetPassword/" //找回密码
 
 #pragma mark - Storm
 #define HTTP_STORM_TAG @"/api.php/Shop/getTagNameByCid/" //子标签

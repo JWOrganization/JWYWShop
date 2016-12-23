@@ -16,6 +16,7 @@
 #import "YWAddressSubSortCollectionView.h"
 #import "YWComfiringViewController.h"
 #import "JPUSHService.h"
+#import "VIPTabBarController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -86,9 +87,17 @@
 
 - (void)makeNavi{
     self.title = @"店铺签约";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"NaviBack" withSelectImage:@"NaviBack" withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside withWidth:30.f];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"退出登录" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(outLogion) forControlEvents:UIControlEventTouchUpInside withWidth:66.f];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentCenter withTittle:@"退出登录" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(outLogion) forControlEvents:UIControlEventTouchUpInside withWidth:66.f];
     self.type = 1;
+}
+
+- (void)backAction{
+    VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    rootTabBarVC.selectedIndex = 0;
+    rootTabBarVC.hidesBottomBarWhenPushed = NO;
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)outLogion{

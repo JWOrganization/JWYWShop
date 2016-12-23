@@ -127,7 +127,7 @@ static UserSession * user=nil;
     
     user.password = dataDic[@"password"];
     [KUSERDEFAULT setValue:user.password forKey:AUTOLOGINCODE];
-    user.nickName = dataDic[@"company_name"]?dataDic[@"company_name"]:user.account;
+    user.nickName = (dataDic[@"company_name"]&&![dataDic[@"company_name"] isKindOfClass:[NSNull class]])?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
     user.hxPassword = [NSString stringWithFormat:@"2%@",dataDic[@"mobile"]];
     user.local = dataDic[@"address"];
@@ -139,8 +139,8 @@ static UserSession * user=nil;
     
     user.money = dataDic[@"money"];
     user.inviteID = dataDic[@"invite_uid"];
-    user.logo = dataDic[@"company_img"]?dataDic[@"company_img"]:@"";
-    user.personality = dataDic[@"company_mark"]?dataDic[@"company_mark"]:@"尚未设置门店简介哟";
+    user.logo = (dataDic[@"company_img"]&&![dataDic[@"company_img"] isKindOfClass:[NSNull class]])?dataDic[@"company_img"]:@"";
+    user.personality = (dataDic[@"company_mark"]&&![dataDic[@"company_mark"]isKindOfClass:[NSNull class]])?dataDic[@"company_mark"]:@"尚未设置门店简介哟";
     if ([user.personality isEqualToString:@""]) {
         user.personality = @"尚未设置门店简介哟";
     }
@@ -177,10 +177,10 @@ static UserSession * user=nil;
         user.comfired_Status = 4;
     }
     
-    user.cut = ceilf([dataDic[@"company_discount"] floatValue]*100);
+    user.cut = ceilf([((dataDic[@"company_discount"]&&![dataDic[@"company_discount"]isKindOfClass:[NSNull class]])?dataDic[@"company_discount"]:@"1") floatValue]*100);
     if (user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
-    user.star = [(dataDic[@"star"]?dataDic[@"star"]:@"5.0") floatValue];
+    user.star = [((dataDic[@"star"]&&![dataDic[@"star"]isKindOfClass:[NSNull class]])?dataDic[@"star"]:@"5.0") floatValue];
     NSArray * infrastructure = dataDic[@"infrastructure"];
     if (!infrastructure) infrastructure=@[];
     if (infrastructure.count>1) {

@@ -127,10 +127,10 @@
             }
         }
         
+        [self.navigationController popToRootViewControllerAnimated:YES];
         VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         rootTabBarVC.selectedIndex = 0;
         rootTabBarVC.hidesBottomBarWhenPushed = NO;
-        [self.navigationController popToRootViewControllerAnimated:YES];
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);
         MyLog(@"Data Error error is %@",responsObj);

@@ -214,10 +214,10 @@
         if ([UserSession instance].comfired_Status == 2||[UserSession instance].isVIP == 3){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self.navigationController popViewControllerAnimated:YES];
             });
         }else{
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
             VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
             rootTabBarVC.selectedIndex = 0;
             rootTabBarVC.hidesBottomBarWhenPushed = NO;
@@ -262,10 +262,10 @@
         if ([UserSession instance].comfired_Status == 2||[UserSession instance].isVIP == 3){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [JPUSHService setAlias:[UserSession instance].account callbackSelector:nil object:nil];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self.navigationController popViewControllerAnimated:YES];
             });
         }else{
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
             VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
             rootTabBarVC.selectedIndex = 0;
             rootTabBarVC.hidesBottomBarWhenPushed = NO;

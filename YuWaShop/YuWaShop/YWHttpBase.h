@@ -127,7 +127,6 @@
 #define HTTP_Shoper_ShopAdmin_DelShopPhoto   @"/api.php/ShopAdmin/delShopPhoto/"   //相册管理之删除
 #define HTTP_Shoper_ShopAdmin_ShopPhotoLists   @"/api.php/ShopAdmin/shopPhotoLists/"   //相册管理之列表
 
-//#define HTTP_Shoper_ShopAdmin_   @""   //同业排行
 #define HTTP_Shoper_ShopAdmin_MyNotice   @"/api.php/ShopAdmin/myNotice/"   //消息通知之列表
 #define HTTP_Shoper_ShopAdmin_UpdateMyNotice   @"/api.php/ShopAdmin/updateMyNotice/"   //消息通知之更新
 #define HTTP_Shoper_ShopAdmin_Analysis   @"/api.php/ShopAdmin/analysis/"   //数据分析

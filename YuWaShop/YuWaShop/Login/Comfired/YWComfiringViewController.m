@@ -29,10 +29,10 @@
 }
 
 - (void)backAction{
+    [self.navigationController popToRootViewControllerAnimated:NO];
     VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     rootTabBarVC.selectedIndex = 0;
     rootTabBarVC.hidesBottomBarWhenPushed = NO;
-    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 - (void)outLogion{

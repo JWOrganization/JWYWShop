@@ -16,6 +16,7 @@
 
 #import "YWPersonShopViewController.h"
 #import "YWHomeCommoditiesVC.h"
+#import "YWHomeRefundVC.h"
 #import "YWHomeFestivalViewController.h"
 #import "YWHomeCompareViewController.h"
 #import "YWHomeCouponViewController.h"
@@ -74,9 +75,9 @@
 }
 
 - (void)dataSet{
-    self.nameArr = @[@"财务管理",@"商品管理",@"现金券",@"口碑品牌",@"门店管理",@"预定管理",@"节日管理",@"相册管理",@"同业排行"];
+    self.nameArr = @[@"财务管理",@"商品管理",@"现金券",@"口碑品牌",@"退款管理",@"预定管理",@"节日管理",@"相册管理",@"同业排行"];
     self.imgNameArr = @[@"Home_IMG0",@"Home_IMG1",@"Home_IMG2",@"Home_IMG3",@"Home_IMG4",@"Home_IMG5",@"Home_IMG6",@"Home_IMG7",@"Home_IMG8"];
-    self.subVCArr = @[[YWFinancialViewController class],[YWHomeCommoditiesVC class],[YWHomeCouponViewController class],[ShowMoreCommitViewController class],[YWPersonShopViewController class],[YWHomeAdvanceOrderViewController class],[YWHomeFestivalViewController class],[StorePhotoViewController class],[YWHomeCompareViewController class]];
+    self.subVCArr = @[[YWFinancialViewController class],[YWHomeCommoditiesVC class],[YWHomeCouponViewController class],[ShowMoreCommitViewController class],[YWHomeRefundVC class],[YWHomeAdvanceOrderViewController class],[YWHomeFestivalViewController class],[StorePhotoViewController class],[YWHomeCompareViewController class]];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"YWHomeCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YWHomeCollectionHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"YWHomeCollectionHeaderView"];
 }

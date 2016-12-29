@@ -218,9 +218,12 @@
             });
         }else{
             [self.navigationController popToRootViewControllerAnimated:YES];
-            VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-            rootTabBarVC.selectedIndex = 0;
-            rootTabBarVC.hidesBottomBarWhenPushed = NO;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+                rootTabBarVC.selectedIndex = 0;
+                rootTabBarVC.hidesBottomBarWhenPushed = NO;
+
+            });
         }
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Pragram is %@",pragram);

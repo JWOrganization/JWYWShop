@@ -130,6 +130,7 @@ static UserSession * user=nil;
     user.nickName = (dataDic[@"company_name"]&&![dataDic[@"company_name"] isKindOfClass:[NSNull class]])?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
     user.hxPassword = [NSString stringWithFormat:@"2%@",dataDic[@"mobile"]];
+    user.mobile = [NSString stringWithFormat:@"%@",dataDic[@"mobile"]];
     user.local = dataDic[@"address"];
     
     NSArray * SexArr = @[@"男",@"女",@"未知"];

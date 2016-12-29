@@ -16,6 +16,7 @@
 @property (nonatomic,assign)NSInteger uid;//uid
 @property (nonatomic,copy)NSString * token;   //用户登录后标识
 @property (nonatomic,copy)NSString * account;  //账户
+@property (nonatomic,copy)NSString * mobile;
 @property (nonatomic,copy)NSString * password;   //密码
 @property (nonatomic,copy)NSString * hxPassword;   //环信密码
 @property (nonatomic,copy)NSString * inviteID;  //邀请ID

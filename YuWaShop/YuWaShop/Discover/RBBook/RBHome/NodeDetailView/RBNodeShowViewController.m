@@ -406,7 +406,7 @@
 
 #pragma mark - Http
 - (void)requestData{
-    NSDictionary * pragram = @{@"token":[UserSession instance].token,@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"token":[UserSession instance].token,@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postDataWithType:YuWaType_RB_DETAIL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -423,7 +423,7 @@
     }];
 }
 - (void)requestDataWithPages:(NSInteger)page{
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
@@ -463,7 +463,7 @@
     RBNodeAddToAldumModel * aldumModel = self.addToAldumView.dataArr[[aldumIdx integerValue]];
     NSString * album_id = aldumModel.aldumID;
     
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"album_id":album_id,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};//album_id没有将创建默认
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"album_id":album_id,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};//album_id没有将创建默认
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_COLLECTION_TO_ALDUM withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -481,7 +481,7 @@
 }
 
 - (void)requestCancelToAldum{
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_COLLECTION_CANCEL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

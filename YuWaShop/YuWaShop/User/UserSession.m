@@ -174,6 +174,7 @@ static UserSession * user=nil;
     }
     if (![dataDic[@"check_status"] isKindOfClass:[NSNull class]]) {
         user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+        if (user.comfired_Status==2)user.isVIP = 3;
     }else{
         user.comfired_Status = 4;
     }

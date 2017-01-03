@@ -309,7 +309,7 @@
     NSString * tagStr = [self tagArrJsonCreate];
 //    MyLog(@"%@",tagStr);
     NSInteger annotionCount = [RBPublishSession sharePublishSession].status;
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"cid":@(annotionCount),@"title":self.scrollView.nameTextField.text,@"location":[self.scrollView.locationnameLabel.text isEqualToString:@"添加地点"]?@"":self.scrollView.locationnameLabel.text,@"content":[JWTools UTF8WithStringJW:self.scrollView.conTextView.text],@"img_list":[JWTools jsonStrWithArr:self.picUrlArr],@"tag":tagStr};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"cid":@(annotionCount),@"title":self.scrollView.nameTextField.text,@"location":[self.scrollView.locationnameLabel.text isEqualToString:@"添加地点"]?@"":self.scrollView.locationnameLabel.text,@"content":[JWTools UTF8WithStringJW:self.scrollView.conTextView.text],@"img_list":[JWTools jsonStrWithArr:self.picUrlArr],@"tag":tagStr,@"user_type":@([UserSession instance].isVIP==3?2:1)};
     [[HttpObject manager]postDataWithType:YuWaType_RB_NODE_PUBLISH withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);

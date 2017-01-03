@@ -161,7 +161,10 @@
 
 - (void)addToAldumViewmake{
     if (![UserSession instance].aldumCount||[[UserSession instance].aldumCount integerValue]<=0) {
-        if (self.addToAldumView)[self requestAddToAldumWithIdx:@"0"];
+        if (self.addToAldumView){
+            [self.addToAldumView setUserInteractionEnabled:NO];
+            [self requestAddToAldumWithIdx:@"0"];
+        }
     }
     WEAKSELF;
     if (!self.addToAldumView) {
@@ -171,6 +174,7 @@
         };
         self.addToAldumView.frame = CGRectMake(0.f, 0.f, kScreen_Width, kScreen_Height);
         self.addToAldumView.addToAlbumBlock = ^(NSInteger aldumIdx){
+            [weakSelf.addToAldumView setUserInteractionEnabled:NO];
             [weakSelf requestAddToAldumWithIdx:[NSString stringWithFormat:@"%zi",aldumIdx]];
         };
         self.addToAldumView.newAlbumBlock = ^(){
@@ -470,6 +474,7 @@
         MyLog(@"Regieter Code is %@",responsObj);
         self.toolsBottomView.isCollection = !self.toolsBottomView.isCollection;
         self.dataModel.infavs = @"1";
+        [self.addToAldumView setUserInteractionEnabled:YES];
         self.dataModel.fav_count = [NSString stringWithFormat:@"%zi",([self.dataModel.fav_count integerValue] + 1)];
         if (![UserSession instance].aldumCount||[[UserSession instance].aldumCount integerValue]<=0)[UserSession instance].aldumCount = @"1";//成功后若无专辑则创建
         [self reSetBottomToolsView];
@@ -477,6 +482,7 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
+        [self.addToAldumView setUserInteractionEnabled:YES];
     }];
 }
 

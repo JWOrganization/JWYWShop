@@ -11,6 +11,7 @@
 @implementation JWImgPickerAlbumChooseView
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]init];
     [tap addTarget:self action:@selector(tapAction)];
     [self addGestureRecognizer:tap];

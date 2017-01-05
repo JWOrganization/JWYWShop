@@ -22,6 +22,7 @@
 }
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     self.BGImageView.animationImages = self.BGImgArr;
     self.BGImageView.animationDuration = 3;
     self.BGImageView.animationRepeatCount = 0;

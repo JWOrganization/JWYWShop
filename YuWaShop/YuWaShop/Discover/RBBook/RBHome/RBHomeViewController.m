@@ -93,6 +93,7 @@
 }
 
 - (void)searchBtnAction{
+    if (![self isComfired])return;
     RBHomeSearchViewController * vc = [[RBHomeSearchViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -109,6 +110,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (![self isComfired])return;
     RBNodeShowViewController * vc = [[RBNodeShowViewController alloc]init];
     vc.model = self.dataArr[indexPath.row];
     [self.navigationController pushViewController:vc animated:NO];

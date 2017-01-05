@@ -49,6 +49,11 @@
     return [UserSession instance].isLogin;
 }
 
+- (BOOL)isComfired{
+    if ([UserSession instance].isVIP!=3)[UserSession userToComfired];
+    return [UserSession instance].isVIP==3;
+}
+
 - (void)makeCommentToolsView{
     self.commentToolsView = [[[NSBundle mainBundle]loadNibNamed:@"RBCommentToolsView" owner:nil options:nil] firstObject];
     self.commentToolsView.hidden = YES;
@@ -116,6 +121,7 @@
 
 - (void)publishNodeAction{//发笔记
     if (![self isLogin])return;
+    if (![self isComfired])return;
     TZImagePickerController *imagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
     imagePickerVC.allowPickingVideo = NO;
     [imagePickerVC setDidFinishPickingPhotosHandle:^(NSArray * photos , NSArray * assets,BOOL isSelectOriginalPhoto){
@@ -127,11 +133,13 @@
 
 - (void)publishAlbumAction{//发专辑
     if (![self isLogin])return;
+    if (![self isComfired])return;
     MyLog(@"Add Album");
 }
 
 - (void)commentActionWithNodeDic:(NSDictionary *)node{//添加评论
     if (![self isLogin])return;
+    if (![self isComfired])return;
     self.commentToolsView.hidden = NO;
     if (self.commentToolsView.y > kScreen_Height - 44.f)self.commentToolsView.y = kScreen_Height - 44.f;
     self.commentToolsView.sendTextField.text = @"";
@@ -143,6 +151,7 @@
 
 - (void)commentActionWithUserDic:(NSDictionary *)user{//回复用户评论
     if (![self isLogin])return;
+    if (![self isComfired])return;
     self.commentToolsView.hidden = NO;
     if (self.commentToolsView.y > kScreen_Height - 44.f)self.commentToolsView.y = kScreen_Height - 44.f;
     self.commentToolsView.sendTextField.text = @"";

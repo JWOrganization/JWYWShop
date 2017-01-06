@@ -143,7 +143,8 @@
 }
 
 - (void)requestUpLoadShopInfo{
-    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"company_first_tel":self.firstPhoneTextField.text,@"company_second_tel":([self.subPhoneTextField.text isEqualToString:@""]?self.firstPhoneTextField.text:self.subPhoneTextField.text)}];
+    NSMutableDictionary * pragram = [NSMutableDictionary dictionaryWithDictionary:@{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"company_img":self.cameraImageURL,@"company_name":self.nameTextField.text,@"company_address":self.addressTextField.text,@"company_first_tel":self.firstPhoneTextField.text,@"company_mark":self.textView.text}];
+    if (![self.subPhoneTextField.text isEqualToString:@""]&&self.subPhoneTextField.text)[pragram setObject:self.subPhoneTextField.text forKey:@"company_second_tel"];
     
     [[HttpObject manager]postDataWithType:YuWaType_Shoper_ShopAdmin_SetBaseInfo withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

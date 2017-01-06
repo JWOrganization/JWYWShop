@@ -123,7 +123,7 @@
             }
         }
         [UserSession instance].nickName = self.model.headerModel.company_name;
-        [UserSession instance].cut = (int)([self.model.headerModel.discount floatValue]*100)>10?:[UserSession instance].cut;
+        [UserSession instance].cut = (int)(([self.model.headerModel.discount floatValue]*100)>10?([self.model.headerModel.discount floatValue]*100):[UserSession instance].cut);
         [UserSession instance].logo = self.model.headerModel.company_img;
         
         NSString * showCut;

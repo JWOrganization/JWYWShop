@@ -10,7 +10,7 @@
 
 @implementation RBNodeTagModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"tagArr" : [RBPublicTagSaveModel class]};
 }
 

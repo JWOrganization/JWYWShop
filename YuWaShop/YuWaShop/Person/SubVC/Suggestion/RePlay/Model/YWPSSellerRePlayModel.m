@@ -10,7 +10,7 @@
 
 @implementation YWPSSellerRePlayModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)modelCustomPropertyMapper{
     return @{@"customer_content" : @"seller_content",@"ctime" : @"rtime"};
 }
 

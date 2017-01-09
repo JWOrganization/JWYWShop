@@ -11,11 +11,11 @@
 
 @implementation RBNodeShowModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"filter_tags" : [RBNodeShowTagModel class],@"like_users" : [RBHomeUserModel class],@"comments_list" : [RBNodeShowCommentModel class],@"images_list" : [RBHomeListImagesModel class]};
 }
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)modelCustomPropertyMapper{
     return @{@"nodeID" : @"id"};
 }
 

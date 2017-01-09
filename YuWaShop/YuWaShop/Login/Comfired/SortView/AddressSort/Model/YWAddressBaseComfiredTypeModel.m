@@ -13,7 +13,7 @@
     return @{@"typeID" : @"id"};
 }
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"business" : [YWAddressComfiredTypeModel class]};
 }
 

@@ -10,8 +10,8 @@
 
 @implementation YWHomeQuickPayListModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"quickPayID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"quickPayID":@"id"};
 }
 
 @end

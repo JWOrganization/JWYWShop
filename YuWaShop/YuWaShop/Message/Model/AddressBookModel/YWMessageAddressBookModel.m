@@ -10,8 +10,8 @@
 
 @implementation YWMessageAddressBookModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"nikeName" : @"nickname"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"nikeName":@"nickname"};
 }
 
 @end

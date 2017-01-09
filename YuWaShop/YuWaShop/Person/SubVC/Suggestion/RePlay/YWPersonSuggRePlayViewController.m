@@ -90,6 +90,7 @@
                 if (![sellerModel.ctime isEqualToString:@"0"]&&![sellerModel.customer_content isEqualToString:@""]) {
                     [self.dataArr insertObject:sellerModel atIndex:0];
                 }
+                
                 [self.dataArr insertObject:model atIndex:0];
             }
         }

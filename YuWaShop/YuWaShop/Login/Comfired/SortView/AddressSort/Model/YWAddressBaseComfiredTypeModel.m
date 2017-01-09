@@ -9,12 +9,12 @@
 #import "YWAddressBaseComfiredTypeModel.h"
 
 @implementation YWAddressBaseComfiredTypeModel
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"typeID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"typeID":@"id"};
 }
 
 + (NSDictionary *)modelContainerPropertyGenericClass{
-    return @{@"business" : [YWAddressComfiredTypeModel class]};
+    return @{@"business":[YWAddressComfiredTypeModel class]};
 }
 
 @end

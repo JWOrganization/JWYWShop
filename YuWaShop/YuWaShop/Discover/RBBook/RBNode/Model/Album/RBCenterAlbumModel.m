@@ -10,8 +10,8 @@
 
 @implementation RBCenterAlbumModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"aldumID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"aldumID":@"id"};
 }
 
 @end

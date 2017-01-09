@@ -10,8 +10,8 @@
 
 @implementation YWComfiredTypeModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"typeID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"typeID":@"id"};
 }
 
 @end

@@ -10,8 +10,8 @@
 
 @implementation YWHomeNoPayOrderListModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"orderID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"orderID":@"id"};
 }
 
 @end

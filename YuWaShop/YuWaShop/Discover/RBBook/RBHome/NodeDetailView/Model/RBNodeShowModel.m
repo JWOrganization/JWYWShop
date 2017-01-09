@@ -16,7 +16,7 @@
 }
 
 + (NSDictionary *)modelCustomPropertyMapper{
-    return @{@"nodeID" : @"id"};
+    return @{@"nodeID":@"id"};
 }
 
 + (NSMutableDictionary *)dataDicSetWithDic:(NSDictionary *)dic{

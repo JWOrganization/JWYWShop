@@ -80,7 +80,7 @@
 }
 
 - (BOOL)isLogin{
-    if (![UserSession instance].isLogin) {
+    if (![UserSession instance].isLogin){
         VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         __block RBHomeViewController * rbRootVC;
         [rootTabBarVC.viewControllers enumerateObjectsUsingBlock:^(__kindof VIPNavigationController * _Nonnull navi, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -98,7 +98,7 @@
 }
 
 #pragma mark - Button Action
-- (IBAction)likeBtnAction:(id)sender {
+- (IBAction)likeBtnAction:(id)sender{
     if (![self isLogin])return;
     self.isLike = !self.isLike;
     
@@ -130,7 +130,7 @@
 
 #pragma mark - Http
 - (void)requestLike{
-    if (!self.isLike) {
+    if (!self.isLike){
         [self requestCancelLike];
         return;
     }

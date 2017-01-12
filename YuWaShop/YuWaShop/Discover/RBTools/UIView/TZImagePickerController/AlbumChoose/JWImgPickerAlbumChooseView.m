@@ -30,6 +30,8 @@
             self.typeTableV.choosedTypeBlock = ^(NSString * index,NSString *chooseStr){
                 weakSelf.chooseTypeBlock(index);
                 weakSelf.nameLabel.text = chooseStr;
+                weakSelf.nameLabelWidth.constant = [JWTools labelWidthWithLabel:weakSelf.nameLabel];
+                [weakSelf setNeedsLayout];
                 [weakSelf tapAction];
             };
             UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]init];

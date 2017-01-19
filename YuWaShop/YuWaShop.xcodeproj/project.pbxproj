@@ -6790,7 +6790,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = YuWaShop/YuWaShop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Durui Information Technology Co., Ltd. (CL7JKSS9Z7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Durui Information Technology Co., Ltd. (CL7JKSS9Z7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CL7JKSS9Z7;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
@@ -6807,8 +6807,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.duruikeji.YuWaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4da254c3-d38a-4870-90ee-8ad947af69ac";
-				PROVISIONING_PROFILE_SPECIFIER = YWShopDistribution;
+				PROVISIONING_PROFILE = "cfb222b4-8e4a-4acc-a84b-0cf0cb27da35";
+				PROVISIONING_PROFILE_SPECIFIER = YWShopDevelop;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -6820,7 +6820,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = YuWaShop/YuWaShop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Durui Information Technology Co., Ltd. (CL7JKSS9Z7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Durui Information Technology Co., Ltd. (CL7JKSS9Z7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = CL7JKSS9Z7;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YuWaShop/VipxoxPrefixHeader.pch";
@@ -6837,7 +6837,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.duruikeji.YuWaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4da254c3-d38a-4870-90ee-8ad947af69ac";
+				PROVISIONING_PROFILE = "104913dd-1db6-49ad-a58c-ddf2d7cfa20c";
 				PROVISIONING_PROFILE_SPECIFIER = YWShopDistribution;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

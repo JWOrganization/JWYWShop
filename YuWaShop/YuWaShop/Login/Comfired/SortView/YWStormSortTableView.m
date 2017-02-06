@@ -92,8 +92,9 @@
                 [tagArr addObject:[YWComfiredTypeModel yy_modelWithDictionary:dataArr[i]]];
             }
         }
-        
-        self.choosedTypeBlock(self.selectIndex,[self.dataStateArr[self.selectIndex] integerValue],tagArr);
+        NSString * allTypeID;
+        if (dataArr.count>0) allTypeID = dataArr[0][@"id"];
+        self.choosedTypeBlock(self.selectIndex,[self.dataStateArr[self.selectIndex] integerValue],tagArr,allTypeID);
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);

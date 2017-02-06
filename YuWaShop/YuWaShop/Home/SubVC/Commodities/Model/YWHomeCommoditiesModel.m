@@ -9,8 +9,8 @@
 #import "YWHomeCommoditiesModel.h"
 
 @implementation YWHomeCommoditiesModel
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"commoditiesID" : @"goods_id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"commoditiesID":@"goods_id"};
 }
 
 @end

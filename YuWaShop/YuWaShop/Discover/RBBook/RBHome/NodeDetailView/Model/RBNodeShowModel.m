@@ -11,12 +11,12 @@
 
 @implementation RBNodeShowModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"filter_tags" : [RBNodeShowTagModel class],@"like_users" : [RBHomeUserModel class],@"comments_list" : [RBNodeShowCommentModel class],@"images_list" : [RBHomeListImagesModel class]};
 }
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"nodeID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"nodeID":@"id"};
 }
 
 + (NSMutableDictionary *)dataDicSetWithDic:(NSDictionary *)dic{
@@ -45,6 +45,7 @@
     [userDic setObject:dic[@"header_img"]?dic[@"header_img"]:@"" forKey:@"images"];
     [userDic setObject:dic[@"user_id"]?dic[@"user_id"]:@"0" forKey:@"userid"];
     [userDic setObject:dic[@"nickname"]?dic[@"nickname"]:@"" forKey:@"nickname"];
+    [userDic setObject:dic[@"user_type"]?dic[@"user_type"]:@"" forKey:@"user_type"];
     
     NSArray * imgArrTemp = dic[@"images_list"];
     for (int i = 0; i<imgArrTemp.count; i++) {

@@ -161,7 +161,10 @@
 
 - (void)addToAldumViewmake{
     if (![UserSession instance].aldumCount||[[UserSession instance].aldumCount integerValue]<=0) {
-        if (self.addToAldumView)[self requestAddToAldumWithIdx:@"0"];
+        if (self.addToAldumView){
+            [self.addToAldumView setUserInteractionEnabled:NO];
+            [self requestAddToAldumWithIdx:@"0"];
+        }
     }
     WEAKSELF;
     if (!self.addToAldumView) {
@@ -171,6 +174,7 @@
         };
         self.addToAldumView.frame = CGRectMake(0.f, 0.f, kScreen_Width, kScreen_Height);
         self.addToAldumView.addToAlbumBlock = ^(NSInteger aldumIdx){
+            [weakSelf.addToAldumView setUserInteractionEnabled:NO];
             [weakSelf requestAddToAldumWithIdx:[NSString stringWithFormat:@"%zi",aldumIdx]];
         };
         self.addToAldumView.newAlbumBlock = ^(){
@@ -406,7 +410,7 @@
 
 #pragma mark - Http
 - (void)requestData{
-    NSDictionary * pragram = @{@"token":[UserSession instance].token,@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"token":[UserSession instance].token,@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postDataWithType:YuWaType_RB_DETAIL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -423,7 +427,7 @@
     }];
 }
 - (void)requestDataWithPages:(NSInteger)page{
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
@@ -460,16 +464,24 @@
 }
 - (void)requestAddToAldumWithIdx:(NSString *)aldumIdx{
     MyLog(@"添加到专辑%@",aldumIdx);
+    if (self.addToAldumView.dataArr.count<=0) {
+        YWNodeAddAldumViewController * vc = [[YWNodeAddAldumViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+        [self.addToAldumView setUserInteractionEnabled:YES];
+        [self.addToAldumView removeFromSuperview];
+        return;
+    }
     RBNodeAddToAldumModel * aldumModel = self.addToAldumView.dataArr[[aldumIdx integerValue]];
     NSString * album_id = aldumModel.aldumID;
     
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"album_id":album_id,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};//album_id没有将创建默认
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"album_id":album_id,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};//album_id没有将创建默认
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_COLLECTION_TO_ALDUM withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
         self.toolsBottomView.isCollection = !self.toolsBottomView.isCollection;
         self.dataModel.infavs = @"1";
+        [self.addToAldumView setUserInteractionEnabled:YES];
         self.dataModel.fav_count = [NSString stringWithFormat:@"%zi",([self.dataModel.fav_count integerValue] + 1)];
         if (![UserSession instance].aldumCount||[[UserSession instance].aldumCount integerValue]<=0)[UserSession instance].aldumCount = @"1";//成功后若无专辑则创建
         [self reSetBottomToolsView];
@@ -477,11 +489,12 @@
     } failur:^(id responsObj, NSError *error) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code error is %@",responsObj);
+        [self.addToAldumView setUserInteractionEnabled:YES];
     }];
 }
 
 - (void)requestCancelToAldum{
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_COLLECTION_CANCEL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

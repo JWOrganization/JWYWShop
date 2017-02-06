@@ -18,6 +18,7 @@
 @property (nonatomic,strong)JWEmojisKeyBoards * emojisKeyBoards;
 
 - (BOOL)isLogin;
+- (BOOL)isComfired;
 
 - (void)publishNodeAction;
 - (void)publishAlbumAction;

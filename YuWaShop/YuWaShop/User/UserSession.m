@@ -130,6 +130,7 @@ static UserSession * user=nil;
     user.nickName = (dataDic[@"company_name"]&&![dataDic[@"company_name"] isKindOfClass:[NSNull class]])?dataDic[@"company_name"]:user.account;
     user.birthDay = dataDic[@"birthday"];
     user.hxPassword = [NSString stringWithFormat:@"2%@",dataDic[@"mobile"]];
+    user.mobile = [NSString stringWithFormat:@"%@",dataDic[@"mobile"]];
     user.local = dataDic[@"address"];
     
     NSArray * SexArr = @[@"男",@"女",@"未知"];
@@ -173,12 +174,13 @@ static UserSession * user=nil;
     }
     if (![dataDic[@"check_status"] isKindOfClass:[NSNull class]]) {
         user.comfired_Status = [dataDic[@"check_status"] integerValue]<=0?4:[dataDic[@"check_status"] integerValue];//实名认证1待审核 2通过 3拒绝 4未提交
+        if (user.comfired_Status==2)user.isVIP = 3;
     }else{
         user.comfired_Status = 4;
     }
     
     user.cut = ceilf([((dataDic[@"company_discount"]&&![dataDic[@"company_discount"]isKindOfClass:[NSNull class]])?dataDic[@"company_discount"]:@"1") floatValue]*100);
-    if (user.cut<10)user.cut = 100;
+    if (!user.cut||user.cut<10)user.cut = 100;
     user.serventPhone = dataDic[@"invite_phone"];
     user.star = [((dataDic[@"star"]&&![dataDic[@"star"]isKindOfClass:[NSNull class]])?dataDic[@"star"]:@"5.0") floatValue];
     NSArray * infrastructure = dataDic[@"infrastructure"];

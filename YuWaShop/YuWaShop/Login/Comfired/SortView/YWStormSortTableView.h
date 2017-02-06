@@ -12,7 +12,7 @@
 @property (nonatomic,strong)NSMutableArray * dataArr;
 @property (nonatomic,assign)NSInteger selectIndex;
 
-@property (nonatomic,copy)void(^choosedTypeBlock)(NSInteger,NSInteger,NSArray *);
+@property (nonatomic,copy)void(^choosedTypeBlock)(NSInteger,NSInteger,NSArray *,NSString *);
 
 @property (nonatomic,strong)NSMutableArray * dataStateArr;
 

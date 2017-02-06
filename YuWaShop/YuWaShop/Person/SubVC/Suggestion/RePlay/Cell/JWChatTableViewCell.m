@@ -51,7 +51,7 @@
     self.contentButton.titleEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.contentButton setTitle:self.model.customer_content forState:UIControlStateNormal];
     
-    NSDictionary *attributes = @{NSFontAttributeName:self.contentButton.titleLabel.font};
+    NSDictionary * attributes = @{NSFontAttributeName:self.contentButton.titleLabel.font};
     
     CGRect rect = [self.model.customer_content boundingRectWithSize:CGSizeMake(kScreen_Width - 182.f, kScreen_Height) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     self.buttonWidth.constant = rect.size.width + 50.f;

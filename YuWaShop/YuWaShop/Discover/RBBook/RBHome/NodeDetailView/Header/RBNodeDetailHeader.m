@@ -13,6 +13,7 @@
 @implementation RBNodeDetailHeader
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     self.attentiionBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.attentiionBtn.layer.borderWidth = 1.f;
     self.attentiionBtn.layer.cornerRadius = 5.f;
@@ -57,9 +58,9 @@
 
 - (void)dataSet{
     self.nameLabel.text = self.model.nickname;
-//    self.levelImageView.hidden = self.model.
+    if(self.model.user_type)self.levelImageView.hidden = [self.model.user_type integerValue]>=2?NO:YES;
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:self.model.images] placeholderImage:[UIImage imageNamed:@"Head-portrait"] completed:nil];
-    [self.levelImageView sd_setImageWithURL:[NSURL URLWithString:self.model.level.image] placeholderImage:[UIImage imageNamed:@"level"] completed:nil];
+    [self.levelImageView sd_setImageWithURL:[NSURL URLWithString:self.model.level.image] placeholderImage:[UIImage imageNamed:@"level11"] completed:nil];
     
     [self.attentiionBtn setUserInteractionEnabled:YES];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
@@ -90,7 +91,7 @@
 
 #pragma mark - Http
 - (void)requestAttention{//关注此人
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"attention_id":self.model.userid};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"attention_id":self.model.userid,@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_ATTENTION_ADD withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
@@ -101,7 +102,7 @@
     }];
 }
 - (void)requestAttentionCancel{
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"attention_id":self.model.userid};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"attention_id":self.model.userid,@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_ATTENTION_CANCEL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

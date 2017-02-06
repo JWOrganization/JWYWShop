@@ -9,7 +9,7 @@
 #import "YWAldumDetailModel.h"
 
 @implementation YWAldumDetailModel
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"note" : [RBHomeModel class]};
 }
 

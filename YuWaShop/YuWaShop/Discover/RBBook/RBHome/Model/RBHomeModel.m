@@ -11,11 +11,11 @@
 
 @implementation RBHomeModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
++ (NSDictionary *)modelContainerPropertyGenericClass{
     return @{@"relatedgoods_list" : [RBHomeListGoodsModel class],@"newest_comments" : [RBHomeListCommentsModel class],@"images_list" : [RBHomeListImagesModel class]};
 }
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)modelCustomPropertyMapper{
     return @{@"homeID" : @"note_id"};
 }
 

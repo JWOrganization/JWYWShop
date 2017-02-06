@@ -23,6 +23,7 @@
 }
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [self.alphaBGView addGestureRecognizer:tap];
     self.tableView.delegate = self;
@@ -70,7 +71,7 @@
 }
 #pragma mark - Http
 - (void)aldumReload{
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_ALDUM withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

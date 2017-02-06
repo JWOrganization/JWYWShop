@@ -24,29 +24,24 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>请允许以开启定位服务</string>
+	<string>请开启以搜索附近商家</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>请允许以开启定位服务</string>
+	<string>请开启以搜索附近商家</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>App需要您的同意,才能访问麦克风</string>
-    <key>NSLocationUsageDescription</key>
-    <string>App需要您的同意,才能访问位置</string>
-    <key>NSAppleMusicUsageDescription</key>
-    <string>App需要您的同意,才能访问媒体资料库</string>
-    <key>NSCameraUsageDescription</key>
-    <string>App需要您的同意,才能访问相机</string>
+	<string>请开启以用于语音聊天</string>
+	<key>NSLocationUsageDescription</key>
+	<string>请开启以发送地点聊天</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>请开启以发送视频聊天</string>
+	<key>NSCameraUsageDescription</key>
+	<string>请开启以上传照片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>此 App 需要您的同意才能读取媒体资料库</string>
+	<string>请开启以上传照片</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>App需要您的同意,才能访问提醒事项</string>
+	<string>请开启以提示警告</string>
 	<key>Privacy - Camera Usage Description</key>
-	<string>允许此权限才能使用相机功能</string>
+	<string>请开启以拍照上传</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

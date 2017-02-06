@@ -93,6 +93,7 @@
 }
 
 - (void)searchBtnAction{
+    if (![self isComfired])return;
     RBHomeSearchViewController * vc = [[RBHomeSearchViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -109,6 +110,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (![self isComfired])return;
     RBNodeShowViewController * vc = [[RBNodeShowViewController alloc]init];
     vc.model = self.dataArr[indexPath.row];
     [self.navigationController pushViewController:vc animated:NO];
@@ -154,7 +156,7 @@
 
 #pragma mark - Http
 - (void)requestDataWithPages:(NSInteger)page{
-    NSDictionary * pragram = @{@"type":self.states,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page]};
+    NSDictionary * pragram = @{@"type":self.states,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"user_type":@([UserSession instance].isVIP==3?2:1)};
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
     });

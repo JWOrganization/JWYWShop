@@ -93,7 +93,7 @@
 
 #pragma mark - Http
 - (void)requestDataWithPages:(NSInteger)page{
-    NSDictionary * pragram = @{@"note_id":self.idd,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page]};
+    NSDictionary * pragram = @{@"note_id":self.idd,@"pagen":self.pagens,@"pages":[NSString stringWithFormat:@"%zi",page],@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(RefreshTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cancelRefreshWithIsHeader:(page==0?YES:NO)];
@@ -118,7 +118,7 @@
 }
 
 - (void)requestSendComment{
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"note_id":@([self.commentSendDic[@"nodeID"] integerValue]),@"customer_content":[JWTools UTF8WithStringJW:self.commentToolsView.sendTextField.text]};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"note_id":@([self.commentSendDic[@"nodeID"] integerValue]),@"customer_content":[JWTools UTF8WithStringJW:self.commentToolsView.sendTextField.text],@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postDataWithType:YuWaType_RB_COMMENT withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

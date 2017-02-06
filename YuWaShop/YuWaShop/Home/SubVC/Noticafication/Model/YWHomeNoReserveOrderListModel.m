@@ -10,8 +10,8 @@
 
 @implementation YWHomeNoReserveOrderListModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"reserveID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"reserveID":@"id"};
 }
 
 @end

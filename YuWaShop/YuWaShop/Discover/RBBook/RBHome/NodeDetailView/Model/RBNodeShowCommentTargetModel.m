@@ -10,8 +10,8 @@
 
 @implementation RBNodeShowCommentTargetModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"targetID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"targetID":@"id"};
 }
 
 @end

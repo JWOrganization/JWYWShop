@@ -61,12 +61,11 @@
             YWBankModel * model = self.bankArr[indexPath.row];
             [self requestDelBankWithID:model.bankID withIndexPath:indexPath];
             }];
-        
-            UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-            UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除银行卡?" preferredStyle:UIAlertControllerStyleAlert];
-            [alertVC addAction:cancelAction];
-            [alertVC addAction:OKAction];
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除银行卡?" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:cancelAction];
+        [alertVC addAction:OKAction];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertVC animated:YES completion:nil];
     }
 }
 

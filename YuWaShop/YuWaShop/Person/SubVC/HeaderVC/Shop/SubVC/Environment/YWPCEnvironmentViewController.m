@@ -150,7 +150,7 @@
             }
             [dataArrTemp replaceObjectAtIndex:i withObject:tagSubArr];
         }
-        self.parkChoose = [(dataDic[@"park"]?dataDic[@"park"]:@"0") integerValue];
+        self.parkChoose = [(dataDic[@"park"]&&![dataDic[@"park"] isKindOfClass:[NSNull class]]?dataDic[@"park"]:@"0") integerValue];
         NSMutableArray * parkArr = [NSMutableArray arrayWithCapacity:0];
         for (int i = 0; i<4; i++) {
             [parkArr addObject:(self.parkChoose==i?@"1":@"0")];

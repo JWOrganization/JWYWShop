@@ -90,12 +90,13 @@
                 if (![sellerModel.ctime isEqualToString:@"0"]&&![sellerModel.customer_content isEqualToString:@""]) {
                     [self.dataArr insertObject:sellerModel atIndex:0];
                 }
+                
                 [self.dataArr insertObject:model atIndex:0];
             }
         }
         
         [self.tableView reloadData];
-        if (page == 0) {
+        if (page == 0&&self.dataArr.count>0) {
             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(self.dataArr.count-1) inSection:0]  atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
     } failur:^(id responsObj, NSError *error) {

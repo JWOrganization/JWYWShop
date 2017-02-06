@@ -11,8 +11,8 @@
 
 @implementation RBNodeShowCommentModel
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"commentID" : @"id"};
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"commentID":@"id"};
 }
 
 + (NSMutableDictionary *)dataDicSetWithDic:(NSDictionary *)dic{

@@ -101,7 +101,7 @@
         return;
     }
     if (!self.aldumIntro)self.aldumIntro = @"";
-    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"title":self.aldumTitle,@"info":self.aldumIntro,@"is_hidden":@(self.isPublic)};
+    NSDictionary * pragram = @{@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"title":self.aldumTitle,@"info":self.aldumIntro,@"is_hidden":@(self.isPublic),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_CREATE_ALDUM withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

@@ -80,7 +80,7 @@
 }
 
 - (BOOL)isLogin{
-    if (![UserSession instance].isLogin) {
+    if (![UserSession instance].isLogin){
         VIPTabBarController * rootTabBarVC = (VIPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         __block RBHomeViewController * rbRootVC;
         [rootTabBarVC.viewControllers enumerateObjectsUsingBlock:^(__kindof VIPNavigationController * _Nonnull navi, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -98,7 +98,7 @@
 }
 
 #pragma mark - Button Action
-- (IBAction)likeBtnAction:(id)sender {
+- (IBAction)likeBtnAction:(id)sender{
     if (![self isLogin])return;
     self.isLike = !self.isLike;
     
@@ -130,11 +130,11 @@
 
 #pragma mark - Http
 - (void)requestLike{
-    if (!self.isLike) {
+    if (!self.isLike){
         [self requestCancelLike];
         return;
     }
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_LIKE withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
@@ -145,7 +145,7 @@
 }
 
 - (void)requestCancelLike{
-    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.model.homeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_LIKE_CANCEL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);

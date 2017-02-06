@@ -23,6 +23,7 @@
 - (void)setIsLike:(BOOL)isLike{
     if (_isLike == isLike)return;
     _isLike = isLike;
+    [self.likeBtn setImage:[UIImage imageNamed:_isLike == YES?@"icon-like":@"icon-dislike"] forState:UIControlStateNormal];
 }
 
 - (void)likeBtnImageAnimation{
@@ -72,7 +73,7 @@
         [self requestCancelLike];
         return;
     }
-    NSDictionary * pragram = @{@"note_id":self.nodeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.nodeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_LIKE withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
         MyLog(@"Regieter Code is %@",responsObj);
@@ -83,7 +84,7 @@
 }
 
 - (void)requestCancelLike{
-    NSDictionary * pragram = @{@"note_id":self.nodeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid)};
+    NSDictionary * pragram = @{@"note_id":self.nodeID,@"device_id":[JWTools getUUID],@"token":[UserSession instance].token,@"user_id":@([UserSession instance].uid),@"user_type":@([UserSession instance].isVIP==3?2:1)};
     
     [[HttpObject manager]postNoHudWithType:YuWaType_RB_LIKE_CANCEL withPragram:pragram success:^(id responsObj) {
         MyLog(@"Regieter Code pragram is %@",pragram);
